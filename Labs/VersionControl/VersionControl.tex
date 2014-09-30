@@ -1,0 +1,95 @@
+\documentclass{tufte-book}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{listings}
+
+\usepackage{multicol}              
+\usepackage{multirow}
+\usepackage{booktabs} 
+
+\usepackage[]{hyperref}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\hypersetup{colorlinks=true, breaklinks=true, linkcolor=darkblue, menucolor=darkblue, urlcolor=darkblue, citecolor=darkblue}
+
+\lstset{
+language=[LaTeX]{TeX},
+breaklines = true,
+breakautoindent = false,
+breakindent = 0pt,
+commentstyle=\color{gray},
+frame=single,
+framerule=0.4pt,
+framesep=3pt,
+xleftmargin=3.4pt,
+xrightmargin=3.4pt,
+basicstyle=\normalfont,
+keywordstyle=\color{blue}\sffamily,                                
+identifierstyle=\color{black},
+numbersep=5mm, 
+numbers=left, 
+numberstyle=\tiny,
+morekeywords = {
+maketitle, 
+tableofcontents}  
+}
+
+\setcounter{secnumdepth}{1}
+
+
+\title{Version Control (with a focus on Git and Github)}
+\author{Florian Hartig}
+
+
+
+\begin{document}
+\let\cleardoublepage\clearpage
+\maketitle
+\newpage
+\tableofcontents
+
+\chapter{Introduction}
+
+
+\section{Collaboration}
+
+
+\chapter{Why use version control}
+
+
+\section{Collaboration}
+
+
+\section{Archiving previous version properly}
+
+Do you have folders on your computer filled with filenames such as thesis-version-27-03.doc, thesis-version-03-04.doc and so on? Well, that's your rudimentary and very ineffective try to achieve what a version control system will do for you. 
+
+
+\section{Restoring and comparing previous versions}
+
+
+\section{Backup}
+
+
+\chapter{Git providers and clients}
+
+\section{Collaboration}
+
+\section{Collaboration}
+
+
+\chapter{Important concepts when working with version control}
+
+\section{Distributed vs. central systems}
+
+\section{Distributed vs. central systems}
+
+
+
+First of create a folder on your computer and make sure that you have the necessary\marginnote{Always create a new project folder with a distinct name when starting a \LaTeX document!} rights to read and write in that location. Do not simply start your project on the desktop since \LaTeX creates additional files as you compile your project and you will make a mess of things.
+ 
+When creating the folder and all following files make sure you do not use spaces or\marginnote{No spaces or special symbols in file- or folder-names anywhere in your file path!} special symbols. Nowhere in the path to your files should be any of those symbols. Stick to letters, numbers and underscores or scores. 
+
+
+\end{document}
