@@ -1,0 +1,57 @@
+\documentclass{tufte-book} %style file is in the same folder.
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{listings}
+
+\usepackage{multicol}              
+\usepackage{multirow}
+\usepackage{booktabs} 
+
+\usepackage[]{hyperref}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\hypersetup{colorlinks=true, breaklinks=true, linkcolor=darkblue, menucolor=darkblue, urlcolor=darkblue, citecolor=darkblue}
+
+\lstset{ % settings for listings needs to be be changed to R sytanx 
+language=[LaTeX]{TeX},
+breaklines = true,
+breakautoindent = false,
+breakindent = 0pt,
+commentstyle=\color{gray},
+frame=single,
+framerule=0.4pt,
+framesep=3pt,
+xleftmargin=3.4pt,
+xrightmargin=3.4pt,
+basicstyle=\normalfont,
+keywordstyle=\color{blue}\sffamily,                                
+identifierstyle=\color{black},
+numbersep=5mm, 
+numbers=left, 
+numberstyle=\tiny,
+morekeywords = {
+maketitle, 
+tableofcontents}  
+}
+
+\setcounter{secnumdepth}{1}
+
+
+\title{How to use R for scientific purposes}
+\author{author}
+
+
+
+\begin{document}
+\let\cleardoublepage\clearpage % No empty pages between chapters
+\maketitle
+\newpage
+\tableofcontents
+
+\chapter{Introduction} % Use chapters instead of sections
+
+This short script is supposed to help you start your first R Analysis.\marginnote{This is how you place text in the margins of the document.} 
+
+ 
+\end{document}

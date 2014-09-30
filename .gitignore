@@ -8,3 +8,6 @@
 *.gz
 
 *.toc
+*.bak
+*.bbl
+*.blg
