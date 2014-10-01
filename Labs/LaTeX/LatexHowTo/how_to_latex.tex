@@ -62,7 +62,7 @@ This short script is supposed to help you start your first document in \LaTeX. Y
 
  \LaTeX is a script based typesetting program that allows you to set the design of your report, article, book or whatever written statement via written commands. This may appear a bit cryptic in the beginning but after a short time of getting used to this way of working you will realize how much time this can save you and how much nicer and more professional your documents look. Basically when it comes to typesetting software there are two distinguishable types.
  
-The first and most common is called \emph{"What You See Is What You Get"} (WYSIWYG). this describes Software such as Open Office, Microsoft Word etc. where you can see how your document is going to look in the end while you are working on it but it might be difficult to create a document exactly the way you wanted it to be. The second type is called \emph{"What You Get Is What You Want"}(WYGIWYW). This is the category \LaTeX belongs to. It means that while you are working on your  document you do not get a visual representation of the final result but your final result will be the way you imagined it when you started.  	
+The first and most common is called \emph{"What You See Is What You Get"} (WYSIWYG). this describes software such as Open Office, Microsoft Word etc. where you can see how your document is going to look in the end while you are working on it but it might be difficult to create a document exactly the way you wanted it to be. The second type is called \emph{"What You Get Is What You Want"}(WYGIWYW). This is the category \LaTeX belongs to. It means that while you are working on your  document you do not get a visual representation of the final result but your final result will be the way you imagined it when you started.  	
 \end{fullwidth}
 \chapter{Before you start}
 
@@ -304,10 +304,12 @@ This is our second numbered equation.
 As you can see there are a lot of new symbols added but if you look at them they are pretty self explanatory. \verb!\infty! is used for the infinity symbol $\infty$ , \verb!\frac{}{}! is used for fractions such as $\frac{x}{y}$ and \verb!\cdot! is used for the multiplication dot $\cdot$. A bit more complicated is \verb!\int! it is used for integrals the lower bound is indicated by an underscore " \_ " and the upper bound by the  \^. The full expression for an integral is respectively \verb!\int_x^y! which then looks like $\int_x^y$. Brackets can be placed with the commands \verb!\left(! and \verb!\right)!. 
 
 \chapter{Labels and referencing}
-When adding graphs, tables, pictures or equations to your document\marginnote{Labels and references are important for you and for others to easily link written information to graphic content!} it is common to number reference these to allow the reader to easily connect your text to the respective visualization. In addition you might also want to reference sections to be able to later refer to them. The numbering is done automatically by latex for all these types. To reference them in your document you just need to label them. The commands used for this purpose are \verb!\label{}! and \verb!\ref{}!. You assign a specific label to the aspect you want reference later on by simply placing \verb!\label{}! behind the object you want to reference. Here it is common to use a short prefix to indicate the type of object you want to label such as \emph{sec} for sections, \emph{fig} for figures, \emph{tab} for tables\marginnote{Use abbreviated prefixes to quickly identify your labels!} and so on. This makes it easy to distinguish between different objects connected to the same topic (e.g. a graph and a table displaying the same kind of data). You can also make your references interactive. This means you can link your references to the actual content to make navigating the pdf even easier. To do so you need to include the \emph{hyperref} package into your document header. You can then use the \verb!\hypersetup! command to define the formatting of your references. Here we colored them in  dark blue. to see how this is done look at the following lines of code:
+When adding graphs, tables, pictures or equations to your document\marginnote{Labels and references are important for you and for others to easily link written information to graphic content!} it is common to number reference these to allow the reader to easily connect your text to the respective visualization. In addition you might also want to reference sections to be able to later refer to them. The numbering is done automatically by latex for all these types. To reference them in your document you just need to label them. The commands used for this purpose are \verb!\label{}! and \verb!\ref{}!. You assign a specific label to the aspect you want reference later on by simply placing \verb!\label{}! behind the object you want to reference. Here it is common to use a short prefix to indicate the type of object you want to label such as \emph{sec} for sections, \emph{fig} for figures, \emph{tab} for tables\marginnote{Use abbreviated prefixes to quickly identify your labels!} and so on. This makes it easy to distinguish between different objects connected to the same topic (e.g. a graph and a table displaying the same kind of data). You can also make your references interactive. This means you can link your references to the actual content to make navigating the pdf even easier. To do so you need to include the \emph{hyperref} package into your document header. You can then use the \verb!\hypersetup! command to define the formatting of your references. Here we colored them in  dark blue. You can use the packages \emph{color} and \emph{xcolor} to increase the spectrum of colors you can use and to enable the definition of custom colors from rgb values. To see how this is done look at the following:
 \marginnote{\emph{hyperref} allows you to create interactive links between your references and the referenced content. This makes navigating large documents a lot easier!}
 \begin{lstlisting}
 \usepackage[]{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
 \definecolor{darkblue}{rgb}{0,0,.5}
 \hypersetup{colorlinks=true, breaklinks=true, 
 linkcolor=darkblue, menucolor=darkblue, 
@@ -323,6 +325,14 @@ As a quick exercise you are now going to label your numbered equations and the i
 \documentclass{article}
 \author{FirstName LastName}
 \title{My first \LaTeX  document}
+
+\usepackage[]{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\hypersetup{colorlinks=true, breaklinks=true, 
+linkcolor=darkblue, menucolor=darkblue, 
+urlcolor=darkblue, citecolor=darkblue}
 
 \begin{document}
 \maketitle
@@ -383,6 +393,14 @@ Your document should now look like this:\\[5pt]
 \documentclass{article}
 
 \usepackage{graphicx}
+
+\usepackage[]{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\hypersetup{colorlinks=true, breaklinks=true, 
+linkcolor=darkblue, menucolor=darkblue, 
+urlcolor=darkblue, citecolor=darkblue}
 
 \author{FirstName LastName}
 \title{My first \LaTeX  document}
@@ -516,6 +534,14 @@ This is how a table for scientific data should look. Generally there should be n
 \usepackage{multirow}
 \usepackage{booktabs} 
 
+\usepackage[]{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\hypersetup{colorlinks=true, breaklinks=true, 
+linkcolor=darkblue, menucolor=darkblue, 
+urlcolor=darkblue, citecolor=darkblue}
+
 \author{FirstName LastName}
 \title{My first \LaTeX  document}
 
@@ -634,6 +660,14 @@ In every scientific article it is important to clearly state your sources. You n
 
 \usepackage{natbib}
 \bibpunct{(}{)}{;}{a}{}{,}  
+
+\usepackage[]{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\hypersetup{colorlinks=true, breaklinks=true, 
+linkcolor=darkblue, menucolor=darkblue, 
+urlcolor=darkblue, citecolor=darkblue}
 
 \author{FirstName LastName}
 \title{My first \LaTeX  document}
