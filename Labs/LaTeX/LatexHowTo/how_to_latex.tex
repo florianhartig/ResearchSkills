@@ -295,7 +295,7 @@ This is our second numbered equation.
  
 \begin{equation} 
 \lambda = \int_{m_0}^\infty f(\Theta) d \Theta 
-\end{equation}.\\
+\end{equation}
 
 \end{document} 
 \end{lstlisting}
@@ -305,7 +305,7 @@ As you can see there are a lot of new symbols added but if you look at them they
 
 \chapter{Labels and referencing}
 When adding graphs, tables, pictures or equations to your document\marginnote{Labels and references are important for you and for others to easily link written information to graphic content!} it is common to number reference these to allow the reader to easily connect your text to the respective visualization. In addition you might also want to reference sections to be able to later refer to them. The numbering is done automatically by latex for all these types. To reference them in your document you just need to label them. The commands used for this purpose are \verb!\label{}! and \verb!\ref{}!. You assign a specific label to the aspect you want reference later on by simply placing \verb!\label{}! behind the object you want to reference. Here it is common to use a short prefix to indicate the type of object you want to label such as \emph{sec} for sections, \emph{fig} for figures, \emph{tab} for tables\marginnote{Use abbreviated prefixes to quickly identify your labels!} and so on. This makes it easy to distinguish between different objects connected to the same topic (e.g. a graph and a table displaying the same kind of data). You can also make your references interactive. This means you can link your references to the actual content to make navigating the pdf even easier. To do so you need to include the \emph{hyperref} package into your document header. You can then use the \verb!\hypersetup! command to define the formatting of your references. Here we colored them in  dark blue. to see how this is done look at the following lines of code:
-
+\marginnote{\emph{hyperref} allows you to create interactive links between your references and the referenced content. This makes navigating large documents a lot easier!}
 \begin{lstlisting}
 \usepackage[]{hyperref}
 \definecolor{darkblue}{rgb}{0,0,.5}
