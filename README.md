@@ -3,12 +3,13 @@ ResearchSkills
 
 Material for the 3-week MSc block "Research Skills". Final material at http://florianhartig.github.io/ResearchSkills/ 
 
-###Objective
+### Objective
 
 To learn discipline-independent skills for doing research at the graduate-level.
-Prerequisites
 
-###An undergraduate degree, ideally in science. 
+### Prerequisites
+
+An undergraduate degree, ideally in science. 
 
 
 ### Topics
