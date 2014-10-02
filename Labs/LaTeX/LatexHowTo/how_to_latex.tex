@@ -56,21 +56,27 @@ morekeywords = {maketitle, tableofcontents, subsection,
 
 \chapter{Introduction}
 \begin{fullwidth}
-This short script is supposed to help you start your first document in \LaTeX. You will learn how to set up your document as a scientific article, how to include graphics and tables as well as formulas. You will learn to set up a decent structure for your article, to easily include your citations and how to link references within your article.
+This short script will help you start your first document in \LaTeX. You will learn how to set up your document as a scientific article, how to include graphics and tables as well as formulas. You will learn to set up a decent structure for your article, to easily include your citations and how to link references within your article.
 
  \LaTeX is a script based typesetting program that allows you to set the design of your report, article, book or whatever written statement via written commands. This may appear a bit cryptic in the beginning but after a short time of getting used to this way of working you will realize how much time this can save you and how much nicer and more professional your documents look. Basically when it comes to typesetting software there are two distinguishable types.
  
-The first and most common is called \emph{"What You See Is What You Get"} (WYSIWYG). this describes software such as Open Office, Microsoft Word etc. where you can see how your document is going to look in the end while you are working on it but it might be difficult to create a document exactly the way you wanted it to be. The second type is called \emph{"What You Get Is What You Want"}(WYGIWYW). This is the category \LaTeX belongs to. It means that while you are working on your  document you do not get a visual representation of the final result but your final result will be the way you imagined it when you started.  	
+The first and most common is called \emph{"What You See Is What You Get"} (WYSIWYG). this describes software such as Open Office, Microsoft Word etc. where you can see how your document is going to look in the end while you are working on it but it might be difficult to create a document exactly the way you wanted it to be. The second type is called \emph{"What You Get Is What You Want"}(WYGIWYW). This is the category \LaTeX\ belongs to. It means that while you are working on your  document you do not get a visual representation of the final result but your final result will be the way you imagined it when you started.  	
 \end{fullwidth}
 \chapter{Before you start}
 
-First you need to set up \LaTeX on your computer. In this tutorial we will be using the free \LaTeX editor TexMaker. It is available for all common platforms but some settings may wary. Here we are using TexMaker for Windows. To set up \LaTeX you first need to install the right distribution. This would be the latest version of MikTex for Windows. Search for it on the web then download and install it on your computer. afterwards do the same for TexMaker. You can use any other software you like but this tutorial can not cover the settings and options for all those so you will need to figure them out on your own.
+First you need to set up \LaTeX\ on your computer. Basically, a \LaTeX\ system consists of two component: a latex distribution, and an editor.
+
+There are different distributions, also depending on your operating system. For Windows, the clear choice is MikTex. For Mac, MacTeX is probably the best choice but there are other options as well. Linux distributions usually already include a \LaTeX\ distribution, otherwise it should be easy to install one. 
+
+The second thing you need is an editor. In principle you can use any editor (latex documents are just text files), but it is more convenient to use a specialised \LaTeX\  editor that is already set up to work together wit your \LaTeX\ distribution. We recommend using the free \LaTeX\ editor TexMaker, and some of the comments later in this document will assume that you will be working with a MikTex / TexMaker combination (Most of the advice, however, as well as any proper \LaTeX\ document, can be used on any system)
+
+To get MikTex and TexMaker, search for it on the web then download and install it on your computer. Make sure you install from the project website and not from third-party sites that often offer pretty old versions. 
   
 Before you start your project you have to keep a couple of things in mind that will later on help you to keep track of what you are doing and to avoid unnecessary errors.
  
-It is helpful to be connected to the internet in some way to enable \LaTeX to download packages on the fly.
+If you use MikTex, It is helpful to be connected to the internet in some way to enable \LaTeX to download packages on the fly. For other distributions, you will have to install missing packages by hand.
 
-First of create a folder on your computer and make sure that you have the necessary\marginnote{Always create a new project folder with a distinct name when starting a \LaTeX document!} rights to read and write in that location. Do not simply start your project on the desktop since \LaTeX creates additional files as you compile your project and you will make a mess of things.
+First of create a folder on your computer and make sure that you have the necessary\marginnote{Always create a new project folder with a distinct name when starting a \LaTeX\ document!} rights to read and write in that location. Do not simply start your project on the desktop since \LaTeX\ creates additional files as you compile your project and you will make a mess of things.
  
 When creating the folder and all following files make sure you do not use spaces or\marginnote{No spaces or special symbols in file- or folder-names anywhere in your file path!} special symbols. Nowhere in the path to your files should be any of those symbols. Stick to letters, numbers and underscores or scores. 
 
@@ -85,7 +91,7 @@ Under "Options -> Interface Language" you can choose the language for TexMaker. 
 
 \chapter{First steps}
 
-Now that you have created your project folder you can create your first \LaTeX document. Navigate to your project folder and create a new text file. Open this file and type the following line:\\[5pt]
+Now that you have created your project folder you can create your first \LaTeX\ document. Navigate to your project folder and create a new text file. Open this file and type the following line:\\[5pt]
 
 \emph{\% This is my first Latex document. There are many documents like this but this one is mine.}\\[5pt]
 
@@ -102,7 +108,7 @@ The gray color symbolizes a \emph{comment} the comment is declared by using the 
 
 To start of your actual document you first need to declare the type of document you want to create. This is done in the so called "Header" of the file. There you can also declare additional options and include packages to increase the functionality of \LaTeX.
 
-For the purpose of this tutorial you are going to create a scientific article. This type of document is declared by \verb!\documentclass{article}!. This defines a few design characteristics like line spacing and the width of the borders of the page for your document. the \verb!\! is used to indicate to \LaTeX that the following is a command. In \LaTeX commands are used for everything from setting your font type to including pictures or graphics.  
+For the purpose of this tutorial you are going to create a scientific article. This type of document is declared by \verb!\documentclass{article}!. This defines a few design characteristics like line spacing and the width of the borders of the page for your document. the \verb!\! is used to indicate to \LaTeX\ that the following is a command. In \LaTeX\ commands are used for everything from setting your font type to including pictures or graphics.  
 
 Now you can begin with your document.\marginnote{Every \emph{begin} statement requires an \emph{end} statement!} To do so you start with the line \verb!\begin{document}!
 This should result in 2 lines being created in addition to \verb!\begin{document}! there should also be a line saying \verb!\end{document}!. If this is not the case just type it yourself. Now  you should have a document looking like this:\\[5pt]
@@ -141,18 +147,20 @@ This is my first \LaTeX document. I am going to learn a lot about typesetting an
 \end{lstlisting}
 
 
-You should now be able to compile your document and create a pdf file from it. To do so you just have to press compile in your \LaTeX editor. You should notice the  \LaTeX symbol. This was created by using the \verb!\LaTeX! command. After the abstract you can start your first section. This is usually the introduction. You can add sections via \verb!\section{}!. Here no begin- or end-statement is needed. One section lasts until the next one starts or the document ends. To add the section "Introduction" to your document now type  \verb!\section{Introdution}! below \verb!\end{abstract}! in your document and write a few lines like\\
+You should now be able to compile your document and create a pdf file from it. To do so you just have to press compile in your \LaTeX\ editor. You should notice the  \LaTeX\ symbol. This was created by using the \verb!\LaTeX! command. After the abstract you can start your first section. This is usually the introduction. You can add sections via \verb!\section{}!. Here no begin- or end-statement is needed. One section lasts until the next one starts or the document ends. To add the section "Introduction" to your document now type  \verb!\section{Introdution}! below \verb!\end{abstract}! in your document and write a few lines like\\
 
-\noindent This is my \verb!\textbf{first}! \verb!\emph{sentence}!.
+\begin{lstlisting}
 
-\noindent This is my \verb!\textit{second}! sentence. 
+This is my \textbf{first} \emph{sentence}.
 
-\noindent This is my third sentence. You can also put some distance between lines.\verb!\\[3mm]!
+This is my \textit{second} sentence. 
 
-\noindent Test\\[5pt] 
+This is my third sentence. You can also put some distance between lines.\\[3mm]
+Test 
+
+\end{lstlisting}
 
 Now your document should look like this:\\[5pt]
-
 
 \begin{lstlisting}
 % This is my first Latex document. There are many documents like this but this one is mine.
@@ -212,45 +220,41 @@ Test
 \chapter{Equations in \LaTeX}
 Here you will learn how to write equations in \LaTeX. There are two basic types of equations. First there are inline equations which can be used to write down basic mathematical expressions and equations like $\alpha = 3.5$. or $\lambda = \sqrt{\alpha}$ within your text. Second are the numbered equations. They will appear separated from your text like this:
 
+\begin{lstlisting}
 \begin{equation} 
 \lambda = \int_{m_0}^\infty f(\Theta) d \Theta 
 \end{equation}
+\end{lstlisting}
 
-They will be numbered (in this case as the first equation in chapter six) which allows you to easily reference the equation later on in your text. You can use this to write down more complex equations or expressions. As an exercise you can now create those two types within your own document and put them in a new section named "Equations". You will start with an inline equation. An inline equation is framed by \$ symbols to separate it from the rest of the text. For this purpose start a new subsection called "Inline Equations" a subsection can be created with the \verb!\subsection{}! command. Your first inline equations will be \verb!$\alpha = 3.5$. and $\lambda = \sqrt{\alpha}$!. To emphasize the inline effect put a short sentence before the equations. As you can see Greek letters can be written by typing a \verb!\! before the full name of the letter. Additionally the \verb!\sqrt{}! command is used for the square root symbol. Your document should now look like this:\\[5pt]   
+They will be numbered (in this case as the first equation in chapter six) which allows you to easily reference the equation later on in your text. You can use this to write down more complex equations or expressions. As an exercise you can now create those two types within your own document and put them in a new section named "Equations". You will start with an inline equation. An inline equation is framed by \$ symbols to separate it from the rest of the text. For this purpose start a new subsection called "Inline Equations" a subsection can be created with the \verb!\subsection{}! command. Your first inline equations will be \verb!$\alpha = 3.5$. and $\lambda = \sqrt{\alpha}$!. To emphasize the inline effect put a short sentence before the equations. As you can see Greek letters can be written by typing a \verb!\! before the full name of the letter. Additionally the \verb!\sqrt{}! command is used for the square root symbol. Include this section in your document:\\[5pt]   
 
 
 \begin{lstlisting}
-% This is my first Latex document. There are many documents like this but this one is mine.
-
-\documentclass{article}
-\author{FirstName LastName}
-\title{My first \LaTeX  document}
-
-\begin{document}
-\maketitle
-
-\begin{abstract}
-This is my first \LaTeX! document. I am going to learn a lot about typesetting and writing articles in \LaTeX! and my papers will look really nice from now on.
-\end{abstract}
-
-\section{Introduction}
-This is my \textbf{first} \emph{sentence}.
-
-This is my \textit{second} sentence.
-
-This is my third sentence. You can also put some distance between lines.\\[3mm]
-Test 
-
-\section{Doing equations}
-
 \subsection{Inline equations}
 This is our first inline equation $\alpha = 3.5$. $\lambda = \sqrt{\alpha}$. 
 
 \end{document}  
 \end{lstlisting}
 
-
 Next come your numbered equations. A numbered equation starts with the \verb!\begin{equation}! statement and ends with \verb!\end{equation}!. In between you can\marginnote{Use inline equations for short expressions and numbered equations for more complex equations!} put text as well as all the statements used in equations. Try it yourself now. Start a new subsection called "Numbered Equations" and write down a short sentence followed by:\\ \verb!\begin{equation}! \\ \verb!m = \left( \frac{a \cdot b}{c} \right)! \\ \verb!\end{equation}! \\ and another short sentence followed by:\\ \verb!\begin{equation}\!\\ \verb!\lambda = \int_{m_0}^\infty f(\Theta) d \Theta!\\ \verb!\end{equation}!.\\
+Include this section in your document:\\[5pt]
+
+\begin{lstlisting}
+
+\subsection{Numbered equations}
+This is our first numbered equation.
+
+\begin{equation}
+m = \left( \frac{a \cdot b}{c} \right)
+\end{equation}
+ 
+This is our second numbered equation.
+ 
+\begin{equation} 
+\lambda = \int_{m_0}^\infty f(\Theta) d \Theta 
+\end{equation}
+\end{lstlisting}
+
 Your document should now look like this:\\[5pt]
 
 
@@ -377,10 +381,16 @@ The easiest way to include figures into your document is by placing the file con
 
 To include images into your \LaTeX document you first need to define a figure space. This can be achieved by using the \verb!\begin{figure}! and \verb!\end{figure}! statements. In between these statements you can now include your image and add a caption to it to briefly summarize what is displayed here. To do so you need the \verb!\includegraphics[scale=]{}!, with the name or file path of the image to include without the file extension, and \verb!\caption{}! commands. Most of the time you want your image to be displayed in the center of the lines your placing it in. For that you can use the command \verb!\centering! one line above the  \verb!\includegraphics[scale=]{}! statement.
 
-There should be two image files in your training material. A picture of Albert Einstein in his study and a boxplot graph. Include them into your document. They should be 6 cm wide. \begin{marginfigure}
+There should be two image files in your training material. A picture of Albert Einstein in his study and a boxplot graph. Include them into your document. They should be 6 cm wide. 
+\begin{lstlisting}
+\begin{marginfigure}
 \includegraphics[width=4cm]{../example/einstein}
 \caption{This photograph by Ferdinand Schmutzer shows Einstein in his study}
-\end{marginfigure}You can set the width in the square brackets by typing \emph{width = 6 cm}. To include two pictures side by side just put them into the same figure just make sure to set their width to 3 cm. For each figure you just need one caption even if it induces several images. And do not forget to label your figures.   
+\end{marginfigure}You can set the width in the square brackets by typing \emph{width = 6 cm}. 
+\end{lstlisting}
+
+To include two pictures side by side just put them into the same figure just make sure to set their width to 3 cm. For each figure you just need one caption even if it induces several images. And do not forget to label your figures.   
+
 Your document should now look like this:\\[5pt]
 
 
