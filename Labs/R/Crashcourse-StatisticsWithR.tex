@@ -1,0 +1,173 @@
+\documentclass{tufte-book} %style file is in the same folder.
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{listings}
+
+\usepackage{multicol}              
+\usepackage{multirow}
+\usepackage{booktabs}
+%\usepackage{natbib} 
+
+\usepackage[]{hyperref}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\hypersetup{colorlinks=true, breaklinks=true, linkcolor=darkblue, menucolor=darkblue, urlcolor=darkblue, citecolor=darkblue}
+
+\lstset{ % settings for listings needs to be be changed to R sytanx 
+language=[LaTeX]{TeX},
+breaklines = true,
+breakautoindent = false,
+breakindent = 0pt,
+commentstyle=\color{gray},
+frame=single,
+framerule=0.4pt,
+framesep=3pt,
+xleftmargin=3.4pt,
+xrightmargin=3.4pt,
+basicstyle=\normalfont,
+keywordstyle=\color{blue}\sffamily,                                
+identifierstyle=\color{black},
+numbersep=5mm, 
+numbers=none, 
+numberstyle=\tiny,
+morekeywords = {
+maketitle, 
+tableofcontents}  
+}
+
+   \lstset{language=R,
+           basicstyle=\ttfamily \scriptsize,
+           keywordstyle=\color{black}
+          breaklines=true
+          }
+
+\setcounter{secnumdepth}{1}
+
+
+\title{A crash course in\\statistics and R}
+\author{Florian Hartig}
+
+
+\begin{document}
+\let\cleardoublepage\clearpage % No empty pages between chapters
+\maketitle
+\newpage
+\tableofcontents
+
+\chapter{Synopsis and Introduction} % Use chapters instead of sections
+
+The purpose of this document is to give you a very short introduction to the type of statistical analysis most likely to be encountered in the Research Skills course. This does not a replace an proper introductory textbook. For beginners, I recommend \citep{Dormann-ParametrischeStatistik-2013} for German speakers (ebook free of charge for students from Freiburg, contact me) and \citep{Gotelli-PrimerEcologicalStatistics-2004} for English speakers. 
+ 
+\chapter{The R environment for statistical computing}
+
+In the ecological sciences, R is the de-facto standard for doing statistical analysis. R is script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment.
+
+
+
+
+
+For installing R, see \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{here}
+
+For solving problems, see \href{http://biometry.github.io/APES/R/R80-solvingProblems.html}{here}
+
+
+\chapter{Basic concepts of statistical inference}
+
+Before we explain some typical statistical methods, I want you to understand how statistics works and what the methods typically report. In a nutshell, a statistical analysis consists of 3 parts: the data, a statistical model, and an inferential method
+
+\section{The data}
+
+Creating data is a lot of work. People therefore tend to think very hard on what data they want to have, and also how they later want to use this data (typically in a statistical analysis). We will speak about how to create data (design of experiments) in a later chapter. For the moment, however, let us assume that we just have some data. That typically means that we have measured some variable of interest. We call this variable the response, because we are interested if and how this variable of interest varies (responds) when something changes. The thing that changes could be another variable (e.g. temperature), it could be an experimental treatment (fertilized vs. non fertilized), or anything else. We call these other variables the predictors. \marginnote{We want to know if the response variable responds to changes in the predictor variables}
+
+\section{A statistical model}
+
+The problem with giving a straight answer to the question of whether the response variable is affected by the predictors is that all our ecological data contains random variability. If we take two pots and plant a plant in each one of them, and we expose one plant to classical music and the other to heavy metal, probably one of them will grow taller. But are we sure that this is an effect of the music, or could it just be due to the fact that no plant is exactly the same, and therefore one of the two will typically grow a bit taller?
+
+Thus, to arrive at robust conclusions, we have to make some assumptions about how the growth of plants varies, so that we can see if some differences that we are seeing could be the result of random variation only. These assumptions are what we call a statistical model. A statistical model would, for example, make the assumptions that there is a medium growth rate for each plant species, but that the growth of each individual plant varies with a certain distribution around this mean growth. Based on this, we can now ask ourselves whether the data that we have allows us to draw conclusions about the effect of a predictor. 
+
+\section{Inferential methods and their outputs}
+
+But given that we have a model, and some data, how do we say if there is an effect or not? Basically, there is two classical ways of calculating an indicator from a model and data: p-values and parameter estimates. There is a third option which I will mention very shortly at the end. 
+
+\subsection{p-values}
+
+The use of p-values is connected to the concept of null hypothesis significance testing (NHST). The idea is the following: if we have some data observed, and we have a statistical model, we can use this statistical model to specify a fixed hypothesis about how the data did arise. For the example with the plants and music, this hypothesis could be: music has no influence on plants, all differences we see are due to random variation between individuals. Such a scenario is called the null hypothesis. \marginnote{A null hypothesis $H_0$ is a fixed scenario that makes predictions about the expected probabilities of different observations.} Although it is very typical to use the assumption of no effect as null-hypothesis, note that it is really your choice, and you could use anything as null hypothesis, also the assumption: "classical music doubles the growth of plants". The fact that it's the analyst's choice what to fix as null hypothesis is part of the reason why there are are a large number of tests available. We will see a few of them in the following chapter about important hypothesis tests.
+
+If we have a null hypothesis, we calculate the probability that we would see the observed data or data more extreme under this scenario. This is called a hypothesis tests, and we call the probability the p-value. \marginnote{The p-value is the probability to see the data or more extreme data under the null-hypothesis.} If the p-value falls under a certain level (the significance level $\alpha$) we say the null hypothesis was rejected, and there is significant support for the alternative hypothesis. The level of $\alpha$ is a convention, in ecology we chose typically 0.05, so if a p-value falls below 0.05, we can reject the null hypothesis. \marginnote{if p<0.05, we say we have significant evidence to reject the null-hypothesis.} 
+
+A problem with hypothesis tests and p-values is that their results are notoriously misinterpreted. The p-value is NOT the probability that the null hypothesis is true, or the probability that the alternative hypothesis is false, although many authors have made the mistake of interpreting it like that \citep[][]{Cohen-earthisround-1994}. Rather, the idea of p-values is to control the rate of false positives (Type I error). When doing hypothesis tests on random data, with an $\alpha$ level of 0.05, one will get exactly 5\% false positives. Not more and not less.  
+
+\subsection{Parameter estimates}
+
+The second type of output that is reported by most statistical methods are parameter estimates. Without going into too much detail: while the p-value is the probability of the data or more extreme data under a fixed (null) hypothesis, a parameter estimate (often also called point estimate or maximum likelihood estimate) refers to those of many possible hypothesis that are spanned by a parameter that has the highest probability to produce the observed data. 
+
+In plain words, the parameter estimate is our best estimate for a difference between groups, or the influence between parameters. Again, in contrast, the p-value typically tells us the probability that we would see the data if there is no such influence. 
+
+Parameter estimates are typically accompanies by confidence intervals. Sloppily you can think of the 95\% confidence interval of a parameter as the probable range for this area. Somewhat confusing for many, it's not the interval in which the true parameter lies with 95\% probability. Rather, in a repeated experiments, the standard 95\% CI will contain the true value in 95\% of all cases. It's a subtle, but important difference. However, for now, don't worry about it. The CI interval is roughly where we expect the parameter. 
+
+\subsection{Bayesian estimates}
+
+Just for completeness - there are some advanced methods that report a different thing than p-values and the parameter estimates discussed before. Bayesian methods calculate a quantity that is called the posterior parameter estimate. It is similar, but not identical to the parameter estimates discussed previously. You won't need this here, but if you want to know more about those, have a look at \citep{Gelman-BayesianDataAnalysis-2003}.
+
+
+\chapter{Important examples of hypothesis tests}
+
+After having discussed the concept of hypothesis tests (which produce p-values against a null-hypothesis) and parameter estimates (which produce best estimates and confidence intervals), lets move to practice and get to know the most commonly applied hypothesis tests, the t-test and ANOVA.
+
+\section{t-test}
+
+A t-test tests for differences between the means of two normally distributed samples, or if there is only one sample, between 0 and the mean of the sample. Henv
+
+
+The p-values that are produced are for the null hypothesis that there is no difference, respectively that the sample mean is 0. Depending on the software used, there are usually a number of adjustments possible, e.g. whether the groups have the same variance. An example in R
+
+\begin{lstlisting}
+t.test(weight[group=='ctrl'], weight[group=="trt1"])
+
+# Welch Two Sample t-test
+# 
+# data:  weight[group == "ctrl"] and weight[group == "trt1"] 
+# t = 1.1913, df = 16.524, p-value = 0.2504
+# alternative hypothesis: true difference in means is not equal to 0 
+# 95 percent confidence interval:
+#   -0.2875162  1.0295162 
+# sample estimates:
+#   mean of x mean of y 
+# 5.032     4.661 
+\end{lstlisting}
+
+Note that the output also contains the estimates of the means, together with the confidence intervals. 
+
+\section{ANOVA}
+
+Anova or analysis of variance makes basically the same assumptions as a t-test (normally distributed errors), but allows for more than two groups. More precisely, the measured response (i.e. the dependent variable) can be influence by several categorical variables  
+
+\begin{lstlisting}
+aovresult <- aov(weight~group)
+summary(aovresult)
+
+# Df Sum Sq Mean Sq F value Pr(>F)  
+# group        2  3.766  1.8832   4.846 0.0159 *
+#   Residuals   27 10.492  0.3886                 
+# ---
+#   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{lstlisting}
+
+\section{Other important tests}
+
+In my experience, t-test and ANOVA are the most commonly needed tests in the context of the research skills module, but there are many more tests that could be potentially important. Important tests are 
+
+
+A list of tests that have wikipedia articles can be found at \href{http://en.wikipedia.org/wiki/Category:Statistical_tests}{here} 
+
+
+
+\chapter{Regression}
+
+
+
+\bibliographystyle{/Users/Florian/Home/Bibliography/Databases/bibstyles/harvard}
+\bibliography{/Users/Florian/Home/Bibliography/Databases/flo}
+ 
+\end{document}
