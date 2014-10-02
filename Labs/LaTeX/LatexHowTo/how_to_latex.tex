@@ -28,9 +28,7 @@ xrightmargin=3.4pt,
 basicstyle=\normalfont\scriptsize,
 keywordstyle=\color{blue}\sffamily,                                
 identifierstyle=\color{black},
-numbersep=5mm, 
-numbers=left, 
-numberstyle=\tiny,
+numbers=none, 
 morekeywords = {maketitle, tableofcontents, subsection, 
 				citet, cite, citep, bottomrule, toprule,
 				midrule, addlinespace, includegraphics, 
@@ -40,8 +38,8 @@ morekeywords = {maketitle, tableofcontents, subsection,
 
 
 
-\title{How to use LaTeX for scientific purposes}
-\author{Research Skills}
+\title{Scientific writing\\with LaTeX}
+\author{MSc Module Research Skills}
 
 
 
@@ -52,7 +50,7 @@ morekeywords = {maketitle, tableofcontents, subsection,
 \null
 \vfill
 \begin{fullwidth}
-\LARGE{This Tutorial was created by Paul Bauche for the Module "Research Skills" in the M.Sc. program "Environmental Sciences" at the Faculty of Environment and Natural Resources, Albert-Ludwigs-Universit\"at Freiburg . Its creation was funded through the Hochschule 2020 program.}
+\LARGE{This Tutorial was created by Paul Bauche for the Module "Research Skills" in the M.Sc. program "Environmental Sciences" at the Faculty of Environment and Natural Resources, Albert-Ludwigs-Universit\"at Freiburg. Its creation was supported by the Faculty of Environment and Natural Resources through QSM Lehre funds.}
 \end{fullwidth}
 \tableofcontents
 
@@ -93,11 +91,11 @@ Now that you have created your project folder you can create your first \LaTeX d
 
 Make sure you do not forget the \%. Then save your document as \verb!my_first_article.tex! and close the editor. With the extension .tex you make sure that your system recognizes the file as a \LaTeX document.\marginnote{The \% symbol is used for comments, lines of text that are not interpreted by \LaTeX!}
 Now open \verb!my_first_article.tex! with your \LaTeX editor (e.g. Texmaker). You will notice that the line you wrote now looks gray.\\[5pt]
-\begin{fullwidth}
+
 \begin{lstlisting}
 % This is my first Latex document. There are many documents like this but this one is mine.}
 \end{lstlisting}
-\end{fullwidth}
+
 The gray color symbolizes a \emph{comment} the comment is declared by using the \% symbol at the start of the line. Everything written after the \% is not interpreted by \LaTeX and does not appear in your document. Comments can be used to structure your document for yourself and others using it. You can explain functions and why you include packages. This is especially useful if you want to reuse the structure of our document again for other papers.    
 
 \chapter{Beginning your document}
@@ -109,7 +107,7 @@ For the purpose of this tutorial you are going to create a scientific article. T
 Now you can begin with your document.\marginnote{Every \emph{begin} statement requires an \emph{end} statement!} To do so you start with the line \verb!\begin{document}!
 This should result in 2 lines being created in addition to \verb!\begin{document}! there should also be a line saying \verb!\end{document}!. If this is not the case just type it yourself. Now  you should have a document looking like this:\\[5pt]
 
-\begin{fullwidth}
+
 \begin{lstlisting}
 % This is my first Latex document. There are many documents like this but this one is mine.
 
@@ -119,7 +117,7 @@ This should result in 2 lines being created in addition to \verb!\begin{document
 
 \end{document}
 \end{lstlisting}
-\end{fullwidth}
+
 
 This is the most basic setup for your document. To start adding some text you can now write a few lines between the begin- and end-document statements. Since this is supposed to be a scientific article it should start with an abstract. The abstract is also framed by a begin- and an end-statement. They are \verb!\begin{abstract}! and \verb!\end{abstract}!. For your abstract try:\\[5pt] 
 
@@ -128,7 +126,7 @@ This is the most basic setup for your document. To start adding some text you ca
 
 Now your document should look like this:\\[5pt]
 
-\begin{fullwidth}
+
 \begin{lstlisting}
 % This is my first Latex document. There are many documents like this but this one is mine.
 
@@ -141,7 +139,7 @@ This is my first \LaTeX document. I am going to learn a lot about typesetting an
 
 \end{document}
 \end{lstlisting}
-\end{fullwidth}
+
 
 You should now be able to compile your document and create a pdf file from it. To do so you just have to press compile in your \LaTeX editor. You should notice the  \LaTeX symbol. This was created by using the \verb!\LaTeX! command. After the abstract you can start your first section. This is usually the introduction. You can add sections via \verb!\section{}!. Here no begin- or end-statement is needed. One section lasts until the next one starts or the document ends. To add the section "Introduction" to your document now type  \verb!\section{Introdution}! below \verb!\end{abstract}! in your document and write a few lines like\\
 
@@ -155,7 +153,7 @@ You should now be able to compile your document and create a pdf file from it. T
 
 Now your document should look like this:\\[5pt]
 
-\begin{fullwidth}
+
 \begin{lstlisting}
 % This is my first Latex document. There are many documents like this but this one is mine.
 
@@ -177,7 +175,6 @@ Test
 
 \end{document}
 \end{lstlisting}
-\end{fullwidth}
 
 Compile your document to notice the effect of the new commands. \verb!\textbf{}! leads to \textbf{bold} fonts \verb!\textit{}! leads to \textit{italic} fonts and \verb!\emph{}! \emph{emphasizes} what ever you put into the wavy brackets. Additionally you learned two ways to add a line break to your document. The first one is to simply leave a blank line after the point at which you want to break the line. This also leads to an indent at the beginning of the next line which makes for better readability. The second one is to add \verb!\\! this method can be refined by adding the exact spacing either in mm, pt or relative to the default linewidth in square brackets. like \verb!\\[3mm]!. No indent follows this type of line break. 
 
@@ -185,7 +182,7 @@ Compile your document to notice the effect of the new commands. \verb!\textbf{}!
 
 As aforementioned your document has a header.\marginnote{In the header you can include new packages and set general parameters and meta data for your document!} The header is everything you write before the \verb!\begin{document}! statement.Here you declare the packages you want to use, define styles and you can add some meta data to your document. Such as the author or the title of your article. These two are added by using the \verb!\author{}! and \verb!\title{}! commands. Add them to your document right below the \verb!\documentclass{}! command and write a title in the wavy brackets after title and your name in the wavy brackets after author and compile again. There should be no noticeable difference. Now right under the \verb!\begin{document}! statement add \verb!\maketitle! and compile again. Your pdf document should now have a title, your name and the current date at the top. The \verb!\maketitle! command uses the information you provided in the header to create a title for your article. If everything worked your \LaTeX document should now look like this:\\[5pt]
 
-\begin{fullwidth}
+
 \begin{lstlisting}
 % This is my first Latex document. There are many documents like this but this one is mine.}
 
@@ -210,7 +207,7 @@ Test
 
 \end{document} 
 \end{lstlisting}
-\end{fullwidth}
+
 
 \chapter{Equations in \LaTeX}
 Here you will learn how to write equations in \LaTeX. There are two basic types of equations. First there are inline equations which can be used to write down basic mathematical expressions and equations like $\alpha = 3.5$. or $\lambda = \sqrt{\alpha}$ within your text. Second are the numbered equations. They will appear separated from your text like this:
@@ -221,7 +218,7 @@ Here you will learn how to write equations in \LaTeX. There are two basic types 
 
 They will be numbered (in this case as the first equation in chapter six) which allows you to easily reference the equation later on in your text. You can use this to write down more complex equations or expressions. As an exercise you can now create those two types within your own document and put them in a new section named "Equations". You will start with an inline equation. An inline equation is framed by \$ symbols to separate it from the rest of the text. For this purpose start a new subsection called "Inline Equations" a subsection can be created with the \verb!\subsection{}! command. Your first inline equations will be \verb!$\alpha = 3.5$. and $\lambda = \sqrt{\alpha}$!. To emphasize the inline effect put a short sentence before the equations. As you can see Greek letters can be written by typing a \verb!\! before the full name of the letter. Additionally the \verb!\sqrt{}! command is used for the square root symbol. Your document should now look like this:\\[5pt]   
 
-\begin{fullwidth}
+
 \begin{lstlisting}
 % This is my first Latex document. There are many documents like this but this one is mine.
 
@@ -251,12 +248,12 @@ This is our first inline equation $\alpha = 3.5$. $\lambda = \sqrt{\alpha}$.
 
 \end{document}  
 \end{lstlisting}
-\end{fullwidth}
+
 
 Next come your numbered equations. A numbered equation starts with the \verb!\begin{equation}! statement and ends with \verb!\end{equation}!. In between you can\marginnote{Use inline equations for short expressions and numbered equations for more complex equations!} put text as well as all the statements used in equations. Try it yourself now. Start a new subsection called "Numbered Equations" and write down a short sentence followed by:\\ \verb!\begin{equation}! \\ \verb!m = \left( \frac{a \cdot b}{c} \right)! \\ \verb!\end{equation}! \\ and another short sentence followed by:\\ \verb!\begin{equation}\!\\ \verb!\lambda = \int_{m_0}^\infty f(\Theta) d \Theta!\\ \verb!\end{equation}!.\\
 Your document should now look like this:\\[5pt]
 
-\begin{fullwidth}
+
 \begin{lstlisting}
 % This is my first Latex document. There are many documents like this but this one is mine.
 
@@ -299,7 +296,7 @@ This is our second numbered equation.
 
 \end{document} 
 \end{lstlisting}
-\end{fullwidth}
+
 
 As you can see there are a lot of new symbols added but if you look at them they are pretty self explanatory. \verb!\infty! is used for the infinity symbol $\infty$ , \verb!\frac{}{}! is used for fractions such as $\frac{x}{y}$ and \verb!\cdot! is used for the multiplication dot $\cdot$. A bit more complicated is \verb!\int! it is used for integrals the lower bound is indicated by an underscore " \_ " and the upper bound by the  \^. The full expression for an integral is respectively \verb!\int_x^y! which then looks like $\int_x^y$. Brackets can be placed with the commands \verb!\left(! and \verb!\right)!. 
 
@@ -318,7 +315,7 @@ urlcolor=darkblue, citecolor=darkblue}
 
 As a quick exercise you are now going to label your numbered equations and the introduction section and reference them in a new section called \emph{Labels and referencing}. Do so by placing a label behind the \verb!\section{}! and the \verb!\begin{equation}! statements. The label you assign here is just for you so you can distinguish it from the others the \verb!\ref{}! command only returns the number of the object. To reference your labels simply type \verb!\ref{}! with the label you assigned within the wavy brackets. Your document should now look like this:
 
-\begin{fullwidth}
+
 \begin{lstlisting}
 % This is my first Latex document. There are many documents like this but this one is mine.
 
@@ -372,7 +369,7 @@ In LaTeX, everything can be labeled, and after that it can be referenced. Consid
 
 \end{document}  
 \end{lstlisting}
-\end{fullwidth}
+
 
 \chapter{Including figures}
 As aforementioned you can also include graphs and pictures into your \LaTeX document. This can be done via the \emph{grapicx} package.\marginnote{Remember that you can include packages in the header before your \emph{begin document} statement!}
@@ -381,12 +378,12 @@ The easiest way to include figures into your document is by placing the file con
 To include images into your \LaTeX document you first need to define a figure space. This can be achieved by using the \verb!\begin{figure}! and \verb!\end{figure}! statements. In between these statements you can now include your image and add a caption to it to briefly summarize what is displayed here. To do so you need the \verb!\includegraphics[scale=]{}!, with the name or file path of the image to include without the file extension, and \verb!\caption{}! commands. Most of the time you want your image to be displayed in the center of the lines your placing it in. For that you can use the command \verb!\centering! one line above the  \verb!\includegraphics[scale=]{}! statement.
 
 There should be two image files in your training material. A picture of Albert Einstein in his study and a boxplot graph. Include them into your document. They should be 6 cm wide. \begin{marginfigure}
-\includegraphics[width=4cm]{einstein}
+\includegraphics[width=4cm]{../example/einstein}
 \caption{This photograph by Ferdinand Schmutzer shows Einstein in his study}
 \end{marginfigure}You can set the width in the square brackets by typing \emph{width = 6 cm}. To include two pictures side by side just put them into the same figure just make sure to set their width to 3 cm. For each figure you just need one caption even if it induces several images. And do not forget to label your figures.   
 Your document should now look like this:\\[5pt]
 
-\begin{fullwidth}
+
 \begin{lstlisting}
 % This is my first Latex document. There are many documents like this but this one is mine.
 
@@ -466,7 +463,7 @@ In LaTeX, everything can be labeled, and after that it can be referenced. Consid
 
 \end{document}  
 \end{lstlisting}
-\end{fullwidth}
+
 
 \chapter{Tables}
 
@@ -480,7 +477,7 @@ A very common way of displaying data is to use tables\marginnote{\begin{tabular}
 
 \noindent This is a very simple table created with the \emph{tabular} command!}. 
 They are a very efficient way to sort large amounts of data and to make them easy to understand. In \LaTeX there are different ways to create and display tables. The easiest way is to use the \verb!\begin{tabular}{}! command. In the wavy brackets you can define the number of columns with the following syntax \verb!\begin{tabular}{|c|c|}!. This would for example create a two column table. The columns are later separated by the \& symbol. To add rows you have to break the line with \verb!\\! and then add a horizontal line with the \verb!\hline! command. Try to recreate the table on right and keep in mind that every \emph{begin} statement needs an \emph{end} statement. As you can see this kind of table is very simplistic and does not look professional or well suited for large amounts of data that require some explanation and additional information. To create proper tables you need additional packages. These packages are called \emph{multicol, multirow} and \emph{booktabs}. Include them in your document now. Look at the following code snippet:
-\begin{fullwidth}
+
 \begin{lstlisting}
 
 \begin{table*}\label{Table: Fit types}
@@ -501,7 +498,7 @@ They are a very efficient way to sort large amounts of data and to make them eas
 \end{table*}
 
 \end{lstlisting} 
-\end{fullwidth}
+
 
 As you can see it is way more complex than the simple table but it also allows a more informative and more structured table design. You do not need to specify the dimensions of the table in advance. The columns are still separated by the \& symbol The rows are separated simply by a line break. Additionally the table is divided into different vertical sections which are indicated by the \emph{toprule, midrule} and \emph{bottomrule} statements. These sections can be used to display additional information such as a header for the columns or to aggregate different treatments in one table. The \verb!\multicolumn{}{}{}! \marginnote{use \emph{multicolumn} to aggregate multiple columns into one e.g. for footnotes or headers} command can be used to write over several columns e.g. for table headlines or explanations. The first wavy bracket defines the number of columns you want to aggregate, the second one the style ("l" means left bound) and in the third wavy bracket you can put your text. In this case the rows are enclosed in \$ symbols to give them the look of a formula and separate them from the headlines. When compiled correctly the table should look like this:\marginnote{Stick to this kind of table whenever you write a scientific article, report or thesis!} 
 \begin{table*}\label{Table: Fit types}
@@ -521,7 +518,7 @@ As you can see it is way more complex than the simple table but it also allows a
 
 This is how a table for scientific data should look. Generally there should be no vertical lines and horizontal lines should only be used to separate the headline from the data. Try to create this table in your own document. Your document should now look like this: \\
 
-\begin{fullwidth}
+
 \begin{lstlisting}
 
 % This is my first Latex document. There are many documents like this but this one is mine.
@@ -634,7 +631,7 @@ In LaTeX, everything can be labeled, and after that it can be referenced. Consid
 
 \end{document}
 \end{lstlisting}
-\end{fullwidth}
+
 
 
 \chapter{References in \LaTeX}
@@ -644,7 +641,7 @@ In every scientific article it is important to clearly state your sources. You n
 \noindent Now everything is set for you to compile your document and have a look at your citations and your bibliography. Your \LaTeX file should now look like this:
 
 
-\begin{fullwidth}
+
 \begin{lstlisting}
 
 % This is my first Latex document. There are many documents like this but this one is mine.
@@ -770,7 +767,7 @@ Referenced are extremely important \citep[see also][for more references]{Gintis-
 
 \end{document}
 \end{lstlisting}
-\end{fullwidth}
+
 
 \chapter{Going further}
 
