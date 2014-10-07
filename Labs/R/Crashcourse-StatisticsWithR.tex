@@ -1,4 +1,4 @@
-\documentclass{tufte-book} %style file is in the same folder.
+\documentclass[a4paper,twoside]{tufte-book} %style file is in the same folder.
 
 \usepackage{color}
 \usepackage{xcolor}
@@ -15,32 +15,20 @@
 \hypersetup{colorlinks=true, breaklinks=true, linkcolor=darkblue, menucolor=darkblue, urlcolor=darkblue, citecolor=darkblue}
 
 \lstset{ % settings for listings needs to be be changed to R sytanx 
-language=[LaTeX]{TeX},
+language=R,
 breaklines = true,
 breakautoindent = false,
-breakindent = 0pt,
+basicstyle=\ttfamily \scriptsize,
+keywordstyle=\color{black},                          
+identifierstyle=\color{black},
 commentstyle=\color{gray},
 frame=single,
 framerule=0.4pt,
 framesep=3pt,
 xleftmargin=3.4pt,
 xrightmargin=3.4pt,
-basicstyle=\normalfont,
-keywordstyle=\color{blue}\sffamily,                                
-identifierstyle=\color{black},
-numbersep=5mm, 
-numbers=none, 
-numberstyle=\tiny,
-morekeywords = {
-maketitle, 
-tableofcontents}  
+numbers=none
 }
-
-   \lstset{language=R,
-           basicstyle=\ttfamily \scriptsize,
-           keywordstyle=\color{black}
-          breaklines=true
-          }
 
 \setcounter{secnumdepth}{1}
 
@@ -57,38 +45,51 @@ tableofcontents}
 
 \chapter{Synopsis and Introduction} % Use chapters instead of sections
 
-The purpose of this document is to give you a very short introduction to the type of statistical analysis most likely to be encountered in the Research Skills course. This does not a replace an proper introductory textbook. For beginners, I recommend \citep{Dormann-ParametrischeStatistik-2013} for German speakers (ebook free of charge for students from Freiburg, contact me) and \citep{Gotelli-PrimerEcologicalStatistics-2004} for English speakers. 
+The purpose of this document is to give a short and concise introduction to the type of statistical analysis most likely to be encountered in elementary experimental and observation setups. It is a crash-course and not meant to replace an proper introductory textbook. For beginners, I recommend \citep{Dormann-ParametrischeStatistik-2013} for German speakers (ebook free of charge for students from Freiburg, contact me) and \citep{Gotelli-PrimerEcologicalStatistics-2004} for English speakers. 
  
 \chapter{The R environment for statistical computing}
 
-In the ecological sciences, R is the de-facto standard for doing statistical analysis. R is script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment.
+The time where people did statistics with pen, paper and a calculator are over. Statistical analysis nowadays happens on the computer, and a number of software environments exist to do so. In the ecological sciences, R is the de-facto standard for statistical analysis. R is open-source, free, and has a very larger user base, specially in the environmental sciences, that contribute packages for specialized ecological and environmental analysis. Therefore, while maybe not as user-friendly as other software options in every respect, there is practically no way around R.
 
-
-
-
-
-For installing R, see \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{here}
-
-For solving problems, see \href{http://biometry.github.io/APES/R/R80-solvingProblems.html}{here}
-
+R is script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment. In the rest of this course, we will use R where we need a computer, but I will give no further introduction to R. If you need one, follow  \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{this link} for an introduction, in including help on how to install the software.
 
 \chapter{Basic concepts of statistical inference}
 
-Before we explain some typical statistical methods, I want you to understand how statistics works and what the methods typically report. In a nutshell, a statistical analysis consists of 3 parts: the data, a statistical model, and an inferential method
+OK, let's start with statistics. Before we start discuss statistical methods, I want you to explain the basic idea of statistical methods, and what they typically report. 
+
+In a nutshell, a statistical analysis consists of 3 parts: the data, a statistical model, and an inferential method
 
 \section{The data}
 
-Creating data is a lot of work. People therefore tend to think very hard on what data they want to have, and also how they later want to use this data (typically in a statistical analysis). We will speak about how to create data (design of experiments) in a later chapter. For the moment, however, let us assume that we just have some data. That typically means that we have measured some variable of interest. We call this variable the response, because we are interested if and how this variable of interest varies (responds) when something changes. The thing that changes could be another variable (e.g. temperature), it could be an experimental treatment (fertilized vs. non fertilized), or anything else. We call these other variables the predictors. \marginnote{We want to know if the response variable responds to changes in the predictor variables}
+We will speak about how to create data (design of experiments) in a later chapter. For the moment, however, let us assume that we already have some data. Usually, this data will contain one variable that we are most interested in, the variable that we try to understand. \marginnote{The response variable is the variable for which we try to understand how it responds to other factors.}. We call this variable the response variable (sometimes also the depended variable), because we are interested if and how this variable of interest varies (responds, depends) when something else changes. These conditions could be another variable (e.g. temperature), it could be an experimental treatment (fertilized vs. non fertilized), or anything else. \marginnote{The predictor variables are those that affect the response.} Those variables are called synonymously predictor variables, explanatory variables, covariates or independent variables. 
+
+Most typically is that the response variable is a single number (a scalar), and we will concentrate on this case here. However, there are cases when the response has more than one dimension, or when we are interested in the change of several response variables at a time. The analysis of such data is known as multivariate statistics.
+
+Another important distinction is the type of variables that. Independent of whether we are speaking about the response or the predictor, we distinguish:
+
+\begin{itemize}
+\item Continuous numeric variables (ordered and dense), e.g. temperature
+\item Discrete numeric variables (ordered, but discrete), e.g. count data
+\item Categorical variables (e.g. a fixed set of options such as red, green blue), which can further be divided into
+\begin{itemize}
+\item Unordered categorical variables (Nominal) such as red, green, blue 
+\item Binary (Dichotomous) variables (dead / survived)
+\item Ordered categorical variables (small, medium, large)
+\end{itemize}
+\end{itemize}
+
+For whatever reason, experience shows that there is certain tendency of beginners to use categorical variables for things that are actually continuous, e.g. by coding body weight of animals into light, medium, heavy. \marginnote{Don't use categorical variables for things that can also be recorded numerically! } The justification that is often stated is that this avoids the measurement uncertainty. In short: it doesn't, it just creates more problems. Don't use categorical variables for things that can also be recorded numerically! 
+
 
 \section{A statistical model}
 
 The problem with giving a straight answer to the question of whether the response variable is affected by the predictors is that all our ecological data contains random variability. If we take two pots and plant a plant in each one of them, and we expose one plant to classical music and the other to heavy metal, probably one of them will grow taller. But are we sure that this is an effect of the music, or could it just be due to the fact that no plant is exactly the same, and therefore one of the two will typically grow a bit taller?
 
-Thus, to arrive at robust conclusions, we have to make some assumptions about how the growth of plants varies, so that we can see if some differences that we are seeing could be the result of random variation only. These assumptions are what we call a statistical model. A statistical model would, for example, make the assumptions that there is a medium growth rate for each plant species, but that the growth of each individual plant varies with a certain distribution around this mean growth. Based on this, we can now ask ourselves whether the data that we have allows us to draw conclusions about the effect of a predictor. 
+Thus, to arrive at robust conclusions, we have to make some assumptions about how the growth of plants varies, so that we can see if some differences that we are seeing could be the result of random variation only. These assumptions are what we call a statistical model. \marginnote{A statistical model describes the potential dependence of response on the predictors, as well as random variance in the variables} A statistical model could, for example, make the assumptions that there is a medium growth rate for each plant species, but that the growth of each individual plant varies with a certain distribution around this mean growth. Based on this, we can now ask ourselves whether the data that we have allows us to draw conclusions about the effect of a predictor. 
 
 \section{Inferential methods and their outputs}
 
-But given that we have a model, and some data, how do we say if there is an effect or not? Basically, there is two classical ways of calculating an indicator from a model and data: p-values and parameter estimates. There is a third option which I will mention very shortly at the end. 
+OK, we have some data and a statistical model. But there is still one step to go - how do we say if there is an effect or not? Basically, there are two classical ways of calculating a conclusion from a statistical model and some data: p-values and parameter estimates. There is a third option which I will mention very shortly at the end. \marginnote{Drawing conclusions from data with a statistical model is called statistical inference} Btw., the process of drawing conclusions from data is called inference, when we use statistical models, we call it statistical inference. 
 
 \subsection{p-values}
 
@@ -111,16 +112,13 @@ Parameter estimates are typically accompanies by confidence intervals. Sloppily 
 Just for completeness - there are some advanced methods that report a different thing than p-values and the parameter estimates discussed before. Bayesian methods calculate a quantity that is called the posterior parameter estimate. It is similar, but not identical to the parameter estimates discussed previously. You won't need this here, but if you want to know more about those, have a look at \citep{Gelman-BayesianDataAnalysis-2003}.
 
 
-\chapter{Important examples of hypothesis tests}
+\chapter{Important hypothesis tests}
 
 After having discussed the concept of hypothesis tests (which produce p-values against a null-hypothesis) and parameter estimates (which produce best estimates and confidence intervals), lets move to practice and get to know the most commonly applied hypothesis tests, the t-test and ANOVA.
 
 \section{t-test}
 
-A t-test tests for differences between the means of two normally distributed samples, or if there is only one sample, between 0 and the mean of the sample. Henv
-
-
-The p-values that are produced are for the null hypothesis that there is no difference, respectively that the sample mean is 0. Depending on the software used, there are usually a number of adjustments possible, e.g. whether the groups have the same variance. An example in R
+A t-test tests for differences between the means of two normally distributed samples, or if there is only one sample, between 0 and the mean of the sample. Hence, the statistical model underlying is that of a normally distributed response, and the null hypothesis is that that there is no difference in the mean of the this normal distribution for the two groups, respectively that the sample mean is 0 if we have one group. Depending on the software used, there are usually a number of adjustments possible, e.g. relaxing the assumption that the two groups have the same variance. An example in R
 
 \begin{lstlisting}
 t.test(weight[group=='ctrl'], weight[group=="trt1"])
@@ -137,11 +135,11 @@ t.test(weight[group=='ctrl'], weight[group=="trt1"])
 # 5.032     4.661 
 \end{lstlisting}
 
-Note that the output also contains the estimates of the means, together with the confidence intervals. 
+Note that the output give a p-value, but also contains the estimates of the means, together with the confidence intervals. 
 
 \section{ANOVA}
 
-Anova or analysis of variance makes basically the same assumptions as a t-test (normally distributed errors), but allows for more than two groups. More precisely, the measured response (i.e. the dependent variable) can be influence by several categorical variables  
+Anova or analysis of variance makes basically the same assumptions as a t-test (normally distributed responses), but allows for more than two groups. More precisely, the measured response (i.e. the dependent variable) can be influence by several categorical variables that could also interact. Here a simple example for testing whether weight depends on group, where group is a variable that codes for three different options control, treatment1 and treatment2:
 
 \begin{lstlisting}
 aovresult <- aov(weight~group)
@@ -154,6 +152,13 @@ summary(aovresult)
 #   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 \end{lstlisting}
 
+We find a p-value of 0.0159, which is significant at an $\alpha$ level of 0.05. Note that in this case, we don't get any parameter estimates. If you want those, there are two options for the ANOVA:
+\begin{itemize}
+\item Either you apply what is called post-hoc testing, which means that you test for differences (e.g. with a t-test) between the subgroups, i.e. control vs. treatment1, treatment1 vs. treatment2, etc.
+\item Or you switch to a regression, which is described in the next chapter
+\end{itemize}
+If you do post-hoc testing, you are doing multiple tests on the same data. This is a problem - the idea of the p-value is that you calculate the probability of seeing the data under ONE null hypothesis. If you do this, you will get at most 5\% error at an $\alpha$ level of 0.05. \marginnote{When doing multiple tests on the same data, we need to correct the p-values for multiple testing.} However, if we do multiple tests, we are testing multiple null hypotheses, and there are more options for the test statistics to get significant just by chance. Hence, we need to correct the p-values for multiple testing. There are a number of options to do so, google is your friend. 
+
 \section{Other important tests}
 
 In my experience, t-test and ANOVA are the most commonly needed tests in the context of the research skills module, but there are many more tests that could be potentially important. Important tests are 
@@ -165,7 +170,139 @@ A list of tests that have wikipedia articles can be found at \href{http://en.wik
 
 \chapter{Regression}
 
+Regression often uses the same models as certain hypothesis tests (ANOVA and the linear regression model in R use the same assumptions). However, the goal of regression is a different one. While hypothesis tests are all about seing whether the data would be compatible with a null-hypothesis, regression is about finding the best-fitting hypothesis. To say this again, if we have a model with a number of parameters that describe the influence of some predictors on the response, a hypothesis tests would typically set them to 0, testing the null hypothesis that there is no influence. A regression model tries to find the parameter combination that produces the highest probability to create the observed data, i.e. we are looking for the best fit.
 
+\section{Linear regression}
+
+The most basic regression model is the linear regression. The assumption here is that we have a response that depends on the predictors in a form of 
+
+\begin{equation} \label{eq: linear regression}
+y \sim a \cdot x + b + \epsilon 
+\end{equation}
+
+where y is the response, x is a predictor, a is the parameter that fits how strongly the predictor influences the response, b is the intercept, and $\epsilon$ is the random variation, which in a linear regression is assumed to be normally distributed. 
+
+In R, we can do such a regression by typing
+
+\begin{lstlisting}
+fit = lm(airquality$Temp~airquality$Ozone)
+summary(fit)
+
+# Coefficients:
+#   Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)      69.41072    1.02971   67.41   <2e-16 ***
+#   airquality$Ozone  0.20081    0.01928   10.42   <2e-16 ***
+#   ---
+#   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+# 
+# Residual standard error: 6.819 on 114 degrees of freedom
+# (37 observations deleted due to missingness)
+# Multiple R-squared:  0.4877,  Adjusted R-squared:  0.4832 
+# F-statistic: 108.5 on 1 and 114 DF,  p-value: < 2.2e-16
+\end{lstlisting}
+
+The fitted parameters appear in the column "Estimate". This tells us how much the predictor, in this case Ozone, affects the response, in this case the Temperature: for each unit of Ozone more, temperature increases by a 0.208 units, with a standard error (confidence interval) of 0.019. Apart from seeing how a regression output looks like, this teaches us another valuable lesson: the fact that we have used temperature as a response here and ozone as a predictor doesn't mean that ozone causally affects temperature. \marginnote{Correlation is not causality.} In fact, it is likely the other way around: if we have more sun, it's hotter, and we tend to have more ozone as well. Regression, as most other statistical analysis, doesn't establish causality, it establishes correlation. What we are saying is that if our ozone measurements go up, we can be pretty sure that it is hotter as well. Doesn't mean that ozone creates heat. Correlation is not causality. 
+
+The regression results gives us a lot of p-values as well. These are results of various hypothesis tests that are performed automatically for you after the regression is done. For example, we get a p-value for each parameter. This p-value is based on a particular type of t-tests where the full model is tested against the model with the parameter set to 0. There is also other p-value, based on a different test statistics at the end of the regression output. This tests the null hypothesis that all parameters are zero.  
+
+
+\subsection{Checking the assumptions}
+
+Formally, we can fit any data with a linear model. However, as in any statistical inference procedure the results (i.e. parameter estimates, p-values) are conditional on the assumptions that we have made. Hence, the p-value we get is conditional on the assumption that the data is actually from a process that conforms to eq.~\ref{eq: linear regression}. If it doesn't the p-value could be completely wrong. Hence, we have to check whether those assumptions are actually met. 
+
+So, what were the assumptions of a linear regression? One problem I often encounter is that students remember that the assumptions were normal distribution. Hence, they look at whether the response variable is normally distributed. However, if you look sharply at eq.~\ref{eq: linear regression}, you see that this was actually not the point. If we shift around the terms in eq.~\ref{eq: linear regression}, we see that what is actually supposed to be normally distributed is 
+
+\begin{equation} \label{eq: linear regression}
+y - (a \cdot x + b ) \sim \epsilon 
+\end{equation}
+
+i.e. the difference between the observed value and the model predictions. These differences are called the residuals.
+
+
+\section{Generalized linear regression models}
+
+The general ideas of a linear regression was that 1) The response is continuous, theoretically from -infinity to + infinity, and 2) residuals are normally distributed around the model predictions
+
+Idea of the GLM framework is take the linear regression framework, but allow relaxing both assumptions. To do this, we have to do two things
+
+\begin{itemize}
+	\item   We wrap the linear model in a transformation function that forces the response on the right interval (typical intervals are positive, or between 0 and 1). This transformation is called the link function
+	\item We use other distributions as the Gaussian for the fit.
+\end{itemize}    
+   
+Let's talk about these points in a bit more detail.
+
+\subsection{The link function}
+
+We said above that a linear regression takes the form 
+
+\begin{equation}
+y \sim a \cdot x + b 
+\end{equation}
+
+That means that if x gets large, y could take any value, positive or negative. A trick to ensure that all predictions for y are positive, or within a certain range is using a link function of the form 
+
+\begin{equation}
+y \sim f^{link}(a \cdot x + b )
+\end{equation}
+
+Any function is possible, but as we see later typical choices are the exponential function, which ensures positives outcomes, and the inverse logit, which ensures are range between 0 and 1.
+
+\subsection{Other distributions}
+
+Well, this is conceptually the easy part, but maybe you are not yet aware what kind of distributions exist beside the normal. Two typical choices that we use below are the binomial (the distribution for coin flipping), and the Poisson distribution (a discrete probability distribution). There are many other choices available. Maybe it becomes more clear when we move to the actual examples in the next sections. 
+
+\subsection{0/1 data - logistic regression}
+
+Logistic regression is the most common analysis for binary data (presence/absence; survived/dead; infected/not infected). Logistic regression assumes that the distribution is binomial (coin flip model). To get the linear predictor on a scale between 0 and 1 that is necessary for the binomial distribution, we use the logistic function (or inverse logit). 
+
+Here an example with the data of the Titanic survivors
+\begin{lstlisting}
+
+fmt <- glm(surv ~ age + I(age^2) + I(age^3), family=binomial)
+summary(fmt)
+
+#Coefficients:
+#                   Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)        3.522074   0.326702  10.781  < 2e-16 ***
+#age               -0.034393   0.006331  -5.433 5.56e-08 ***
+#sexmale           -2.497845   0.166037 -15.044  < 2e-16 ***
+#passengerClass2nd -1.280570   0.225538  -5.678 1.36e-08 ***
+#passengerClass3rd -2.289661   0.225802 -10.140  < 2e-16 ***
+#---
+#Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+#
+#(Dispersion parameter for binomial family taken to be 1)
+#
+#    Null deviance: 1414.62  on 1045  degrees of freedom
+#Residual deviance:  982.45  on 1041  degrees of freedom
+#  (263 observations deleted due to missingness)
+#AIC: 992.45
+
+\end{lstlisting}
+
+
+\subsection{count data - poisson regression}
+
+Poisson regression is the standard choice for working with count data, although there are a few other options available as well. 
+
+\begin{lstlisting}
+fm <- glm(stuecke ~ attrakt, family=poisson)
+summary(fm)
+
+# Coefficients:
+#   Estimate Std. Error z value Pr(>|z|)    
+# (Intercept)  1.47459    0.19443   7.584 3.34e-14 ***
+#   attrakt      0.14794    0.05437   2.721  0.00651 ** 
+#   ---
+#   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+# 
+# (Dispersion parameter for poisson family taken to be 1)
+# 
+# Null deviance: 25.829  on 24  degrees of freedom
+# Residual deviance: 18.320  on 23  degrees of freedom
+# AIC: 115.42
+\end{lstlisting}
 
 \bibliographystyle{/Users/Florian/Home/Bibliography/Databases/bibstyles/harvard}
 \bibliography{/Users/Florian/Home/Bibliography/Databases/flo}
