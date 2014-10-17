@@ -4,11 +4,11 @@
 
 ### Software installed in the CIP pools?
 
-Jabref + Libre Office 
-R
-Latex + TexMaker
-Inkscape
-GitHub?
+* Jabref + Libre Office 
+* R
+* Latex + TexMaker
+* Inkscape
+* GitHub?
 
 ### Exercises prepared?
 
