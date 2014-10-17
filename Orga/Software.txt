@@ -1,5 +1,0 @@
-Jabref + Libre Office 
-R
-Latex + TexMaker
-Inkscape
-GitHub?
