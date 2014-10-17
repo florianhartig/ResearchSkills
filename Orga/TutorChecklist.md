@@ -1,14 +1,14 @@
 # Checklist for Tutor
 
-## Before the class:
+## Before the module starts:
 
 ### Software installed in the CIP pools?
 
-Jabref + Libre Office 
-R
-Latex + TexMaker
-Inkscape
-GitHub?
+* Jabref + Libre Office 
+* R
+* Latex + TexMaker
+* Inkscape
+* GitHub?
 
 ### Exercises prepared?
 
