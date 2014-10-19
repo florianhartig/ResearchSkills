@@ -11,3 +11,5 @@
 *.bak
 *.bbl
 *.blg
+
+Exercises/*.pdf

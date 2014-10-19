@@ -416,10 +416,24 @@ We said before that the significance level $\alpha$ is the probability of findin
 \item Power goes down with increasing variability in the response
 \end{enumerate}
 
-This means that, unlike for the type I error which is fixed, calculation of power requires knowledge about the expected effect and the variability. This sounds really bad, but in most cases you can estimate from previous experience how much variation there will be, and in most cases you also know how big the effect has to be at least to be interesting. Based on that, you can then calculate how many samples you need. 
+This means that, unlike for the type I error which is fixed, calculation of power requires knowledge about the expected effect and the variability. This sounds really bad, but in most cases you can estimate from previous experience how much variation there will be, and in most cases you also know how big the effect has to be at least to be interesting. Based on that, you can then calculate how many samples you need. \\
+
+\vspace{1cm}
+\fbox{
+\begin{minipage}{\textwidth}
+\Large{Checklist experimental desig}
+
+\begin{description}
+\item[( )] Clear, logically consistent question? Write it down.
+\item[( )] What variables need to be measured to answer this question? Check that the measured variables really correspond to the main question
+\item[( )] Confounding factors controlled, randomised or measured? Are you sure they are confounding (correlated to response AND one or several of the predictors)
+\item[( )] Define the exact hypothesis (statistical model) to be tested. Write it down, as in $height  \sim age + soil * precipitation + precipitation^2$. Based on that, decide how many different levels of each variable need to be measured.
+\item[( )] Decide on the number of replicates. Make a guess for effect size and variability of the data, and either calculate or guess the number of replicates necessary to get sufficient power. What sufficient means depends on the field, but I would say you want to have a good chance to see an effect if it's there, so a power of $>80\%$ would be good. 
+\end{description}
 
 
-
+\end{minipage}
+}
 
 \bibliographystyle{/Users/Florian/Home/Bibliography/Databases/bibstyles/harvard}
 \bibliography{/Users/Florian/Home/Bibliography/Databases/flo}
