@@ -5,6 +5,8 @@
 \usepackage{framed}
 \usepackage{listings}
 
+\usepackage{graphicx}
+
 \usepackage{multicol}              
 \usepackage{multirow}
 \usepackage{booktabs}
@@ -119,21 +121,33 @@ After having discussed the concept of hypothesis tests (which produce p-values a
 
 \section{t-test}
 
-A t-test tests for differences between the means of two normally distributed samples; or if there is only one sample, between 0 and the mean of the sample. Classifying our variables, we would say the response variable in continuous, and the predictor is categorical (group 1 or group 2), or, if there is only one group, there is no predictor. Again, the statistical model underlying is that of a normally distributed response, and the null hypothesis is that that there is no difference in the mean of the this normal distribution for the two groups, respectively that the sample mean is 0 if we have one group. Depending on the software used, there are usually a number of adjustments possible, e.g. relaxing the assumption that the two groups have the same variance. An example in R
+A t-test tests for differences between the means of two normally distributed samples; or if there is only one sample, between 0 and the mean of the sample. Classifying our variables, we would say the response variable in continuous, and the predictor is categorical (group 1 or group 2), or, if there is only one group, there is no predictor. Again, the statistical model underlying is that of a normally distributed response, and the null hypothesis is that that there is no difference in the mean of the this normal distribution for the two groups, respectively that the sample mean is 0 if we have one group. Depending on the software used, there are usually a number of adjustments possible, e.g. relaxing the assumption that the two groups have the same variance. An example in R, using the classical data from Student (1908) The probable error of the mean. Biometrika, 6, 20. The data which show the effect of two soporific drugs (increase in hours of sleep compared to control) on 10 patients. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5cm]{ttest}
+\caption{Data from Student (1908) The probable error of the mean. Biometrika, 6, 20}
+\label{fig: Student Sleep Data}
+\end{center}
+\end{figure}
+
 
 \begin{lstlisting}
-t.test(weight[group=='ctrl'], weight[group=="trt1"])
+## Traditional interface
+with(sleep, t.test(sleep$extra[sleep$group == 1], extra[group == 2]))
+## Formula interface
+t.test(extra ~ group, data = sleep)
 
 # Welch Two Sample t-test
 # 
-# data:  weight[group == "ctrl"] and weight[group == "trt1"] 
-# t = 1.1913, df = 16.524, p-value = 0.2504
-# alternative hypothesis: true difference in means is not equal to 0 
+# data:  extra by group
+# t = -1.8608, df = 17.776, p-value = 0.07939
+# alternative hypothesis: true difference in means is not equal to 0
 # 95 percent confidence interval:
-#   -0.2875162  1.0295162 
+#   -3.3654832  0.2054832
 # sample estimates:
-#   mean of x mean of y 
-# 5.032     4.661 
+#   mean in group 1 mean in group 2 
+# 0.75            2.33 
 \end{lstlisting}
 
 Note that the output give a p-value, but also contains the estimates of the means, together with the confidence intervals. 
@@ -323,7 +337,7 @@ summary(fmt)
 
 \subsection{count data - poisson regression}
 
-Poisson regression is the standard choice for working with count data, although there are a few other options available as well. In poisson regression, the standard choice is to use a exponential function to make all values positive. The inverse of the exponential is the log, so we call this the log link. As before, R is choosing this automatically if you specify the distribution to be poisson. An example:
+Poisson regression is the standard choice for working with count data, although there are a few other options available as well. In poisson regression, the standard choice is to use a exponential function to make all values positive. The inverse of the exponential is the log, so we call this the log link. As before, R is choosing this automatically if you specify the distribution to be poisson. An example, using some data on the feeding of bird nestlings, in relation to their attractiveness:
 
 \begin{lstlisting}
 fm <- glm(stuecke ~ attrakt, family=poisson)
@@ -350,7 +364,59 @@ Residuals in glms are not supposed to be normally distributed, so don't use stan
 
 \chapter{Design of experiments}
 
-Will be added later. 
+Let's come back to one of the first point in this script: the data. If we have to collect data ourselves, we have to answer a number of questions. Which variables should we collect? At which values of those variables should we collect data? And how many replicates do we need?
+
+\section{Which variables}
+
+In a practical setting, we are typically interested in how a response is affected by a number of predictor variables. Clearly, we need to measure both response and this predictors of interest across a few of those predictor values to say something about the effect of the predictors. \marginnote{Correlation is not causality. For suggesting causality, we have to exclude confounding effects.} If we only wanted to know whether there is a correlation between predictors and response, our list of variables would be complete at this point. However, typically, we want to know not only if there is a correlation, but also whether we can say with some confidence that this correlation is causal. If we want to make this claim, we have to exclude that there are founfounding factors, also called confounding variables. 
+
+\subsection{What is a confounding variable?}
+
+Imagine we are interested in a response A, and we have hypothesized that A~B. Imagine there is a second predictor variable C that has an influence on A, but in which we are not interested in for the purpose of the question under consideration. Such a variable that is not of interest for the question is also called "extraneous variables". \marginnote{An extraneous variable is a variable that can influence the response, but is not of interest for the experimenter}. So we also have A~C, but we are not interested in this relationship. If we now take data, and don't measure C, it's usually not a bit problem as long as C is uncorrelated with B - it might create a bit more variability in the response, but by and large the effect of C should average out and we should still be able to detect the effect of B.
+
+The problem of confounding appears when the extraneous variable C is for some reason correlated with the predictor variable of interest B. \marginnote{A confounding variable is an extraneous variable that correlated to both the response and a predictor variable of interest.} In that case, if we only measure B, we see both the effect of B and C. In this case, we may attribute the effect of C on A wrongly to the effect of B on A. \marginnote{A spurious correlation is a correlation that is caused by a confounding variable.} Auch a correlation that is caused by an unmeasured confounding variable is called a spurious correlation.  
+
+\subsection{What do do about confounding variables}
+
+If we think there is a factor that could be confounding, we basically have three options
+
+\begin{enumerate}
+\item Best: control the value of these factors. Either fix the value (preferred if we are not interested in this factor), else vary the value in a controlled way.
+\item Second best: randomize and measure them
+\item Third best: only randomize or only measure them
+\end{enumerate}
+
+Randomization means that we try to ensure that the confounding factor is not systematically correlated with the variable of interest (but can still cause problems with interactions and nonlinear relationships).
+
+Measuring allows to control the effect, but cost power (see below) and, and we can?t measure everything
+
+\section{At which values should we measure the variables}
+
+If we have decided which variables to measure, we have to decide for the values at which we want to measure them. In an observational study, this may not always be possible completely, but it's usually possible to ensure sufficient variation in the predictor variables. A few points to consider
+
+\subsection{Vary all variables independently}
+
+A common problem in practice is that we have two variables,  but their values change in a correlated way. Imagine we test for the presence of a species, but we have only warm dry and cold wet sites. We say the two variables a collinear. In this case we don't know whether any observed effect is due to temperature or water availability. The bottom-line: if you want to separate two effects, you need them to vary independently. 
+
+\subsection{Interactions}
+
+To be able to detect interactions between variables, it's not enough to vary all, you also need to have certain combinations. The buzzword here is called factorial design. Google will help you.
+
+\subsection{Nonlinear effects}
+
+The connection of two points is a line. If you want to see whether the response to a variable is nonlinear, you therefore need more than two values of each variable.  
+
+
+\section{How many replicates?}
+
+We said before that the significance level $\alpha$ is the probability of finding false positives. This is called the type I error. There is another error we can make: failing to find significance for a true effect. This is called the type II error, and the probability of finding an effect is called power. \marginnote{Power is the probability of finding significance for an effect if it's there}. For standard statistical methods, power can be calculated. You have to look it up for your particular method, but in general assume that 
+
+\begin{enumerate}
+\item Power goes up with increasing effect size
+\item Power goes down with increasing variability in the response
+\end{enumerate}
+
+This means that, unlike for the type I error which is fixed, calculation of power requires knowledge about the expected effect and the variability. This sounds really bad, but in most cases you can estimate from previous experience how much variation there will be, and in most cases you also know how big the effect has to be at least to be interesting. Based on that, you can then calculate how many samples you need. 
 
 
 
