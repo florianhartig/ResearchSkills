@@ -1,0 +1,282 @@
+Statistics crash course
+===
+
+*These scripts are intended to be read together with the more detailed explanation [here](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/R/Script/Crashcourse-StatisticsWithR.pdf)*
+
+
+## Continous response variables
+
+### Linear regression
+
+Linear regression is the simples form of regression. We can use this when the response is continous. The assumption is that the response depends on the predictors as in 
+
+y ~ par1 * pred1 +  par2 * pred2 +  par3 * pred2^2 + ... + residual Error
+
+where the parameters par1 ... par3 are estimated, and the residual error is normally distributed. 
+
+Let's look at some example, using the data from Monday. We see that there is a correlation between Ozone and Temperature. 
+
+```{r}
+plot(airquality$Temp~airquality$Ozone)
+```
+
+With the lm() command, we can ask R to try to get the best fitting straight line between the two variables. 
+
+```{r}
+fit = lm(airquality$Temp~airquality$Ozone)
+```
+
+Let's look at the result visually first
+
+```{r}
+plot(airquality$Ozone, airquality$Temp)
+abline(fit, col = "blue")
+```
+
+Here's the detailed output
+
+```{r}
+summary(fit)
+```
+
+In the output, we see the parameters for the effect of Ozone (called the regression slope), and the intercept. 
+
+R knows the line is straight because we tell the program that airquality$Temp~airquality$Ozone . We'll see later how to modify this if we want to fit other functions. 
+
+#### Residual analysis
+
+with plot(fit), we get the residuals (the deviation from the straight line). As said, the linear regression assumes that those are normally distributed, so we should check whether this is really the case. 
+
+```{r}
+par(mfrow=c(2,2))
+plot(fit)
+```
+
+Here, the residuals are not really homogenously scattering around the predicted value, suggesting that the model doesn't fit very well. Well, one could have already guessed this, because the correlation doesn't look very linear. We can add a quadratic term by 
+
+
+```{r}
+fit2 = lm(airquality$Temp~airquality$Ozone + I(airquality$Ozone^2))
+summary(fit2)
+```
+
+Residuals look better now
+
+```{r}
+par(mfrow=c(2,2))
+plot(fit2)
+```
+
+
+Plotting the results
+
+```{r}
+plot(airquality$Ozone, airquality$Temp)
+points(fit2$model[,2], predict(fit2), col = "blue")
+```
+
+### Linear regression with categorical predictors 
+
+If we have categorical varialbles such as in this dataset
+
+```{r}
+boxplot(PlantGrowth$weight~PlantGrowth$group, main = "growth of plants")
+```
+
+This still works:
+
+```{r}
+fit <- lm(weight~group, data = PlantGrowth)
+summary(fit)
+```
+
+A thing that is confusing many people now, however, is that we have two parameter estimates for the one predictor variable. The reson is that there are 3 groups in the dataset. The first group is set in this case automatically as reference, and for the other groups, predictors are estimated. The p-values for those predictors are thus against the reference (if I take predictor trt1 out, it will get the value of ctrl). Hence, these p-values for categorical variables depend on the order of the varialbles (you could reorder to have trt1 as reference.)
+
+
+#### ANOVA
+
+A question that often pops up in this context is: is there are difference between the groups at all? The regression only shows us whether there is a signficant difference between the first factor and the two others. If we want to test for overall differences, we can make an ANOVA of the fitted object
+
+```{r}
+aovresult <- aov(fit)
+summary(aovresult)
+```
+
+Note that we get now significance for an overall difference, although we didn't have significance in the regression before. 
+
+We can now use so-called post-hoc tests to find out which differences are significant ()
+
+See more examples, with more factors here http://www.statmethods.net/stats/anova.html
+
+Note: aov is designed for balanced designs, and the results can be hard to interpret without balance: beware that missing values in the response(s) will likely lose the balance. If there are two or more error strata, the methods used are statistically inefficient without balance, and it may be better to use lme in package nlme.
+
+#### T-test
+
+A simple option if you just want to test two groups against each other is the t-test. It assumes normal distribution within the groups. We can use this to do post-hoc testing for the example above: 
+
+```{r}
+attach(PlantGrowth)
+t.test(weight[group=='ctrl'], weight[group=="trt1"])
+```
+
+testing against group 2
+
+```{r}
+t.test(weight[group=='ctrl'], weight[group=="trt2"])
+detach(PlantGrowth)
+```
+
+but if we really would have done both tests, we would have had to correct for multiple testing
+
+```{r}
+p.adjust(c(0.2504, 0.0479), method = "holm")
+```
+
+How does this work? Write ?p.adjust in the console. Also, read http://webdev.cas.msu.edu/cas992/weeks/week10.html
+
+After correction, the values wouldn't be significant any more 
+
+## Discrete response variables 
+
+### The generalized linear model framework
+
+The glm is a generalization of lm. We could create a model identical to lm() by glm(formula, family = gaussian(link = "identity")), but the advantage is that glm has more options, among them the following defaults
+
+binomial(link = "logit")
+gaussian(link = "identity")
+Gamma(link = "inverse")
+inverse.gaussian(link = "1/mu^2")
+poisson(link = "log")
+quasi(link = "identity", variance = "constant")
+quasibinomial(link = "logit")
+quasipoisson(link = "log")
+
+but step for step ... let's look at an example for binomial data
+
+
+### 0/1 Response - the logistic regression
+
+```{r}
+library(effects) 
+data(TitanicSurvival)
+head(TitanicSurvival)
+str(TitanicSurvival)
+attach(TitanicSurvival)
+```
+
+Let's visualize this. About visualizing associations see http://www.statmethods.net/advgraphs/mosaic.html
+
+We'll use the mosaic plot. May be you have to install.packages("vcd")
+
+```{r}
+library(vcd)
+mosaic(~ sex + passengerClass + survived, shade=TRUE, legend=TRUE) 
+surv <- as.numeric(survived)-1 # glm requires 0 / 1 not true false
+```
+
+How do we analyze this data? Response clearly not normal, but 1/0. now, the glm is basically the same as lm(), just that you specify the family.
+
+Let's first test whether survival is correlated to age
+
+```{r}
+fmt <- glm(surv ~ age, family=binomial)
+summary(fmt)
+```
+
+Result plotted 
+
+```{r}
+plot(surv ~ age, main="only age term")
+newage <- seq(min(age, na.rm=T), max(age, na.rm=T), len=100)
+preds <- predict(fmt, newdata=data.frame("age"=newage), se.fit=T)
+lines(newage, plogis(preds$fit), col="purple", lwd=3)
+lines(newage, plogis(preds$fit-2*preds$se.fit), col="purple", lwd=3, lty=2)
+lines(newage, plogis(preds$fit+2*preds$se.fit), col="purple", lwd=3, lty=2)
+```
+
+Now, let's out all relevant variables in 
+
+```{r}
+surv <- as.numeric(survived)-1 # glm requires 0 / 1 not true false
+fmt <- glm(surv ~ age  + sex + passengerClass, family=binomial)
+summary(fmt)
+```
+
+#### ANOVA for GLM
+
+if you want an ANOVA
+
+```{r}
+library(car)
+Anova(fmt)
+
+detach(TitanicSurvival)
+```
+
+### Count data - Poisson Regression
+
+For count data, we use the glm with the Poisson error distribution. Here's some observations of the pieces of food given to young birds, and their perceived attractiveness.
+
+```{r}
+cfc <- data.frame(
+  stuecke = c(3,6,8,4,2,7,6,8,10,3,5,7,6,7,5,6,7,11,8,11,13,11,7,7,6),
+  attrakt = c(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5) 
+)
+attach(cfc)
+plot(stuecke ~ attrakt)
+```
+
+This is how you specify the poisson
+
+```{r}
+fm <- glm(stuecke ~ attrakt, family=poisson)
+summary(fm)
+```
+
+predictions
+
+```{r}
+newattrakt <- c(1,1.5,2,2.5,3,3.5,4,4.5,5)
+preds <- predict(fm, newdata=data.frame("attrakt"=newattrakt))
+plot(stuecke ~ attrakt)
+lines(newattrakt, exp(preds), lwd=2, col="green")
+```
+
+same with 95% confidence interval:
+
+```{r}
+preds <- predict(fm, newdata=data.frame("attrakt"=newattrakt), se.fit=T)
+str(preds)
+plot(stuecke ~ attrakt)
+lines(newattrakt, exp(preds$fit), lwd=2, col="green")
+lines(newattrakt, exp(preds$fit+2*preds$se.fit), lwd=2, col="green", lty=2)
+lines(newattrakt, exp(preds$fit-2*preds$se.fit), lwd=2, col="green", lty=2)
+
+detach(cfc)
+```
+
+
+
+### Multinomial Data - multinomial regression
+
+If you have several options for the response (red, green, blue), you are fitting a multinomial regression. This is not in the standard glm package. Use mlogit
+
+```{r}
+library(mlogit)
+ 
+data("Fishing", package = "mlogit")
+Fish <- mlogit.data(Fishing, varying = c(2:9), shape = "wide", choice = "mode")
+ 
+## a pure "conditional" model
+ 
+summary(mlogit(mode ~ price + catch, data = Fish))
+ 
+## a pure "multinomial model"
+ 
+summary(mlogit(mode ~ 0 | income, data = Fish))
+```
+
+See more examples at http://www.inside-r.org/packages/cran/mlogit/docs/suml
+
+
+
