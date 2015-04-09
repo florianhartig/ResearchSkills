@@ -1,0 +1,1 @@
+The templates in this folder are largely not from me. See readme or comments in the latex templates for their reuse permissions!

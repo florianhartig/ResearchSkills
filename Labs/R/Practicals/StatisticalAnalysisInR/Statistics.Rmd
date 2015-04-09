@@ -67,7 +67,6 @@ par(mfrow=c(2,2))
 plot(fit2)
 ```
 
-
 Plotting the results
 
 ```{r}
@@ -130,7 +129,7 @@ but if we really would have done both tests, we would have had to correct for mu
 
 ```{r}
 p.adjust(c(0.2504, 0.0479), method = "holm")
-```
+  ```
 
 How does this work? Write ?p.adjust in the console. Also, read http://webdev.cas.msu.edu/cas992/weeks/week10.html
 
@@ -265,18 +264,69 @@ If you have several options for the response (red, green, blue), you are fitting
 library(mlogit)
  
 data("Fishing", package = "mlogit")
+head(Fishing)
+```
+The data we are using is a dataframe containing :
+
+mode
+recreation mode choice, one of : beach, pier, boat and charter
+
+price.beach
+price for beach mode
+
+price.pier
+price for pier mode
+
+price.boat
+price for private boat mode
+
+price.charter
+price for charter boat mode
+
+catch.beach
+catch rate for beach mode
+
+catch.pier
+catch rate for pier mode
+
+catch.boat
+catch rate for private boat mode
+
+catch.charter
+catch rate for charter boat mode
+
+income
+monthly income
+
+We transform this in an object mlogit can work with by
+
+```{r}
 Fish <- mlogit.data(Fishing, varying = c(2:9), shape = "wide", choice = "mode")
- 
+```
+varying tells the model that those are variables that are specific to the alternative outcomes of the response, i.e. price of the boat, while variables that are not varying are independent of the outcome, e.g. income. 
+
+```{r}
+
 ## a pure "conditional" model
  
 summary(mlogit(mode ~ price + catch, data = Fish))
- 
+
+```
+Fits, for each outcome, the increase of the choice with the price and catch. Hence, we get the intercepts for each outcome, and one parameter fitted per variable that is the effect of price / choice on the probability to choose any of the 4 outcomes. 
+
+If we correlate the variable income, this is different. Income is not specific to the choice (not selected as varying when we set up the data). In this case, we ask how the choice differs when we have people of different incomes. Hence, we obtain an intervept value per parameter, and an estimate for whether this choice is affected by an increase of income, relative to the baseline (pier).
+
+```{r}
 ## a pure "multinomial model"
  
 summary(mlogit(mode ~ 0 | income, data = Fish))
 ```
 
+Note that if you want to interpret the parameter values, you have to transform back to the response with the relatively complicated link function of the multinomial logistic regression, see formula here http://en.wikipedia.org/wiki/Multinomial_logistic_regression 
+
 See more examples at http://www.inside-r.org/packages/cran/mlogit/docs/suml
+
+And this is a good tutorial http://cran.r-project.org/web/packages/mlogit/vignettes/Exercises.pdf
 
 
 

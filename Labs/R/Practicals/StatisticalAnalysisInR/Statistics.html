@@ -410,9 +410,36 @@ lines(newattrakt, exp(preds$fit-2*preds$se.fit), lwd=2, col=&quot;green&quot;, l
 ## If you have questions, suggestions, or comments regarding the 'maxLik' package, please use a forum or 'tracker' at maxLik's R-Forge site:
 ## https://r-forge.r-project.org/projects/maxlik/</code></pre>
 <pre class="r"><code>data(&quot;Fishing&quot;, package = &quot;mlogit&quot;)
-Fish &lt;- mlogit.data(Fishing, varying = c(2:9), shape = &quot;wide&quot;, choice = &quot;mode&quot;)
- 
-## a pure &quot;conditional&quot; model
+head(Fishing)</code></pre>
+<pre><code>##      mode price.beach price.pier price.boat price.charter catch.beach
+## 1 charter      157.93     157.93     157.93        182.93      0.0678
+## 2 charter       15.11      15.11      10.53         34.53      0.1049
+## 3    boat      161.87     161.87      24.33         59.33      0.5333
+## 4    pier       15.13      15.13      55.93         84.93      0.0678
+## 5    boat      106.93     106.93      41.51         71.01      0.0678
+## 6 charter      192.47     192.47      28.93         63.93      0.5333
+##   catch.pier catch.boat catch.charter income
+## 1     0.0503     0.2601        0.5391   7083
+## 2     0.0451     0.1574        0.4671   1250
+## 3     0.4522     0.2413        1.0266   3750
+## 4     0.0789     0.1643        0.5391   2083
+## 5     0.0503     0.1082        0.3240   4583
+## 6     0.4522     0.1665        0.3975   4583</code></pre>
+<p>The data we are using is a dataframe containing :</p>
+<p>mode recreation mode choice, one of : beach, pier, boat and charter</p>
+<p>price.beach price for beach mode</p>
+<p>price.pier price for pier mode</p>
+<p>price.boat price for private boat mode</p>
+<p>price.charter price for charter boat mode</p>
+<p>catch.beach catch rate for beach mode</p>
+<p>catch.pier catch rate for pier mode</p>
+<p>catch.boat catch rate for private boat mode</p>
+<p>catch.charter catch rate for charter boat mode</p>
+<p>income monthly income</p>
+<p>We transform this in an object mlogit can work with by</p>
+<pre class="r"><code>Fish &lt;- mlogit.data(Fishing, varying = c(2:9), shape = &quot;wide&quot;, choice = &quot;mode&quot;)</code></pre>
+<p>varying tells the model that those are variables that are specific to the alternative outcomes of the response, i.e. price of the boat, while variables that are not varying are independent of the outcome, e.g. income.</p>
+<pre class="r"><code>## a pure &quot;conditional&quot; model
  
 summary(mlogit(mode ~ price + catch, data = Fish))</code></pre>
 <pre><code>## 
@@ -442,6 +469,8 @@ summary(mlogit(mode ~ price + catch, data = Fish))</code></pre>
 ## Log-Likelihood: -1230
 ## McFadden R^2:  0.178 
 ## Likelihood ratio test : chisq = 534 (p.value = &lt;2e-16)</code></pre>
+<p>Fits, for each outcome, the increase of the choice with the price and catch. Hence, we get the intercepts for each outcome, and one parameter fitted per variable that is the effect of price / choice on the probability to choose any of the 4 outcomes.</p>
+<p>If we correlate the variable income, this is different. Income is not specific to the choice (not selected as varying when we set up the data). In this case, we ask how the choice differs when we have people of different incomes. Hence, we obtain an intervept value per parameter, and an estimate for whether this choice is affected by an increase of income, relative to the baseline (pier).</p>
 <pre class="r"><code>## a pure &quot;multinomial model&quot;
  
 summary(mlogit(mode ~ 0 | income, data = Fish))</code></pre>
@@ -473,7 +502,9 @@ summary(mlogit(mode ~ 0 | income, data = Fish))</code></pre>
 ## Log-Likelihood: -1480
 ## McFadden R^2:  0.0137 
 ## Likelihood ratio test : chisq = 41.1 (p.value = 6.09e-09)</code></pre>
+<p>Note that if you want to interpret the parameter values, you have to transform back to the response with the relatively complicated link function of the multinomial logistic regression, see formula here <a href="http://en.wikipedia.org/wiki/Multinomial_logistic_regression">http://en.wikipedia.org/wiki/Multinomial_logistic_regression</a></p>
 <p>See more examples at <a href="http://www.inside-r.org/packages/cran/mlogit/docs/suml">http://www.inside-r.org/packages/cran/mlogit/docs/suml</a></p>
+<p>And this is a good tutorial <a href="http://cran.r-project.org/web/packages/mlogit/vignettes/Exercises.pdf">http://cran.r-project.org/web/packages/mlogit/vignettes/Exercises.pdf</a></p>
 </div>
 </div>
 </div>
