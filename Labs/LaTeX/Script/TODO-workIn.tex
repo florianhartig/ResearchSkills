@@ -1,0 +1,315 @@
+\documentclass[12pt]{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[ngerman]{babel}
+\usepackage{color}
+\documentclass[xcolor=dvipsnames]{beamer} 
+\usepackage{listings} % C, C++, HTML, Ant, Basic, Delphi, Java, Lisp, make, Pascal, PHP, Python, Ruby, tcl, TeX, LaTeX, VRML, Perl, Prolog, SQL, VBScript, XML, XSLT
+\lstset{language=Tex, keywordstyle=\color{red}, commentstyle=\color{blue}, backgroundcolor=\color{lightgray}, xleftmargin= 0.04 \textwidth, xrightmargin= 0.04 \textwidth}
+\usepackage[pdfauthor={Florian Hartig}, pdftitle={Latex solutions for scientists}]{hyperref}
+
+\usepackage[normalem]{ulem}
+\usepackage[page]{appendix}
+
+\begin{document}
+
+
+
+\title{Latex solutions for scientists}
+\author{Florian Hartig \thanks{florian.hartig@ufz.de}}
+\date{\small UFZ, Helmholtz Centre for Environmental Research - UFZ, Department of Ecological Modelling, Permoserstr. 15, 04318 Leipzig, Germany \\[0.5cm] \today}
+\maketitle
+\begin{abstract}
+There is a great amount of free introductions to latex. However, despite that, I found it extremely difficult to find a good, short and comprehensive compilation of the things you really need to use latex as a word processor for scientific publications. This documents aims at closing this gap.  
+\end{abstract}
+\vspace{1cm}
+\begin{center}
+You can find the newest version of this document via subversion at \\[0.3cm] \href{http://svn2.assembla.com/svn/b3p52O1v4r3j1YabIlDkbG/book}{http://svn2.assembla.com/svn/b3p52O1v4r3j1YabIlDkbG/book}\\[0.3cm]
+A password may be necessary to access the files, please contact the author. 
+\end{center}
+
+
+\newpage
+\tableofcontents
+
+\newpage
+
+\section{Software}
+\subsection{Latex Distributions}
+
+\subsection{Editor}
+
+
+
+
+\subsection{Viewer}
+
+\subsubsection{DVI Viewer}
+
+\subsubsection{PDF Viewer}
+The acrobat reader and some other viewers have the problem that an open file is locked and therefore prevents LaTeX from compiling until it is closed. The following viewers don't have this problem 
+\begin{itemize}
+    \item Linux xpdf
+    \item Windows sumatra   
+    \item Max xpdf
+\end{itemize}    
+\subsubsection{PS Viewer}
+For windows, you 
+\newpage
+\section{Latex Stuff}
+
+\subsection{Tables}
+
+\subsection{Tables}
+
+\subsection{Captions}
+
+\subsection{Math}
+
+
+\newpage
+\section{References, bibtex and that}
+Basically, there are two options to use references in latex. One is including references in the latex file, the other one is maintaining an external file in the BibTex format. For practically all cases, the latter will be the preferred solution. The only reason to keep references directly in the latex file I could imagine would be that a journal requires the submission in one latex file only (however, in most cases you can include the .bbl file which is created by bibtex to your submission). Therefore, I concentrate on the BibTex option only
+\subsection{BibTex} 
+
+BibTex is the Latex format for references. An excellent file to built a bibtex database is Jabref. 
+\subsubsection{The .bib file}
+A bibtex file is a text file with the file ending bib which contains references in the format
+
+\begin{lstlisting}
+ @referencetype { bibtexkey,
+    other information
+ }
+\end{lstlisting}
+An example such an entry would be 
+\begin{lstlisting}
+@ARTICLE{Ovaskainen-Spaceandstochasticity-2006,
+  author = {Ovaskainen, O. and Cornell, S. J.},
+  title = {Space and stochasticity in population 
+  dynamics},
+  journal = {PNAS},
+  year = {2006},
+  volume = {103},
+  pages = {12781--12786},
+  number = {34},
+  month = aug,
+}
+\end{lstlisting}
+\subsubsection{Citing in your text}
+Citations can be included into the latex code by
+\begin{lstlisting}
+ \cite{bibtexkey}
+\end{lstlisting}
+If you want to use citations in the harvard-like bib-style, the natbib package (described later) is a must. If loaded, you can create citations of the form "(textbefore author, year textafter)" by
+\begin{lstlisting}
+ \citep[textbefore][textafter]{bibtexkey}
+\end{lstlisting}
+and citations of the form textbefore author (year) textafter by
+\begin{lstlisting}
+ \citet{bibtexkey}
+\end{lstlisting}
+\subsubsection{Building and adjusting the reference list}
+A reference list according to a certain bibtex style is build by latex if you include
+\begin{lstlisting}
+ \bibliographystyle{bibtex style}
+ \bibliography{bibtex file name}
+\end{lstlisting}
+
+
+\subsection{Jabref}
+Jabref is a free (open source) literature manager which uses the BibTex file format. As it is written in java and distributed as a jar file, you can use it on any operating system with a java virtual machine installed. First choice for everyone who works with latex, but it is also possible to use it with word!\\
+Advantages include
+\begin{itemize}
+    \item Database is in the bibtex format, so you can directly link it to your latex file
+    \item Automatic link to pdf files on your computer
+    \item Hyperlinks and doi links are opened in your browser
+    \item Very good 
+\end{itemize}    
+
+
+
+\href{http://jabref.sourceforge.net/}{Developer page}
+
+Excellent user manual in German: \href{http://jabref.sourceforge.net/help/manual_pdf/JabRef-UserManual_de.pdf}{here}
+
+
+\subsubsection{How to use Jabref with Microsoft Word}
+It is possible to use Jabref with Word, a detailed how to do can be found at
+
+\href{http://www.medicalnerds.com/how-to-use-jabrefbibtex-with-microsoft-word-2003/}{http://www.medicalnerds.com/how-to-use-jabrefbibtex-with-microsoft-word-2003/} 
+
+
+\newpage
+\section{Packages you need}
+
+
+\subsection{International Typewriting}
+
+\subsubsection{Encoding - inputenc}
+The inputenc package allows for extended character encoding, in particular for characters like "Ä, Ü, etc"
+\begin{lstlisting}
+\usepackage[latin1]{inputenc}
+\end{lstlisting}
+
+\subsubsection{Typesetting - fontenc}
+Extends the standard font family of latex to allow special characters.
+\begin{lstlisting}
+\usepackage[T1]{fontenc}
+\end{lstlisting}
+
+\subsubsection{Language specific labels and hyphenation - babel}
+The babel package changes the standard labels of LaTeX like e.g. "table of contents" to the desired language. Hyphenation is changed, too
+\begin{lstlisting}
+\usepackage[ngerman]{babel}
+\end{lstlisting}
+
+\subsection{Graphics and environments}
+
+\subsubsection{Including pdfs in your text - pdfpages}
+The pdfpages package allows you to include pdf documents, e.g. a paper, in your document
+\begin{description}
+    \item[Documentation] \href{http://www.ctan.org/tex-archive/macros/latex/contrib/pdfpages/pdfpages.pdf}{here}
+    \item[Conflicts/Issues] Works only with pdflatex
+\end{description}    
+
+\subsubsection{Proper appendices - the appendix package}
+The appendix package adds some useful features which you will probably need when writing an appendix. It defines a new environment, appendices. W
+\begin{lstlisting}
+\usepackage[toc,page]{appendix}
+...
+\begin{appendices}
+...
+\end{appendices}
+\end{lstlisting}
+It is also possible to include subappendices within a section in the document
+\begin{lstlisting}
+\usepackage{appendix}
+...
+\section{Some stuff}
+...
+\begin{subappendices}
+\subsection{Some boring stuff}
+...
+\end{subappendices}
+\section{Some new stuff}
+...
+\end{lstlisting}
+
+\newpage
+\subsection{Math and formulae}
+
+\subsubsection{Amsmath, amsfonts and amssymb}
+The standard packages for extended math symbols. Careful, there is a conflict with the lineno package!
+\begin{lstlisting}
+\usepackage{amsmath, amsfonts, amssymb}
+\end{lstlisting}
+\begin{description}
+    \item[Documentation] \href{http://www.ams.org/tex/amslatex.html}{here}
+    \item[Conflicts/Issues] Conflict with the lineno package!
+\end{description} 
+
+
+\newpage
+\subsection{Formatting and colors}
+\subsubsection{The color package}
+Enables color in latex
+\subsubsection{The xcolor package}
+Extends color commands in latex, enables in particular mixing of colors and provides some predefined colors
+
+
+\subsubsection{Underline - the ulem package}
+Surprisingly, latex does not include an option for underlining text by default. This can be resolved using the \emph{ulem} package. Ulem replaces italics with underlining in emphasized text given by \emph{em} or  \emph{emph}. I recommend to use it with the \emph{normlem} option, which restores the normal \emph{em} behavior.
+\begin{lstlisting}
+\usepackage[normalem]{ulem}
+...
+\uline{Underlinded text}
+\end{lstlisting}
+results in: \uline{Underlinded text}
+
+\newpage
+\subsection{Submitting Papers}
+
+
+
+\subsubsection{Spacing with setspace and linespread}
+Many journals demand double spaced text for submission. There are two options to get this, the first and preferred one being the setspace package. 
+\begin{lstlisting}
+\usepackage{setspace}   
+\end{lstlisting}
+Double spacing is then activated by 
+\begin{lstlisting}
+\doublespacing   
+\end{lstlisting}
+A number of other spacing options is available and can be found in the manual. However, one drawback is that setspace does not change the spacing in the footnotes and floating environments like figures captions, tables etc. For a submission of a paper, when double spacing throughout all text, tables etc. is wanted, the best option is to use the linespread command 
+\begin{lstlisting}
+\linespread{1.6}
+\end{lstlisting}
+Note that although you want to have double spacing, the multiplication factor is 1.6, due to the way latex measures the spacing. More information (if needed) can be found on the web. 
+\subsubsection{Hyphenation}
+To switch of hyphenation, use the hyphenat package. Careful, this will sometimes cause text to cross the border of your text box
+\begin{lstlisting}
+\usepackage[none]{hyphenat} 
+\end{lstlisting}
+
+\subsubsection{The preprint bundle}
+Preprint is a bundle of packages which helps submitting preprints to journals. The most important package inside preprint is "figcaps", which is described in the next subsection. The package is quite old, but the MPI for solar seems to use the package and has made some changes which may be interesting to modify for your own purposes, too. Their website 
+
+\href{http://www.mps.mpg.de/software/latex/localtex/localltx.html#preprint}{preprint}
+
+
+
+\subsubsection{figcaps}
+Figcaps is part of the preprint bundle. It puts all tables, figure captions, and (optional) figures at the end of the document on separate pages.
+\begin{lstlisting}
+\usepackage[]{figcaps}
+\end{lstlisting}
+\paragraph{Problems and incompatibilities:} Sometimes Problems with the labelling of captions, see appendix \ref{app: Enable references to figure captions with  figcaps}
+
+
+%\usepackage[displaymath]{lineno}        %optional line numbers ... use \linenumbers to turn line numbers on careful, displaymath is needed to allow numbering in an environment which contains math environments, DOES NOT WORK WITH AMSMATH!!!
+%\usepackage{numline}
+
+
+\newpage
+\begin{appendices}
+
+\section{Fixing incompatibilities}
+\subsection{Enable references to figure captions with figcaps}\label{app: Enable references to figure captions with figcaps}
+Figcaps has sometimes problems with the references to figure captions, which results in something like ?? when you refer to a figure number in your text. The following code, put after your usepackage command, resolves the problem (I got the code from Ted Pavlic's blog, it may still be Ted Pavlic \href{http://www.pkblogs.com/phaseportrait/search/label/latex}{here})
+
+
+
+
+\begin{lstlisting}[]
+     
+    \makeatletter
+    % This lets figcaps work with \ref
+    % However, forces \label outside of \caption
+    \def\phantomsection{\relax}
+    \let\oldfigurepage\@figurepage
+    \def\@figurepage{%
+            \@ifundefined{tf@pof}{}{%
+            \let\oldlabel\label%
+            \let\oldinput\@input%
+            \def\@input{\def\label{\oldlabel}\oldinput}%
+            \phantomsection%
+            \addcontentsline{toc}{section}{\figurepagename}}%
+            \oldfigurepage%
+            }
+    \let\@makefcaption\@makecaption
+    \let\oldtablepage\@tablepage
+    \def\@tablepage{%
+            \@ifundefined{tf@pot}{}{%
+            \clearpage%
+            \phantomsection%
+            \addcontentsline{toc}{section}{\tablepagename}}%
+            \oldtablepage%
+            }
+    \makeatother
+\end{lstlisting}
+
+\end{appendices}
+
+\end{document}
