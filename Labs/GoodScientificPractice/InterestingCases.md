@@ -31,3 +31,9 @@ http://www.sciencemag.org/content/344/6184/566.summary
 http://blogs.discovermagazine.com/neuroskeptic/2014/05/06/suspicion-misconduct-forster/#.VUjEqWbVXF4
 
 http://retractionwatch.com/2014/04/30/social-psychologist-forster-denies-misconduct-calls-charge-terrible-misjudgment/
+
+
+
+## Purposefully faked chocolate study 
+
+http://io9.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800
