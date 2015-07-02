@@ -1,75 +1,5 @@
-\documentclass[12pt]{article}
 
 
-\usepackage[latin1]{inputenc}
-\usepackage[T1]{fontenc}
-%\usepackage[ngerman]{babel}
-\usepackage{color}
-\documentclass[xcolor=dvipsnames]{beamer} 
-\usepackage{listings} % C, C++, HTML, Ant, Basic, Delphi, Java, Lisp, make, Pascal, PHP, Python, Ruby, tcl, TeX, LaTeX, VRML, Perl, Prolog, SQL, VBScript, XML, XSLT
-\lstset{language=Tex, keywordstyle=\color{red}, commentstyle=\color{blue}, backgroundcolor=\color{lightgray}, xleftmargin= 0.04 \textwidth, xrightmargin= 0.04 \textwidth}
-\usepackage[pdfauthor={Florian Hartig}, pdftitle={Latex solutions for scientists}]{hyperref}
-
-\usepackage[normalem]{ulem}
-\usepackage[page]{appendix}
-
-\begin{document}
-
-
-
-\title{Latex solutions for scientists}
-\author{Florian Hartig \thanks{florian.hartig@ufz.de}}
-\date{\small UFZ, Helmholtz Centre for Environmental Research - UFZ, Department of Ecological Modelling, Permoserstr. 15, 04318 Leipzig, Germany \\[0.5cm] \today}
-\maketitle
-\begin{abstract}
-There is a great amount of free introductions to latex. However, despite that, I found it extremely difficult to find a good, short and comprehensive compilation of the things you really need to use latex as a word processor for scientific publications. This documents aims at closing this gap.  
-\end{abstract}
-\vspace{1cm}
-\begin{center}
-You can find the newest version of this document via subversion at \\[0.3cm] \href{http://svn2.assembla.com/svn/b3p52O1v4r3j1YabIlDkbG/book}{http://svn2.assembla.com/svn/b3p52O1v4r3j1YabIlDkbG/book}\\[0.3cm]
-A password may be necessary to access the files, please contact the author. 
-\end{center}
-
-
-\newpage
-\tableofcontents
-
-\newpage
-
-\section{Software}
-\subsection{Latex Distributions}
-
-\subsection{Editor}
-
-
-
-
-\subsection{Viewer}
-
-\subsubsection{DVI Viewer}
-
-\subsubsection{PDF Viewer}
-The acrobat reader and some other viewers have the problem that an open file is locked and therefore prevents LaTeX from compiling until it is closed. The following viewers don't have this problem 
-\begin{itemize}
-    \item Linux xpdf
-    \item Windows sumatra   
-    \item Max xpdf
-\end{itemize}    
-\subsubsection{PS Viewer}
-For windows, you 
-\newpage
-\section{Latex Stuff}
-
-\subsection{Tables}
-
-\subsection{Tables}
-
-\subsection{Captions}
-
-\subsection{Math}
-
-
-\newpage
 \section{References, bibtex and that}
 Basically, there are two options to use references in latex. One is including references in the latex file, the other one is maintaining an external file in the BibTex format. For practically all cases, the latter will be the preferred solution. The only reason to keep references directly in the latex file I could imagine would be that a journal requires the submission in one latex file only (however, in most cases you can include the .bbl file which is created by bibtex to your submission). Therefore, I concentrate on the BibTex option only
 \subsection{BibTex} 
@@ -313,3 +243,4 @@ Figcaps has sometimes problems with the references to figure captions, which res
 \end{appendices}
 
 \end{document}
+
