@@ -25,8 +25,15 @@ longer tutorials
 Although Git (as svn as well) can be purely run locally, it really makes sense to have a version of your files on the web, not only as backup. If you know nothing, try out GitHub, which is pretty popular in Science. See links below for how to get started with that. Tutorials specially for GitHub (a lot applies to Git as well)
 
 * [GitHub help page](https://help.github.com/)
+* [GitHub guids - excellent!!!](https://guides.github.com/)
 * [How to Get Started with Github - Beginner Tutorial ](http://www.youtube.com/watch?v=73I5dRucCds)
 
 ## SVN
 
-to be added later 
+SVN is the older working horse in the field. I don't see a reason to start new projects with svn, git is the better alternative. For historical reasons, many projects are still on svn, so there may be a reason to use it at some stage.
+
+* I recommend [this tutorial](http://svnbook.red-bean.com/)
+
+* In terms of software, use
+ * tortoise svn for windows
+ * no great free options available for linux and mac. You may as well use the command line. 
