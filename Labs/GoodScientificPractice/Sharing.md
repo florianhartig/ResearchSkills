@@ -15,6 +15,9 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 ## Reproducibility
 
 
+http://andrewgelman.com/2015/08/11/its-hard-to-replicate-that-is-duplicate-analyses-in-sociology/
+
+
 
 ## False discovery rates 
 
