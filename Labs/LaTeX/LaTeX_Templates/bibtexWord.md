@@ -1,1 +1,0 @@
-http://www.docear.org/software/add-ons/docear4word/download/
