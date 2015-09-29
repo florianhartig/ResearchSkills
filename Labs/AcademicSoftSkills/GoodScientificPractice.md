@@ -1,5 +1,23 @@
 
 
+# Codes of professional ethics / conduct
+
+
+### German Science Foundation
+
+http://www.dfg.de/en/research_funding/principles_dfg_funding/good_scientific_practice/ 
+
+### Max Plack Society 
+
+https://www.mpg.de/197494/rulesScientificPractice.pdf
+
+### Deutscher Hochschulverband
+
+http://www.hochschulverband.de/cms1/fileadmin/redaktion/download/pdf/info_blaetter/Fehlverhalten.pdf 
+
+
+# Interesting Cases of (alledged) scientific misconduct
+
 http://universitypost.dk/article/timeline-bente-klarlund-pedersen-case
 
 
