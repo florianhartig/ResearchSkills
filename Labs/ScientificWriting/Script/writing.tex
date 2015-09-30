@@ -1,5 +1,6 @@
 \documentclass[justified, notoc]{tufte-book} %justified ovverides the rugged-right style
 
+\usepackage[toc,page]{appendix}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{xcolor}
@@ -12,6 +13,7 @@
 
 \usepackage{natbib}
 
+\usepackage[normalem]{ulem}
 \usepackage[]{hyperref}
 \definecolor{darkblue}{rgb}{0,0,.5}
 \hypersetup{colorlinks=true, breaklinks=true, linkcolor=darkblue, menucolor=darkblue, urlcolor=darkblue, citecolor=darkblue}
@@ -57,22 +59,23 @@ morekeywords = {maketitle, tableofcontents, subsection,
 
 
 \chapter{Introduction}
-
+\begin{fullwidth}
 % Why care about writing
-Science writing is an important part of the professional life of an academic. It is the communication of (original) results and thus a driver of progress through the expansion of the current state of knowledge\marginnote{\citet{Tischler1978}}.
+Science writing is an important part of the professional life of an academic. It is the communication of (original) results and thus a driver of progress through the expansion of the current state of knowledge \citep{Tischler1978}.
 Of course, there are also personal reasons why one may improve scientific writing skills. Selling an argument and getting recognised for your work primarily depends on the quality of your work but certainly also on the way it is being communicated. 
 The career of researchers and professors depend on their ability to communicate their cause in writing. Even if this does not apply to you yet, a well-thought-out master thesis or report may help you convince your project supervisor leading to better marks.  
-Furthermore, writing helps you thinking\marginnote{\citet{Woodford1967}}: Start early to write your thesis/ project. It will help you structure your thoughts and question your logic.
+Furthermore, writing helps you thinking: Start early to write your thesis/ project. It will help you structure your thoughts and question your logic \citep{Woodford1967}.
 
 Now that we established why scientific writing is important to us, we may be interested to know: What is good science writing and how can we improve our skills? 
-To answer these questions recall the goal of scientific writing;\marginnote{\citet{Gopen1990}} "it matters only whether a large majority of the reading audience accurately perceives what the author had in mind." Therefore it is important to understand that the reader does not only read but interpret the written document. Most readers are familiar with the conventions of science writing and expect to find arguments, sections and statements in relatively fix positions. That is to say, if the writer respects these structural standards the readability is greatly improved. 
-You certainly know the general layout of a scientific article (at least in the (environmental) natural sciences). It is divided in a title, abstract, introduction, materials and methods, results and discussion. Within these structural elements there are further recognizable patterns, which lead to a better understanding of the article's messages\marginnote{\citet{Gopen1990,Tischler1978}}.  
+To answer these questions recall the goal of scientific writing; "it matters only whether a large majority of the reading audience accurately perceives what the author had in mind" \citep{Gopen1990}. Therefore it is important to understand that the reader does not only read but interpret the written document. Most readers are familiar with the conventions of science writing and expect to find arguments, sections and statements in relatively fix positions. That is to say, if the writer respects these structural standards the readability is greatly improved. 
+You certainly know the general layout of a scientific article (at least in the (environmental) natural sciences). It is divided in a title, abstract, introduction, materials and methods, results and discussion. Within these structural elements there are further recognizable patterns, which lead to a better understanding of the article's messages \citep{Gopen1990,Tischler1978}.  
 
 Establishing a basis to build upon, these "laws of writing" can be taught. However, to become a skilled writer you need to start reflecting about your writing. This is a process that takes time and requires experience. 
 
 In this short note we provide the scientific writing standards and conventions we consider the most important to start with. We split them into elements of structure and style and finally, we present a commented, made-up research article for which we point out the key elements of science writing.
 
 Before you start writing however, you need to be aware of your audience. Who is going to read what you write? This mostly depends on the journal you choose to publish your work. Bearing this in mind the next step is to list your key messages. What is the main message you want to tell people with your paper? Just remember: Writing a good paper is not about telling everything you know or have done about a topic -- it is about telling a story and selecting the relevant details.
+\end{fullwidth}
 
 \chapter{Elements of structure}   
 % general strucutre
@@ -84,36 +87,47 @@ Another structural element concerning the general layout is the "hourglass struc
  
 %individual sections/elements
 %title
-Zooming in to the next smaller unit of discourse we start off with the title\marginnote{\large{\textsc{the title}}}. Its main purpose is to interest potential readers since 97~\%  of them only read the title. To keep them reading the title should signal the topic. A good tip is to make it precise and informative with a hint at the findings -- it should reflect the main message of the article's story.\\
+\paragraph{Title}
+Zooming in to the next smaller unit of discourse we start off with the title. %\marginnote{\large{\textsc{the title}}}
+Its main purpose is to interest potential readers since 97~\%  of them only read the title. To keep them reading the title should signal the topic. A good tip is to make it precise and informative with a hint at the findings -- it should reflect the main message of the article's story.\\
 
 %keywords
-The author is asked to list some keywords\marginnote{\large{\textsc{the keywords}}}, which are usually located right below the abstract. These terms allow people to find the article when searching with ISI web of knowledge. Yet, since Google scans whole documents the keywords are probably not as important as they used to be. Nevertheless, a good strategy is to choose keywords complementary to title and abstract, e.g. for important technical terms that you
+\paragraph{Keywords}
+The author is asked to list some keywords, %\marginnote{\large{\textsc{the keywords}}}
+which are usually located right below the abstract. These terms allow people to find the article when searching with ISI web of knowledge. Yet, since Google scans whole documents the keywords are probably not as important as they used to be. Nevertheless, a good strategy is to choose keywords complementary to title and abstract, e.g. for important technical terms that you
 did not want to include in the abstract nor title.\\
 
 %abstract
-The abstract\marginnote{\large{\textsc{the abstract}}} is the second time you will tell your story; in fact it can be considered as a mini paper. It starts off by setting the scene with a very short and general introduction. This usually links to the second part: Raise the problem. You can emphasize the research question by indicator words like "however". Here you tell why your work is necessary.\marginnote{To make sure you follow this structure it may be helpful to copy a template into your manuscript.} Third, you briefly delineate your approach. The fourth subsection serves to state the results. Finally, you present your conclusions and discuss the broader significance.\\
+\paragraph{Abstract}
+The abstract %\marginnote{\large{\textsc{the abstract}}} 
+is the second time you will tell your story; in fact it can be considered as a mini paper. It starts off by setting the scene with a very short and general introduction. This usually links to the second part: Raise the problem. You can emphasize the research question by indicator words like "however". Here you tell why your work is necessary.\marginnote{To make sure you follow this structure it may be helpful to copy a template into your manuscript.} Third, you briefly delineate your approach. The fourth subsection serves to state the results. Finally, you present your conclusions and discuss the broader significance.\\
 
 %introduction
-The first main section of the article is the introduction\marginnote{\large{\textsc{the introduction}}}. It comprises four parts: Start of with one or two paragraphs outlining the broad topic and what work has been done before.\marginnote{Go from the general\\ ...to the specific\\ ...but not back to the general.} Here you usually cite a lot of literature showing that you know the current state of knowledge concerning the topic of your study.
+\paragraph{Introduction}
+The first main section of the article is the introduction. %\marginnote{\large{\textsc{the introduction}}}
+It comprises four parts: Start of with one or two paragraphs outlining the broad topic and what work has been done before.\marginnote{Go from the general\\ ...to the specific\\ ...but not back to the general.} Here you usually cite a lot of literature showing that you know the current state of knowledge concerning the topic of your study.
 Use another one or two paragraphs to explain the problem, i.e. the gap of knowledge. Here, you may sell your idea and why the knowledge gap needs to be filled.
 Then, delineate your approach in one paragraph: What are your methods; what are the data you used?\marginnote{Make use of indicator words to clarify the role of the individual paragraph: however; problem/ challenge; here we used; we applied; we asked; we tested.}
 Finally, you may list your specific research questions. This subsection does not need to be clearly separated from the approach subsection. It should however, provide a link to the result sections by outlining the work flow of the analysis.\\
 
 %methods
-In the methods section\marginnote{\large{\textsc{the methods}}} the reader learns precisely what has been done. Even though details may be important this section should not take up too many words, since the total amount for the paper is usually fairly limited by the publishing journal\marginnote{Keyword is repdoucibility.}. You will have to make a selection here; technical information, which is necessary to replicate the study (Software version, etc.) can be moved to an (online) appendix. This may even increase the readability. If helpful the methods section may also be divided in subsections such as study area, data, statistical analysis/ model, analysis, etc. Another helpful tip is to add figures. They can greatly enhance the ability of the reader to understand your approach. Furthermore, if there were any problems with your methods, do not discuss them here -- use the discussion for that.\\
+\paragraph{Methods}
+In the methods section %\marginnote{\large{\textsc{the methods}}}
+the reader learns precisely what has been done. Even though details may be important this section should not take up too many words, since the total amount for the paper is usually fairly limited by the publishing journal\marginnote{Keyword is repdoucibility.}. You will have to make a selection here; technical information, which is necessary to replicate the study (Software version, etc.) can be moved to an (online) appendix. This may even increase the readability. If helpful the methods section may also be divided in subsections such as study area, data, statistical analysis/ model, analysis, etc. Another helpful tip is to add figures. They can greatly enhance the ability of the reader to understand your approach. Furthermore, if there were any problems with your methods, do not discuss them here -- use the discussion for that.\\
 
 %results
-Now that you have explained your methods and the course of analysis, present your results in the next section\marginnote{\large{\textsc{the results}}}. Here you will have to make a selection once again. The results you show need to be relevant to your story, and need to match the specific research questions you lay out in the abstract and more importantly at the end of the introduction. To clarify your findings it is helpful to use figures.\marginnote{Facts are better conveyed short and simple!}
+\paragraph{Results}
+Now that you have explained your methods and the course of analysis, present your results in the next section.%\marginnote{\large{\textsc{the results}}}
+Here you will have to make a selection once again. The results you show need to be relevant to your story, and need to match the specific research questions you lay out in the abstract and more importantly at the end of the introduction. To clarify your findings it is helpful to use figures.\marginnote{Facts are better conveyed short and simple!}
 Remember the most important aspect about this section: Your results need to be presented as neutral facts. Do only state what is obvious, but leave speculation for the discussion. You may however give an interpretation and cross links if they are obvious.\\
 
 %discussion/conclusion
-Finally, we need to wrap up the article.\marginnote{\large{\textsc{the discussion/ conclusions}}} The discussion/ conclusion section comes commonly at last but with extensive functionality. It contains a summary of the main findings. Remember here, many of your readers only read this section (and the title)\marginnote{Move from the specific\\ ...to the general.}. It is common to summarize by restating the problem, significance and the methods in the beginning. Secondly, this section is the platform to discuss the results, speculate about reasons and theories and for the connection to other literature.\marginnote{Only discuss the limitations that question/limit the credibility of your results.}
+\paragraph{Discussion/ Conclusion}
+Finally, we need to wrap up the article.%\marginnote{\large{\textsc{the discussion/ conclusions}}} 
+The discussion/ conclusion section comes commonly at last but with extensive functionality. It contains a summary of the main findings. Remember here, many of your readers only read this section (and the title)\marginnote{Move from the specific\\ ...to the general.}. It is common to summarize by restating the problem, significance and the methods in the beginning. Secondly, this section is the platform to discuss the results, speculate about reasons and theories and for the connection to other literature.\marginnote{Only discuss the limitations that question/limit the credibility of your results.}
 As was mentioned before, this section is the place where you may tell the reader about the limitations of your approach and possibly the reasons why the main findings are still credible. However, rather establish the domain under which your results are valid; do not question your approach in general. Finally, the reader expects you to provide conclusions, recommendations, applications and questions for further research.\\
 
-\chapter{Elements of style}
-
-
-\chapter{Showcase: A commented paper}
+\section{Showcase: A commented paper}
 \begin{center}
 	\huge{Tropical forests: Finding the real reason for species richness} \\
 	\vspace{0.3em}
@@ -161,10 +175,47 @@ the observation that the correlation between A and B is affected
 by C. Such an effect would be expected if R is really the cause of
 this Correlation, as R is dependent on C (XAY, 1968).
 
+\chapter{Elements of style}
 
 
 
+\begin{fullwidth}
 \bibliographystyle{elsarticle-harv}
 \bibliography{sciencewriting}
+	
+\makeatletter\@openrightfalse
+
+\begin{appendices}
+\section{Common writing problems}
+\subsection{Strategic writing problems}
+\begin{itemize}
+	\item Do not make statements that are unnecessary for your argument, but could be questioned. 
+	Example: "The two most classic games to simulate the behavior of animals are the Hawk-Dove game and the Prisoner's Dilemma." $\rightarrow$ Others might disagree. Is it really important to be so definite here? Why not say: "Two classic games..."?
+	\item Passive/ Active: See the comments in the lecture notes on scientific writing. In general you should write in an active voice, unless  1) Sentence structure C3 takes precedence, or 2) the thing you talk about is impersonal, was done by another person. More details in the lecture notes. In particular, opinions of your own \textsc{should} be active.
+	\item The Yoda rule: There is no try, do it. Phrases like: "we attempted to find whether there is" or "this study aims at" sound weak and defensive. Write "we studied whether ..."
+\end{itemize}
+
+\subsection{Logical problems}
+\begin{itemize}
+	\item The stated implication does not follow the argument logically. Example: "Because both models follow different pay-off schemes, it is important to know how a simulation model reacts to different settings." $\rightarrow$ Unclear why it is important to know how simulation reacts to different settings if two models are different.
+	\item "Micrologic": Logical indicators such as "thus", "hence", "however", "nevertheless" have a clear and distinct meaning. "thus", "hence" indicate an implication. "however", "nevertheless" indicate contradicting statements or evidence to the previous proposition.
+\end{itemize}
+
+\subsection{Style}
+\begin{itemize}
+	\item Drop redundant words: Any of the following \textbf{words} can be erased: "\textbf{a total of} n subjects", "the simulations were run with the \textbf{exact} same parameter set as before"
+	\item Pompous/ pontificating style: If something can be said in simple words, it should be said in simple words, i.e. if the only purpose of a sentence is to "sound scientific", it should not be said at all. Examples: Do you really have to "utilize" a method instead of "using" it? Do you have to do the analysis by "using the model in an integrated framework to facilitate a holistic forecast" instead of "predicting from the model"? Tip: Read \citet{Woodford1967}.
+	\item Topic position/ Stress position not properly occupied: The first part of a sentence should give the context. The last part of the sentence should provide the crucial new information, and should relate to what is further discussed. Tip: Read \citet{Gopen1990}.
+	\item A paragraph structures the text into topical units. Use them! Each paragraph should introduce its topic in the beginning, and ideally lead to some conclusion or summary at the end. 
+	\item Unnecessary adjectives. Mark Twain: "As to the adjective: when in doubt, strike it out." Especially adjectives such as "very", "particularly" are often not necessary. Applies also to larger constructs such as "Evolutionary Game Theory \uline{is an important tool to} investigate(s) ..." -- if you erase the underlined text, the sentence remains fine.
+	\item Unclear/ ambiguous expressions: Write as clear and as informative as possible. Avoid ambiguous words like "tends to", "mostly" etc. if you can make a definite statement. Example: "the frequency of cooperators always tends to be zero"  $\rightarrow$ What does that mean? 1) It was always zero or 2) It was zero in 95 \% of the cases or 3) something else.
+\end{itemize}
+
+\section{Grammar and spelling}
+\begin{itemize}
+	\item \url{http://www.grammarbook.com/punctuation/commas.asp}
+\end{itemize}
+\end{appendices}
+\end{fullwidth}
 
 \end{document}
