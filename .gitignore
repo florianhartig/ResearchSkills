@@ -28,3 +28,8 @@ Labs/ScientificWriting/Script/writing.pdf
 *.dvi
 >>>>>>> origin/master
 
+Labs/ScientificWriting/Script/tufte.bst
+Labs/ScientificWriting/Script/tufte-handout.cls
+Labs/ScientificWriting/Script/tufte-common.def
+Labs/ScientificWriting/Script/tufte-book.cls
+Labs/ScientificWriting/Script/elsarticle-harv.bst
