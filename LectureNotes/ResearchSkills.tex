@@ -1,6 +1,7 @@
 \documentclass{tufte-book}
 
-\usepackage[latin1]{inputenc} % uft8?
+\usepackage[utf8]{inputenc} % uft8?
+\usepackage[T1]{fontenc}
 
 \usepackage{color}
 \usepackage{xcolor}
@@ -13,7 +14,10 @@
 \usepackage{multirow}
 \usepackage{booktabs} 
 
-\usepackage{morefloats}
+\usepackage{mdframed}
+\usepackage{mdwlist}
+
+\usepackage{morefloats} % to take care of too many floats caused by the marginnotes
 
 \usepackage[]{hyperref}
 \definecolor{darkblue}{rgb}{0,0,.5}
@@ -56,6 +60,7 @@ tableofcontents}
 
 \newpage
 
+
 \section*{Preface}
 
 Lecture notes for the MSc course "Research Skills". Work in progress. Please send comments and suggestions to \href{http://florianhartig.wordpress.com/}{http://florianhartig.wordpress.com/}
@@ -70,40 +75,40 @@ Acknowledgments: Severin Hauenstein for contributions to the chapter on scientif
 The Oxford dictionary defines science as 
 
 \begin{quote}
-Science /?s???ns/ [mass noun] - the intellectual and practical activity encompassing the systematic study of the structure and behaviour of the physical and natural world through observation and experiment
+Science [mass noun] - the intellectual and practical activity encompassing the systematic study of the structure and behaviour of the physical and natural world through observation and experiment
 \end{quote}
 
-Hence, science is a method to find out how to world works.\footnote{Epistemology, from Greek epist?m? = knowledge and logos = word is the branch of philosophy concerned with what knowledge is, how it can be acquired, and what can be known} In fact, "a method" is an understatement. In the last centuries, the scientific method has been the reason for an unprecedented increase in knowledge, opportunity and well-being. In the western world at least, science is the current dominant answer to what one can know and how to find it out (epistemology). 
+Hence, science is a method to find out how to world works.\footnote{Epistemology, from Greek episteme = knowledge and logos = word is the branch of philosophy concerned with what knowledge is, how it can be acquired, and what can be known} In fact, "a method" is an understatement. In the last centuries, the scientific method has been the reason for an unprecedented increase in knowledge, opportunity and well-being. In the western world at least, science is the current dominant answer to what one can know and how to find it out (epistemology). 
 
-But science is also a human endeavor.\footnote{Many famous scientists engaged in personal feuds that, looking back, seem to be fueled by ego more than by scientific evidence. A famous example is the doubtlessly ingenious Isaac Newton. Brian Gottesman notes \href{http://mentalfloss.com/article/24520/6-things-you-should-know-about-isaac-newton}{here}:"Newton was a man of great ego and great temper, and had few close friends. His dispute with German mathematician Gottfried Leibniz over the invention of infintesmial calculus is the stuff of legend, but Newton's less famous academic feuds were both bitter and many. His fellow scientists John Flamsteed, Robert Hooke, and Henry Oldenberg were just a few of those who at times felt the sting of Newton's viciousness. Sir Isaac's most famous quotation may well have been an exercise in sarcastic, spiteful anger. In February 1676 Newton wrote to Hooke "if I have seen further it is by standing on the shoulders of Giants." Often taken as a sign of Newton's great humility, this famed quote was almost certainly intended as an insult to Hooke, who was hunchbacked and may have suffered from a form of dwarfism."} If one says "science", it may be that the reference relates to the history of science, the state of scientific knowledge, or the science as a social institution. Regarding those latter aspects of science, things become less formally defined - if we look at the history of science, we see a complex of individuals that are somewhat unified by a common cause, but at the same time subject to their national and cultural influences as well as by personal vanity, pride or madness. As a result, the history of science, as well as its present state, is complicated by personal preferences, power games and random events, in the same way as political and economic history is.
+But science is also a human endeavor.\footnote{Many famous scientists engaged in personal feuds that, looking back, seem to be fueled by irrationality and personal pride. The doubtlessly ingenious Isaac Newton engaged in various spiteful and bitter feuds, including his most famous battle with German mathematician Gottfried Leibniz over the invention of infintesmial calculus.} If one says "science", it may be that the reference relates to the history of science, the state of scientific knowledge, or the science as a social institution. Regarding those latter aspects of science, things become less formally defined - if we look at the history of science, we see a complex of individuals that are somewhat unified by a common cause, but at the same time subject to their national and cultural influences as well as by personal vanity, pride or madness. As a result, the history of science, as well as its present state, is complicated by personal preferences, power games and random events, in the same way as political and economic history is.
 
 In the center of science, however, is a set of simple assumptions and ideals, often referred to as the "scientific method". Understanding how this method works will be the focus of the remaining part of this chapter.
 
 
 \section{Philosophical foundations of scientific thinking}
 
-\subsection{Induction and deduction}
-
-\subsection{Empiricism}
 
 \subsection{Rationalism}
 
 
-In one of the foundational works of modern science, "Le Discours de la Méthode (1637)"  \footnote{Full title "Discourse on the Method of Rightly Conducting One's Reason and of Seeking Truth" \citep{Descartes-DiscourseMethodRightly-1673}}, René Descartes famously observed: 
+In one of the foundational works of modern science, "Le Discours de la MÃ©thode (1637)"  \footnote{The full title of this famous essay is "Discourse on the Method of Rightly Conducting One's Reason and of Seeking Truth" \citep{Descartes-DiscourseMethodRightly-1673}}, RenÃ© Descartes famously observed: 
 
 \begin{quote}
 Good sense is, of all things among men, the most equally distributed; for every one thinks himself so abundantly provided with it, that those even who are the most difficult to satisfy in everything else, do not usually desire a larger measure of this quality than they already possess.
 \end{quote}
 
-These words of one of the founding fathers of what we today consider Science are often read and cited as a sarcastic observation of human vanity. However, if one continues reading, it becomes clear that Descartes may, after all, have been 
+These words of one of the founding fathers of what we today consider Science are often read and cited as a sarcastic observation of human vanity. However, if one continues reading, it becomes clear that Descartes may, after all, have been serious about his faith in human rationality. He goes on to state
 
 \begin{quote}
 And in this it is not likely that all are mistaken the conviction is rather to be held as testifying that the power of judging aright and of distinguishing truth from error, which is properly what is called good sense or reason, is by nature equal in all men; and that the diversity of our opinions, consequently, does not arise from some being endowed with a larger share of reason than others, but solely from this, that we conduct our thoughts along different ways, and do not fix our attention on the same objects. 
 \end{quote}
 
-\begin{quote}
-For to be possessed of a vigorous mind is not enough; the prime requisite is rightly to apply it. The greatest minds, as they are capable of the highest excellences, are open likewise to the greatest aberrations; and those who travel very slowly may yet make far greater progress, provided they keep always to the straight road, than those who, while they run, forsake it. 
-\end{quote}
+
+
+\subsection{Induction and deduction}
+
+\subsection{Empiricism}
+
 
 
 \section{Popper and the scientific method}
@@ -120,10 +125,18 @@ For to be possessed of a vigorous mind is not enough; the prime requisite is rig
 
 
 
-\chapter{On top of the published literature, and finding a good scientific question}
+\chapter{The scientific literature}
 
 
-\section{Literature - standing on the shoulders of giants}
+\begin{quote}
+If I have seen further it is by standing on the shoulders of Giants.
+\end{quote}
+\footnote{Sounds very deep - but Brian Gottesman notes about this quote \href{http://mentalfloss.com/article/24520/6-things-you-should-know-about-isaac-newton}{here}:"Newton was a man of great ego and great temper, and had few close friends. [...] Sir Isaac's most famous quotation may well have been an exercise in sarcastic, spiteful anger. In February 1676 Newton wrote to Hooke "if I have seen further it is by standing on the shoulders of Giants." Often taken as a sign of Newton's great humility, this famed quote was almost certainly intended as an insult to Hooke, who was hunchbacked and may have suffered from a form of dwarfism."}
+
+
+
+
+\section{The scientific literature - standing on the shoulders of giants}
 
 
 \subsection{Citation rules}
@@ -133,11 +146,18 @@ http://www.nature.com/ng/journal/v47/n4/full/ng.3271.html
 Greenberg-Howcitationdistortions-2009
 
 
+
+
+
+
+\chapter{From a good questions, to data and valid conclusions}
+
+\begin{quote}
+For to be possessed of a vigorous mind is not enough; the prime requisite is rightly to apply it. The greatest minds, as they are capable of the highest excellences, are open likewise to the greatest aberrations; and those who travel very slowly may yet make far greater progress, provided they keep always to the straight road, than those who, while they run, forsake it. (Descartes, Le Discours de la MÃ©thode, 1637) 
+\end{quote}
+
+
 \section{What makes a good scientific questions?}
-
-
-
-\chapter{From empirical data to scientific conclusions - experimental design and validity}
 
 Assuming you have your question, how can we find an answer to this.
 
@@ -165,7 +185,7 @@ Are the things
 
 
 
-\chapter{Communication principles in science}
+\chapter{Principles and channels of communication}
 
 
 \section{Principles of communication}
@@ -184,37 +204,26 @@ Kelleher-Tenguidelineseffective-2011
 \chapter{Scientific writing}
 
 
-\section{The purpose and the art of writing}
+Writing is an essential skill for an academic, as for many other professions. \marginnote{The importance of the written word does not seem to change at all in the modern world. The art of writing, similar to public speaking, seems to be one of the stable skills that one can think of.} Despite its central role, however, few master it well. Writing is a subtle art. You can read some advice, but to become a skilled and effective writer requires a long process of observation, practice and reflection: read widely, and think about why some writers appeal to you more. Look critically over your own writing, and think about the things that you can improve. The rest of this section is intended to help you start this journey. 
 
-Writing is an essential skill for a professional academic. Scientific progress relies on the communication of (original) scientific results\citep{Tischler1978}. If you are not swayed by the greater good - also your personal recognition, your career, or simply the mark for a report or an essay relies on being able to communicate your work in writing. These things are unlikely to change soon - even in the world of technology, writing will likely remain the most important communication channel in science and many professions beyond. 
+\section{Some basic writing advice}
 
-Now that we established why scientific writing is important to us, we may be interested to know: What is good science writing and how can we improve our skills? 
+\paragraph{Start writing early}\marginnote{Please, follow this point in your thesis - if you don't it leads foreseeable into disaster!} Writing structures your thinking, and you will find flaws in your logic that you didn't see before. "The time to begin writing an article is when you have finished it to your satisfaction. By that time you begin to clearly and logically perceive what it is that you really want to say." (Mark Twain)
 
-Writing is a subtle art. As for any art or craft, you will not acquire it by learning the "laws of writing" by heart and following them to the word. To become a skilled writer, you need to understand the art of writing by observation, practice and reflection. Read widely, and think about why some writers appeal to you more. Look critically over your writing, and think about the things that you can improve. This is a process that takes time and requires experience.
-
-Nevertheless, there are some hints that can be given to be more effective in writing, in particular in academic writing. Here are the seven most important ones:
-
-\paragraph{Start writing early} Writing structures your thinking, and you will find flaws in your logic that you didn't see before. "The time to begin writing an article is when you have finished it to your satisfaction. By that time you begin to clearly and logically perceive what it is that you really want to say." (Mark Twain)
-
-\paragraph{Know your audience} Who is going to read what you write? This mostly depends on the journal you choose to publish your work. You need to adjust your text to the knowledge and background of your audience. As \citet{Gopen1990} state "it matters only whether a large majority of the reading audience accurately perceives what the author had in mind".
+\paragraph{Know your audience}\marginnote{\citet{Gopen1990} state "it matters only whether a large majority of the reading audience accurately perceives what the author had in mind".} Who is going to read what you write?  You need to adjust your text to the knowledge and background of your audience. 
 
 
-\paragraph{Know what you want to say}. What is the main message you want to tell people with your paper? Sounds trivial, but in my experience it isn't. Remember: Writing a good paper is not about telling everything you know or have done about a topic -- it is about telling a story and selecting the relevant details. Remember, "if you don't know where you are going,you'll end up someplace else" (Yogi Berra). Before spending hours on writing the wrong text, try to explain a friend in 5-10 min the essential points of piece, and note the structure. If you fail with this, think again about your story.
+\paragraph{Know what you want to say, and make a selection}\marginnote{"If you don't know where you are going,you'll end up someplace else" (Yogi Berra). } Sounds trivial, but in my experience it isn't. Before spending hours on writing the wrong text, try to explain a friend in 5-10 min the essential points of piece, and note the structure. If you fail with this, think again about your story. Also remember: Writing a good paper is not about telling everything you know or have done about a topic -- it is about telling a story and selecting the relevant details. 
 
 \paragraph{Mindset} Make your goal, above all, clarity of thought and expression, and impervious logic of your argument. Read \citet{Woodford1967}.
 
-\paragraph{Respect conventions} Most readers are familiar with the conventions of science writing and expect to find arguments, sections and statements in relatively fix positions. That is to say, if the writer respects these structural standards the readability is greatly improved. 
-You certainly know the general layout of a scientific article (at least in the (environmental) natural sciences). It is divided in a title, abstract, introduction, materials and methods, results and discussion. Within these structural elements there are further recognizable patterns, which lead to a better understanding of the article's messages \citep{Gopen1990,Tischler1978}.  
+\paragraph{Respect conventions}\marginnote{For example, the default scientific article is divided into a title, abstract, introduction, materials and methods, results and discussion. Within these structural elements there are further recognizable patterns. Maintaining this structure makes it easier to understanding of the article's messages \citep{Gopen1990,Tischler1978}} Readers, particularly experienced readers, are familiar with writing conventions expect to find arguments, sections and statements in particular positions and structures. If the writer respects these structural standards the readability is greatly improved. 
 
 
-\paragraph{Modesty} Think of your text or thesis as a piece of craftsmanship. You are an apprentice and you are asked to make a chair. What is expected of you is a simple piece of work that respects the rules you have been taught, and that is, above all, solid. You are not expected to add fancy ornamentation that might be used by an ingenious master craftsmen, and you are not asked to produce a entire set of furniture that would suffice to fit out a house. You would gain admiration and praise if you could manage to achieve one of the latter, but likely you will fail to even produce the very thing you were asked for while trying ? a simple, solid chair. Bottomline ? stay modest in what you want to achieve, but stay ambitions in how you achieve it!
+\paragraph{Modesty} Think of a scientific text as a piece of craftsmanship, like a chair. What is expected of you is to produce a simple chair that respects the usual standards (e.g. four legs), and that is, above all, solid. You are not expected to add fancy ornamentation that might be used by an ingenious master craftsmen, and produce a entire set of furniture that would suffice to fit out a house. If you could do the later, you would gain admiration and praise, but when trying, you will nearly certainly fail to even produce the very thing you were asked for - a simple, solid chair. Bottomline: stay modest in what you want to achieve, but stay ambitions in how you achieve it!
 
 
-\paragraph{Style} Writing is difficult. Good writing is incredibly hard. If you think writing is no problem for you, you probably haven't even realized the extent of your writing problems. Read
-
-
-In the rest of the chapter, we will look at two aspects of this hints in more detail: writing style (which covers style as well as clarity), and the structure of a scientific paper. 
-
+\paragraph{Style} Writing is difficult. Good writing is incredibly hard. If you think writing is no problem for you, you probably haven't even realized the extent of your writing problems. Read the following section twice!
 
 
 \section{Style}
@@ -307,8 +316,9 @@ The discussion/ conclusion section comes commonly at last but with extensive fun
 As was mentioned before, this section is the place where you may tell the reader about the limitations of your approach and possibly the reasons why the main findings are still credible. However, rather establish the domain under which your results are valid; do not question your approach in general. Finally, the reader expects you to provide conclusions, recommendations, applications and questions for further research.\\
 
 \section{Showcase: A commented paper}
+
 \begin{center}
-	\huge{Tropical forests: Finding the real reason for species richness} \\
+	\huge{Fancy analysis supports hypothesis\marginnote{Try to capture the questions, methods, and main results of your study in the title, if possible} X as the main cause high species diversity in tropical forests} \\ 
 	\vspace{0.3em}
 	\large{Florian Hartig and Severin Hauenstein}\\
 	\vspace{0.3em}
@@ -316,19 +326,21 @@ As was mentioned before, this section is the place where you may tell the reader
 	\vspace{1em}
 	\large{\today}\\
 	\vspace{2em}
-	\textbf{Abstract}\\
+	\textbf{Abstract}\\ \marginnote{Remember: the abstract is a mini-paper}
 \end{center}
-Tropical forests are some of the most species-rich ecosystems\marginnote{Set the scene} of the world.
-The reason for this, \textbf{however}, is still widely debated\marginnote{Raise the problem}. Hypotheses range from processes related to productivity over environmental stability to the historical changes in geography.
-\textbf{Here}\marginnote{Introduce your approach}, we contrasted these different hypotheses by using data from ... together with ... (fancy new method).
-\textbf{We find that}\marginnote{State your results} hypothesis X seems to be significantly better supported by our data
+\begin{quote}
+Tropical forests are some of the most species-rich ecosystems\marginnote{First words set the scene} of the world.
+The reason for this, \textbf{however}, is still widely debated\marginnote{Raise the problem. Indicator word: however}. Hypotheses range from processes related to productivity over environmental stability to the historical changes in geography.
+\textbf{Here}\marginnote{Introduce your approach. Indicator word: here}, we contrasted these different hypotheses by using data from ... together with ... (fancy new method).
+\textbf{We find that}\marginnote{State your results. Indicator word: We find, our results are ...} hypothesis X seems to be significantly better supported by our data
 than all alternatives we tested. Specifically ... 
-\textbf{In conclusion}\marginnote{Give your conclusions and discuss wider significance}, our study supports the hypothesis that species diversity in the
+\textbf{In conclusion}\marginnote{Give your conclusions and discuss wider significance. Indicator word: in conclusion, ...}, our study supports the hypothesis that species diversity in the
 tropics is mainly driven by higher productivity. These results challenge some long held
 ideas about geographical stability being the main reason for global diversity
 patterns. They also have important practical applications for mitigation of climate
-change, as ...\\
+change, as ...\\[0.3cm]
 \noindent\textbf{Keywords:} Biodiversity -- Primary production -- Floristic structure ...\\
+\end{quote}
 
 \noindent\textbf{Introduction}\\
 Tropical forests provide a suitable habitat to a vast variety of species. According to XY (19XX) tropical forests make up fo x \% of the planet's biodiversity.\\
@@ -432,7 +444,9 @@ In the following, I highlighted \uline{redundant words} and other problems
 
 \chapter{A working scientists}
 
-\section{Good scientific practice}
+Up to now, we have covered the primary scientific process from deciding on a scientific question, generating valid data and conclusions, and communicating those in writing or through other channels. However, as hinted to in the introduction, science is also a human endeavor, and as such, a professional scientist should also be aware of the norms and codes of the field, as well as the realities of a life in science. The purpose of this chapter is to give a very fast overview on this questions.
+
+\section{Professional ethics and good scientific practice}
 
 The term "good scientific practice"
 
@@ -447,10 +461,7 @@ The term "good scientific practice"
 
 \section{Science as a career}
 
-
 \bibliographystyle{/Users/Florian/Home/Bibliography/Databases/bibstyles/elsart-harv-hyperlinks}
 \bibliography{/Users/Florian/Home/Bibliography/Databases/flo}
-
-
 
 \end{document}
