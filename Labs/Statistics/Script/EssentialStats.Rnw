@@ -65,8 +65,6 @@ The purpose of this document is to give a short and concise introduction to the 
 * Predictive methods
 * Design of experiments
 
-In a 
-
 
 \section{The R environment for statistical computing}
 
@@ -488,15 +486,11 @@ This means that, unlike for the type I error which is fixed, calculation of powe
 }
 
 
-
 \chapter{Good to knows and further reading}
 
 \section{Reproducibility and good scientific practice}
 
 \section{How to learn more about statistics}
-
-
-
 
 
 
