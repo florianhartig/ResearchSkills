@@ -1,1 +1,1 @@
-For the lecture nots
+Lecture notes 
