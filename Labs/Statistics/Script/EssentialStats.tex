@@ -42,9 +42,10 @@ numbers=none
 \author{Florian Hartig}
 
 
+\usepackage{Sweave}
 \begin{document}
 
-\SweaveOpts{concordance=TRUE}
+\input{EssentialStats-concordance}
 
 \let\cleardoublepage\clearpage % No empty pages between chapters
 \maketitle
@@ -179,14 +180,30 @@ A t-test tests for differences between the means of two normally distributed sam
 \end{center}
 \end{figure}
 
-<<eval=FALSE>>=
-## Traditional interface
-with(sleep, t.test(sleep$extra[sleep$group == 1], extra[group == 2]))
-@
-<<>>=
-## Formula interface
-t.test(extra ~ group, data = sleep)
-@
+\begin{Schunk}
+\begin{Sinput}
+> ## Traditional interface
+> with(sleep, t.test(sleep$extra[sleep$group == 1], extra[group == 2]))
+\end{Sinput}
+\end{Schunk}
+\begin{Schunk}
+\begin{Sinput}
+> ## Formula interface
+> t.test(extra ~ group, data = sleep)
+\end{Sinput}
+\begin{Soutput}
+	Welch Two Sample t-test
+
+data:  extra by group
+t = -1.8608, df = 17.776, p-value = 0.07939
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -3.3654832  0.2054832
+sample estimates:
+mean in group 1 mean in group 2 
+           0.75            2.33 
+\end{Soutput}
+\end{Schunk}
 
 Note that the output give a p-value, but also contains the estimates of the means, together with the confidence intervals. 
 
@@ -200,16 +217,27 @@ While the word ANOVA is generally associated to the assumption of the standard A
 
 Here a simple example with a standard ANOVA (normal errors), testing whether weight (of chicken) depends on their diet, where diet is a factor variable with four levels:
 
-<<>>=
-aovresult <- aov(weight~Diet, ChickWeight)
-summary(aovresult)
-
-# Df Sum Sq Mean Sq F value Pr(>F)  
-# group        2  3.766  1.8832   4.846 0.0159 *
-#   Residuals   27 10.492  0.3886                 
-# ---
-#   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-@
+\begin{Schunk}
+\begin{Sinput}
+> aovresult <- aov(weight~Diet, ChickWeight)
+> summary(aovresult)
+\end{Sinput}
+\begin{Soutput}
+             Df  Sum Sq Mean Sq F value   Pr(>F)    
+Diet          3  155863   51954   10.81 6.43e-07 ***
+Residuals   574 2758693    4806                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{Soutput}
+\begin{Sinput}
+> 
+> # Df Sum Sq Mean Sq F value Pr(>F)  
+> # group        2  3.766  1.8832   4.846 0.0159 *
+> #   Residuals   27 10.492  0.3886                 
+> # ---
+> #   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{Sinput}
+\end{Schunk}
 
 We find a p-value of  6.43e-07, which is highly significant at an $\alpha$ level of 0.05. Hence, we can reject the null hypothesis that the diet has no influence on the response "weight". Note that in this case, we don't get any parameter estimates, and we can't say anything about which of the diets differs from which. If you want those, there are two options:
 \begin{itemize}
@@ -242,10 +270,32 @@ where y is the response, x is a predictor, a is the parameter that fits how stro
 
 In R, we can do such a regression by typing
 
-<<>>=
-fit = lm(airquality$Temp~airquality$Ozone)
-summary(fit)
-@
+\begin{Schunk}
+\begin{Sinput}
+> fit = lm(airquality$Temp~airquality$Ozone)
+> summary(fit)
+\end{Sinput}
+\begin{Soutput}
+Call:
+lm(formula = airquality$Temp ~ airquality$Ozone)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-22.147  -4.858   1.828   4.342  12.328 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      69.41072    1.02971   67.41   <2e-16 ***
+airquality$Ozone  0.20081    0.01928   10.42   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.819 on 114 degrees of freedom
+  (37 observations deleted due to missingness)
+Multiple R-squared:  0.4877,	Adjusted R-squared:  0.4832 
+F-statistic: 108.5 on 1 and 114 DF,  p-value: < 2.2e-16
+\end{Soutput}
+\end{Schunk}
 
 You can use the same code regardless of whether your predictor is continuous or categorical. In case of continuous variable, a line is fit to the data. In case of a categorical variable with n levels, the first level is set as the reference (intercept), and n-1 parameters are fitted for the following levels that describe the difference to the reference. 
 
@@ -257,31 +307,39 @@ The regression results gives us a lot of p-values as well. These are results of 
 
 Response y depends linearly on a variable a (continous or categorical)
 
-<<eval = FALSE>>=
-fit = lm(y~a)
-summary(fit)
-@
+\begin{Schunk}
+\begin{Sinput}
+> fit = lm(y~a)
+> summary(fit)
+\end{Sinput}
+\end{Schunk}
 
 Response y depends linearly on two variables a and b (continous or categorical), but the value of either variable doesn't influence the effect the other variable has on the response (no interaction)
 
-<<eval = FALSE>>=
-fit = lm(y~a+b)
-summary(fit)
-@
+\begin{Schunk}
+\begin{Sinput}
+> fit = lm(y~a+b)
+> summary(fit)
+\end{Sinput}
+\end{Schunk}
 
 Response y depends linearly on two variables a and b (continous or categorical), but the value of one variable does influence the effect the other variable on the response (interaction)
 
-<<eval = FALSE>>=
-fit = lm(y~a+b)
-summary(fit)
-@
+\begin{Schunk}
+\begin{Sinput}
+> fit = lm(y~a+b)
+> summary(fit)
+\end{Sinput}
+\end{Schunk}
 
 Response y depends as in $a + a^2$ on a variable a (continous or categorical)
 
-<<eval = FALSE>>=
-fit = lm(y~a + I(a^2))
-summary(fit)
-@
+\begin{Schunk}
+\begin{Sinput}
+> fit = lm(y~a + I(a^2))
+> summary(fit)
+\end{Sinput}
+\end{Schunk}
 
 the I() notation means that the following expression is interpreted as a mathematical formula. 
 
@@ -336,21 +394,75 @@ Logistic regression is the most common analysis for binary data (presence/absenc
 
 Here an example with the data of the Titanic survivors. Note that if you tell R to use the binomial distribution, the logit link is automatically selected. If you wanted, you could overrule this choice. 
 
-<<>>=
-library(effects)
-fmt <- glm(survived ~ age + I(age^2) + I(age^3), family=binomial, data = TitanicSurvival)
-summary(fmt)
-@
+\begin{Schunk}
+\begin{Sinput}
+> library(effects)
+> fmt <- glm(survived ~ age + I(age^2) + I(age^3), family=binomial, data = TitanicSurvival)
+> summary(fmt)
+\end{Sinput}
+\begin{Soutput}
+Call:
+glm(formula = survived ~ age + I(age^2) + I(age^3), family = binomial, 
+    data = TitanicSurvival)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.5062  -0.9978  -0.9695   1.3483   2.0135  
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  7.855e-01  3.031e-01   2.592 0.009549 ** 
+age         -1.189e-01  3.291e-02  -3.613 0.000303 ***
+I(age^2)     3.414e-03  1.113e-03   3.066 0.002171 ** 
+I(age^3)    -2.931e-05  1.107e-05  -2.648 0.008109 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1414.6  on 1045  degrees of freedom
+Residual deviance: 1398.5  on 1042  degrees of freedom
+  (263 observations deleted due to missingness)
+AIC: 1406.5
+
+Number of Fisher Scoring iterations: 4
+\end{Soutput}
+\end{Schunk}
 
 
 \subsection{count data - poisson regression}
 
 Poisson regression is the standard choice for working with count data, although there are a few other options available as well. In poisson regression, the standard choice is to use a exponential function to make all values positive. The inverse of the exponential is the log, so we call this the log link. As before, R is choosing this automatically if you specify the distribution to be poisson. An example, using some data on the feeding of bird nestlings, in relation to their attractiveness:
-<<>>=
-schnaepper <- read.csv("schnaepper.txt", sep="")
-fm <- glm(stuecke ~ attrakt, family=poisson, data = schnaepper)
-summary(fm)
-@
+\begin{Schunk}
+\begin{Sinput}
+> schnaepper <- read.csv("schnaepper.txt", sep="")
+> fm <- glm(stuecke ~ attrakt, family=poisson, data = schnaepper)
+> summary(fm)
+\end{Sinput}
+\begin{Soutput}
+Call:
+glm(formula = stuecke ~ attrakt, family = poisson, data = schnaepper)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-1.55377  -0.72834   0.03699   0.59093   1.54584  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  1.47459    0.19443   7.584 3.34e-14 ***
+attrakt      0.14794    0.05437   2.721  0.00651 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 25.829  on 24  degrees of freedom
+Residual deviance: 18.320  on 23  degrees of freedom
+AIC: 115.42
+
+Number of Fisher Scoring iterations: 4
+\end{Soutput}
+\end{Schunk}
 
 \subsection{Residuals in GLMs}
 
