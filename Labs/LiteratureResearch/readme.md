@@ -1,24 +1,29 @@
 
 
-# Overview
+# Literature research
+
+## Scientific literature databases
+
+The main databases are
+
+* Google scholar https://scholar.google.de/ (free, fast)
+* ISI web of knowledge http://webofknowledge.com/ (proprietory, slow, but most "official")
+* Scopus http://www.scopus.com/ (proprietory, competitor to ISI)
+
+see comments in the scripts about their use
+
+## Reference Managers
+
+There are lots of reference managers, see overview [here](https://en.wikipedia.org/wiki/Comparison_of_reference_management_software) 
+
+You should see what is best for you. I recommend to start with 
+
+* LaTeX - Jabref (bibtex-based)
+* Word - Endnote (costly), Zotero, Mendeley, Jabref (integreation in Word tricky, some comments below)
+* Open Office - Jabref, Zotero, Mendeley
 
 
-
-# Reference Managers
-
-
-https://en.wikipedia.org/wiki/Comparison_of_reference_management_software
-
-
-
-# BibTex / JabRef
-
-
-
-### bibtex with Libre Office
-
-
-### BibTex with Microsoft Word
+### Using BibTex with Microsoft Word
 
 From http://www.ademcan.net/?d=2012/01/30/15/23/05-using-jabref-references-in-word-documents
 
@@ -31,6 +36,7 @@ The following steps will help you to use your JabRef bibliography into Word docu
 5 - Move the Sources.xml file from JabRef to ~/Documents/Microsoft User Data
 6 - Enjoy your new bibliography in Word
 
-Alternative: use the Bibtex4Word plugin http://www.ee.ic.ac.uk/hp/staff/dmb/perl/
+Alternatives: 
 
-http://www.docear.org/software/add-ons/docear4word/download/
+* use the Bibtex4Word plugin http://www.ee.ic.ac.uk/hp/staff/dmb/perl/
+* use http://www.docear.org/software/add-ons/docear4word/download/
