@@ -1,21 +1,5 @@
 
 
-# Codes of professional ethics / conduct
-
-
-### German Science Foundation
-
-http://www.dfg.de/en/research_funding/principles_dfg_funding/good_scientific_practice/ 
-
-### Max Plack Society 
-
-https://www.mpg.de/197494/rulesScientificPractice.pdf
-
-### Deutscher Hochschulverband
-
-http://www.hochschulverband.de/cms1/fileadmin/redaktion/download/pdf/info_blaetter/Fehlverhalten.pdf 
-
-
 # Interesting Cases of (alledged) scientific misconduct
 
 http://universitypost.dk/article/timeline-bente-klarlund-pedersen-case
@@ -44,7 +28,7 @@ http://www.zeit.de/studium/2015-04/bologna-faz-professor-student-ruediger-bachma
 
 http://www.faz.net/aktuell/feuilleton/forschung-und-lehre/meinungsstreit-an-der-universitaet-konstanz-13557304.html
 
-## Jens Föster
+## Jens FÃ¶ster
 
 http://www.sciencemag.org/content/344/6184/566.summary
 
