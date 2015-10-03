@@ -1,15 +1,14 @@
 ---
-title: 'Research Skills Practical: Graphics with R'
-author: ""
+title: 'Research Skills Practical: Graphics with R (ca. 1h)'
+author: "Florian Hartig"
 date: "3 October 2015"
 output: html_document
 ---
-**Important** if you had problems to follow the practical:
 
-- This series of video lectures on youtube basically goes through the same steps http://www.youtube.com/playlist?list=UUAeWj0GhZ94wuvOIYu1XVrg
-- This website, which I also recommended in the stats lecture notes, has a list of written tutorials http://biometry.github.io/APES/R/R10-gettingStarted.html
+**Important** if you had problems to follow the practical, see links to websites with further explanations at the end of this document!
 
-#Practical: Graphics in R (ca. 1h)
+## The R gui
+
 We will work in RStudio, but as a demonstration, let's have a look at the RGui first. Start up the program R from your programs in Windows. Hava a look at the window popping up, and type 2+2 in the main window. After hitting enter you will end up with this:
 
 ![](rgui1.png)
@@ -25,6 +24,8 @@ The result should look like this:
 ![](rgui2.png)
 
 So, as you see, this apparently plots airmiles against time. We'll discuss why and how this works, but let's first move to RStudio, an alternative program to interact with R.
+
+## The Rstudio editor
  
 RStudio basically offers the same functions as the RGui, but a few things can be done easier or are handled more comfortable for you. This is how it looks like:
 
@@ -241,6 +242,10 @@ check out ?formula to understand how to put in formulas.
 
 
 ## Websites with examples / tutorials
+
+
+- This series of video lectures on youtube basically goes through the same steps http://www.youtube.com/playlist?list=UUAeWj0GhZ94wuvOIYu1XVrg
+- This website, which I also recommended in the stats lecture notes, has a list of written tutorials http://biometry.github.io/APES/R/R10-gettingStarted.html
 
 - Start with http://www.statmethods.net/index.html 
 
