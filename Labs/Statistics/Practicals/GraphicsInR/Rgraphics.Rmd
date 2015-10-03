@@ -5,6 +5,11 @@ date: "3 October 2015"
 output: html_document
 ---
 
+```{r, echo = F}
+set.seed(123)
+knitr::opts_chunk$set(fig.width=6, fig.height=6)
+```
+
 **Important** if you had problems to follow the practical, see links to websites with further explanations at the end of this document!
 
 ## The R gui

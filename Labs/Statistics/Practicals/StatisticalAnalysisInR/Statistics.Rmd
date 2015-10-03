@@ -6,6 +6,13 @@ output:
 Statistics crash course
 ===
 
+```{r, echo = F}
+set.seed(123)
+knitr::opts_chunk$set(fig.width=6, fig.height=6)
+```
+
+
+
 *These scripts are intended to be read together with the more detailed explanation [here](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/R/Script/Crashcourse-StatisticsWithR.pdf)*
 
 
