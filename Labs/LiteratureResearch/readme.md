@@ -2,6 +2,10 @@
 
 # Literature research
 
+The information below provides an overview of how to search for and organize relevant literature.
+
+An exercise demonstrating this workflow is provided in the [practical](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/LiteratureResearch/Practical/Practical_LiteratureResearch.pdf).
+
 ## Scientific literature databases
 
 The main databases are
@@ -10,7 +14,7 @@ The main databases are
 * ISI web of knowledge http://webofknowledge.com/ (proprietory, slow, but most "official")
 * Scopus http://www.scopus.com/ (proprietory, competitor to ISI)
 
-see comments in the scripts about their use
+see comments in the lecture notes / scripts about their use, in particular about how to use advanced search patterns and how they index the papers.
 
 ## Reference Managers
 
