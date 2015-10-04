@@ -12,7 +12,7 @@
 \usepackage{booktabs}
 %\usepackage{natbib} 
 
-\usepackage{mdframed}
+\usepackage[innerrightmargin = 0.7cm, innerleftmargin = 0.3cm]{mdframed}
 \usepackage{mdwlist}
 
 \usepackage[]{hyperref}
@@ -59,34 +59,40 @@ This document provides a short introduction to the field of statistics, as well 
 
 \section{Topics of statistics and data science}
 
-Statistics, or more broadly data science, deals with the visualization, summary and interpretation of data. I will provide here an introduction to what I think are the four pillars of statistical methods for a quantitative researcher:
+Statistics, or more broadly data science, deals with the visualization, summary and interpretation of data. This primer provides an introduction the four most important pillars of statistical methods for a quantitative researcher:
 
-\paragraph{Descriptive statistics} include summary statistics such as mean and median as well as the various options to visualize data.
+\paragraph{Descriptive statistics}include summary statistics such as mean and median as well as the various options to visualize data.
 
-\paragraph{Inferential statistics} deals with testing hypothesis and fitting models, typically based on a statistical model (the data-generating process).
+\marginnote{The difference between inferential and predictive statistics is that inferential statistics is typically concerned with a decision about a model or assumption (is the hypothesis true ...), while predictive methods deal with making predictions from data, often without the intermediate step of modelling a "data-generating process".}
 
-\marginnote{The difference to inferential statistics is not always entirely clear cut, but the general idea is that the focus of inferential statistics is to find out something about a model or assumption (is the hypothesis true ...). Predictive methods often don't even make such assumptions. Their focus is on finding ways to transform data into predictions, without the intermediate step of finding out the "data-generating process".}
+\paragraph{Inferential statistics}deals with testing hypothesis and fitting models, typically based on a statistical model (the data-generating process).
 
-\paragraph{Predictive statistics and machine learning} deals with deriving predictions from data, in particular from "big data". 
+\paragraph{Predictive statistics and machine learning}deals with deriving predictions from data, in particular from "big data". 
 
-\paragraph{Experimental design} covers all aspects of generating data, but in particular questions such as "which variables need to be measured?", "how many data do we need?", "how should we optimally vary the variables of interest in an experiment"?
+\paragraph{Experimental design}covers all aspects of generating data, in particular questions such as "which variables need to be measured?", "how many data do we need?", "how should we optimally vary the variables of interest in an experiment"?
 
 
 \section{The R environment for statistical computing}
 
 For the better or worse, the times when statistics was done with pen, paper and a calculator are over. Statistical analysis nowadays happens on the computer, and a number of software environments exist to do so. In the ecological sciences, R is the de-facto standard for statistical analysis. R is open-source, free, and has a very larger user base, specially in the environmental sciences, that contribute packages for specialised ecological and environmental analysis. \marginnote{R is a script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment.}
 
-In this primer, all examples will be calculated with R; however, I will give no further introduction to R. If you need one, follow  \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{this link} for an introduction, in including help on how to install the software.
+In this primer, all examples will be calculated with R; however, I will give no further introduction to R. If you need one, follow  \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{this link} for an introduction, including help on how to install the software. If you start using R for the first time, I highly recommend to using R together with RStudio. Follow the link above to get further information
 
 \chapter{Data, descriptive statstics and visualization}
 
-Descriptive statistics deals with the summary and visualization of data. Before we speak about those methods, it will be useful to shortly discuss what data is and what properties it may have.\footnote{For the moment, assume that we have some data. We will speak about how to create data in the later chapter~\ref{cha: design of experiments} on experimental design.} 
+\marginnote{We will speak about how to create data in the later chapter~\ref{cha: design of experiments} on experimental design.} 
+
+Descriptive statistics deals with the summary and visualization of data. Before we speak about those methods, it will be useful to shortly discuss what data is and what properties it may have.
 
 \section{Data}
 
-A typical dataset consists of multiple observations of number of variables (e.g. temperature, precipitation, growth).\footnote{Of course, there are other data structures, but this is the most common one.} You can think of this situation as a spreadsheet where the columns are the variables and the rows are the observations.
+\marginnote{Of course, there are other data structures, but this is the most common one.} You can think of this situation as a spreadsheet where the columns are the variables and the rows are the observations.
 
-Usually, this data will contain one variable on which we want to focus. \marginnote{The response variable is the variable for which we try to understand how it responds to other factors.} We call this variable the response variable (sometimes also the dependent variable or outcome variable), because we are interested if and how this variable of interest varies (responds, depends) when something else changes. The variables that affect the response could be an environmental factor (e.g. temperature), it could be an experimental treatment (fertilized vs. non fertilized), or anything else. \marginnote{The predictor variables are those that affect the response.} Those other variables that affect our response are called predictor variables (synonymous terms are explanatory variables, covariates or independent variables). 
+A typical dataset consists of multiple observations of number of variables (e.g. temperature, precipitation, growth).
+
+\marginnote{The response variable is the variable for which we try to understand how it responds to other factors.} 
+
+Usually, this data will contain one variable on which we want to focus. We call this variable the response variable (sometimes also the dependent variable or outcome variable), because we are interested if and how this variable of interest varies (responds, depends) when something else changes. The variables that affect the response could be an environmental factor (e.g. temperature), it could be an experimental treatment (fertilized vs. non fertilized), or anything else. \marginnote{The predictor variables are those that affect the response.} Those other variables that affect our response are called predictor variables (synonymous terms are explanatory variables, covariates or independent variables). 
 
 The most common case is that the response variable is a single value (e.g. a number or a categorical outcome), and we will concentrate on this case. However, there are cases when the response has more than one dimension, or when we are interested in the change of several response variables at a time. {If the response has several dimensions, we have to use multivariate analysis methods, which are not explained here.} The analysis of such data is known as multivariate statistics. We will not cover this here, but if you need it some further links are \href{http://biometry.github.io/APES/Stats/stats50-MultivariateStatistics.html}{here}.
 
@@ -106,7 +112,7 @@ Another important distinction is the type of variables. Independent of whether w
 Experience shows that there is certain tendency of beginners to use categorical variables for things that are actually continuous, e.g. by coding body weight of animals into light, medium, heavy. \marginnote{Don't use categorical variables for things that can also be recorded numerically! } The justification stated is often that this avoids the measurement uncertainty. In short: it doesn't, it just creates more problems. Don't use categorical variables for things that can also be recorded numerically! 
 
 
-\vspace{2em}
+\vspace{1cm}
 \begin{fullwidth}
 \begin{mdframed}
     
@@ -133,10 +139,11 @@ It is very important that you check that your columns have the right type after 
 
 \section{Summary statistics}
 
+\marginnote{A simple summary statistics you should be familiar with is the mean}
 
-Summary statistics are numerical calculations that summarize a dataset. \marginnote{A simple summary statistics you should be familiar with is the mean}.
+Summary statistics are numerical calculations that summarize a dataset. They are used to display the properties of a dataset in a more compact way. 
 
-\subsection{Summarizing distributions - moments and quantiles}
+\subsection{Summarizing a single continous variable}
 
 Imagine we have a single, continous variable with a large number of observations - hence, we have a distribution of values (see below).
 
@@ -171,7 +178,24 @@ where $<>$ denotes the average, and $d$ the distribution. The first four moments
 The second central quantity for describing distributions are the quanties. If we have a distribution such as the figure above, we can ask ourself: which is the value of the variable that divides the data in half, so that half of the observed data are lower, and half are higher than this value? \marginnote{Half of the data are lower, and half of the data are higher than the median, the 0.5 quantile} This point is called the median, and also the 0.5 quantile. More general, the 0.x quantile is the value at which a fraction of 0.x of the data is smaller. 
 
 
-\vspace{2em}
+\subsection{Correlatins - summarizing the dependence between continous variables}
+
+
+Correlation measures the dependence between continous variables. 
+
+Add some example of pearson correlation here
+
+Mention that there are other correlations, i.e. rank correlation
+
+
+\subsection{Contingency tables - summarizing disrecte outcomes of several varialbles}
+
+Contingency tables measure 
+
+add an example of contingency tables here 
+
+
+\vspace{1cm}
 \begin{fullwidth}
 \begin{mdframed}
     
@@ -184,9 +208,20 @@ For calculating descriptive statistics in R, see \href{http://www.uni-kiel.de/ps
 \end{fullwidth} 
 
 
+
+
+
 \section{Visualization}
 
 
+\subsection{Principles of visualization}
+
+
+Clean graphs 
+
+Truthfull 
+
+Not more than neccessary 
 
 
 \subsection{Basic graphts}
@@ -204,8 +239,6 @@ For calculating descriptive statistics in R, see \href{http://www.uni-kiel.de/ps
 \paragraph{Box plots}
 
 
-
-
 <<fig=TRUE, echo = FALSE>>=
 par(mfrow = c(2,2))
 
@@ -218,21 +251,13 @@ boxplot(weight ~ group, data = PlantGrowth, main = "Plant Growth",
 @
 
 
-
-
-
-
-
-
-
-
-\vspace{2em}
+\vspace{1cm}
 \begin{fullwidth}
 \begin{mdframed}
     
 \textbf{In R:} 
 
-There are number of excellent introductions to graphics with R, so that I won't bother to provide details here. I recommend to look at
+There are number of excellent introductions to graphics with R, so that I won't bother to provide details here. I recommend to look at \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/Statistics/Practicals/GraphicsInR}{exercise on graphics with R} that accompanies this primer, as well as at 
 
 \begin{itemize*}
   \item \href{http://www.statmethods.net/graphs/index.html}{QuickR}
@@ -242,10 +267,6 @@ There are number of excellent introductions to graphics with R, so that I won't 
 
 \end{mdframed}
 \end{fullwidth} 
-
-
-
-
 
 
 \chapter{Inferential statistics}
@@ -309,12 +330,14 @@ After having discussed the concept of hypothesis tests (which produce p-values a
 
 \subsection{t-test}
 
-A t-test tests for differences between the means of two normally distributed samples; or if there is only one sample, between 0 and the mean of the sample. Classifying our variables, we would say the response variable in continuous, and the predictor is categorical (group 1 or group 2), or, if there is only one group, there is no predictor. Again, the statistical model underlying is that of a normally distributed response, and the null hypothesis is that that there is no difference in the mean of the this normal distribution for the two groups, respectively that the sample mean is 0 if we have one group. Depending on the software used, there are usually a number of adjustments possible, e.g. relaxing the assumption that the two groups have the same variance. An example in R, using the classical data from Student (1908) The probable error of the mean. Biometrika, 6, 20. The data which show the effect of two soporific drugs (increase in hours of sleep compared to control) on 10 patients. 
+A t-test tests for differences between the means of two normally distributed samples; or if there is only one sample, between 0 and the mean of the sample. Classifying our variables, we would say the response variable in continuous, and the predictor is categorical (group 1 or group 2), or, if there is only one group, there is no predictor. Again, the statistical model underlying is that of a normally distributed response, and the null hypothesis is that that there is no difference in the mean of the this normal distribution for the two groups, respectively that the sample mean is 0 if we have one group. Depending on the software used, there are usually a number of adjustments possible, e.g. relaxing the assumption that the two groups have the same variance. An example in R, using the classical data from \citet{Student-probableerrormean-1908}. The data which show the effect of two soporific drugs (increase in hours of sleep compared to control) on 10 patients. 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=5cm]{ttest}
-\caption{Data from Student (1908) The probable error of the mean. Biometrika, 6, 20}
+<<fig=T, echo = F>>=
+boxplot(extra ~ group, data = sleep, col = "lightgrey", xlab = "treatment", ylab = "Extra hours sleep")
+@
+\caption{Data from \citet{Student-probableerrormean-1908}}
 \label{fig: Student Sleep Data}
 \end{center}
 \end{figure}
@@ -323,6 +346,7 @@ A t-test tests for differences between the means of two normally distributed sam
 ## Traditional interface
 with(sleep, t.test(sleep$extra[sleep$group == 1], extra[group == 2]))
 @
+
 <<>>=
 ## Formula interface
 t.test(extra ~ group, data = sleep)
@@ -388,7 +412,12 @@ The fitted parameters appear in the column "Estimate". This tells us how much th
 
 The regression results gives us a lot of p-values as well. These are results of various hypothesis tests that are performed automatically for you after the regression is done. For example, we get a p-value for each parameter. This p-value is based on a particular type of t-tests where the full model is tested against the model with the parameter set to 0. There is also other p-value, based on a different test statistics at the end of the regression output. This tests the null hypothesis that all parameters are zero.  
 
-\subsection{Specifying different model assumptions}
+
+\vspace{1cm}
+\begin{fullwidth}
+\begin{mdframed}
+    
+\textbf{Specifying different model assumptions in R:} 
 
 Response y depends linearly on a variable a (continous or categorical)
 
@@ -420,6 +449,8 @@ summary(fit)
 
 the I() notation means that the following expression is interpreted as a mathematical formula. 
 
+\end{mdframed}
+\end{fullwidth}
 
 
 \subsection{Checking the assumptions}
@@ -432,7 +463,7 @@ So, what were the assumptions of a linear regression? One problem I often encoun
 y - (a \cdot x + b ) \sim \epsilon 
 \end{equation}
 
-i.e. the difference between the observed value and the model predictions. These differences are called the residuals, and, according to the assumptions of our model, they should be normally distributed. How to check this is described \href{http://www.statmethods.net/stats/rdiagnostics.html}{here}.
+i.e. the difference between the observed value and the model predictions. These differences are called the residuals, and, according to the assumptions of our model, they should be normally distributed. You get basic residual diagnostics by typing plot(fit), where fit is your fitted model object. For further details on residual diagnostics, see \href{http://www.statmethods.net/stats/rdiagnostics.html}{here}.
 
 \section{Generalized linear regression models}
 
@@ -469,6 +500,12 @@ Well, this is conceptually the easy part, but maybe you are not yet aware what k
 
 Logistic regression is the most common analysis for binary data (presence/absence; survived/dead; infected/not infected). Logistic regression assumes that the distribution is binomial (coin flip model). To get the linear predictor on a scale between 0 and 1 that is necessary for the binomial distribution, we use the logistic link function (or inverse logit). 
 
+\vspace{1cm}
+\begin{fullwidth}
+\begin{mdframed}
+    
+\textbf{In R:} 
+
 Here an example with the data of the Titanic survivors. Note that if you tell R to use the binomial distribution, the logit link is automatically selected. If you wanted, you could overrule this choice. 
 
 <<>>=
@@ -477,15 +514,32 @@ fmt <- glm(survived ~ age + I(age^2) + I(age^3), family=binomial, data = Titanic
 summary(fmt)
 @
 
+\end{mdframed}
+\end{fullwidth} 
+
+
+
 
 \subsection{count data - poisson regression}
 
-Poisson regression is the standard choice for working with count data, although there are a few other options available as well. In poisson regression, the standard choice is to use a exponential function to make all values positive. The inverse of the exponential is the log, so we call this the log link. As before, R is choosing this automatically if you specify the distribution to be poisson. An example, using some data on the feeding of bird nestlings, in relation to their attractiveness:
+Poisson regression is the standard choice for working with count data, although there are a few other options available as well. In poisson regression, the standard choice is to use a exponential function to make all values positive. The inverse of the exponential is the log, so we call this the log link. As before, R is choosing this automatically if you specify the distribution to be poisson. 
+
+\vspace{1cm}
+\begin{fullwidth}
+\begin{mdframed}
+    
+\textbf{In R:} 
+
+An example, using some data on the feeding of bird nestlings, in relation to their attractiveness:
 <<>>=
 schnaepper <- read.csv("schnaepper.txt", sep="")
 fm <- glm(stuecke ~ attrakt, family=poisson, data = schnaepper)
 summary(fm)
 @
+
+\end{mdframed}
+\end{fullwidth} 
+
 
 \subsection{Residual checks in GLMs}
 
