@@ -23,11 +23,11 @@ structure for your article, to easily include your citations and how to link ref
 
 ## Practical
 
-Sufficient examplary material to setting up a first LaTeX document yourself can be downloaded from [here](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/LaTeX/Prcatical).
+Sufficient examplary material to setting up a first LaTeX document yourself can be downloaded from [here](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/LaTeX/Prcatical.zip).
   
 ## Additional help
 
-If you find yourself on to higher goals and get stuck at some point (which you inevitably will) seek online help here:
+If you find yourself on to higher goals and get stuck at some point (which you inevitably will), seek online help here:
 
 * for a list of helpful websites
   * https://latex-project.org/guides/
