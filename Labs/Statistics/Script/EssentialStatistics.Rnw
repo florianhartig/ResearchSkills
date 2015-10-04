@@ -55,34 +55,42 @@ numbers=none
 
 \section{Purpose and intended audience}
 
-The purpose of this document is to give a short and concise introduction to the type of statistical analysis most likely to be encountered in elementary experimental and observation setups. It is a crash-course and not meant to replace an proper introductory textbook. For beginners, I recommend \citep{Dormann-ParametrischeStatistik-2013} for German speakers (ebook free of charge for students from Freiburg, contact me) and \citep{Gotelli-PrimerEcologicalStatistics-2004} for English speakers. Also, see the stats help website of our department \href{http://biometry.github.io/APES/}{here}.
-
+This document provides a short introduction to the field of statistics, as well as to statistical analyses most likely to be encountered in elementary experimental and observational situations. It is intended as a primer and will not replace a more thorough lecture or textbook. Regarding the latter, I provide recommendations in the final section~\ref{sec: further readings}.
 
 \section{Topics of statistics and data science}
 
-* Descriptive methods
-* Inference
-* Predictive methods
-* Design of experiments
+Statistics, or more broadly data science, deals with the visualization, summary and interpretation of data. I will provide here an introduction to what I think are the four pillars of statistical methods for a quantitative researcher:
+
+\paragraph{Descriptive statistics} include summary statistics such as mean and median as well as the various options to visualize data.
+
+\paragraph{Inferential statistics} deals with testing hypothesis and fitting models, typically based on a statistical model (the data-generating process).
+
+\marginnote{The difference to inferential statistics is not always entirely clear cut, but the general idea is that the focus of inferential statistics is to find out something about a model or assumption (is the hypothesis true ...). Predictive methods often don't even make such assumptions. Their focus is on finding ways to transform data into predictions, without the intermediate step of finding out the "data-generating process".}
+
+\paragraph{Predictive statistics and machine learning} deals with deriving predictions from data, in particular from "big data". 
+
+\paragraph{Experimental design} covers all aspects of generating data, but in particular questions such as "which variables need to be measured?", "how many data do we need?", "how should we optimally vary the variables of interest in an experiment"?
 
 
 \section{The R environment for statistical computing}
 
- 
-The time when people did statistics with pen, paper and a calculator are over. Statistical analysis nowadays happens on the computer, and a number of software environments exist to do so. In the ecological sciences, R is the de-facto standard for statistical analysis. R is open-source, free, and has a very larger user base, specially in the environmental sciences, that contribute packages for specialized ecological and environmental analysis. Therefore, while maybe not as user-friendly as other software options in every respect, there is practically no way around R.
+For the better or worse, the times when statistics was done with pen, paper and a calculator are over. Statistical analysis nowadays happens on the computer, and a number of software environments exist to do so. In the ecological sciences, R is the de-facto standard for statistical analysis. R is open-source, free, and has a very larger user base, specially in the environmental sciences, that contribute packages for specialised ecological and environmental analysis. \marginnote{R is a script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment.}
 
-R is a script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment. In the rest of this course, we will use R whenever we need a computer, but I will give no further introduction to R. If you need one, follow  \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{this link} for an introduction, in including help on how to install the software.
+In this primer, all examples will be calculated with R; however, I will give no further introduction to R. If you need one, follow  \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{this link} for an introduction, in including help on how to install the software.
 
 \chapter{Data, descriptive statstics and visualization}
 
+Descriptive statistics deals with the summary and visualization of data. Before we speak about those methods, it will be useful to shortly discuss what data is and what properties it may have.\footnote{For the moment, assume that we have some data. We will speak about how to create data in the later chapter~\ref{cha: design of experiments} on experimental design.} 
 
 \section{Data}
 
-We will speak about how to create data (design of experiments) in a later chapter. For the moment, however, let us assume that we have some data. Usually, this data will contain one variable on which we want to focus. \marginnote{The response variable is the variable for which we try to understand how it responds to other factors.} We call this variable the response variable (sometimes also the dependent variable or outcome variable), because we are interested if and how this variable of interest varies (responds, depends) when something else changes. Something else could be an environmental factor (e.g. temperature), it could be an experimental treatment (fertilized vs. non fertilized), or anything else. \marginnote{The predictor variables are those that affect the response.} Those other variables that affect our response are called predictor variables (and also explanatory variables, covariates or independent variables). 
+A typical dataset consists of multiple observations of number of variables (e.g. temperature, precipitation, growth).\footnote{Of course, there are other data structures, but this is the most common one.} You can think of this situation as a spreadsheet where the columns are the variables and the rows are the observations.
 
-The most common case is that the response variable is a single value, and we will concentrate on this case here. However, there are cases when the response has more than one dimension, or when we are interested in the change of several response variables at a time. {If the response has several dimensions, we have to use multivariate analysis methods, which are not explained here.} The analysis of such data is known as multivariate statistics. We will not cover this here, but if you need it some further links are \href{http://biometry.github.io/APES/Stats/stats50-MultivariateStatistics.html}{here}.
+Usually, this data will contain one variable on which we want to focus. \marginnote{The response variable is the variable for which we try to understand how it responds to other factors.} We call this variable the response variable (sometimes also the dependent variable or outcome variable), because we are interested if and how this variable of interest varies (responds, depends) when something else changes. The variables that affect the response could be an environmental factor (e.g. temperature), it could be an experimental treatment (fertilized vs. non fertilized), or anything else. \marginnote{The predictor variables are those that affect the response.} Those other variables that affect our response are called predictor variables (synonymous terms are explanatory variables, covariates or independent variables). 
 
-Another important distinction is the type of variables that. Independent of whether we are speaking about the response or the predictor, we distinguish: \marginnote{Variables can be continous, discrete or categorical. Categorical variables can be ordered, unordered, or binary.}
+The most common case is that the response variable is a single value (e.g. a number or a categorical outcome), and we will concentrate on this case. However, there are cases when the response has more than one dimension, or when we are interested in the change of several response variables at a time. {If the response has several dimensions, we have to use multivariate analysis methods, which are not explained here.} The analysis of such data is known as multivariate statistics. We will not cover this here, but if you need it some further links are \href{http://biometry.github.io/APES/Stats/stats50-MultivariateStatistics.html}{here}.
+
+Another important distinction is the type of variables. Independent of whether we are speaking about the response or the predictor, we distinguish: \marginnote{Variables can be continous, discrete or categorical. Categorical variables can be ordered, unordered, or binary.}
 
 \begin{itemize}
 \item Continuous numeric variables (ordered and dense), e.g. temperature
@@ -96,13 +104,15 @@ Another important distinction is the type of variables that. Independent of whet
 \end{itemize}
 
 Experience shows that there is certain tendency of beginners to use categorical variables for things that are actually continuous, e.g. by coding body weight of animals into light, medium, heavy. \marginnote{Don't use categorical variables for things that can also be recorded numerically! } The justification stated is often that this avoids the measurement uncertainty. In short: it doesn't, it just creates more problems. Don't use categorical variables for things that can also be recorded numerically! 
-\vspace{0.5em}
+
+
+\vspace{2em}
 \begin{fullwidth}
 \begin{mdframed}
     
 \textbf{In R:} 
 
-R has a basic data structure, the data.frame. A data frame is like a spread sheet, with columns, and each column has can have a different type. Possibilities are
+To represent data, R has a basic data structure, the data.frame. A data frame is like a spread sheet, with columns, and each column has can have a different type. Possibilities are
 
 \begin{itemize*}
   \item interger - what it says
@@ -111,10 +121,124 @@ R has a basic data structure, the data.frame. A data frame is like a spread shee
   \item factor - normally unordered, i.e. red, green, blue. Can also be made ordered (small, medium, large), although it is then often better to code this as an integer
 \end{itemize*}
 
+Also, although not really a data type, a common case is the absence of an observation for a particular variable. This is typicall code by "NA". Similar, but not the same is "NaN" (not a number), which occurs as the result of a calculation that cannot be performed. 
+
 To read in data as a data.frame in R-studio, go to the upper right part, "Import Dataset". For more explanation, see \href{http://biometry.github.io/APES/R/R20-DataStructures.html}{http://biometry.github.io/APES/R/R20-DataStructures.html}
 
-It is very important that you check that your collumns have the right type after reading in the data. To do so, type in str(TheNameOfMyData), and check the type of the columns
+It is very important that you check that your columns have the right type after reading in the data. To do so, type in str(TheNameOfMyData), and check the type of the columns
 
+\end{mdframed}
+\end{fullwidth} 
+
+
+\section{Summary statistics}
+
+
+Summary statistics are numerical calculations that summarize a dataset. \marginnote{A simple summary statistics you should be familiar with is the mean}.
+
+\subsection{Summarizing distributions - moments and quantiles}
+
+Imagine we have a single, continous variable with a large number of observations - hence, we have a distribution of values (see below).
+
+
+<<fig=TRUE, echo=FALSE>>=
+parameter = seq(-5,5,len=500)
+
+mix <- rbinom(2000,1,0.5)
+samples = mix * rnorm(2000) + (1-mix)*rnorm(2000, mean = 2.5, sd=0.5)
+
+distr = (dnorm(parameter) + dnorm(parameter, mean = 2.5, sd=0.5)) /2
+
+plot(parameter,distr, type = "l", ylab = "Density", xlab = "Observed value", col = "red", lwd = 2, ylim = c(0,0.5))
+hist(samples, breaks = 100, add = T,freq = F, col = "#99999930")
+# polygon(parameter, distr, border=NA, col="darksalmon")
+
+MLEEstimate <- parameter[which.max(distr)]
+# abline(v=MLEEstimate, col = "red")
+text(3.1,0.4, "Mode", col = "red", cex = 1.5)
+@
+
+How can we summarize the properties of this distribution. Some basic properties would be the minimum and the maximum, as well as the model (the maximum of the distribution, i.e. value with the highest density of observations). There are two further central summaries that are always calculated - moments and quantiles.
+
+The n-th moment is defined as the average across the distribution, taking each observed value to the poewr of n. 
+
+\begin{equation}
+<x^2>_{d}
+\end{equation}
+
+where $<>$ denotes the average, and $d$ the distribution. The first four moments are called the mean (average value), the standard deviation (measure of spread), the skewness (measure of assymetry in the distribution) and the kurtosis. 
+
+The second central quantity for describing distributions are the quanties. If we have a distribution such as the figure above, we can ask ourself: which is the value of the variable that divides the data in half, so that half of the observed data are lower, and half are higher than this value? \marginnote{Half of the data are lower, and half of the data are higher than the median, the 0.5 quantile} This point is called the median, and also the 0.5 quantile. More general, the 0.x quantile is the value at which a fraction of 0.x of the data is smaller. 
+
+
+\vspace{2em}
+\begin{fullwidth}
+\begin{mdframed}
+    
+\textbf{In R:} 
+
+For calculating descriptive statistics in R, see \href{http://www.uni-kiel.de/psychologie/rexrepos/rerDescriptive.html}{here}
+
+
+\end{mdframed}
+\end{fullwidth} 
+
+
+\section{Visualization}
+
+
+
+
+\subsection{Basic graphts}
+
+
+\paragraph{Line plots} continous continous, ordered
+
+
+\paragraph{Scatter plots} continous continous, ordered
+
+
+\paragraph{Bar plots}
+
+
+\paragraph{Box plots}
+
+
+
+
+<<fig=TRUE, echo = FALSE>>=
+par(mfrow = c(2,2))
+
+boxplot(weight ~ group, data = PlantGrowth, main = "Plant Growth",
+        ylab = "Dried weight of plants", col = "lightgray",
+        notch = F, names = c("control", "classical music", "heavy metal"))
+
+
+
+@
+
+
+
+
+
+
+
+
+
+
+\vspace{2em}
+\begin{fullwidth}
+\begin{mdframed}
+    
+\textbf{In R:} 
+
+There are number of excellent introductions to graphics with R, so that I won't bother to provide details here. I recommend to look at
+
+\begin{itemize*}
+  \item \href{http://www.statmethods.net/graphs/index.html}{QuickR}
+  \item \href{http://shinyapps.org/apps/RGraphCompendium/index.php}{RGraphCompendium}
+  \item \href{http://www.uni-kiel.de/psychologie/rexrepos/rerDiagrams.html}{rexrepos}
+\end{itemize*}
 
 \end{mdframed}
 \end{fullwidth} 
@@ -123,24 +247,40 @@ It is very important that you check that your collumns have the right type after
 
 
 
+
 \chapter{Inferential statistics}
 
-When we start discussing statistics, it's tempting to jump right into distributions, models and how to put them in the computer. We'll get to this, but I want to take on step back and discuss the aims of why we want to do statistics, and what we want to get out of it. 
+Inferential statistics is concerned with inference, i.e. drawing conclusions from observations \marginnote{Statistical inference is drawing conclusions from observations using statistical methods}. Inference is not always, but in most cases connected to the idea with a data-generating model. 
 
-In a nutshell, a statistical analysis consists of 3 parts: the data, a statistical model, and an inferential method. 
+\section{Obtaining a data-generating model}
+
+Why do we need the idea of a data-generating model to draw conclusions from data? Imagine we want to know whether plant growth can be affected by music. We might take two pots, each with a plant, and expose one to classical music and the other to heavy metal. Inevitably, one of them will grow taller, but this could be by chance, as there is always some variation in the growth rates. 
+
+Hence, we need more repetitions. Let's say we take a few more pots, 30 in the hypothetical case I show below
+
+<<fig=TRUE, echo = FALSE>>=
+
+boxplot(weight ~ group, data = PlantGrowth, main = "Plant Growth",
+        ylab = "Dried weight of plants", col = "lightgray",
+        notch = F, names = c("control", "classical music", "heavy metal"))
+
+@
+
+\marginnote{Remember the interpretation of the boxplots - the strong line in the middle is the median. The box covers the central 0.5 quantile of the distribution.}
+There seem to be some differences between the three cases, but there is also quite a bit of variation in plant growth within each treatment (we have on average seven observations per treatment here). Hence, it is still possilbe that the differences that we observe have arisen by chance. 
+
+If want to say something definite about the probability that there is a difference between those three cases, we need to make a model that describes the stochastic variation in the data, which then allows us to calculate things such as the probability of the observed data arising by chance. These assumptions are what we call a statistical model (eqivalent: stochastic process, data-generating model). \marginnote{A statistical model describes how the response variable arise as a functiono of the predictors as well as some random (stochastic) processes}. 
+
+The more common class of models used for this purpose are parametric statistical models. \marginnote{Parametric statistics uses statistical models that describe the data-generating process in terms of functions and distributions that have parameters that then need to be fit} For the data that we have here, a parametric statistical model might, for example, make the assumptions that there is a mean growth rate for each treatment (control, classical and heavy metal), but that the growth of each individual plant varies with a normal distribution around the mean growth of its respective group. The parameters of this model are the unknwon mean growth rates and the variance of the normal distribution. Those parameters are then fit to the data with methods explained below, and based on the fit one can calculate, for example, the probability that the data would arise if there was no difference between the groups.
+
+The other option to obtain a data-generating model are non-parametric methods. \marginnote{non-parametric statistics tries to avoid making assumptions about the data-generating process. Typically, the data-generating process is emulated by using the data itself, e.g. by resampling methods.} Non-parametric methods bypass the neccessity of making assumptions, e.g. about the distribution of the data, typically by randomizing or resampling the data itself. How does this work? For the plant, growth, for example, we could answer the question of how likely it is to see the observed data if there is no difference between groups also without making an assumption about the distribution - we simply throw all observations in one pot, irrespectively of their treatment, and then re-distribute them randomly on the three treatments. If we do this many times (e.g. 1000 times), we can get a good idea how likely it would be to obtain the observed differences if treatment has no effect. 
+
+Non-parametric methods are an important branch of modern statistics. Their advantage is obviously that they don't make assumptions. \marginnote{The higher sensitivity of parametric methods relies on the fact that they make assumptions, which, in a sense, are like additional data. Of course, all results then rely on those assumptions being correct. We will talk about how to check parametric assumptions later in the chapter.} On the other hand, parametric methods are typically much faster, and if their assumptions are correct, they are more sensitive and powerfull, meaning that, with the same amount of data, they are more likely to detect an effect if it is there. For the latter two reasons, parametric methods are currently the basis of most statistical analysis.
 
 
+\section{Inferential products}
 
-\section{Statistical models}
-
-The problem with giving a straight answer to the question of whether the response variable is affected by the predictors is that all our ecological data contains random variability. If we take two pots and plant a plant in each one of them, and we expose one plant to classical music and the other to heavy metal, probably one of them will grow taller. But are we sure that this is an effect of the music, or could it just be due to the fact that no plant is exactly the same, and therefore one of the two must grow taller just by chance?
-
-Thus, to arrive at robust conclusions, we have to make some assumptions about how the growth of plants varies, so that we can see if some differences that we are seeing could be the result of random variation only. These assumptions are what we call a statistical model. \marginnote{A statistical model describes the potential dependence of response on the predictors, as well as random variance in the variables} A statistical model could, for example, make the assumptions that there is a mean growth rate for each classical and heavy metal music, but that the growth of each individual plant varies with a certain distribution around the mean growth of its respective group. Based on this model, we can now ask ourselves (or the computer) certain questions, e.g. for our example whether the data is consistent with the hypothesis that there is no difference between the growth of plants that differ only in the music that they are exposed to.
-
-
-\section{Inferential methods and their outputs}
-
-The process of and the methods for asking this question, i.e. for using a statistical model and data to draw certain conclusions is called statistical inference. \marginnote{Statistical inference is drawing conclusions from observations using statistical methods}. There are two main inferential procedures. In standard statistics, there are two main inferential procedures that are applied in all kind of settings and models, and the outputs of these two procedures are: p-values and parameter estimates. There is a third option which I will mention very shortly at the end.  
+Based on the data-generating model (parametric or non-parametric), we can now apply different inferential procedures to draw conclusion about our data (in our case: to decide of music makes a difference or not). In standard statistics, there are two main inferential procedures that are applied in all kind of settings and models, and the outputs of these two procedures are: p-values and maximum likelihood estimates. A third procedure, Bayesian inference, has become more fashionable lately. I will mention it shortly in at the end of this section 
 
 \subsection{p-values}
 
@@ -160,7 +300,7 @@ Parameter estimates are typically accompanies by confidence intervals. Sloppily 
 
 \subsection{Bayesian estimates}
 
-Just for completeness - there are some advanced methods that report a different thing than p-values and the parameter estimates discussed before. Bayesian methods calculate a quantity that is called the posterior parameter estimate. It is similar, but not identical to the parameter estimates discussed previously. You won't need this here, but if you want to know more about those, have a look at \citep{Gelman-BayesianDataAnalysis-2003}.
+Finally, Bayesian methods calculate a quantity that is called the posterior parameter estimate. It is similar, but not identical to the parameter estimates discussed previously. You won't need this here, but if you want to know more about those, have a look at \citep{Gelman-BayesianDataAnalysis-2003} and at my website \href{http://florianhartig.github.io/LearningBayes/}{Learning Bayes}.
 
 
 \section{Important hypothesis tests}
@@ -204,11 +344,6 @@ Here a simple example with a standard ANOVA (normal errors), testing whether wei
 aovresult <- aov(weight~Diet, ChickWeight)
 summary(aovresult)
 
-# Df Sum Sq Mean Sq F value Pr(>F)  
-# group        2  3.766  1.8832   4.846 0.0159 *
-#   Residuals   27 10.492  0.3886                 
-# ---
-#   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 @
 
 We find a p-value of  6.43e-07, which is highly significant at an $\alpha$ level of 0.05. Hence, we can reject the null hypothesis that the diet has no influence on the response "weight". Note that in this case, we don't get any parameter estimates, and we can't say anything about which of the diets differs from which. If you want those, there are two options:
@@ -352,15 +487,27 @@ fm <- glm(stuecke ~ attrakt, family=poisson, data = schnaepper)
 summary(fm)
 @
 
-\subsection{Residuals in GLMs}
+\subsection{Residual checks in GLMs}
 
-Residuals in glms are not supposed to be normally distributed, so don't use standard checks for normality to check for the appropriateness of the residuals. One standard concern in poisson or binomial glms is that the variance of the poisson and binomial distribution is fixed by the mean. This is not so for the normal distribution. A problem appears when the data is more variable than expected. This is called overdispersion. How to deal with this is beyond this introduction. 
+Residuals in glms are not supposed to be normally distributed, so don't use standard checks for normality such as normal qq plots to check for the appropriateness of the residuals. For not too complicate models, a good way to deal with this problem is to use the so-called pearsons residuals, which scale the observed differences between model and data by the expected variance of the model \footnote{in R, you can specify the option pearson in many fuctions, including the residual() function that you can apply to a fitted object}
+
+One standard concern in poisson or binomial glms is that the variance of the poisson and binomial distribution cannot be adjusted, but is fixed by the mean. This is a problem you don't encounter in the normal linear model, because here the random part is modelled by a normal distribution, which has a parameter for the variance. A problem that appears very frequently in Poisson or binomial glms is overdispersion, i.e. that the residuals show more variance than expected under the fitted model. \marginnote{You can check for overdispersion by looking at the fitted deviance, or apply an overdispersion test} The easiest way to correct for this is to use the quasi-Poisson and quasi-binomial models available in the glm function. These models fit an additional parameter that modifies the variance of the Poisson and binomial glm. 
+
 
 \chapter{Predictive statistics - machine learning}
 
+A third class of statistical procedures that have become very important in recent years are predictive methods, often called machine-learning algorithms. The basic goal of this methods is to to be able to make predictions from a given dataset with the lowest possible error. In doing so, they typically use relatively complicated, often non-parametric methods that typically don't allow to calculate inferential products such as the MLE or p-values.
+
+There is considerable tension between the more classical field of inferntial statistics and the more modern field of machine-leraning. For classical, inferential statisticians, machine learning methods have abandoned the idea of "learning from data", in the sense of comparing hypotheses to data, in favor of simply making predictions. A statistician concentrating on machine-learning would reply that in many applied problems, there is nothing to learn \footnote{Typical machine learning applications include predicting the interests of customers in web shops, the association of feature-rich satelite data with ground signals, or speech / face recognition. Machine-learning experts are currently sought-after by technology companies such as google, facebook and so on.}. The goal is to build an algorithm that is able to correctly predict given a complex dataset. The distinction between the goals of inferential statistics and predictive statistics, as well as the tension between these fields, are nicely summarized in the abstract of the extrememly recommendable article "Statistical Modeling: The Two Cultures" by \citet{Breiman-StatisticalModelingTwo-2001}:
+
+\begin{quote}
+There are two cultures in the use of statistical modeling to reach conclusions from data. One assumes that the data are generated bya given stochastic data model. The other uses algorithmic models and treats the data mechanism as unknown. The statistical community has been committed to the almost exclusive use of data models. This commitment has led to irrelevant theory, questionable conclusions, and has kept statisticians from working on a large range of interesting current problems. Algorithmic modeling, both in theory and practice, has developed rapidlyin fields outside statistics. It can be used both on large complex data sets and as a more accurate and informative alternative to data modeling on smaller data sets. If our goal as a field is to use data to solve problems, then we need to move awayfrom exclusive dependence on data models and adopt a more diverse set of tools.
+\end{quote}
 
 
-\chapter{Design of experiments}
+I have included this short chapter because of the importance of predictive methods in modern statistics. A detailed explanation of the methods of machine-learning, however, is beyond this introduction. If you are interested in starting to learn more about predictive methods, I would recommend to start with the textbook by  \citet{James-IntroductiontoStatistical-2013} that I also recommend at the end of this primer for further reading. 
+
+\chapter{Design of experiments}\label{cha: design of experiments}
 
 Let's come back to one of the first point in this script: the data. If we have to collect data ourselves, we have to answer a number of questions. Which variables should we collect? At which values of those variables should we collect data? And how many replicates do we need?
 
@@ -433,12 +580,45 @@ This means that, unlike for the type I error which is fixed, calculation of powe
 \end{minipage}
 }
 
-
 \chapter{Good to knows and further reading}
 
 \section{Reproducibility and good scientific practice}
 
-\section{How to learn more about statistics}
+Reproducibility means that each step of your analysis is repeatable. Experience shows that it is not as trivial as it sounds to ensure reproducibility. Here some hints for making your data analysis reproducible
+
+\begin{itemize}
+
+\item{Once you have your raw data produced, NEVER change it. Store it in a save location, make a backup, and never touch it again}
+
+\item{Typically you will have to do some cleaning, renaming etc. before the data analysis. If possible at all, make this through a script (e.g. R, python, perl). Store the script with the analysis.}
+
+\item{Use a version control system for your code, and note for each output the revision number that the output was produced with.}
+
+\item{When running the analysis, store the random seed and the settings of your computer to ensure reproducibility. In R, the easiest way to do this is to set the random seed by random.seed(123), and store the results of sessionInfo() which provides you with the version numbers of all the packages that you use}
+
+\item{Think about running your code within an reporting environment such as Rmd or sweave}
+
+
+%\footnote{See also the R task view on \href{https://cran.r-project.org/web/views/ReproducibleResearch.html}{reproducible research}
+
+\end{itemize}
+
+\section{How to learn more about statistics}\label{sec: further readings}
+
+
+\begin{itemize}
+
+\item To complete this primer, I would recommend that you go through the \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/Statistics}{practicals for this script}.
+
+\item If you want one further practical textbook for beginners, I recommend \citet{Dormann-ParametrischeStatistik-2013} for German speakers (ebook free of charge for students from Freiburg, contact me) and \citet{Gotelli-PrimerEcologicalStatistics-2004} for English speakers. 
+
+\item For the technically slightly more ambitious (it's still very elementary), I recommend \citet{James-IntroductiontoStatistical-2013}. You can download the pdf for free, and there is a MOOC available for the book with lectures and exercises. 
+
+\item For more help and references, see the stats help website of our department  \href{http://biometry.github.io/APES/}{here}, in particular the recommendations regarding R scripts and statistics textbooks. 
+
+\end{itemize}
+
+
 
 
 
