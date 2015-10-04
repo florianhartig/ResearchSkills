@@ -147,7 +147,8 @@ Summary statistics are numerical calculations that summarize a dataset. They are
 
 Imagine we have a single, continous variable with a large number of observations - hence, we have a distribution of values (see below).
 
-
+\begin{figure}[htbp]
+\begin{center}
 <<fig=TRUE, echo=FALSE>>=
 parameter = seq(-5,5,len=500)
 
@@ -164,6 +165,10 @@ MLEEstimate <- parameter[which.max(distr)]
 # abline(v=MLEEstimate, col = "red")
 text(3.1,0.4, "Mode", col = "red", cex = 1.5)
 @
+\caption{bla}
+\label{fig: }
+\end{center}
+\end{figure}
 
 How can we summarize the properties of this distribution. Some basic properties would be the minimum and the maximum, as well as the model (the maximum of the distribution, i.e. value with the highest density of observations). There are two further central summaries that are always calculated - moments and quantiles.
 
@@ -187,6 +192,8 @@ Add some example of pearson correlation here
 
 Mention that there are other correlations, i.e. rank correlation
 
+\begin{figure}[htbp]
+\begin{center}
 <<fig = T, echo = F>>=
 # From https://en.wikipedia.org/wiki/File:Correlation_examples2.svg
 
@@ -262,7 +269,10 @@ Others <- function(n = 1000) {
  Others(800)
 
 @
-
+\caption{bla}
+\label{fig: }
+\end{center}
+\end{figure}
 
 \subsection{Contingency tables - summarizing disrecte outcomes of several varialbles}
 
@@ -293,7 +303,8 @@ For calculating descriptive statistics in R, see \href{http://www.uni-kiel.de/ps
 
 Summary statistics are useful, but also dangerous. A fabous example is Anscombe's Quartet, a hypothetical dataset of four observations that are identical in classical summary statistics such as mean, variance, correlation, regression line, etc. \citep{Anscombe-Graphsinstatistical-1973}. 
 
-
+\begin{figure}[htbp]
+\begin{center}
 <<fig = T, echo = F, results=hide>>=
 
 require(stats); require(graphics)
@@ -324,7 +335,10 @@ mtext("Anscombe's 4 Regression data sets", outer = TRUE, cex = 1.5)
 par(op)
 
 @
-
+\caption{bla}
+\label{fig: }
+\end{center}
+\end{figure}
 
 
 \subsection{Principles of visualization}
@@ -351,7 +365,8 @@ Not more than neccessary
 
 \paragraph{Box plots}
 
-
+\begin{figure}[htbp]
+\begin{center}
 <<fig=TRUE, echo = FALSE>>=
 par(mfrow = c(2,2))
 
@@ -362,7 +377,10 @@ boxplot(weight ~ group, data = PlantGrowth, main = "Plant Growth",
 
 
 @
-
+\caption{bla}
+\label{fig: }
+\end{center}
+\end{figure}
 
 \vspace{1cm}
 \begin{fullwidth}
@@ -392,6 +410,8 @@ Why do we need the idea of a data-generating model to draw conclusions from data
 
 Hence, we need more repetitions. Let's say we take a few more pots, 30 in the hypothetical case I show below
 
+\begin{figure}[htbp]
+\begin{center}
 <<fig=TRUE, echo = FALSE>>=
 
 boxplot(weight ~ group, data = PlantGrowth, main = "Plant Growth",
@@ -399,6 +419,10 @@ boxplot(weight ~ group, data = PlantGrowth, main = "Plant Growth",
         notch = F, names = c("control", "classical music", "heavy metal"))
 
 @
+\caption{bla}
+\label{fig: }
+\end{center}
+\end{figure}
 
 \marginnote{Remember the interpretation of the boxplots - the strong line in the middle is the median. The box covers the central 0.5 quantile of the distribution.}
 There seem to be some differences between the three cases, but there is also quite a bit of variation in plant growth within each treatment (we have on average seven observations per treatment here). Hence, it is still possilbe that the differences that we observe have arisen by chance. 
@@ -519,6 +543,17 @@ fit = lm(airquality$Temp~airquality$Ozone)
 summary(fit)
 @
 
+\begin{figure}[htbp]
+\begin{center}
+<<fig=T, echo = F>>=
+plot(airquality$Temp ~ airquality$Ozone, ylab = "Temperature", xlab = "Ozone")
+abline(fit)
+@
+\caption{Airquality data: Temperature plotted against Ozone. Relationship indicated by the regression line.}
+\label{fig: LR}
+\end{center}
+\end{figure}
+
 You can use the same code regardless of whether your predictor is continuous or categorical. In case of continuous variable, a line is fit to the data. In case of a categorical variable with n levels, the first level is set as the reference (intercept), and n-1 parameters are fitted for the following levels that describe the difference to the reference. 
 
 The fitted parameters appear in the column "Estimate". This tells us how much the predictor, in this case Ozone, affects the response, in this case the Temperature: for each unit of Ozone more, temperature increases by a 0.208 units, with a standard error (confidence interval) of 0.019. Apart from seeing how a regression output looks like, this teaches us another valuable lesson: the fact that we have used temperature as a response here and ozone as a predictor doesn't mean that ozone causally affects temperature. \marginnote{Correlation is not causality.} In fact, it is likely the other way around: if we have more sun, it's hotter, and we tend to have more ozone as well. Regression, as most other statistical analysis, doesn't establish causality, it establishes correlation. What we are saying is that if our ozone measurements go up, we can be pretty sure that it is hotter as well. Doesn't mean that ozone creates heat. Correlation is not causality. 
@@ -613,7 +648,7 @@ Well, this is conceptually the easy part, but maybe you are not yet aware what k
 
 Logistic regression is the most common analysis for binary data (presence/absence; survived/dead; infected/not infected). Logistic regression assumes that the distribution is binomial (coin flip model). To get the linear predictor on a scale between 0 and 1 that is necessary for the binomial distribution, we use the logistic link function (or inverse logit). 
 
-\vspace{1cm}
+evspace{1cm}
 \begin{fullwidth}
 \begin{mdframed}
     
