@@ -17,13 +17,13 @@ The information below provides some help to get started with LaTeX in a fairly b
 
 ## Skript
 
-This[script](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/LaTeX/Script/how_to_latex.pdf) is rather a tutorial and will help you start your first document in LaTeX. You will learn how to set up your document
+This [script](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/LaTeX/Script/how_to_latex.pdf) is rather a tutorial and will help you start your first document in LaTeX. You will learn how to set up your document
 as a scientific article, how to include graphics and tables as well as formulae. You will learn to set up a decent
 structure for your article, to easily include your citations and how to link references within your article.
 
 ## Practical
 
-Sufficient examplary material to setting up a first LaTeX document yourself can be downloaded from [here](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/LaTeX/Practical.zip).
+Sufficient exemplary material to setting up a first LaTeX document yourself can be downloaded from [here](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/LaTeX/Practical.zip).
   
 ## Additional help
 
