@@ -15,7 +15,7 @@ and a graphics with R practical to show you basic plotting commands.
 * [R Studio](https://www.rstudio.com/products/rstudio/download/)
 
 
-## Skript 
+## Script 
 
 This [script](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/Statistics/Script/EssentialStatistics.pdf) provides a statistics crash course with links to the implementation in R.
 It is not meant to replace a proper introductory text-book. For beginners, we recommend Dormann (2013) for German
