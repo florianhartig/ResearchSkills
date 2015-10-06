@@ -3,7 +3,14 @@
 LaTeX is a script based typesetting program that allows you to set the design of your report, article, book
 or whatever written statement via written commands. The information below provides some help to get started with LaTeX in a fairly basic way. 
 
-#### Install LaTeX on your computer
+## Practical
+
+* Download the [example material](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/LaTeX/Practical.zip)
+* Follow the [script](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/LaTeX/Script/how_to_latex.pdf) to work with this material, and your tutors of course.
+
+## Additional information
+
+#### To Install LaTeX on your computer
 
 * A latex distribution
   * Windows: MikTex
@@ -14,12 +21,6 @@ or whatever written statement via written commands. The information below provid
   * TexMaker
   * ...
 
-#### Practical
-
-* Download the [example material](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/LaTeX/Practical.zip)
-* Follow the [script](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/LaTeX/Script/how_to_latex.pdf) to work with this material, and your tutors of course.
-
-## Additional information
 
 #### BSc / MSc Template 
 
