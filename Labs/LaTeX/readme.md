@@ -24,6 +24,10 @@ structure for your article, to easily include your citations and how to link ref
 ## Practical
 
 Sufficient exemplary material to setting up a first LaTeX document yourself can be downloaded from [here](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/LaTeX/Practical.zip).
+
+## BSc / MSc Template 
+
+* Template from Prof. Dormann [here](https://github.com/florianhartig/ResearchSkills/tree/master/Labs/LaTeX/LaTeX_Templates/Template-BScMSc-Freiburg)
   
 ## Additional help
 
