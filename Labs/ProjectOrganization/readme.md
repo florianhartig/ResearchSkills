@@ -11,6 +11,6 @@ There are just a few helpful things to keep in mind:
 
 ## Example
 [Here](https://github.com/florianhartig/ResearchSkills/tree/master/Labs/ProjectOrganization/ExampleProject) we provide an exemplary folder structure with some simulated data, basic analysis and plotting, and the implementation of these results in a LaTeX document.
-You may download our example from [here](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/ProjectOrganization/ExampleProject.rar) and use it as a template for your own little research project.
+You may download our example from [here](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/ProjectOrganization/ExampleProject.zip) and use it as a template for your own little research project.
 
  
