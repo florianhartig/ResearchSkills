@@ -59,40 +59,63 @@ morekeywords = {maketitle, tableofcontents, subsection,
 \begin{document}
 \let\cleardoublepage\clearpage
 \maketitle
+
 \thispagestyle{empty}
 \null
-\vfill
-\begin{fullwidth}
-\LARGE{This Tutorial was created by Paul Bauche for the Module "Research Skills" in the M.Sc. program "Environmental Sciences" at the Faculty of Environment and Natural Resources, Albert-Ludwigs-Universit\"at Freiburg. Its creation was supported by the Faculty of Environment and Natural Resources through QSM Lehre funds.}
 
-\tableofcontents
+
+\begin{fullwidth}
+Course material for the MSc model Research Skills, University of Freiburg (website \href{http://florianhartig.github.io/ResearchSkills/}{here})\\[0.5cm]
+Comments / questions to:\\[0.5cm]
+\href{https://florianhartig.wordpress.com/}{Florian Hartig}\\
+University of Freiburg\\
+Germany
+
+
 \end{fullwidth}
 
-\chapter{Introduction}
+
+\vfill
 \begin{fullwidth}
-This short script will help you start your first document in \LaTeX. You will learn how to set up your document as a scientific article, how to include graphics and tables as well as formulae. You will learn to set up a decent structure for your article, to easily include your citations and how to link references within your article.
+Created 2014 by Paul Bauche based on the existing RS LaTeX exercise. Updates 2015 by Severin Hauenstein and Florian Hartig.
+\end{fullwidth}
+
+\tableofcontents
+
+\chapter{Introduction}
+
+This tutorial will help you start working with \LaTeX. You will learn how to set up a basic  \LaTeX document that contains all the elements typically used in a scientific article, for example references, graphics, tables or formulae. 
 
  \LaTeX\ is a script based typesetting program that allows you to set the design of your report, article, book or whatever written statement via written commands. This may appear a bit cryptic in the beginning but after a short time of getting used to this way of working you will realize how much time this can save you and how much nicer and more professional your documents look. Basically when it comes to typesetting software there are two distinguishable types.
  
-The first and most common is called \emph{"What You See Is What You Get"} (WYSIWYG). this describes software such as Open Office, Microsoft Word etc. where you can see how your document is going to look in the end while you are working on it but it might be difficult to create a document exactly the way you wanted it to be. The second type is called \emph{"What You Get Is What You Want"}(WYGIWYW). This is the category \LaTeX\ belongs to. It means that while you are working on your  document you do not get a visual representation of the final result but your final result will be the way you imagined it when you started.  	
-\end{fullwidth}
-\chapter{Before you start}
+The first and most common is called \emph{"What You See Is What You Get"} (WYSIWYG). This describes software such as Open Office, Microsoft Word etc. where you can see how your document is going to look in the end while you are working on it but it might be difficult to create a document exactly the way you wanted it to be. The second type is called \emph{"What You Get Is What You Want"}(WYGIWYW). This is the category \LaTeX\ belongs to. It means that while you are working on your  document you do not get a visual representation of the final result but your final result will be the way you imagined it when you started.  	
+
+\chapter{Setting up \LaTeX\ on your computer}
 
 First you need to set up \LaTeX\ on your computer. Basically, a \LaTeX\ system consists of two component: a latex distribution, and an editor.
 
-There are different distributions, also depending on your operating system. For Windows, the clear choice is MikTex. For Mac, MacTeX is probably the best choice but there are other options as well. Linux distributions usually already include a \LaTeX\ distribution, otherwise it should be easy to install one. 
+\paragraph{Distribution -}There are different distributions, also depending on your operating system. For Windows, the clear choice is MikTex. For Mac, MacTeX is probably the best choice but there are other options as well. Linux distributions usually already include a \LaTeX\ distribution, otherwise it should be easy to install one. 
 
-The second thing you need is an editor. In principle you can use any editor (latex documents are just text files), but it is more convenient to use a specialised \LaTeX\  editor that is already set up to work together wit your \LaTeX\ distribution. We recommend using the free \LaTeX\ editor TexMaker, and some of the comments later in this document will assume that you will be working with a MikTex / TexMaker combination (Most of the advice, however, as well as any proper \LaTeX\ document, can be used on any system)
+\paragraph{Editor -}The second thing you need is an editor. In principle you can use any editor (latex documents are just text files), but it is more convenient to use a specialised \LaTeX\  editor that is already set up to work together wit your \LaTeX\ distribution. \marginnote{Texmaker and TeXstudio are very simular (they originate from the same software). TeXstudio is a bit more automatized and offers more buttons} We recommend using the free \LaTeX\ editor TexMaker or TexStudio, and some of the comments later in this document will assume that you will be working with a MikTex / TexMaker or TeXstudio combination (Most of the advice, however, as well as any proper \LaTeX\ document, can be used on any system).
 
-To get MikTex and TexMaker, search for it on the web then download and install it on your computer. Make sure you install from the project website and not from third-party sites that often offer pretty old versions. 
+To get MikTex and TexMaker or TeXstudio, search for it on the web then download and install it on your computer. Make sure you install from the project website and not from third-party sites that often offer pretty old versions. 
   
 Before you start your project you have to keep a couple of things in mind that will later on help you to keep track of what you are doing and to avoid unnecessary errors.
  
-If you use MikTex, It is helpful to be connected to the internet in some way to enable \LaTeX\ to download packages on the fly. For other distributions, you will have to install missing packages by hand.
+If you use MikTex, it is helpful to be connected to the internet in some way to enable \LaTeX\ to download packages on the fly.\marginnote{If you install MacTex, choose the full installation because missing packages are not installed automatically} For other distributions, you will have to install missing packages by hand. 
+
+
+\chapter{Starting a new \LaTeX\ project}
+
+
+\section{Creating a new directory for the project}
 
 First of create a folder on your computer and make sure that you have the necessary\marginnote{Always create a new project folder with a distinct name when starting a \LaTeX\ document!} rights to read and write in that location. Do not simply start your project on the desktop since \LaTeX\ creates additional files as you compile your project and you will make a mess of things.
  
 When creating the folder and all following files make sure you do not use spaces or\marginnote{No spaces or special symbols in file- or folder-names anywhere in your file path!} special symbols. Nowhere in the path to your files should be any of those symbols. Stick to letters, numbers and underscores or scores. 
+
+
+\section{Preparing your editor}
 
 In TexMaker you have several options to configure the user interface. The most important ones shall be explained briefly. 
 
@@ -103,9 +126,9 @@ Here you can also choose the text format of your editor. It is recommended to us
 Under "Options -> Interface Language" you can choose the language for TexMaker. This does not affect the spell check but is solely for your convenience.  
 
 
-\chapter{First steps}
+\section{Creating a \LaTeX\ document}
 
-Now that you have created your project folder you can create your first \LaTeX\ document. Navigate to your project folder and create a new text file. Open this file and type the following line:\\[5pt]
+Now that you have created your project folder you can create your first \LaTeX document. Navigate to your project folder and create a new text file. Open this file and type the following line:\\[5pt]
 
 \emph{\% This is my first Latex document. There are many documents like this but this one is mine.}\\[5pt]
 
@@ -118,7 +141,7 @@ Now open \verb!my_first_article.tex! with your \LaTeX\ editor (e.g. Texmaker). Y
 
 The gray color symbolizes a \emph{comment} the comment is declared by using the \% symbol at the start of the line. Everything written after the \% is not interpreted by \LaTeX\ and does not appear in your document. Comments can be used to structure your document for yourself and others using it. You can explain functions and why you include packages. This is especially useful if you want to reuse the structure of our document again for other papers.    
 
-\chapter{Beginning your document}
+\chapter{Start editing your document}
 
 To start of your actual document you first need to declare the type of document you want to create. This is done in the so called "Header" of the file. There you can also declare additional options and include packages to increase the functionality of \LaTeX.
 
@@ -826,6 +849,7 @@ While expanding your document or when creating a new one you will probably get t
 \makeatletter\@openrightfalse
 
 \begin{appendices}
+
 \label{appendix}
 \noindent \textbf{This is a selection of packages, which may help you with everyday \LaTeX\ problems:}
 
