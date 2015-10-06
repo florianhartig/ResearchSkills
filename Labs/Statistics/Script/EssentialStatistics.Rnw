@@ -48,6 +48,27 @@ numbers=none
 
 \let\cleardoublepage\clearpage % No empty pages between chapters
 \maketitle
+
+\thispagestyle{empty}
+\null
+
+\begin{fullwidth}
+Course material for the MSc model Research Skills, University of Freiburg (website \href{http://florianhartig.github.io/ResearchSkills/}{here})\\[0.5cm]
+Comments / questions to:\\[0.5cm]
+\href{https://florianhartig.wordpress.com/}{Florian Hartig}\\
+University of Freiburg\\
+Germany
+
+
+\end{fullwidth}
+
+
+\vfill
+\begin{fullwidth}
+Created 2014. Updated 2015. 
+\end{fullwidth}
+
+
 \newpage
 \tableofcontents
 
@@ -78,21 +99,28 @@ For the better or worse, the times when statistics was done with pen, paper and 
 
 In this primer, all examples will be calculated with R; however, I will give no further introduction to R. If you need one, follow  \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{this link} for an introduction, including help on how to install the software. If you start using R for the first time, I highly recommend to using R together with RStudio. Follow the link above to get further information
 
-\chapter{Data, descriptive statstics and visualization}
+\chapter{Data, sample and population}
 
-\marginnote{We will speak about how to create data in the later chapter~\ref{cha: design of experiments} on experimental design.} 
+Before we speak about statistical methods, however, a few short comments on how data arises, and how we represent it. 
 
-Descriptive statistics deals with the summary and visualization of data. Before we speak about those methods, it will be useful to shortly discuss what data is and what properties it may have.
+\section{Sample, population, and the data-generating process}
 
-\section{Data}
+The very reason for doing statistics is that the data that we observe is somehow random. But how does this randomness arise?
 
-\marginnote{Of course, there are other data structures, but this is the most common one.} You can think of this situation as a spreadsheet where the columns are the variables and the rows are the observations.
+Imagine \marginnote{The population is the set of all observations that you could have mode, the sample is the observations that you have actually made} that we we are interested in the average growth rate of trees in Germany during two consecutive years. Ideally, we would simplye measure them all and be done without having to do statistics. In practice, however, we hardly ever have the resources to do so. We therefore have to make a selection of trees. The statistical term for all the trees is the "population", and the term fro the trees that you have observed is the "sample".
 
-A typical dataset consists of multiple observations of number of variables (e.g. temperature, precipitation, growth).
+The population as such is fixed and does not change, but the observable elements within the populations can vary. Hence, every time we observe a random selection (sample) of the population, we may get elements with slightly different properties. As a concrete example: imagine we have the resources to sample 1000 trees across Germamy. Therefore, every time we take a random selection of 1000 trees out of the population, we will get a slightly different average growth rate.
 
-\marginnote{The response variable is the variable for which we try to understand how it responds to other factors.} 
+A\marginnote{A more modern concept that replaces the "population" is the "data-generating process"} slight problem with the concept of sample and population is that the picture of sampling from a population does not match very well with more complex processes where randomness arise. Imagine, for example, that data arises from a person going to random plots to measure radition (which varies within minutes due to cloud cover), using a measurement instrument that measures with some random error. Does it really make sense to think of the data arising from sampling from a "population" of possible observations? A related concept that I would prefer in this case is the the concept of the "data-generating process", which is pretty self-explenatory: the data-generating process describes how the sample is created, including the properties of what would classically be called the "population".
 
-Usually, this data will contain one variable on which we want to focus. We call this variable the response variable (sometimes also the dependent variable or outcome variable), because we are interested if and how this variable of interest varies (responds, depends) when something else changes. The variables that affect the response could be an environmental factor (e.g. temperature), it could be an experimental treatment (fertilized vs. non fertilized), or anything else. \marginnote{The predictor variables are those that affect the response.} Those other variables that affect our response are called predictor variables (synonymous terms are explanatory variables, covariates or independent variables). 
+The important point to remember from this section is that there are two objects that we have to distinguish well: on the one hand, there is our sample. We may describe it in terms of it's properties (mean, minimum, maximum), but the sample is not the goal. Ultimately, we want to infer the properties of the population / data-generating process from the sample. We will explain how to do this in the next sections, in particular in the section on inferential statistics. 
+
+
+\section{Representation and classes of data}
+
+For the moment, however, let us talk in a bit more detail about the sample, i.e. the data that we observe. A typical dataset consists of multiple observations of number of variables (e.g. temperature, precipitation, growth). You can think of this situation as a spreadsheet where the columns are the variables and the rows are the observations. Of course, there are other data structures, but this is the most common one.
+
+Usually, this data will contain one variable on which we want to focus.\marginnote{The response variable is the variable for which we try to understand how it responds to other factors.}  We call this variable the response variable (sometimes also the dependent variable or outcome variable), because we are interested if and how this variable of interest varies (responds, depends) when something else changes. The variables that affect the response could be an environmental factor (e.g. temperature), it could be an experimental treatment (fertilized vs. non fertilized), or anything else. \marginnote{The predictor variables are those that affect the response.} Those other variables that affect our response are called predictor variables (synonymous terms are explanatory variables, covariates or independent variables). 
 
 The most common case is that the response variable is a single value (e.g. a number or a categorical outcome), and we will concentrate on this case. However, there are cases when the response has more than one dimension, or when we are interested in the change of several response variables at a time. {If the response has several dimensions, we have to use multivariate analysis methods, which are not explained here.} The analysis of such data is known as multivariate statistics. We will not cover this here, but if you need it some further links are \href{http://biometry.github.io/APES/Stats/stats50-MultivariateStatistics.html}{here}.
 
@@ -137,42 +165,47 @@ It is very important that you check that your columns have the right type after 
 \end{fullwidth} 
 
 
+\chapter{Descriptive statstics and visualization}
+
+Descriptive statistics\marginnote{We will speak about how to create data in the later chapter~\ref{cha: design of experiments} on experimental design.} deals with the summary and visualization of (sampled) data
+
 \section{Summary statistics}
 
-\marginnote{A simple summary statistics you should be familiar with is the mean}
-
-Summary statistics are numerical calculations that summarize a dataset. They are used to display the properties of a dataset in a more compact way. 
+Summary statistics\marginnote{Summary statistics summarize data} are numerical calculations that summarize a dataset. They are used to display the properties of a dataset in a more compact way. 
 
 \subsection{Summarizing a single continous variable}
 
-Imagine we have a single, continous variable with a large number of observations - hence, we have a distribution of values (see below).
+A very common situation in which we want to use sumamry statistics are repeated observations of a continous variable. If it helps you, imagine we have measured and remeasured 2000 trees, and how we have a distribution of observed diameter increments (see Fig.\ref{fig: data distribution}).
 
 \begin{figure}[htbp]
 \begin{center}
 <<fig=TRUE, echo=FALSE>>=
+seed = (123)
 parameter = seq(-5,5,len=500)
 
 mix <- rbinom(2000,1,0.5)
-samples = mix * rnorm(2000) + (1-mix)*rnorm(2000, mean = 2.5, sd=0.5)
+samples = mix * rnorm(2000, mean = 3) + (1-mix)*rnorm(2000, mean = 0.5, sd=0.5)
 
-distr = (dnorm(parameter) + dnorm(parameter, mean = 2.5, sd=0.5)) /2
+distr = (dnorm(parameter, mean = 3) + dnorm(parameter, mean = 0.5, sd=0.5)) /2
 
-plot(parameter,distr, type = "l", ylab = "Density", xlab = "Observed value", col = "red", lwd = 2, ylim = c(0,0.5))
-hist(samples, breaks = 100, add = T,freq = F, col = "#99999930")
+plot(parameter,distr, type = "l", ylab = "Probability density", xlab = "Observed diameter growth", col = "red", lwd = 2, ylim = c(0,0.5), lty = 2)
+hist(samples, breaks = 40, add = T,freq = F, col = "#99999930")
 # polygon(parameter, distr, border=NA, col="darksalmon")
 
 MLEEstimate <- parameter[which.max(distr)]
 # abline(v=MLEEstimate, col = "red")
-text(3.1,0.4, "Mode", col = "red", cex = 1.5)
+#text(3.1,0.4, "Mode", col = "red", cex = 1.5)
 @
-\caption{bla}
-\label{fig: }
+\caption{A distribution of observed values diameter increment values (gray bars). We assume (in this case I know it) that these values come from some true distribution (population or data-generating process) that I plotted here in dashed red color. If we would draw more and more data, the gray bars would approach the true distribution}
+\label{fig: data distribution}
 \end{center}
 \end{figure}
 
-How can we summarize the properties of this distribution. Some basic properties would be the minimum and the maximum, as well as the model (the maximum of the distribution, i.e. value with the highest density of observations). There are two further central summaries that are always calculated - moments and quantiles.
+How can we summarize the properties of this distribution? Some basic properties would be the minimum and the maximum, the mean, or the mode (the maximum of the distribution, i.e. value with the highest density of observations). 
 
-The n-th moment is defined as the average across the distribution, taking each observed value to the poewr of n. 
+There are two further central summaries that are much used - moments and quantiles.
+
+The moments may not sound familiar with you, but you have probably already used the first and the second moment of the distribution, which are known as the mean and the standard deviation. In general, the n-th moment is defined as the average across the distribution, taking each observed value to the poewr of n. 
 
 \begin{equation}
 <x^2>_{d}
@@ -180,17 +213,20 @@ The n-th moment is defined as the average across the distribution, taking each o
 
 where $<>$ denotes the average, and $d$ the distribution. The first four moments are called the mean (average value), the standard deviation (measure of spread), the skewness (measure of assymetry in the distribution) and the kurtosis. 
 
-The second central quantity for describing distributions are the quanties. If we have a distribution such as the figure above, we can ask ourself: which is the value of the variable that divides the data in half, so that half of the observed data are lower, and half are higher than this value? \marginnote{Half of the data are lower, and half of the data are higher than the median, the 0.5 quantile} This point is called the median, and also the 0.5 quantile. More general, the 0.x quantile is the value at which a fraction of 0.x of the data is smaller. 
+Quantiles are the second central class of summary statistics for describing continous distributions. If we have a distribution such as the figure above, we can ask ourself: which is the value of the variable that divides the data in half, so that half of the observed data are lower, and half are higher than this value? \marginnote{Half of the data are lower, and half of the data are higher than the median, the 0.5 quantile} This point is called the median, and also the 0.5 quantile. More general, the 0.x quantile is the value at which a fraction of 0.x of the data is smaller. 
 
+\subsection{Correlation - summarizing the dependence between continous variables}
 
-\subsection{Correlatins - summarizing the dependence between continous variables}
+A second important case for summary statistics is correlation. Correlation methods measure the dependence between continous variables. Unfortunately, there are quite a number of measures of correlation, and it is imporant to distinguish between them. The two most important are:
 
+\paragraph{Linear coefficients}, most notably the widely used "Pearson's correlation coefficient", measure the linear dependence between two variables. 
 
-Correlation measures the dependence between continous variables. 
+\paragraph{Rank correlation coefficients} such as ``Spearman's rank correlation coefficient'' and ``Kendall tau rank correlation coefficient'' measure how well the variables match in their dendency to increase or decrease, without considering the extend or linearity of this increase.
 
-Add some example of pearson correlation here
+Pearson's correlation coefficient is widely used because it computes fast and is easily interpretable. However, it can be misleading if variables are not in a linear dependence. This effect is displayed in Fig.~\ref{fig: correlation}.
 
-Mention that there are other correlations, i.e. rank correlation
+Also visible in Fig.~\ref{fig: correlation} is an often misunderstood property of correlations and dependence - a high correlation coefficient does not mean that a variable has a strong reaction to another variable. All that is needed to obtain a high correlation coefficient is little spread around the line (see middle row). 
+
 
 \begin{figure}[htbp]
 \begin{center}
@@ -269,16 +305,18 @@ Others <- function(n = 1000) {
  Others(800)
 
 @
-\caption{bla}
-\label{fig: }
+\caption{Demonstration of possible correlations with the Pearson's correlation coefficients. Note that many datasets that show a clear dependence between variables are assinged a Pearson's correlation coefficient of 0 because the dependence is not linear.}
+\label{fig: correlation}
 \end{center}
 \end{figure}
 
 \subsection{Contingency tables - summarizing disrecte outcomes of several varialbles}
 
-Contingency tables measure 
+Finally,\marginnote{This dataset from Berkeley is a famous example for the Simpson's paradox. Read up on wikipedia about this important statistical trap.} a classic concept for summarizing binary or categorical data are contingency tables. Here an example from a classical dataset available in R on aggregate data on applicants to graduate school at Berkeley for the six largest departments in 1973 classified by admission and sex. I show only the first department.
 
-add an example of contingency tables here 
+<<>>=
+UCBAdmissions[,,1]
+@
 
 
 \vspace{1cm}
@@ -287,7 +325,7 @@ add an example of contingency tables here
     
 \textbf{In R:} 
 
-For calculating descriptive statistics in R, see \href{http://www.uni-kiel.de/psychologie/rexrepos/rerDescriptive.html}{here}
+For the various options to calculate descriptive statistics in R, see \href{http://www.uni-kiel.de/psychologie/rexrepos/rerDescriptive.html}{here}
 
 
 \end{mdframed}
@@ -766,8 +804,8 @@ We said before that the significance level $\alpha$ is the probability of findin
 This means that, unlike for the type I error which is fixed, calculation of power requires knowledge about the expected effect and the variability. This sounds really bad, but in most cases you can estimate from previous experience how much variation there will be, and in most cases you also know how big the effect has to be at least to be interesting. Based on that, you can then calculate how many samples you need. \\
 
 \vspace{1cm}
-\fbox{
-\begin{minipage}{\textwidth}
+\begin{mdframed}
+    
 \Large{Checklist experimental desig}
 
 \begin{description}
@@ -778,9 +816,9 @@ This means that, unlike for the type I error which is fixed, calculation of powe
 \item[( )] Decide on the number of replicates. Make a guess for effect size and variability of the data, and either calculate or guess the number of replicates necessary to get sufficient power. What sufficient means depends on the field, but I would say you want to have a good chance to see an effect if it's there, so a power of $>80\%$ would be good. 
 \end{description}
 
+\end{mdframed}
 
-\end{minipage}
-}
+
 
 \chapter{Good to knows and further reading}
 
