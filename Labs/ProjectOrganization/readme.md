@@ -3,7 +3,7 @@
 Keeping your project structured (also on your computer) will simplify your work greatly. A few things that are recommended:
 
 * Keep everything in one folder
-* Separate folders for data, analysis, outcomes, writing
+* Separate subfolders for data, analysis, outcomes, writing
 * Keep all paths in scripts, R, LaTeX relativ (as in ../data/datafile.RData)
 * Ideally, you would then put the whole folder under [version control](https://github.com/florianhartig/ResearchSkills/tree/master/Labs/VersionControl)
 
