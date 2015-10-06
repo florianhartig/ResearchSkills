@@ -1,0 +1,230 @@
+% This is a template designed by Maarten J. Waterloo for BSc and MSc
+% students at the Faculty of Earth and Life Sciences, Vrije Universiteit
+% Amsterdam, adapted to the University of Freiburg by Carsten F. Dormann. 
+
+\documentclass[11pt,twoside,a4paper,final]{report}
+% We define a two-side report on A-4 paper in final quality using a
+% point size of 11 for the text. Other possibilities are {book},
+% {article}, etc.
+
+% A % sign indicates that text is commented out and will not appear in
+% the document. Use \% if you want to indicate a % symbol in the text,
+% thus 10\% will become 10%...
+
+% We need to include some packages for layout and style. We do this
+% below using the \usepackage command. A short explanation for each
+% package is included.
+
+\usepackage{amsmath}   % If you are going beyond the most basic level
+                       % of displayed equations, you will benefit from
+                       % using the amsmath package that plugs into
+                       % LaTeX. This package has lots of useful
+                       % features for multi-line equations, compound
+                       % symbols, even commutative diagrams! Allows
+                       % use \text in equations	
+
+\usepackage{booktabs}  % booktabs is to enable the easy production of
+                       % tables such as should appear in published
+                       % scientific books and journals. What
+                       % distinguishes these from plain LaTeX tables
+                       % is the default use of additional space above
+                       % and below rules, and rules of
+                       % varying`thickness'.
+
+\usepackage[top=3cm, bottom=3cm, outer=2.5cm, inner=3.5cm]{geometry}  
+					   % formating the page margins
+
+\usepackage{graphicx}  % The graphicx package implements LaTeX
+                       % support for including graphics files,
+                       % rotating parts of a page, and scaling parts
+                       % of a page. The package depends on having a
+                       % DVI driver that can produce these effects.
+                       
+\usepackage[hidelinks]{hyperref} %This package will make links in PDF
+                       % documents to your figures, references, etc.
+                       % hidelinks removes the boxes around the hyperreferenced items
+                       
+\usepackage[utf8]{inputenc} % Hard to explain: Define here the text encoding 
+					   % used by your computer; on Linux typically utf8, on 
+					   % windows ansinew and on mac often latin1;
+					   % ideally, the whole world would use utf8
+					   % important for öüäß (Umlaute)
+
+\usepackage{libertine} % Use a nice serif font! Alternatives:
+					   % times, palatino, ... 
+					   
+\usepackage{makeidx} % use this package to make an index
+                       % of keywords, you have to follow this by the
+                       % \makeindex command 
+\makeindex             % Create the index file        
+
+\usepackage{natbib}    % Provides a style with author-year and
+                       % numbered references, as well as much detailed
+                       % of support for other bibliography
+                       % use. Provides versions of the standard BibTeX
+                       % styles that are compatible with natbib,
+                       % plainnat, unsrtnat,
+                       % abbrnat. The bibliography styles produced by
+                       % custom-bib are designed from the start to be
+                       % compatible with natbib.
+                       
+\usepackage{rotating}  % The rotating package implements three
+                       % environments within which in-line figures,
+                       % tables, and captions can be rotated by an
+                       % arbitrary number of degrees. Two additional
+                       % environments allow rotation of floating
+                       % objects, which are typeset alone on separate
+                       % pages.
+
+\usepackage{wrapfig}   % allows text to flow around a figure               
+
+
+% The \raggedbottom declaration makes all pages the height of the text
+% on that page. No extra vertical space is added.
+\raggedbottom
+
+%----------------------------------------------------------------------------
+% Allow more floating material on text pages:
+\renewcommand\floatpagefraction{.9}%
+\renewcommand\topfraction{.9}%
+\renewcommand\bottomfraction{.9}%
+\renewcommand\textfraction{.1}%
+\setcounter{bottomnumber}{4}%
+\setcounter{topnumber}{4}%
+\setcounter{totalnumber}{4}%
+
+
+%----------------------------------------------------------------------------
+				% here the content starts !		
+%----------------------------------------------------------------------------
+% Define title and authors
+\def\maintitle{On the intersection of desirability, reachability and sleeping disorder: the role of the final thesis in the maturation of a student}
+%\def\subtitle{Subtitle...}
+\def\authors{Whathave I. Learned }
+\def\supervisor{Supervisor: Prof. Dr. Irene Knowitall, Department of Irreproducible Affairs}
+\def\cosupervisor{Co-supervisor: Prof. Dr. Jörg Noinput, Department for the Investigation of the Unknown}
+\def\year{Freiburg, May 2014}
+\def\course{Bachelor thesis  (Student ID 450100) \\submitted to \\the Faculty of Environment \& Natural Resources \\ at the Albert-Ludwigs-University Freiburg}
+
+% Start the document
+\begin{document}
+
+% Make some shortcuts for writing units and chemical species
+% You can add your own here...
+\newcommand{\mgl}{mg l$^{-1}$}
+\newcommand{\mmoll}{mmol l$^{-1}$}
+\newcommand{\meql}{meq l$^{-1}$}
+\newcommand{\muscm}{$\mu$S cm$^{-1}$}
+\newcommand{\water}{H$_2$O}
+\newcommand{\kion}{K$^+$}
+\newcommand{\naion}{Na$^+$}
+\newcommand{\caion}{Ca$^{2+}$}
+\newcommand{\mgion}{Mg$^{2+}$}
+\newcommand{\clion}{Cl$^-$}
+\newcommand{\nitrate}{NO$_3^-$}
+\newcommand{\nitrite}{NO$_2^-$}
+\newcommand{\nhion}{NH$_4^+$}
+\newcommand{\hcoion}{HCO$_3^-$}
+\newcommand{\hardness}{Ca$^{2+}$ + Mg$^{2+}$}
+
+% Pagestyle of numbering, options are plain (Just a plain page number), empty (empty heads and feet - no page numbers), 
+% headings	(puts running headings on each page), and myheadings (You specify what is to go in the heading with the 
+% \markboth or the \markright commands.
+% No numbering on title page, so we use empty here...
+\pagestyle{empty}
+
+%-- french title page (r) ------------------------------------------------
+% Include the university-logo at the bottom of the page
+\begin{figure}[h]
+  \begin{flushright}
+    \vspace{-2cm}
+    \includegraphics[width=4cm]{images/ufcd-logo-e1-a4-color} %ALU_longlogo}
+  \end{flushright}
+\end{figure}
+
+\begin{center}
+  {\huge\bfseries\maintitle\par}
+  \vskip 2em%
+%  {\Large\bfseries\subtitle\par}
+%  \vskip 2em%
+  {\Large\authors\par}
+   \vskip 2cm%
+  {\course\par}
+  \vskip 1em%
+   \begin{figure}[h]
+     \begin{center}
+       \includegraphics[width=10cm]{images/bsc-fossil}
+    \end{center}
+  \end{figure}
+ % \vskip 2em%
+\end{center}
+  {\supervisor \\  \cosupervisor \\
+  \flushright \year \par} 
+
+\newpage
+% If you have a photo on the titlepage, you can add a short
+% explanataion here 
+Cover photograph: Example of a fossil in a reef. Source: somewhere from the internet ...
+
+\newpage
+
+% Page numbering, options are arabic (Arabic numerals), roman	(Lowercase Roman), Roman (Uppercase Roman)
+% alph (lowercase letters) and Alph (Uppercase letters)
+\pagenumbering{Roman}
+\pagestyle{plain}
+
+% Include table of contents
+\tableofcontents
+
+% Remove the % in front of the command below to include a list of tables:
+%\listoftables
+
+% Remove the % in front of the command below to include a list of figures:
+%\listoffigures
+
+\newpage
+% Use arabic numbering throughout the text
+\pagenumbering{arabic}
+
+% Include an abstract of your report
+\abstract{
+
+Place your abstract text here
+
+} 
+
+
+
+\input{chapters/introduction}
+
+\input{chapters/methods}
+
+\input{chapters/results}
+
+\input{chapters/discussion}
+
+\input{chapters/acknowledgements}
+
+
+   
+% Insert the references
+\bibliographystyle{plainnat}
+\bibliography{library/studlib}
+
+% Anything behind this command will be treated as an appendix
+\appendix
+
+% Insert the first appendix
+\input{chapters/appendix1}
+
+% Insert the second appendix
+\input{chapters/appendix2}
+
+
+% If you used the makeidx package to create an index then use the 
+% following command to print the index
+\printindex
+
+\input{chapters/selbststaendigkeit}
+
+\end{document}
