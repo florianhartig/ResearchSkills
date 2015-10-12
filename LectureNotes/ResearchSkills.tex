@@ -14,7 +14,7 @@
 \usepackage{multirow}
 \usepackage{booktabs} 
 
-\usepackage{mdframed}
+\usepackage[innerrightmargin = 0.7cm, innerleftmargin = 0.3cm]{mdframed}
 \usepackage{mdwlist}
 
 \usepackage{morefloats} % to take care of too many floats caused by the marginnotes
@@ -111,7 +111,7 @@ And in this it is not likely that all are mistaken the conviction is rather to b
 
 \begin{figure}[]
 \begin{center}
-\includegraphics[width=5cm]{figures/Descartes}
+%\includegraphics[]{figures/Descartes}
 \caption{Portrait of René Descartes}
 \label{fig: Descartes}
 \end{center}
@@ -194,9 +194,36 @@ For to be possessed of a vigorous mind is not enough; the prime requisite is rig
 \end{quote}
 
 
+If you start a new research project, the first thing to decide on is your question. From that, you develop a hypotheses and experimental procedures to test it and so on. 
+
+It cannot be stressed enough that the choice of the question is probably the single most important decision in a scientific project. It determines 
+
+\begin{itemize}
+\item what you do for the next year / 5yrs / decade
+\item whether you identify with your work or not
+\item if you can succeed
+\item whether anyone cares or not
+\end{itemize}
+
+
 \section{What makes a good scientific questions?}
 
-Assuming you have your question, how can we find an answer to this.
+There have been tons of comments on what makes a good question. If you listen to advice nobel price winners, they often tell you: don't listen to the opinions of the others, do your own thing. This may have become true for them, but certainly not everyone that avoids the mainstream becomes successful. The sad truth may be: it's hard to know in advance what question will make you famous.
+
+That being said, I think it is quite easy to give a few minimum requirements for a good question. 
+
+
+\paragraph{It has to be new!}A basic requirement is 
+
+Different levels of new
+Probably thought of, but not done before (no one bothered)
+Thought of, but couldn’t be done (because methods lacking)
+Done, but wrongly (correct previous results)
+Not thought of before (really new)
+
+Check the literature, make sure you understand to which extent your study is different from previous studies
+
+ 
 
 
 
@@ -221,6 +248,51 @@ Are the things
 
 
 \subsection{External validity}
+
+
+
+
+
+\vspace{1cm}
+\begin{mdframed}
+\begin{fullwidth}
+    
+\textbf{Checklist validity}\\[0.4]
+
+Before everything else, make sure the question is well defined. I recommend writing it down to avoid ambiguity. Now, check validity of:
+
+    \begin{itemize}
+      \item Construct validity
+      \begin{itemize}
+        \item Do the variables that you can measure match your question?
+        \item What could be sources and extend of errors in your measurement (stochastic, systematic), think also about observer bias etc.
+      \end{itemize}
+      
+      \item Internal validity
+      \begin{itemize}
+        \item What are potential confound or interacting variables?
+        \item How are you planning to control / randomize / measure them? Remember, if you can control is better than measure.
+        \item Are you sure about the direction of the causality?
+      \end{itemize}     
+       
+      \item Statistical validity
+      \begin{itemize}
+        \item How will you analyze your data?
+        \item What is the sample size that you need (power)?
+        \item Are the problems with the independence of your data? How can you minimize those problems (pseudo-replication, blocked design, ...)
+      \end{itemize} 
+         
+      \item External validity
+      \begin{itemize}
+        \item What generalization are you planning to make from this study?
+        \item What are threads to these generalizations / what could be different in other sites
+        \item Is there anything in your design that you can change to allow better generalizations?
+      \end{itemize}   
+    \end{itemize}
+
+
+\end{mdframed}
+\end{fullwidth}
 
 
 
