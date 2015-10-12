@@ -8,7 +8,7 @@ An exercise demonstrating this workflow is provided in the [practical](https://g
 
 ## Scientific literature databases
 
-The main databases are
+The three main databases are
 
 * Google scholar https://scholar.google.de/ (free, fast)
 * ISI web of knowledge http://webofknowledge.com/ (proprietory, slow, but most "official")
@@ -16,19 +16,22 @@ The main databases are
 
 see comments in the lecture notes / scripts about their use, in particular about how to use advanced search patterns and how they index the papers.
 
+## Access to journals
+
+Usually via IP / proprietory databases. This means that within the U Freiburg, you have access. From ouside the Uni, you have access if you use the VPN (because then you have a U Freiburg IP). In many cases, you can also get access via your Uni password, but this is more cumbersome. 
+
 ## Reference Managers
 
 There are lots of reference managers, see overview [here](https://en.wikipedia.org/wiki/Comparison_of_reference_management_software) 
 
-You should see what is best for you. I recommend to start with 
+You should see what is best for you. Dependeing on what text processing system you use, I recommend to start with 
 
-* LaTeX - Jabref (bibtex-based)
-* Word - Endnote (costly), Zotero, Mendeley, Jabref (integreation in Word tricky, some comments below)
-* Open Office - Jabref, Zotero, Mendeley
+* For LaTeX: Jabref (bibtex-based)
+* For Word: Endnote (costly), Zotero, Mendeley, Jabref (integreation in Word tricky, some comments below), Citavi (U. Freiburg has a licence, no other reason)
+* For Open Office: Jabref, Zotero, Mendeley
 
 
 ### Using BibTex with Microsoft Word
-
 
 The following steps (copied from [here](http://www.ademcan.net/?d=2012/01/30/15/23/05-using-jabref-references-in-word-documents)) will help you to use your JabRef bibliography into Word documents:
 
