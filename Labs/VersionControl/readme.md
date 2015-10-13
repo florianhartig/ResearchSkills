@@ -6,9 +6,11 @@ There are a lot of benefits of using such a system and virtually no costs --> **
 
 There are different version control systems around, but effectively there is a clear recommendation at the moment, which is Git. 
 
-## Git 
+# Git 
 
 Git is a distributed version control system, and it is the one that is currently the most popular. 
+
+### Getting started
 
 * For a a simple video tutorial / intro to Git, click [here](http://www.youtube.com/watch?feature=player_embedded&v=Y9XZQO1n_7c)
 
@@ -18,11 +20,19 @@ Although Git (as svn as well) can be purely run locally, it really makes sense t
 * [GitHub guids - excellent!!!](https://guides.github.com/)
 * [How to Get Started with Github - Beginner Tutorial ](http://www.youtube.com/watch?v=73I5dRucCds)
 
-To work with git locally, the minimum is to have the git software installed (command line). However, most people want to have a gui client for git. I recommend 
+### Software to install
 
-* GitHub client (Windows, Mac, simple, but can't do everything, consider installing a second client)
+To work with git locally, the minimum is to have the git software installed (command line). However, most people want to have a gui client for git. If you install one, the command line is usually included. I recommend 
+
+* GitHub app (Windows, Mac, simple, but can't do everything, consider installing a second client)
 * SourceTree (Windows, Mac - the eclipse of git clients)
 * TortoiseGit (Windows, integrates git in the windows explorer)
+
+If you install github, I would recommend installing SourceTree or TortoiseGit as well, because the GitHub is nice and easy, but a bit limited.
+
+On Linux, peole seem to have trouble with whatever solution is out there. The best seems to be the command line. Let me know if there is a better option. 
+
+### Further readings
 
 Longer tutorials on git
 
@@ -31,7 +41,7 @@ Longer tutorials on git
 * [Introduction to Git - talk by Scott Chacon ](http://www.youtube.com/watch?v=xbLVvrb2-fY) - goes into technical details, don't do this as a fist introduction
 
 
-## SVN
+# SVN
 
 SVN is the older working horse in the field. I don't see a reason to start new projects with svn, git is the better alternative. For historical reasons, many projects are still on svn, so there may be a reason to use it at some stage.
 
