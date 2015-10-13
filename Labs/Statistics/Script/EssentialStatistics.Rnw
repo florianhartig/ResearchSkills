@@ -82,15 +82,13 @@ This document provides a short introduction to the field of statistics, as well 
 
 Statistics, or more broadly data science, deals with the visualization, summary and interpretation of data. This primer provides an introduction the four most important pillars of statistical methods for a quantitative researcher:
 
-\paragraph{Descriptive statistics}include summary statistics such as mean and median as well as the various options to visualize data.
+\paragraph{Descriptive statistics:} Descriptive statistics\marginnote{Descriptive statistics = plots, summary statistics} include summary statistics such as mean and median as well as the various options to visualize data.
 
-\marginnote{The difference between inferential and predictive statistics is that inferential statistics is typically concerned with a decision about a model or assumption (is the hypothesis true ...), while predictive methods deal with making predictions from data, often without the intermediate step of modelling a "data-generating process".}
+\paragraph{Inferential statistics:} Inferential statistics\marginnote{Inferential statistics = parameter estimates, p-values, tests} deals with testing hypothesis and estimating parameters. Inference is typically based on assumptions that are summarized in a statistical model \marginnote{A statistical model describes how the data was generated = data-generating process}, also called the data-generating process because it describes the assumptions about how variation in the data arose (systematic and stochastic).
 
-\paragraph{Inferential statistics}deals with testing hypothesis and fitting models, typically based on a statistical model (the data-generating process).
+\paragraph{Predictive statistics and machine learning:} Predictive statistics and machine learning\marginnote{Machine learning = predictive models. Big data = large datates, e.g. from consumers on Amazon} deals with deriving predictions from data, in particular from "big data". 
 
-\paragraph{Predictive statistics and machine learning}deals with deriving predictions from data, in particular from "big data". 
-
-\paragraph{Experimental design}covers all aspects of generating data, in particular questions such as "which variables need to be measured?", "how many data do we need?", "how should we optimally vary the variables of interest in an experiment"?
+\paragraph{Experimental design:} Experimental design\marginnote{Experimental design or study design = how to obtain and create data} covers all aspects of generating data, in particular questions such as "which variables need to be measured?", "how many data do we need?", "how should we optimally vary the variables of interest in an experiment"?
 
 
 \section{The R environment for statistical computing}
@@ -219,13 +217,11 @@ Quantiles are the second central class of summary statistics for describing cont
 
 A second important case for summary statistics is correlation. Correlation methods measure the dependence between continous variables. Unfortunately, there are quite a number of measures of correlation, and it is imporant to distinguish between them. The two most important are:
 
-\paragraph{Linear coefficients}, most notably the widely used "Pearson's correlation coefficient", measure the linear dependence between two variables. 
+\paragraph{Linear coefficients:}Linear coefficients, most notably the widely used "Pearson's correlation coefficient", measure the linear dependence between two variables. 
 
-\paragraph{Rank correlation coefficients} such as ``Spearman's rank correlation coefficient'' and ``Kendall tau rank correlation coefficient'' measure how well the variables match in their dendency to increase or decrease, without considering the extend or linearity of this increase.
+\paragraph{Rank correlation coefficients:}Pearson's correlation coefficient is widely used because it computes fast and is easily interpretable. However, it can be misleading if variables are not in a linear dependence. This effect is displayed in Fig.~\ref{fig: correlation}. Rank correlation coefficients, such as ``Spearman's rank correlation coefficient'' and ``Kendall tau rank correlation coefficient'' measure how well the variables match in their dendency to increase or decrease, without considering the extend or linearity of this increase. They are preferable if you think variables could be in a nonlinear relationship.
 
-Pearson's correlation coefficient is widely used because it computes fast and is easily interpretable. However, it can be misleading if variables are not in a linear dependence. This effect is displayed in Fig.~\ref{fig: correlation}.
-
-Also visible in Fig.~\ref{fig: correlation} is an often misunderstood property of correlations and dependence - a high correlation coefficient does not mean that a variable has a strong reaction to another variable. All that is needed to obtain a high correlation coefficient is little spread around the line (see middle row). 
+\paragraph{Correlation does not equal effect:} Also visible in Fig.~\ref{fig: correlation} is an often misunderstood property of correlations and dependence - a high correlation coefficient does not mean that a variable has a strong reaction to another variable. All that is needed to obtain a high correlation coefficient is little spread around the line (see middle row). 
 
 
 \begin{figure}[htbp]
@@ -327,19 +323,15 @@ UCBAdmissions[,,1]
 
 For the various options to calculate descriptive statistics in R, see \href{http://www.uni-kiel.de/psychologie/rexrepos/rerDescriptive.html}{here}
 
-
 \end{mdframed}
 \end{fullwidth} 
-
-
-
 
 
 \section{Visualization}
 
 \marginnote{Type ?anscombe in R to see the code to create these plots and to calculate the statistical properties of the datastes}
 
-Summary statistics are useful, but also dangerous. A fabous example is Anscombe's Quartet, a hypothetical dataset of four observations that are identical in classical summary statistics such as mean, variance, correlation, regression line, etc. \citep{Anscombe-Graphsinstatistical-1973}. 
+Summary statistics are useful, but also dangerous. A famous example is Anscombe's Quartet, a hypothetical dataset of four observations that are identical in classical summary statistics such as mean, variance, correlation, regression line, etc. \citep{Anscombe-Graphsinstatistical-1973}. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -373,50 +365,59 @@ mtext("Anscombe's 4 Regression data sets", outer = TRUE, cex = 1.5)
 par(op)
 
 @
-\caption{bla}
-\label{fig: }
+\caption{Anscombe's Quartet}
+\label{fig: Anscombes Quartet}
 \end{center}
 \end{figure}
 
 
 \subsection{Principles of visualization}
 
+The principle of graphics and visualization is to represent the data as accessible and truthful as possible. The reader should get the best possible overview about the data in the shortest possible time. And, of course, the graphics should look nice as well. First of all, some general hints that may help:
 
-Clean graphs 
-
-Truthfull 
-
-Not more than neccessary 
-
-
-\subsection{Basic graphts}
-
-
-\paragraph{Line plots} continous continous, ordered
+\begin{itemize}
+\item Simple is better than complicated
+\item Avoid exccessive color. Graphics should be b/w readable if possible (use a color gradient that is a gradient in intensity at the same time, use dashing of lines additional to colors). If your graphic relies on color, try to choose colors that can be read by color blinds (avoid red/green).
+\item Truthfulness: avoid distortions. Quadratic figures unless there are particular reasons. Axis should start at 0 unless you have good reasons not to. If presenting several graphics, use the same scale unless there are good reasons for it. 
+\item Don't manipulate graphics by hand
+\item Output in a vector format (pdf, eps, svg)
+\end{itemize}
 
 
-\paragraph{Scatter plots} continous continous, ordered
+\subsection{Graph types}
 
+There is a large, nearly infinte number of possible visual representation of data. I provide here four very common graph types. 
 
-\paragraph{Bar plots}
+\paragraph{Line plots:} Line plots are used to visualize continous, ordered measurements. Typical examples would be time series, continous variations of a parameter, or a mathematical function. Example in Fig.~\ref{fig: exaple plots}a.
 
+\paragraph{Scatter plots:} Scatter plots show two continous continous variables that are measured in pairs. Typical example is when you have repeated measurements of several variables, and you want to see if they correlate. Example in Fig.~\ref{fig: exaple plots}b.
 
-\paragraph{Box plots}
+\paragraph{Bar plots:} Bar plots show an information (counts, or a continous variable) for discrete groups. Example in Fig.~\ref{fig: exaple plots}c.
+
+\paragraph{Box plots:} Box plots are very common to show the distribution of a continous variable across several discete groups. They typically consist of a box, whiskers (lines), and potentially points around the whiskers. What those means depends on the software used to create the plots, but the typical interpretation is that the box covers the central 50\%, with the median in indicated in the middle. The whiskers aim at providing an estimate of the range of your data, except for outliers. Of course, what is counted as an outlier depends on your assumptions. If you must know, the technical definition is that the whiskers are at the most distant observation less than or equal to the upper quartile plus 1.5 the length of the interquartile range. Example in Fig.~\ref{fig: exaple plots}d.
 
 \begin{figure}[htbp]
 \begin{center}
+
+\setkeys{Gin}{width=\textwidth}
 <<fig=TRUE, echo = FALSE>>=
 par(mfrow = c(2,2))
 
-boxplot(weight ~ group, data = PlantGrowth, main = "Plant Growth",
+plot(co2, ylab = expression("Atmospheric concentration of CO"[2]),
+     las = 1)
+title(main = "a) Athmospheric CO2 Hawai")
+
+plot(airquality$Temp, airquality$Ozone, xlab = "Temperature", ylab = "Ozone", main = "b) Temperature vs. Ozone")
+
+barplot(table(mtcars$gear, mtcars$cyl), beside=T, xlab = "cylinders", main = "c) Gears / cylinders of cars")
+legend("top", legend = c("3 gears", "4 gears", "5 gears"), pch = 15, col = gray.colors(3, end = 0.7), bg = "#FFFFFF66", bty = "n")
+
+boxplot(weight ~ group, data = PlantGrowth, main = "d) Plant Growth",
         ylab = "Dried weight of plants", col = "lightgray",
-        notch = F, names = c("control", "classical music", "heavy metal"))
-
-
-
+        notch = F, names = c("control", "classical music", "heavy metal"), las = 1)
 @
-\caption{bla}
-\label{fig: }
+\caption{Four typical plot types, from top left to bottom right: a) A line plot to represent continous measurements of one variable; b) a scatter plot to represent the relationship between two continous variables; c) a bar plot to represent measurements in discrete groups / variables; d) a box plot to represent repeated continous measurements in discrete groups.}
+\label{fig: exaple plots}
 \end{center}
 \end{figure}
 
@@ -457,8 +458,8 @@ boxplot(weight ~ group, data = PlantGrowth, main = "Plant Growth",
         notch = F, names = c("control", "classical music", "heavy metal"))
 
 @
-\caption{bla}
-\label{fig: }
+\caption{Groth measurements under three different treatments}
+\label{fig: plant growth music}
 \end{center}
 \end{figure}
 
