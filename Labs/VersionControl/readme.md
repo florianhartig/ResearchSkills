@@ -12,10 +12,12 @@ Git is a distributed version control system, and it is the one that is currently
 
 ### Getting started
 
-* For a a simple video tutorial / intro to Git, click [here](http://www.youtube.com/watch?feature=player_embedded&v=Y9XZQO1n_7c)
+* For a a simple video tutorial / intro to Git, click [here](https://www.youtube.com/watch?v=SCZF6I-Rc4I)
 
 Although Git (as svn as well) can be purely run locally, it really makes sense to have a version of your files on the web, not only as backup. If you know nothing, try out GitHub, which is pretty popular in Science. See links below for how to get started with that. Tutorials specially for GitHub (a lot applies to Git as well)
 
+* [Video intro to Git / GitHub](https://www.youtube.com/watch?v=U8GBXvdmHT4)
+* [Video series](https://www.youtube.com/playlist?list=PLg7s6cbtAD15G8lNyoaYDuKZSKyJrgwB-)
 * [GitHub help page](https://help.github.com/)
 * [GitHub guids - excellent!!!](https://guides.github.com/)
 * [How to Get Started with Github - Beginner Tutorial ](http://www.youtube.com/watch?v=73I5dRucCds)
