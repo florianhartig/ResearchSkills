@@ -49,6 +49,7 @@ numbers=none
 \let\cleardoublepage\clearpage % No empty pages between chapters
 \maketitle
 
+
 \thispagestyle{empty}
 \null
 
@@ -84,49 +85,50 @@ Statistics, or more broadly data science, deals with the visualization, summary 
 
 \paragraph{Descriptive statistics:} Descriptive statistics\marginnote{Descriptive statistics = plots, summary statistics} include summary statistics such as mean and median as well as the various options to visualize data.
 
-\paragraph{Inferential statistics:} Inferential statistics\marginnote{Inferential statistics = parameter estimates, p-values, tests} deals with testing hypothesis and estimating parameters. Inference is typically based on assumptions that are summarized in a statistical model \marginnote{A statistical model describes how the data was generated = data-generating process}, also called the data-generating process because it describes the assumptions about how variation in the data arose (systematic and stochastic).
+\paragraph{Inferential statistics:} Inferential statistics\marginnote{Inferential statistics = parameter estimates, p-values, tests} deals with testing hypothesis and estimating parameters. Inference is typically based on assumptions that are summarized in a statistical model.\marginnote{A statistical model describes how the data was generated = data-generating process} A statistical model is often also called the ``data-generating process'', because it describes the assumptions about the processes that lead to variation in the data (systematic and stochastic).
 
-\paragraph{Predictive statistics and machine learning:} Predictive statistics and machine learning\marginnote{Machine learning = predictive models. Big data = large datates, e.g. from consumers on Amazon} deals with deriving predictions from data, in particular from "big data". 
+\paragraph{Predictive statistics and machine learning:} Predictive statistics and machine learning\marginnote{Machine learning = predictive models. Big data = large datates, e.g. from consumers on Amazon} deals with deriving predictions from data, in particular from "big data". The main difference to inferential statistics is that the focus is on developing methods to make good predictions, without the neccessity to describe, infer or test assuptions about the data-generating process.
 
-\paragraph{Experimental design:} Experimental design\marginnote{Experimental design or study design = how to obtain and create data} covers all aspects of generating data, in particular questions such as "which variables need to be measured?", "how many data do we need?", "how should we optimally vary the variables of interest in an experiment"?
+\paragraph{Experimental design:} Experimental design\marginnote{Experimental design or study design = how to obtain and create data} covers all aspects of generating data, in particular questions such as ``which variables need to be measured?", ``how many replicates do we need?", "how should we optimally vary the variables of interest in an experiment"?
 
 
 \section{The R environment for statistical computing}
 
-For the better or worse, the times when statistics was done with pen, paper and a calculator are over. Statistical analysis nowadays happens on the computer, and a number of software environments exist to do so. In the ecological sciences, R is the de-facto standard for statistical analysis. R is open-source, free, and has a very larger user base, specially in the environmental sciences, that contribute packages for specialised ecological and environmental analysis. \marginnote{R is a script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment.}
+For the better or worse, the times when statistics was done with pen, paper and a calculator are over. Statistical analysis nowadays happens on the computer, and a number of software environments exist to do so.\marginnote{R is a script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment.} In the ecological sciences, R has become the de-facto standard for statistical analysis. R is open-source, free, and has a very larger user base, specially in the environmental sciences, that contribute packages for specialised ecological and environmental analysis.
 
-In this primer, all examples will be calculated with R; however, I will give no further introduction to R. If you need one, follow  \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{this link} for an introduction, including help on how to install the software. If you start using R for the first time, I highly recommend to using R together with RStudio. Follow the link above to get further information
+In this primer, all examples will be calculated with R; however, the focus will not be to introduce R itself. If you need one, follow  \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{this link} for an introduction, including help on how to install the software. I highly recommend to using R together with RStudio. Follow the link above to get further information
 
 \chapter{Data, sample and population}
 
-Before we speak about statistical methods, however, a few short comments on how data arises, and how we represent it. 
+The following four chapters will be devoted to the four types of statistical analysis described in the introduction: descriptive statistics, inferential statistics, predictive statistics and experimental design. Before we go into these topics, however, a few short comments on how data arises, and how we represent it. 
 
 \section{Sample, population, and the data-generating process}
 
 The very reason for doing statistics is that the data that we observe is somehow random. But how does this randomness arise?
 
-Imagine \marginnote{The population is the set of all observations that you could have mode, the sample is the observations that you have actually made} that we we are interested in the average growth rate of trees in Germany during two consecutive years. Ideally, we would simplye measure them all and be done without having to do statistics. In practice, however, we hardly ever have the resources to do so. We therefore have to make a selection of trees. The statistical term for all the trees is the "population", and the term fro the trees that you have observed is the "sample".
+Imagine \marginnote{The population is the set of all observations that you could have made. The sample is the observations that you have actually made} that we we are interested in the average growth rate of trees in Germany during two consecutive years. Ideally, we would measure them all and be done, without having to do statistics. In practice, however, we hardly ever have the resources to do so. We therefore have to make a selection of trees, and infer the growth rate of all trees from that. The statistical term for all the trees is the "population", and the term fro the trees that you have observed is the "sample". Hence, we want to infer properties of the population from a sample.
 
-The population as such is fixed and does not change, but the observable elements within the populations can vary. Hence, every time we observe a random selection (sample) of the population, we may get elements with slightly different properties. As a concrete example: imagine we have the resources to sample 1000 trees across Germamy. Therefore, every time we take a random selection of 1000 trees out of the population, we will get a slightly different average growth rate.
+The \marginnote{Sampling creates randomness} population as such is fixed and does not change, but time we observe a random selection (sample) of the population, we may get elements with slightly different properties. As a concrete example: imagine we have the resources to sample 1000 trees across Germamy. Therefore, every time we take a random selection of 1000 trees out of the population, we will get a slightly different average growth rate.
 
-A\marginnote{A more modern concept that replaces the "population" is the "data-generating process"} slight problem with the concept of sample and population is that the picture of sampling from a population does not match very well with more complex processes where randomness arise. Imagine, for example, that data arises from a person going to random plots to measure radition (which varies within minutes due to cloud cover), using a measurement instrument that measures with some random error. Does it really make sense to think of the data arising from sampling from a "population" of possible observations? A related concept that I would prefer in this case is the the concept of the "data-generating process", which is pretty self-explenatory: the data-generating process describes how the sample is created, including the properties of what would classically be called the "population".
+The\marginnote{However, not all randomness comes from sampling from a population} process of sampling from the population does explains how randomness arises in our data. However, a slight issue with this concept is that it does not match very well with more complex random processes. Imagine, for example, that data arises from a person going to randomly selected plots to measure radition (which varies within minutes due to cloud cover), using a measurement instrument that measures with some random error. Does it really make sense to think of the data arising from sampling from a "population" of possible observations?
 
-The important point to remember from this section is that there are two objects that we have to distinguish well: on the one hand, there is our sample. We may describe it in terms of it's properties (mean, minimum, maximum), but the sample is not the goal. Ultimately, we want to infer the properties of the population / data-generating process from the sample. We will explain how to do this in the next sections, in particular in the section on inferential statistics. 
+\marginnote{A more modern concept that replaces the "population" is the "data-generating process". The data-generating process describes how the observations from a random sample arise, including systematic and stochastic processes} A more modern and general concept to describe how data is created is the the concept of the "data-generating process", which is pretty self-explenatory: the data-generating process describes how the observations from a random sample arise, including systematic and stochastic processes. It therefore includes the properties of what would classically be called "sampling from a population", but it is broader and includes all other processes that would create systematic and random patterns in our data. In this picture, instead of infer properties of the population from a sample, we would say we want to infer the properties of the data-generating process from a sample of observations created by this process.
 
+Whether you think in populations or data-generating processes: the important point to remember from this section is that there are two objects that we have to distinguish well: on the one hand, there is our sample. We may describe it in terms of it's properties (mean, minimum, maximum), but the sample is not the final goal. Ultimately, we want to infer the properties of the population / data-generating process from the sample. We will explain how to do this in the next sections, in particular in the section on inferential statistics. 
 
 \section{Representation and classes of data}
 
-For the moment, however, let us talk in a bit more detail about the sample, i.e. the data that we observe. A typical dataset consists of multiple observations of number of variables (e.g. temperature, precipitation, growth). You can think of this situation as a spreadsheet where the columns are the variables and the rows are the observations. Of course, there are other data structures, but this is the most common one.
+Before we come to that, however, let us talk in a bit more detail about the representation of the sample, i.e. the data that we observe. A typical dataset consists of multiple observations of number of variables (e.g. temperature, precipitation, growth). You can think of this situation as a spreadsheet where the columns are the variables and the rows are the observations. Of course, there are other data structures, but this is the most common one.
 
-Usually, this data will contain one variable on which we want to focus.\marginnote{The response variable is the variable for which we try to understand how it responds to other factors.}  We call this variable the response variable (sometimes also the dependent variable or outcome variable), because we are interested if and how this variable of interest varies (responds, depends) when something else changes. The variables that affect the response could be an environmental factor (e.g. temperature), it could be an experimental treatment (fertilized vs. non fertilized), or anything else. \marginnote{The predictor variables are those that affect the response.} Those other variables that affect our response are called predictor variables (synonymous terms are explanatory variables, covariates or independent variables). 
+Usually, this data will contain one variable that is our focus, meaning that we want to understand how this variable is influenced by other variables.\marginnote{The response variable is the variable for which we try to understand how it responds to other factors.}  We call this variable the ``response variable'' (sometimes also the dependent variable or outcome variable), because we are interested if and how this variable of interest varies (responds, depends) when something else changes. The variables that affect the response could be an environmental factors (e.g. temperature), it could be experimental treatments (fertilized vs. non fertilized), or anything else. \marginnote{The predictor variables are those that affect the response.} Those other variables that affect our response are called ``predictor variables'' (synonymous terms are explanatory variables, covariates or independent variables). 
 
-The most common case is that the response variable is a single value (e.g. a number or a categorical outcome), and we will concentrate on this case. However, there are cases when the response has more than one dimension, or when we are interested in the change of several response variables at a time. {If the response has several dimensions, we have to use multivariate analysis methods, which are not explained here.} The analysis of such data is known as multivariate statistics. We will not cover this here, but if you need it some further links are \href{http://biometry.github.io/APES/Stats/stats50-MultivariateStatistics.html}{here}.
+The most\marginnote{Multivariate statistics deals with response variables that have several dimensions, such as species composition} common case is that the response variable is a single variable (e.g. a single number or a categorical outcome), and we will concentrate on this case. However, there are cases when the response has more than one dimension, or when we are interested in the change of several response variables at a time. The analysis of such data is known as multivariate statistics. We will not cover this methods here, but if you need it some further links are \href{http://biometry.github.io/APES/Stats/stats50-MultivariateStatistics.html}{here}.
 
-Another important distinction is the type of variables. Independent of whether we are speaking about the response or the predictor, we distinguish: \marginnote{Variables can be continous, discrete or categorical. Categorical variables can be ordered, unordered, or binary.}
+Another important distinction is the type of each variables Independent of whether we are speaking about the response or the predictor, we distinguish: \marginnote{Variables can be continous, discrete or categorical. Categorical variables can be ordered, unordered, or binary.}
 
 \begin{itemize}
-\item Continuous numeric variables (ordered and dense), e.g. temperature
-\item Discrete numeric variables (ordered, but discrete), e.g. count data
+\item Continuous numeric variables (ordered and continous / real), e.g. temperature
+\item Integer numeric variables (ordered, integer), e.g. count data
 \item Categorical variables (e.g. a fixed set of options such as red, green blue), which can further be divided into
 \begin{itemize}
 \item Unordered categorical variables (Nominal) such as red, green, blue 
@@ -134,6 +136,8 @@ Another important distinction is the type of variables. Independent of whether w
 \item Ordered categorical variables (small, medium, large)
 \end{itemize}
 \end{itemize}
+
+It is important that you record the variables according to their ``nature''.\marginnote{Check that your variables have the right type after reading them in in your statistic software} And if you use a statistics software, you have to make sure that the type is properly recognized after reading in the data, because many methods treat a varible differently if it is numeric of categorical.
 
 Experience shows that there is certain tendency of beginners to use categorical variables for things that are actually continuous, e.g. by coding body weight of animals into light, medium, heavy. \marginnote{Don't use categorical variables for things that can also be recorded numerically! } The justification stated is often that this avoids the measurement uncertainty. In short: it doesn't, it just creates more problems. Don't use categorical variables for things that can also be recorded numerically! 
 
@@ -147,7 +151,7 @@ Experience shows that there is certain tendency of beginners to use categorical 
 To represent data, R has a basic data structure, the data.frame. A data frame is like a spread sheet, with columns, and each column has can have a different type. Possibilities are
 
 \begin{itemize*}
-  \item interger - what it says
+  \item integer - what it says
   \item numeric - continuos number (float)
   \item boolean - true / false
   \item factor - normally unordered, i.e. red, green, blue. Can also be made ordered (small, medium, large), although it is then often better to code this as an integer
@@ -173,7 +177,7 @@ Summary statistics\marginnote{Summary statistics summarize data} are numerical c
 
 \subsection{Summarizing a single continous variable}
 
-A very common situation in which we want to use sumamry statistics are repeated observations of a continous variable. If it helps you, imagine we have measured and remeasured 2000 trees, and how we have a distribution of observed diameter increments (see Fig.\ref{fig: data distribution}).
+A common situation in which we want to use summary statistics are repeated observations of a continous variable. If it helps you, imagine we have measured and remeasured 2000 trees, and we have now a distribution of observed diameter increments (see Fig.\ref{fig: data distribution}).
 
 \begin{figure}[htbp]
 \begin{center}
@@ -199,9 +203,7 @@ MLEEstimate <- parameter[which.max(distr)]
 \end{center}
 \end{figure}
 
-How can we summarize the properties of this distribution? Some basic properties would be the minimum and the maximum, the mean, or the mode (the maximum of the distribution, i.e. value with the highest density of observations). 
-
-There are two further central summaries that are much used - moments and quantiles.
+How can we summarize the properties of this observed sample? Some basic properties would be the minimum and the maximum value, the mean, or the mode (the maximum of the distribution, i.e. value with the highest density of observations). There are two further central summaries that are much used: moments and quantiles.
 
 The moments may not sound familiar with you, but you have probably already used the first and the second moment of the distribution, which are known as the mean and the standard deviation. In general, the n-th moment is defined as the average across the distribution, taking each observed value to the poewr of n. 
 
@@ -211,17 +213,17 @@ The moments may not sound familiar with you, but you have probably already used 
 
 where $<>$ denotes the average, and $d$ the distribution. The first four moments are called the mean (average value), the standard deviation (measure of spread), the skewness (measure of assymetry in the distribution) and the kurtosis. 
 
-Quantiles are the second central class of summary statistics for describing continous distributions. If we have a distribution such as the figure above, we can ask ourself: which is the value of the variable that divides the data in half, so that half of the observed data are lower, and half are higher than this value? \marginnote{Half of the data are lower, and half of the data are higher than the median, the 0.5 quantile} This point is called the median, and also the 0.5 quantile. More general, the 0.x quantile is the value at which a fraction of 0.x of the data is smaller. 
+Quantiles are the second central class of summary statistics for describing continous distributions. If we have a distribution such as the figure above, we can ask ourself: which is the value of the variable that divides the data in half, so that half of the observed data are lower, and half are higher than this value?\marginnote{Half of the data are lower, and half of the data are higher than the 0.5 quantile, which is called the median} This point is called the median, and also the 0.5 quantile. More general, the 0.x quantile is the value at which a fraction of 0.x of the data is smaller. 
 
 \subsection{Correlation - summarizing the dependence between continous variables}
 
 A second important case for summary statistics is correlation. Correlation methods measure the dependence between continous variables. Unfortunately, there are quite a number of measures of correlation, and it is imporant to distinguish between them. The two most important are:
 
-\paragraph{Linear coefficients:}Linear coefficients, most notably the widely used "Pearson's correlation coefficient", measure the linear dependence between two variables. 
+\paragraph{Linear coefficients:}Linear coefficients, most notably the widely used "Pearson's correlation coefficient", measure the linear dependence between two variables. Pearson's correlation coefficient is widely used because it computes fast and is easily interpretable. However, it can be misleading if variables are not in a linear dependence. This effect is displayed in Fig.~\ref{fig: correlation}.
 
-\paragraph{Rank correlation coefficients:}Pearson's correlation coefficient is widely used because it computes fast and is easily interpretable. However, it can be misleading if variables are not in a linear dependence. This effect is displayed in Fig.~\ref{fig: correlation}. Rank correlation coefficients, such as ``Spearman's rank correlation coefficient'' and ``Kendall tau rank correlation coefficient'' measure how well the variables match in their dendency to increase or decrease, without considering the extend or linearity of this increase. They are preferable if you think variables could be in a nonlinear relationship.
+\paragraph{Rank correlation coefficients:} Rank correlation coefficients, such as ``Spearman's rank correlation coefficient'' and ``Kendall tau rank correlation coefficient'' measure how well the variables match in their dendency to increase or decrease, without considering the extend or linearity of this increase. They are preferable if you think variables could be in a nonlinear relationship.
 
-\paragraph{Correlation does not equal effect:} Also visible in Fig.~\ref{fig: correlation} is an often misunderstood property of correlations and dependence - a high correlation coefficient does not mean that a variable has a strong reaction to another variable. All that is needed to obtain a high correlation coefficient is little spread around the line (see middle row). 
+\paragraph{Correlation does not equal effect:} Also visible in Fig.~\ref{fig: correlation} is an often misunderstood property of correlations and dependence - a high correlation coefficient does not mean that a variable has a strong reaction to another variable. All that is needed to obtain a high correlation coefficient is little spread around the line (see middle row - the effects are different, but the correlation is the same). 
 
 
 \begin{figure}[htbp]
@@ -331,7 +333,7 @@ For the various options to calculate descriptive statistics in R, see \href{http
 
 \marginnote{Type ?anscombe in R to see the code to create these plots and to calculate the statistical properties of the datastes}
 
-Summary statistics are useful, but also dangerous. A famous example is Anscombe's Quartet, a hypothetical dataset of four observations that are identical in classical summary statistics such as mean, variance, correlation, regression line, etc. \citep{Anscombe-Graphsinstatistical-1973}. 
+Summary statistics are useful, but also dangerous. A famous example is Anscombe's Quartet, a hypothetical dataset of four observations that are identical in classical summary statistics such as mean, variance, correlation, regression line, etc. \citep{Anscombe-Graphsinstatistical-1973}. It is therefore very useful to get a graphical overview of your data, additionally to the summary statistics that you may calculate.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -373,28 +375,15 @@ par(op)
 
 \subsection{Principles of visualization}
 
-The principle of graphics and visualization is to represent the data as accessible and truthful as possible. The reader should get the best possible overview about the data in the shortest possible time. And, of course, the graphics should look nice as well. First of all, some general hints that may help:
+The principle\marginnote{Examples of distorting graphics \href{https://en.wikipedia.org/wiki/Misleading_graph}{here}} of graphics and visualization is to represent the data as accessible and truthful as possible. The reader should get the best possible overview about the data in the shortest possible time. And, of course, the graphics should look nice as well. First of all, some general hints that may help:
 
 \begin{itemize}
 \item Simple is better than complicated
 \item Avoid exccessive color. Graphics should be b/w readable if possible (use a color gradient that is a gradient in intensity at the same time, use dashing of lines additional to colors). If your graphic relies on color, try to choose colors that can be read by color blinds (avoid red/green).
-\item Truthfulness: avoid distortions. Quadratic figures unless there are particular reasons. Axis should start at 0 unless you have good reasons not to. If presenting several graphics, use the same scale unless there are good reasons for it. 
+\item Truthfulness: avoid distortions. Use quadratic figures unless there are particular reasons. Axis should start at 0 unless you have good reasons not to. If presenting several graphics, use the same scale unless there are good reasons for it. 
 \item Don't manipulate graphics by hand
 \item Output in a vector format (pdf, eps, svg)
 \end{itemize}
-
-
-\subsection{Graph types}
-
-There is a large, nearly infinte number of possible visual representation of data. I provide here four very common graph types. 
-
-\paragraph{Line plots:} Line plots are used to visualize continous, ordered measurements. Typical examples would be time series, continous variations of a parameter, or a mathematical function. Example in Fig.~\ref{fig: exaple plots}a.
-
-\paragraph{Scatter plots:} Scatter plots show two continous continous variables that are measured in pairs. Typical example is when you have repeated measurements of several variables, and you want to see if they correlate. Example in Fig.~\ref{fig: exaple plots}b.
-
-\paragraph{Bar plots:} Bar plots show an information (counts, or a continous variable) for discrete groups. Example in Fig.~\ref{fig: exaple plots}c.
-
-\paragraph{Box plots:} Box plots are very common to show the distribution of a continous variable across several discete groups. They typically consist of a box, whiskers (lines), and potentially points around the whiskers. What those means depends on the software used to create the plots, but the typical interpretation is that the box covers the central 50\%, with the median in indicated in the middle. The whiskers aim at providing an estimate of the range of your data, except for outliers. Of course, what is counted as an outlier depends on your assumptions. If you must know, the technical definition is that the whiskers are at the most distant observation less than or equal to the upper quartile plus 1.5 the length of the interquartile range. Example in Fig.~\ref{fig: exaple plots}d.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -421,13 +410,26 @@ boxplot(weight ~ group, data = PlantGrowth, main = "d) Plant Growth",
 \end{center}
 \end{figure}
 
+
+\subsection{Graph types}
+
+There is a large, nearly infinte number of possible visual representation of data. I provide here four very common graph types. 
+
+\paragraph{Line plots:} Line plots are used to visualize continous, ordered measurements. Typical examples would be time series, continous variations of a parameter, or a mathematical function. Example in Fig.~\ref{fig: exaple plots}a.
+
+\paragraph{Scatter plots:} Scatter plots show two continous continous variables that are measured in pairs. Typical example is when you have repeated measurements of several variables, and you want to see if they correlate. Example in Fig.~\ref{fig: exaple plots}b.
+
+\paragraph{Bar plots:} Bar plots show an information (counts, or a continous variable) for discrete groups. Example in Fig.~\ref{fig: exaple plots}c.
+
+\paragraph{Box plots:} Box plots are very common to show the distribution of a continous variable across several discete groups. They typically consist of a box, whiskers (lines), and potentially points around the whiskers. What those means depends on the software used to create the plots, but the typical interpretation is that the box covers the central 50\%, with the median in indicated in the middle. The whiskers aim at providing an estimate of the range of your data, except for outliers. Of course, what is counted as an outlier depends on your assumptions. If you must know, the technical definition is that the whiskers are at the most distant observation less than or equal to the upper quartile plus 1.5 the length of the interquartile range. Example in Fig.~\ref{fig: exaple plots}d.
+
 \vspace{1cm}
 \begin{fullwidth}
 \begin{mdframed}
     
 \textbf{In R:} 
 
-There are number of excellent introductions to graphics with R, so that I won't bother to provide details here. I recommend to look at \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/Statistics/Practicals/GraphicsInR}{exercise on graphics with R} that accompanies this primer, as well as at 
+There are number of excellent introductions to graphics with R, so that I won't bother to provide details here. As a start, I recommend looking at \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/Statistics/Practicals/GraphicsInR}{exercise on graphics with R} that accompanies this primer, as well as at 
 
 \begin{itemize*}
   \item \href{http://www.statmethods.net/graphs/index.html}{QuickR}
@@ -441,11 +443,11 @@ There are number of excellent introductions to graphics with R, so that I won't 
 
 \chapter{Inferential statistics}
 
-Inferential statistics is concerned with inference, i.e. drawing conclusions from observations \marginnote{Statistical inference is drawing conclusions from observations using statistical methods}. Inference is not always, but in most cases connected to the idea with a data-generating model. 
+Inferential statistics is concerned with inference, i.e. drawing conclusions from observations.\marginnote{Statistical inference is drawing conclusions from observations using statistical methods} Inference is not always, but in most cases connected to the idea of a data-generating model. 
 
 \section{Obtaining a data-generating model}
 
-Why do we need the idea of a data-generating model to draw conclusions from data? Imagine we want to know whether plant growth can be affected by music. We might take two pots, each with a plant, and expose one to classical music and the other to heavy metal. Inevitably, one of them will grow taller, but this could be by chance, as there is always some variation in the growth rates. 
+Why do we need the idea of a data-generating model to draw conclusions from data?\marginnote{In statistics, one often uses the word treatment to describe manipulations to experimental units. Here, the two types of music would be called treatments. The particular treatment of "doing nothing" is called the control.}  Imagine we want to know whether plant growth can be affected by music. We might take two pots, each with a plant, and expose one to classical music and the other to heavy metal. Inevitably, one of them will grow taller, but this could be by chance, as there is always some variation in the growth rates. 
 
 Hence, we need more repetitions. Let's say we take a few more pots, 30 in the hypothetical case I show below
 
@@ -466,38 +468,52 @@ boxplot(weight ~ group, data = PlantGrowth, main = "Plant Growth",
 \marginnote{Remember the interpretation of the boxplots - the strong line in the middle is the median. The box covers the central 0.5 quantile of the distribution.}
 There seem to be some differences between the three cases, but there is also quite a bit of variation in plant growth within each treatment (we have on average seven observations per treatment here). Hence, it is still possilbe that the differences that we observe have arisen by chance. 
 
-If want to say something definite about the probability that there is a difference between those three cases, we need to make a model that describes the stochastic variation in the data, which then allows us to calculate things such as the probability of the observed data arising by chance. These assumptions are what we call a statistical model (eqivalent: stochastic process, data-generating model). \marginnote{A statistical model describes how the response variable arise as a functiono of the predictors as well as some random (stochastic) processes}. 
+If want to say something definite about the probability of a difference between those two treatments and the control, we need to make a model that describes the stochastic variation in the data, which then allows us to calculate things such as the probability of the observed differences arising by chance. These assumptions are what we call a statistical model (eqivalent: stochastic process, data-generating model). \marginnote{A statistical model describes how the response variable arise as a functiono of the predictors as well as some random (stochastic) processes}. 
 
-The more common class of models used for this purpose are parametric statistical models. \marginnote{Parametric statistics uses statistical models that describe the data-generating process in terms of functions and distributions that have parameters that then need to be fit} For the data that we have here, a parametric statistical model might, for example, make the assumptions that there is a mean growth rate for each treatment (control, classical and heavy metal), but that the growth of each individual plant varies with a normal distribution around the mean growth of its respective group. The parameters of this model are the unknwon mean growth rates and the variance of the normal distribution. Those parameters are then fit to the data with methods explained below, and based on the fit one can calculate, for example, the probability that the data would arise if there was no difference between the groups.
+The more common class of models used for this purpose are parametric statistical models. \marginnote{Parametric statistics uses statistical models that describe the data-generating process in terms of functions and distributions that have parameters that then need to be fit} For the data that we have here, a parametric statistical model might, for example, make the assumptions that there is a mean growth rate for each treatment (control, classical and heavy metal), but that the growth of each individual plant varies with a normal distribution around the mean growth of its respective group. The parameters of this model are the unknwon mean growth rates and the variance of the normal distribution. Those parameters are then fit to the data with methods explained in this chapter, and based on the fit one can calculate, for example, the probability that the data would arise if there was no difference between the groups.
 
 The other option to obtain a data-generating model are non-parametric methods. \marginnote{non-parametric statistics tries to avoid making assumptions about the data-generating process. Typically, the data-generating process is emulated by using the data itself, e.g. by resampling methods.} Non-parametric methods bypass the neccessity of making assumptions, e.g. about the distribution of the data, typically by randomizing or resampling the data itself. How does this work? For the plant, growth, for example, we could answer the question of how likely it is to see the observed data if there is no difference between groups also without making an assumption about the distribution - we simply throw all observations in one pot, irrespectively of their treatment, and then re-distribute them randomly on the three treatments. If we do this many times (e.g. 1000 times), we can get a good idea how likely it would be to obtain the observed differences if treatment has no effect. 
 
 Non-parametric methods are an important branch of modern statistics. Their advantage is obviously that they don't make assumptions. \marginnote{The higher sensitivity of parametric methods relies on the fact that they make assumptions, which, in a sense, are like additional data. Of course, all results then rely on those assumptions being correct. We will talk about how to check parametric assumptions later in the chapter.} On the other hand, parametric methods are typically much faster, and if their assumptions are correct, they are more sensitive and powerfull, meaning that, with the same amount of data, they are more likely to detect an effect if it is there. For the latter two reasons, parametric methods are currently the basis of most statistical analysis.
 
 
-\section{Inferential products}
+\section{Inferential outputs}
 
-Based on the data-generating model (parametric or non-parametric), we can now apply different inferential procedures to draw conclusion about our data (in our case: to decide of music makes a difference or not). In standard statistics, there are two main inferential procedures that are applied in all kind of settings and models, and the outputs of these two procedures are: p-values and maximum likelihood estimates. A third procedure, Bayesian inference, has become more fashionable lately. I will mention it shortly in at the end of this section 
+Based on the data-generating model (parametric or non-parametric), we can now apply different inferential procedures to draw conclusion about our data (in our case: to decide of music makes a difference or not). In standard statistics, there are two main inferential procedures that are applied in all kind of settings and models, and the outputs of these two procedures are: p-values and maximum likelihood estimates. A third procedure, the posterior calculated by Bayesian inference, has become more fashionable lately. I will mention it shortly in at the end of this section 
 
 \subsection{p-values}
 
 The use of p-values is connected to the inferential method of null hypothesis significance testing (NHST). The idea is the following: if we have some data observed, and we have a statistical model, we can use this statistical model to specify a fixed hypothesis about how the data did arise. For the example with the plants and music, this hypothesis could be: music has no influence on plants, all differences we see are due to random variation between individuals. Such a scenario is called the null hypothesis. \marginnote{A null hypothesis $H_0$ is a fixed scenario that makes predictions about the expected probabilities of different observations.} Although it is very typical to use the assumption of no effect as null-hypothesis, note that it is really your choice, and you could use anything as null hypothesis, also the assumption: "classical music doubles the growth of plants". The fact that it's the analyst's choice what to fix as null hypothesis is part of the reason why there are are a large number of tests available. We will see a few of them in the following chapter about important hypothesis tests.
 
-If we have a null hypothesis, we calculate the probability that we would see the observed data or data more extreme under this scenario. This allows us to test whether our null hypothesis is compatible wit the data, and thus called a hypothesis tests. We call the probability to see the data or more extreme the p-value. \marginnote{The p-value is the probability to see the data or more extreme data under the null-hypothesis.} If the p-value falls under a certain level (the significance level $\alpha$) we say the null hypothesis was rejected, and there is significant support for the alternative hypothesis. The level of $\alpha$ is a convention, in ecology we chose typically 0.05, so if a p-value falls below 0.05, we can reject the null hypothesis. \marginnote{if p<0.05, we say we have significant evidence to reject the null-hypothesis.} 
+If we have a null hypothesis, we calculate the probability that we would see the observed data or data more extreme under this scenario. This allows us to test whether our null hypothesis is compatible wit the data, and thus called a hypothesis tests. We call the probability to see the data or more extreme the p-value. \marginnote{The p-value is the probability to see the data or more extreme data under the null-hypothesis.} 
+
+\begin{equation}
+p := p(d >= D_{obs} | H_0)
+\end{equation}
+
+If the p-value falls under a certain level (the significance level $\alpha$), we say we have significant evidence to reject the null hypothesis was rejected. The level of $\alpha$ is a convention, in ecology we chose typically 0.05, so if a p-value falls below 0.05, we can reject the null hypothesis. \marginnote{if p<0.05, we say we have significant evidence to reject the null-hypothesis.} 
 
 A problem with hypothesis tests and p-values is that their results are notoriously misinterpreted. The p-value is NOT the probability that the null hypothesis is true, or the probability that the alternative hypothesis is false, although many authors have made the mistake of interpreting it like that \citep[][]{Cohen-earthisround-1994}. Rather, the idea of p-values is to control the rate of false positives (Type I error). When doing hypothesis tests on random data, with an $\alpha$ level of 0.05, one will get exactly 5\% false positives. Not more and not less.  
 
 \subsection{Parameter estimates}
 
-The second type of output that is reported by most statistical methods are parameter estimates. Without going into too much detail: while the p-value is the probability of the data or more extreme data under a fixed (null) hypothesis, a parameter estimate (often also called point estimate or maximum likelihood estimate) refers to those of many possible hypothesis that are spanned by a parameter that has the highest probability to produce the observed data. 
+The second type of output that is reported by most statistical methods are maximum-likelihood parameter estimates. In a nutshell, the maximum-likelihood estimate (MLE) is our best estimate for the parameters in our model (e.g. a difference between the treatments and the control in our example). 
 
-In plain words, the parameter estimate is our best estimate for a difference between groups, or the influence between parameters. Again, in contrast, the p-value typically tells us the probability that we would see the data if there is no such influence. 
+In a bit more detail: in statistics, we define the likelihood as a function of the model parameters $\theta$ as  
 
-Parameter estimates are typically accompanies by confidence intervals. Sloppily you can think of the 95\% confidence interval of a parameter as the probable range for this area. Somewhat confusing for many, it's not the interval in which the true parameter lies with 95\% probability. Rather, in a repeated experiments, the standard 95\% CI will contain the true value in 95\% of all cases. It's a subtle, but important difference. However, for now, don't worry about it. The CI interval is roughly where we expect the parameter. 
+\begin{equation}
+L(\theta) := p(dD_{obs} | M(\theta))
+\end{equation}
+
+, i.e. as the function that is obtained by calculating the probability of obtaining the observed data when we vary the model parameters.
+
+The maximum-likelihood estimate (MLE)\marginnote{It is important to note that the MLE is the parameter set for which the data is most likely, not the most likely parameter set!} is then defined as the combination of parameters or model assumptions for which the likelihood is maximal. So, while the p-value is the probability of the observed data or more extreme data under a fixed (null) hypothesis, the MLE gives us the ``hypothesis'' that has the hightest probability to produce the observed data  
+
+The MLE is only a single parameter value.\marginnote{A point estimate is something like a single best estimte.} This type of estimate is often called a point estimate. However, a point estimate is typically of litte use if we don't know how certain it is.\marginnote{Confidence intervals provide an estimate of uncertainty around the point estimate.} Therefore, parameter estimates are usually accompanied by confidence intervals. Sloppily you can think of the 95\% confidence interval of a parameter as the probable range for this area. Somewhat confusing for many, it's not the interval in which the true parameter lies with 95\% probability. Rather, in a repeated experiments, the standard 95\% CI will contain the true value in 95\% of all cases. It's a subtle, but important difference. However, for now, don't worry about it. The CI interval is roughly the range within which we expect the true parameter to be. 
 
 \subsection{Bayesian estimates}
 
-Finally, Bayesian methods calculate a quantity that is called the posterior parameter estimate. It is similar, but not identical to the parameter estimates discussed previously. You won't need this here, but if you want to know more about those, have a look at \citep{Gelman-BayesianDataAnalysis-2003} and at my website \href{http://florianhartig.github.io/LearningBayes/}{Learning Bayes}.
+To conclude\marginnote{Bayesian methods calculate a third quantity, the posterior probability. Although they can be used for any model, Bayesian methods tend to be used for more advanced statistics.} our overview on inferential products, one method is still lacking - Bayesian methods calculate a quantity that is called the posterior parameter estimate. It is similar, but not identical to the parameter estimates discussed previously. You won't need this here, but if you want to know more about those, have a look at \citep{Gelman-BayesianDataAnalysis-2003} and at my website \href{http://florianhartig.github.io/LearningBayes/}{Learning Bayes}.
 
 
 \section{Important hypothesis tests}
@@ -563,7 +579,7 @@ A list of tests that have wikipedia articles can be found at \href{http://en.wik
 
 \section{Regression models}
 
-Regression does not necessarily mean that use a different statistical model as in hypothesis testing (ANOVA and the linear regression model in R use the same assumptions). However, the goal of regression is a different one. While hypothesis tests are all about seing whether the data would be compatible with a null-hypothesis, regression is about finding the best-fitting hypothesis or parameters. To say this again, if we have a model with a number of parameters that describe the influence of some predictors on the response, a hypothesis tests would typically set them to 0, testing the null hypothesis that there is no influence. A regression model tries to find the parameter combination that produces the highest probability to create the observed data, i.e. we are looking for the best fit.
+To do a regression does not necessarily mean that use a different statistical model as in hypothesis testing (ANOVA and the linear regression model in R use the same assumptions). However, the goal of regression is a different one. While hypothesis tests are all about seing whether the data would be compatible with a null-hypothesis, regression is about finding the best-fitting hypothesis or parameters (the MLE). Hence, a regression model tries to find the parameter combination that produces the highest probability to create the observed data.
 
 \subsection{Linear regression}
 
@@ -752,7 +768,8 @@ I have included this short chapter because of the importance of predictive metho
 
 Let's come back to one of the first point in this script: the data. If we have to collect data ourselves, we have to answer a number of questions. Which variables should we collect? At which values of those variables should we collect data? And how many replicates do we need?
 
-\section{Which variables}
+
+\section{Selection of variables}
 
 In a practical setting, we are typically interested in how a response is affected by a number of predictor variables. Clearly, we need to measure both response and this predictors of interest across a few of those predictor values to say something about the effect of the predictors. \marginnote{Correlation is not causality. For suggesting causality, we have to exclude confounding effects.} If we only wanted to know whether there is a correlation between predictors and response, our list of variables would be complete at this point. However, typically, we want to know not only if there is a correlation, but also whether we can say with some confidence that this correlation is causal. If we want to make this claim, we have to exclude that there are founfounding factors, also called confounding variables. 
 
@@ -767,16 +784,30 @@ The problem of confounding appears when the extraneous variable C is for some re
 If we think there is a factor that could be confounding, we basically have three options
 
 \begin{enumerate}
-\item Best: control the value of these factors. Either fix the value (preferred if we are not interested in this factor), else vary the value in a controlled way.
+\item Best: control the value of these factors. Either fix the value (preferred if we are not interested in this factor), else vary the value in a controlled way (see below).
 \item Second best: randomize and measure them
 \item Third best: only randomize or only measure them
 \end{enumerate}
 
 Randomization means that we try to ensure that the confounding factor is not systematically correlated with the variable of interest (but can still cause problems with interactions and nonlinear relationships).
 
-Measuring allows to control the effect, but cost power (see below) and, and we can?t measure everything
+Measuring\marginnote{Variables that we include but that are not interesting to us are often called nuisance variables.} allows us to account for the effect in a statistical analysis, but cost power (see below) and, and we can't measure everything.
 
-\section{At which values should we measure the variables}
+\section{Definition and bias of variables}
+
+A common mistake at this step of the design is to take the variable definition and measurements for granted, and continue with considering the selection of replicates and so on. The step that is missing is to think about the following two questions. \marginnote{The consideration of these two questions is often referred to as construct validity, see also main RS script.}
+
+\begin{enumerate}
+  \item Do my variables measure what I want to measure
+  \item What is the expected statistical (stochastic) error in my measurements, and what is the possible systematic error in my measurements
+\end{enumerate}
+
+The first item may seem a bit odd, because one would think that we know what we measure. However, in many cases in ecological statistics and beyond, we do not measure directly the variable that we are interested in, but rather a proxy. So, for example, we want temperature on the plot, and we use temperature from a weather station 5 km away. Or, we want to look at functional diversity, but how can we exactly express this in terms of variables that we measure in the field.
+
+The second questions relates to cosidering how much two measurements would differ if we do them repeatedly (stochastic),\marginnote{See main RS skript for more info on biases.} and how much measurements could be off systematically (e.g. because a method or instrument is systematically wrong, or because humans show particular biases).
+
+
+\section{Selection of values for the independent (predictor) variables}
 
 If we have decided which variables to measure, we have to decide for the values at which we want to measure them. In an observational study, this may not always be possible completely, but it's usually possible to ensure sufficient variation in the predictor variables. A few points to consider
 
