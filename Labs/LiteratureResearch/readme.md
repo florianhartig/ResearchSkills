@@ -50,12 +50,11 @@ Alternatives (it's worth googeling for newer options):
 
 ### Using BibTex with Open/ Libre Office
 
-1. **Start jabref in 32 bit mode.** (If your OS is Windows (e.g. in the CIP pools) paste the following (or similar) into your command line and hit enter: 
+1. **Start jabref in 32 bit mode.** If your OS is Windows (e.g. in the CIP pools) paste the following (or similar) into your command line and hit enter. This will open jabref in 32 bit mode: 
 
-  C:\Windows\System32>"C:\Program Files (x86)\Java\jre1.8.0_60\bin\java" -d32 -jar
- "C:\Program Files (x86)\JabRef\JabRef-2.10.jar"
+C:\Windows\System32>"C:\Program Files (x86)\Java\jre1.8.0_60\bin\java" -d32 -jar
+"C:\Program Files (x86)\JabRef\JabRef-2.10.jar"
 
-This will have opened jabref in 32 bit mode. 
 2. If you have an existing BibTex literature database open it here. If you start from scratch start your database here.
 3. Open your Libre Office writer document. (To help jabref and Libre Office find a connection quicker it is better to have both software launched.)
 4. Start the connection: 
