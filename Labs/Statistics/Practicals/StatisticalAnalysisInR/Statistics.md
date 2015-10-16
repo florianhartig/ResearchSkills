@@ -5,7 +5,7 @@ Statistics crash course
 
 
 
-*These scripts are intended to be read together with the more detailed explanation [here](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/R/Script/Crashcourse-StatisticsWithR.pdf)*
+*These scripts are intended to be read together with the more detailed explanation [here](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf)*
 
 
 ## Continous response variables
