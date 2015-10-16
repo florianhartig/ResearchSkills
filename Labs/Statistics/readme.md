@@ -25,5 +25,5 @@ Also, see the stats help website of our department [here](http://biometry.github
 ## Practicals 
 
 * [Statistical Analysis](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/Statistics/Practicals/StatisticalAnalysisInR/Statistics.md)
-* [Graphics with R](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/Statistics/Practicals/GraphicsR/Rgraphics.R)
+* [Graphics with R](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/Statistics/Practicals/GraphicsInR/Rgraphics.Rmd)
 
