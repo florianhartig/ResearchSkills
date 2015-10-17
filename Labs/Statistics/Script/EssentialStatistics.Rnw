@@ -447,7 +447,7 @@ Inferential statistics is concerned with inference, i.e. drawing conclusions fro
 
 \section{Obtaining a data-generating model}
 
-Why do we need the idea of a data-generating model to draw conclusions from data?\marginnote{In statistics, one often uses the word treatment to describe manipulations to experimental units. Here, the two types of music would be called treatments. The particular treatment of "doing nothing" is called the control.}  Imagine we want to know whether plant growth can be affected by music. We might take two pots, each with a plant, and expose one to classical music and the other to heavy metal. Inevitably, one of them will grow taller, but this could be by chance, as there is always some variation in the growth rates. 
+Why do we need the idea of a data-generating model to draw conclusions from data?\marginnote{In statistics, one often uses the word treatment to describe manipulations to experimental units. Here, the two types of music would be called treatments. The particular treatment of "doing nothing" is called the control.} Imagine we want to know whether plant growth can be affected by music. We might take two pots, each with a plant, and expose one to classical music and the other to heavy metal. Inevitably, one of them will grow taller, but this could be by chance, as there is always some variation in the growth rates. 
 
 Hence, we need more repetitions. Let's say we take a few more pots, 30 in the hypothetical case I show below
 
