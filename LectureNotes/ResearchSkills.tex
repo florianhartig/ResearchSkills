@@ -3,6 +3,8 @@
 \usepackage[utf8]{inputenc} % uft8?
 \usepackage[T1]{fontenc}
 
+\usepackage{graphicx}
+
 \usepackage{color}
 \usepackage{xcolor}
 \usepackage{framed}
@@ -23,27 +25,6 @@
 \definecolor{darkblue}{rgb}{0,0,.5}
 \hypersetup{colorlinks=true, breaklinks=true, linkcolor=darkblue, menucolor=darkblue, urlcolor=darkblue, citecolor=darkblue}
 
-\lstset{
-language=[LaTeX]{TeX},
-breaklines = true,
-breakautoindent = false,
-breakindent = 0pt,
-commentstyle=\color{gray},
-frame=single,
-framerule=0.4pt,
-framesep=3pt,
-xleftmargin=3.4pt,
-xrightmargin=3.4pt,
-basicstyle=\normalfont,
-keywordstyle=\color{blue}\sffamily,                                
-identifierstyle=\color{black},
-numbersep=5mm, 
-numbers=left, 
-numberstyle=\tiny,
-morekeywords = {
-maketitle, 
-tableofcontents}  
-}
 
 \setcounter{secnumdepth}{1}
 
@@ -55,20 +36,43 @@ tableofcontents}
 \begin{document}
 \let\cleardoublepage\clearpage
 \maketitle
+
+
+\thispagestyle{empty}
+\null
+
+\begin{fullwidth}
+Course material for the MSc model Research Skills, University of Freiburg (website \href{http://florianhartig.github.io/ResearchSkills/}{here})\\[0.5cm]
+Comments / questions to:\\[0.5cm]
+\href{https://florianhartig.wordpress.com/}{Florian Hartig}\\
+University of Freiburg\\
+Germany
+\end{fullwidth}
+
+
+\section*{Preface}
+
+Lecture notes for the MSc course "Research Skills". Work in progress.
+
+
+\section*{Acknowledgments}
+
+Severin Hauenstein for contributions to the chapter on scientific writing.
+
+
+\vfill
+\begin{fullwidth}
+Created 2015. 
+\end{fullwidth}
+
+
 \newpage
 \tableofcontents
 
 \newpage
 
 
-\section*{Preface}
 
-Lecture notes for the MSc course "Research Skills". Work in progress. Please send comments and suggestions to \href{http://florianhartig.wordpress.com/}{http://florianhartig.wordpress.com/}
-
-
-\section*{Acknowledgments}
-
-Severin Hauenstein for contributions to the chapter on scientific writing.
 
 \chapter{Logic and philosophy of science}
 
@@ -77,69 +81,189 @@ Severin Hauenstein for contributions to the chapter on scientific writing.
 The Oxford dictionary defines science as 
 
 \begin{quote}
-Science [mass noun] - the intellectual and practical activity encompassing the systematic study of the structure and behaviour of the physical and natural world through observation and experiment
+Science [mass noun] - the intellectual and practical activity encompassing the systematic study of the structure and behaviour of the physical and natural world through observation and experiment.
+\end{quote}
+
+Or, in the words of Richard Feynman:
+
+\begin{quote}
+Science is a process for learning about nature in which competing ideas about how the world works are measured against observation.
 \end{quote}
 
 Hence, science is a method to find out how to world works.\footnote{Epistemology, from Greek episteme = knowledge and logos = word is the branch of philosophy concerned with what knowledge is, how it can be acquired, and what can be known} In fact, "method" is an understatement. In the last centuries, the scientific method has been the reason for an unprecedented increase in knowledge, opportunity and well-being. In the western world at least, science is the current dominant answer to what one can know and how to find it out (epistemology). 
 
-\marginnote{Many famous scientists engaged in personal feuds that, looking back, seem to be fueled by irrationality and personal pride. The doubtlessly ingenious Isaac Newton engaged in various spiteful and bitter feuds, including his most famous battle with German mathematician Gottfried Leibniz over the invention of infintesmial calculus.}
+\marginnote{Many famous scientists engaged in personal feuds that, looking back, seem to be fueled by irrationality and personal pride. The doubtlessly ingenious Isaac Newton engaged in various spiteful and bitter feuds, including his most famous battle with German mathematician Gottfried Leibniz over the invention of infinitesimal calculus.}
 
 But science is also a human endeavor. If one says "science", it may be that the reference relates to the history of science, the state of scientific knowledge, or the science as a social institution. Regarding those latter aspects of science, things become less formally defined - if we look at the history of science, we see a complex of individuals that are somewhat unified by a common cause, but at the same time subject to their national and cultural influences as well as by personal vanity, pride or madness. As a result, the history of science, as well as its present state, is complicated by personal preferences, power games and random events, in the same way as political and economic history is.
 
-In the center of science, though, is a set of assumptions and methods, a philosophy that allows us to draw and agree on conclusions from empirical observations. The rest of this chapter is devoted to understanding these assumptions somewhat better, and finding how how the "scientific method" works. 
+In the center of science, though, is a set of assumptions and methods, a philosophy that allows us to draw and agree on conclusions from empirical observations. Not every scientist is aware of the ``formal rules" of these methods, but that doesn't know that they do not exist. In his book "Induction \& Intuition in Scientific Thought", Peter Medawar notes: 
+
+\begin{quote}
+The fact that scientists do not consciously practice a formal methodology is very poor evidence that no such methodology exists. It could be said—has been said—that there is a distinctive methodology of science which scientists practice unwittingly, like the chap in Molière who found that all his life, unknowingly, he had been speaking prose.
+\end{quote}
+
+Hence, it may well be possible to do science without having ever learned the basics of the scientific method. That being said, it is useful for the general outlook on the world, as well as for doing better science, to understand the basic assumptions underlying scientific work. The rest of this chapter is devoted to understanding these assumptions and their history better, and finding how how the "scientific method" works. 
 
 
 \section{Philosophical foundations of scientific thinking}
 
+\subsection{Empiricism and induction}
+
+Empiricism\marginnote{Hume, John Stuart Mill, Karl Popper} is the stance that (scientific) knowledge comes only from observations. For an empiricist, (sensory) experience is more important for the formation of ideas about how the world works than logical reasoning or innate knowledge. 
+
+\paragraph{Inductive reasoning}\marginnote{Induction = conclusion from the specific to the general} An important idea in the context of empiricism is the concept of inductive reasoning. An induction is a conclusion from particular instances to the general. Example: all swans I have seen are white, therefore all swans are white. It would be a misunderstanding that empiricism is based on induction. Empiricism does not prescribe the use of inductions for generating knowledge, but it seems obvious that pure empiricism would require to rely on inductive reasoning if any general conclusions are to be generated. 
 
 
-\subsection{Rationalism}
-
-
-In one of the foundational works of modern science, "Le Discours de la Méthode (1637)"  \footnote{The full title of this famous essay is "Discourse on the Method of Rightly Conducting One's Reason and of Seeking Truth" \citep{Descartes-DiscourseMethodRightly-1673}}, René Descartes famously observed: 
-
-\begin{quote}
-Good sense is, of all things among men, the most equally distributed; for every one thinks himself so abundantly provided with it, that those even who are the most difficult to satisfy in everything else, do not usually desire a larger measure of this quality than they already possess.
-\end{quote}
-
-These words of one of the founding fathers of what we today consider Science are often read and cited as a sarcastic observation of human vanity. However, if one continues reading, it becomes clear that Descartes may, after all, have been serious about his faith in human rationality. He goes on to state
+\paragraph{The problem of induction}\marginnote{The problem of induction is that we don't know how reliable knowledge generated by inductive reasoning is - ``Induction is the glory of science and the scandal of philosophy" C. D. Broad} The problem with inductive reasoning is evident - an inductive conclusion does not need to be correct, even if the assumptions (observations, formal logic) are formally correct. Hence, we cannot be truly be sure if a if the knowledge that is created by empiricism and inductive reasoning is reliable. This problem has been named the ``problem of induction" by David Hume, but it was of course know since a long time. Sextus Empiricus (c. 160-210 AD), the name father of empiricism, observed famously
 
 \begin{quote}
-And in this it is not likely that all are mistaken the conviction is rather to be held as testifying that the power of judging aright and of distinguishing truth from error, which is properly what is called good sense or reason, is by nature equal in all men; and that the diversity of our opinions, consequently, does not arise from some being endowed with a larger share of reason than others, but solely from this, that we conduct our thoughts along different ways, and do not fix our attention on the same objects. 
+When they propose to establish the universal from the particulars by means of induction, they will effect this by a review of either all or some of the particulars. But if they review some, the induction will be insecure, since some of the particulars omitted in the induction may contravene the universal; while if they are to review all, they will be toiling at the impossible, since the particulars are infinite and indefinite. /Sextus Empiricus (c. 160-210 AD)
 \end{quote}
 
+
+\subsection{Rationalism and deductions}
 
 \begin{figure}[]
 \begin{center}
-%\includegraphics[]{figures/Descartes}
+\includegraphics[width = 4cm]{figures/Descartes}
 \caption{Portrait of René Descartes}
 \label{fig: Descartes}
 \end{center}
 \end{figure}
 
 
+Rationalism, in contrast to empiricism, holds the view that knowledge is created mainly by reasoning. In one of the foundational works of modern science, "Le Discours de la Méthode (1637)"  \footnote{The full title of this famous essay is "Discourse on the Method of Rightly Conducting One's Reason and of Seeking Truth" \citep{Descartes-DiscourseMethodRightly-1673}}, René Descartes famously observed: 
 
-\subsection{Induction and deduction}
+\begin{quote}
+Good sense is, of all things among men, the most equally distributed; for every one thinks himself so abundantly provided with it, that those even who are the most difficult to satisfy in everything else, do not usually desire a larger measure of this quality than they already possess.\footnote{ These words of one of the founding fathers of what we today consider Science are often read and cited as a sarcastic observation of human vanity. However, if one continues reading, it becomes clear that Descartes may, after all, have been serious about his faith in human rationality. He goes on to state: ``
+And in this it is not likely that all are mistaken the conviction is rather to be held as testifying that the power of judging aright and of distinguishing truth from error, which is properly what is called good sense or reason, is by nature equal in all men; and that the diversity of our opinions, consequently, does not arise from some being endowed with a larger share of reason than others, but solely from this, that we conduct our thoughts along different ways, and do not fix our attention on the same objects. ''}
+\end{quote}
 
-\subsection{Empiricism}
+Rationalists differ though in how exactly knowledge is created by reasoning. Clearly, one can only think if one has some things to think about to start with. Some philosophers have stressed experience as providing these starting points, while others have maintained that there are some innate concepts or truths that we can know without reference to the material world. In either case, a type of reasoning that is natural to rationalism is deductive reasoning
+
+\paragraph{Deductive reasoning}\marginnote{Deductive reasoning = conclude from the general to the specific.} A deduction is when one concludes from the general to the specific. Example: all people from Frankfurt like applewine, I am from Frankfurt, therefore I like applewine. An important difference to inductive reasoning is that, if assumptions are correct, conclusions made by deduction are necessarily correct.
 
 
-\section{Important philosophical views on science}
+\section{The basic science stance}
 
+In the previous section, we have learned about two fundamentally different thoughts about how knowledge is created (empiricism and rationalism), and we have learned about two types of reasoning (induction and deduction). An attentive reader has probably already drawn a conclusion: in some way, science combines these two views. 
+
+Before we come to that, let me define the basic assumptions that underlie the scientific method:
+
+\begin{itemize}
+\item There is a material reality, and we can observe it
+\item The material reality follows certain general laws. We can discover the nature of these laws (scientific theory), and we can do this objectively, meaning that everyone sharing the same basic principles (the scientific method) will agree eventually
+\item Discovery happens by (a limited number of) empirical observations (empiricism) and reasoning (rationalism), which are combined in the scientific method. 
+\end{itemize}
+
+
+\section{The scientific method and its history}\label{sec: scientific method}
+
+\marginnote{A wider account of the different views on the scientific method on wikipedia \href{https://en.wikipedia.org/wiki/History_of_scientific_method}{here}}
+
+
+The basic science stance defined in the previous chapter summarizes the basic assumptions of science, but it does not yet tell us how science works in bringing together empiricism and rationalism. 
+\subsection{Aristotle's view on the scientific method in his Posterior Analytics}
+
+
+One of the first\marginnote{Aristotle's six standard works on logic are summarized in the Organon. His view on the scientific method are spread around this work, but the main part is in the the ``Posterior Analytics'', (Latin: Analytica Posteriora).}, certainly one of the best-known explanations of the scientific method is Aristotle's inductive-deductive method (Fig.~\ref{fig: InductiveDeductiveAristotle}). The idea depicted in the figure is the following 
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width = 4cm]{figures/InductiveDeductiveAristotle.pdf}
+\caption{Aristotles inductive-deductive model of the scientific method.}
+\label{fig: InductiveDeductiveAristotle}
+\end{center}
+\end{figure}
+
+\begin{enumerate}
+\item You make an observation
+\item Infer general principles from the observation
+\item Infer consequences of these principles
+\item Check them against observation
+\end{enumerate}
+
+Repeating the cycles of this chain lead to knowledge. 
+
+This basic idea has not changed enormously in the next 2000 years. However, philosophers and scientists have developed different opinions about how the processes of generating explanatory principles and testing them work exactly. A particularly controversial topic has been the extent to which induction plays a role in this cycle. 
+
+Aristotle suggests towards the end of the Posterior Analytics that, at first, explanatory principles arise through induction
+
+\begin{quote}
+    Thus it is clear that we must get to know the primary premises by induction; for the method by which even sense-perception implants the universal is inductive. 
+\end{quote}
+
+However, he is clearly uncomfortable with the inductive element in this and goes on to say that about the premises created by induction
+
+\begin{quote}
+[...] it follows that there will be no scientific knowledge of the primary premises, and since except intuition nothing can be truer than scientific knowledge, it will be intuition that apprehends the primary premises. 
+\end{quote}
+
+How this intuition works to create our first premises remains then a bit unclear - but you should read Aristotle yourself, maybe you can make more sense of it than me. 
 
 \subsection{Popper and the scientific method}
 
+We take a 2000yr leap and go the the arguably most influential interpreter of the scientific method in the 20th century - Karl Popper. Popper developed the what we can think of as the current orthodox interpretation of how science works. You may not like it, but due to his influence you will have to face the situation that many people take his views as eternal truths that are set in stone. 
+
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width = 4cm]{figures/HypotheticoDeductivePopper.pdf}
+\caption{Popper's hypothetico-deductive model of the scientific method}
+\label{fig: InductiveDeductiveAristotle}
+\end{center}
+\end{figure}
+
+\paragraph{Hypothetico-deductive method}\marginnote{Popper: you cannot prove a theory, you can only reject it!} In essence, Popper too a radical step to remove induction completely from the equation. According to popper, the essence of science is not to produce new theories, but to have a method to reject them. We don't care how new theories arise: they may be guessed, they may be induced, this is not part of the scientific method. The methods starts once we have a theory - if we a theory is there, we look at the predictions of this theory (deduction), we can test it against observation and see whether the theory is compatible with it (deduction), and if not, we can conclude that the theory is wrong (deduction). Through this construction, science consists only of logically clean deductions. Here a summary of this method 
+
+\begin{enumerate}
+\item Form / guess a hypothesis about a phenomenon in nature
+\item Derive predictions from hypothesis
+\item Test predictions against observation
+\item Draw conclusions about the validity of the hypothesis
+\end{enumerate}
+
+It follows from Popper that ``you cannot prove a theory, you can only reject'' - hence, avoid using the word proof in scientific articles - many people care deeply about popper, and they will react strongly to it!
+
+
+\subsection{Multiple working hypothesis}
+
+Popper is the mainstream, but there have been other suggestions about how science works of should work. A counterpoint to Popper's idea of rejection is the idea of multiple working hypothesis. The basic principle is simple - instead of trying to reject an idea, one can work with alternative theories. With time, evidence typically moving to favor one of them. \citet{Platt-StrongInferenceCertain-1964} tracks the history of this idea to an influential essay of the Geologist T. C. Chamberlin, who recommended working with multiple hypothesis to avoid as the best way to avoid “parental affection” (T. C. Chamberlin 1890, Science.
 
 \subsection{Kuhn and variations of the scientific method}
 
+The argument for multiple working hypothesis is a fist example of an argument that brings in the social aspect of how science works - the problem that Chamberlin has with the idea of Popper (he formulated his view before Popper of course) is not that Popper's method wouldn't work in principle, but that in practice, researchers may be hesitant to reject ideas, because they like them to be true. 
 
-\subsection{}
+A more modern position that goes in a similar direction are the ideas of Thomas Kuhn: in his seminal work ``the structure of scientific revolutions'', Kuhn posits that sciences works within within certain assumptions. In a normal science phase, we may apply Popper's idea to test and improve these assumptions, but we would not reject the basic premises even if there is evidence against them, unless a better theory emerges (revolutionary phase). The phases of science as a according to Kuhn are thus:
 
+\begin{itemize}
+\item Pre-paradigm phase – no consensus about a certain phenomenon, incomplete theories
+\item Normal science – dominant paradigm emerged, progress in small steps within, but no questioning of paradigm, problems accumulate
+\item Revolutionary science – paradigms redefined
+\end{itemize}
+
+There is probably a good deal of truth in this observation - in the history of science, there are many examples of the fact that an old theory is only rejected if a better theory is on offer. 
 
 \section{Summary: the principles of science}
 
+Bringing these different theories together, I think it's important not to interpret Aristotle, Popper, Chamberlin or Kuhn as opposing each other - I would simply say that they highlight different aspects of the scientific method as it is applied in practice. 
 
+Popper offers arguably the most pure account of a logically consistent way to use empirical arguments to deductively reject a scientific explanation. However, Chamberlin and Kuhn, however, tell us something about the social rules and necessities that affect scientists and therefore the scientific process. There are many more philosophers worth reading: Francis Bacon, Descartes, Hume, Wittgenstein, Russel, Lakatos - in the larger picture, those are neither right nor wrong, but they simple highlight different aspects of science that as a multi-facetal system of thinking, people and institutions. 
 
+In the hear of all that, however, remains the idea of creating ``near-certain'' knowledge by combining rational thinking with empirical observations.
+
+\vspace{1cm}
+\begin{mdframed}
+    
+\textbf{Repetition of central concepts in this chapter:} 
+
+\begin{itemize*}
+  \item Science is based on empiricism and rationalism
+  \item Philosophers have tried to remove as far as possible the inductive element out of the scientific method, stressing the deductive parts of science
+  \item Popper's scientific method is the orthodox view, but there are other views that stress the aspects of multiple hypothesis of the "social" aspect of the scientific endeavor. 
+\end{itemize*}
+
+\end{mdframed}
 
 
 \chapter{The scientific literature}
@@ -154,19 +278,24 @@ Regardless of whether the quote was meant as it is interpreted today \footnote{B
 }, the fact remains that scientists today are hardly explorers that go far on unmarked territory. 
 
 
- 
-
 Before you start a new research project on a particular topic, you should find out what has already been done to a) understand better what you are doing b) avoid doing something that has already been done. 
 
 
 \section{Finding relevant literature}
 
-How to search for relevant literature depends on the
+How to search for relevant literature depends on the your field, but basically there are three main databases
 
+\begin{itemize}
+\item Google scholar 
+\item ISI web of knowledge (proprietory, slow, but most "official")
+\item Scopus (proprietory, competitor to ISI)
+\end{itemize}
+
+All of them work fine, with slightly different interface, search options, advantages and disadvantages. More details in the lecture notes. 
 
 \section{Organizing your literature}
 
-The basic answer to how to organize your literature is pleasingly short - people have created specialized software for this purpose. These reference managers work great, so use them! They will allow you to search in your papers for keywords, names, or anything else, link your pdfs, and they will also couple with your word processing software (MS Word, Open Office, LaTeX). 
+Also the answer to how to organize your literature is pleasingly short - people have created specialized software for this purpose. These reference managers work great, so use them! They will allow you to search in your papers for keywords, names, or anything else, link your pdfs, and they will also couple with your word processing software (MS Word, Open Office, LaTeX). 
 
 \marginnote{See our lab on working with a reference manager \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/LiteratureResearch}{here}}
 
@@ -174,17 +303,38 @@ The only question is which of the available programs work best for you. A genera
 
 \section{Citation rules}
 
-\marginnote{High-profile cases of "faulty" citations include the former German Minister of Defense Karl-Theodor zu Guttenberg as well as the the former German Federal Minister of Education and Research, Annette Schavan}
+Given\marginnote{High-profile cases of "faulty" citations include the former German Minister of Defense Karl-Theodor zu Guttenberg as well as the the former German Federal Minister of Education and Research, Annette Schavan} the amount of PhD titles that have recently been revoked from prominent public figures for not correctly citing the literature in the PhD theses (a charitable expression for outright plagiarism in some cases), it seems a good idea to make sure that everyone is aware of a basic rule in science:
 
-Given the amount of PhD titles that have recently been revoked from prominent public figures for not correctly citing the literature in the PhD theses (a charitable expression for outright plagiarism in some cases)
+\begin{quote}
+If you use the ideas of another person in your work, you need to cite them!
+\end{quote}
 
-http://www.nature.com/ng/journal/v47/n4/full/ng.3271.html
+There are different types of citations:
 
-Greenberg-Howcitationdistortions-2009
+\begin{itemize}
+\item Reference: It is like that (Smith, 2001), or „Smith (2001) expresses the opinion that ...“
+\item Quotation: „It is because it is” (Smith, 2001, p.23)
+\item Personal communication “Frogs are green (S. Smith, personal communcation)”
+\end{itemize}
 
+Taking larger passages / ideas from a source without making this clear is plagiarism. Changing only some words will make it obvious that deliberate intention was involved. Naming the source alone doesn’t make it better when you design the presentation in a way that credit is wrongly attributed to you. By and large, the rules dictated by common sense and honesty apply!
 
+\paragraph{Citation Signals} Citations can be modified by citation signals. An example is the signal ``but'', as in ``It is like it is (but see Adams, 2009)”. These signals are meant to clarify the meaning of a citation, e.g. as supportive, related, or even contradicting the statement made in the main work. Citation signals are therefore crucial, and wrong use can also constitute misconduct! (a few of the high-profile cases with politicians turned around a cf. that was inserted although it should be a direct citation). A list of explanations of the different signals is provided \href{http://en.wikipedia.org/wiki/Citation_signal}{here}. Some of the most important are:
 
+\paragraph{You should read the papers you cite} A recurrent problem, both in student's assignments and in the academic literature, is that papers are cited too broadly or wrongly. \citet{-Causecorrelationconjecture-2015} gives an account of that. \citet{Greenberg-Howcitationdistortions-2009} examine citation networks of papers that are miss-cited. The bottomline is: 1) sure you read the papers that you cite. 2) cite specifically, e.g. by noting in a short sentence for what you cite a paper or what they found, instead of writing only (see also Smith, 2001). 
 
+\vspace{1cm}
+\begin{mdframed}
+    
+\textbf{Repetition of central concepts in this chapter:} 
+
+\begin{itemize*}
+  \item You find literature through literature databases
+  \item Use a reference manager to organize your literature
+  \item Read the papers you cite, cite them correctly for what they say, and don't forget to mention all sources that you use!
+\end{itemize*}
+
+\end{mdframed}
 
 
 \chapter{Questions, data and valid conclusions}
@@ -194,9 +344,7 @@ For to be possessed of a vigorous mind is not enough; the prime requisite is rig
 \end{quote}
 
 
-If you start a new research project, the first thing to decide on is your question. From that, you develop a hypotheses and experimental procedures to test it and so on. 
-
-It cannot be stressed enough that the choice of the question is probably the single most important decision in a scientific project. It determines 
+If you start a new research project, the first thing to decide on is your question. From that, you develop a hypotheses and experimental procedures to test it and so on. It cannot be stressed enough that the choice of the question is probably the single most important decision in a scientific project. It determines 
 
 \begin{itemize}
 \item what you do for the next year / 5yrs / decade
@@ -213,51 +361,81 @@ There have been tons of comments on what makes a good question. If you listen to
 That being said, I think it is quite easy to give a few minimum requirements for a good question. 
 
 
-\paragraph{It has to be new!}A basic requirement is 
+\paragraph{It has to be new!} A basic requirement is that your question is new, or, as we say in science: novel! Note there may be different levels of new
 
-Different levels of new
-Probably thought of, but not done before (no one bothered)
-Thought of, but couldn’t be done (because methods lacking)
-Done, but wrongly (correct previous results)
-Not thought of before (really new)
+\begin{itemize}
+\item Probably thought of, but not done before (no one bothered)
+\item Thought of, but couldn’t be done (because methods lacking)
+\item Done, but wrongly (correct previous results)
+\item Not thought of before (really new)
+\end{itemize}
 
-Check the literature, make sure you understand to which extent your study is different from previous studies
+Obviously, the last item would be the most desirable form of novelty. In any case - check the literature, make sure you understand to which extent your study is different from previous studies
 
- 
+\paragraph{It has to be exciting / relevant!} Your question should be relevant to you, to your community, to society. 
+
+\paragraph{It needs to be a valid scientific question!} We will discuss validity in more detail in the next chaper, but roughly, what is meant by that is: is the question logically consistent, and can we hope to generate a valid answer to it?
 
 
+\begin{figure}[]
+\begin{center}
+\includegraphics[width = 5cm]{figures/MedawarZone}
+\caption{The Medawar zone is an illustration of the sweet spot between too trivial and too difficult questions. The term was coined in \citet{Loehle-guidetoincreased-1990}, in honor of Sir Peter Medawar, who gave a verbal description of this zone in his book `` The Art of the Soluble'' \citep{Medawar-artsoluble-1967}.}
+\label{fig: MedawarZone}
+\end{center}
+\end{figure}
+
+\paragraph{Risks and benefits should balance} In all that, however, you should also make sure that risks and benefits balance - there may be great questions like ``a general cure of cancer'' - it's new, exciting and a valid scientific question. However, if you would try to find an answer in a MSc thesis, you would be set up for failure. Try to find questions that 
+
+\begin{itemize}
+\item Don’t test things when the answer is clear
+\item To avoid this, don’t pose the question to widely
+\item Is a negative result nontrivial? If you can’t show the thing that you expected, is the result still interesting?
+\end{itemize}
+
+Great questions\marginnote{If you want to aim really high, you can read the essay ``Ten Simple Rules to Win a Nobel Prize'' by \citep{Roberts-TenSimpleRules-2015}} are also to test a common belief that was not tested before, or question something which was considered established knowledge. 
 
 \section{Experimental design and validity}
 
-\subsection{Constrcuct validity}
-
-Are the things 
-
-\subsection{Bias}
+Assuming we have a question of interest and novelty, that seems to be worth pursuing - how can we make sure that we set up a valid scientific procedure to answer it?
 
 
-\citep{Ransohoff-Biasasthreat-2005}
+A framework that allows us to classify the things that can go wrong when we try to apply the scientific method as defined in chapter~\ref{sec: scientific method} is the concept of validity \citep[][]{Shadish-Experimentalandquasi-2002}. The application of these terms is more common in the social science / economics that in natural sciences, but the issues are universal, and for discussing and checking problems I find it useful to have a classification. 
+
+\subsection{Constrcuct validity and bias}
+
+The\marginnote{Construct validity = is what we measure well defined and corresponds to what we mean.} first problem that may appear when we try to test a theory are problems of construct validity. Basically, construct validity means: is what we measure well defined and corresponds to what we mean? Does it correlate with measures it should correlate with (convergent validity)? Is it unrelated to measures it should not correlate with (discriminant validity)?
+
+\paragraph{Construct validity of proxy variables} In "hard sciences" such as physics this is often not so much a concern, but the more we go to complex or social systems, the more likely it is that we measure variables that are proxies for concepts rather than a physical quantity. Examples are "intelligence", "biodiversity", "competition", "light climate". In all these cases, there is probably room for interpretation how to define and measure the concept exactly. It is very advisable to think about his hard, because it can have a strong effect on results. 
+
+\paragraph{Bias} A part of construct validity that is important in either case are potential biases. Biases can appear through instrumental errors, but frequently also through observer bias. More on that in the lecture. 
+
+% TODO \citep{Ransohoff-Biasasthreat-2005}
 
 \subsection{Internal validity}
+
+Internal validity\marginnote{ Internal validity = correlation is not causation} is concerned with the question whether a causal effect can be demonstrated within the experiment / system under study. The basic problem is that correlation does not prove causation. As a an example - if we find that trees have started to grow taller in the last 50 years, and we find that atmospheric carbon dioxide concentration have risen in the same time, we can still not be sure that the CO2 is the causal factor for tree growth. 
+
+Inferences\marginnote{Inferences are said to possess internal validity if a causal relation between two variables is properly demonstrated. } are said to possess internal validity if a causal relation between two variables is properly demonstrated. A more detailed description on this in the \href{https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf}{accompanying statistics script}, section on experimental design.
 
 
 \subsection{Statistical validity}
 
+Statistical validity is concerned with the question if an effect has been demonstrated with sufficient statistical (probabilistic certainty). 
 
-\paragraph{Statistical Power} Statististical power
-
+Threats to statistical validity are wrong statistical assumptions, but also explicit and implicit biases through malpractices that are known as multiple testing, researcher’s degrees of freedom, low power,P-value fishing / hacking. A more detailed description on this in the \href{https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf}{accompanying statistics script}. 
 
 \subsection{External validity}
 
+External validity\marginnote{External validity = do extrapolations hold} asks the question: Does our inference about correlations, or cause-effect relationships hold outside the empirical observations available to use. In other word - can we generalize our study, and if so, to what extent. 
 
-
-
+The problem with external validity is that it's hard to demonstrate - if we have measured a plot in a particular location, we cannot be sure a priori how representative it is. In practice, it is a matter of experience and common sense to establish the domain on which your results are valid. Nevertheless, this is a very important task, because it is of course crucial for the results of a study to know how generalization they are. 
 
 \vspace{1cm}
+
 \begin{mdframed}
-\begin{fullwidth}
     
-\textbf{Checklist validity}\\[0.4]
+\textbf{Checklist validity}%\\[0.4cm]
 
 Before everything else, make sure the question is well defined. I recommend writing it down to avoid ambiguity. Now, check validity of:
 
@@ -290,43 +468,130 @@ Before everything else, make sure the question is well defined. I recommend writ
       \end{itemize}   
     \end{itemize}
 
+\end{mdframed}
+
+
+\section{Planning and analysis of experiments} 
+
+Assuming that you have a good question, and that you have checked that you have validity of answering it, how do you perform the measurements and how do you analyze them? A detailed description on all this is in the \href{https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf}{statistics script} accompanying these lecture notes. I highly recommend reading it. I therefore provide here only bullet points of the things that are absolutely crucial to know. 
+
+
+\subsection{Planning and experimental design}
+
+If you have considered internal validity, you should already know which variables you need to consider. A more detailed discussion on the choice of variables to maintain internal validity (confounding effects) is in the statistics script. 
+
+As a next step, you will have to decide how you vary the value of those variables (if you have control), and how many observations (replicates) you need. Again, this is discussed in more detail in the statistics script, section on experimental design.
+
+Apart\marginnote{Simulate your analysis before going into the field!} from that, I thin the most important tip for planning an experiment is: play it though! What I mean by that is: simulate how you take your data (for real with a pilot study, or make up some data), analyze it, and see if the results of this analysis correspond, in principle, to what you want to know. In most cases, you will notice that the way you were taking data is not optimal for the statistical analysis, that the analysis you do with your data does not answer what you want to know, or something alike. If you notice that before your experiment, it's easy to fix. If you notice it it afterwards, it isn't. 
+
+\subsection{Analysis}
+
+See chapter "inferential statistics" in the \href{https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf}{statistics script} accompanying these lecture notes.
+
+
+\subsection{Visualization}
+
+See chapter "descriptive statistics and visualization" \href{https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf}{statistics script} accompanying these lecture notes.
+
+
+\vspace{1cm}
+\begin{mdframed}
+    
+\textbf{Repetition of central concepts in this chapter:} 
+
+\begin{itemize*}
+  \item A good scientific question is novel and important, and you should expect to be able to give a valid answer with a acceptable risk of failure
+  \item Validity is a classification scheme of problems that can arise when trying to give an answer to a scientific question. See the validity checklist.
+  \item You should plan your experiment thoroughly. Part of good planning is that you play the complete process trough before taking the data, including the analysis.
+\end{itemize*}
 
 \end{mdframed}
-\end{fullwidth}
-
 
 
 
 \chapter{Principles and channels of communication}
 
+If you have made a scientific discovery, or at least a little bit of scientific progress, you probably want to let the world know about it. Hence, you need to be able to communicate.
 
 \section{Principles of communication}
+
+Thinking about communication requires a fundamental change in our attitude - up to now, we have dealt with ourselves, and how to generate knowledge. It was all about finding out the truth. Communication, however, is different. It is not necessarily about saying things right - it is about saying the right things. 
+
+What I mean by that is that the end of communication is not to say things as correct or truthful as they are - the thing that counts is that they are received as correct and truthful as possible in your audience. Good communication therefore requires adjustment, according to your audience. For any form of communication, you should therefore ask yourself the following basic questions:
+
+
+\begin{enumerate}
+\item Rule1: Who is my audience?
+\item Rule2: What is my main message?
+\end{enumerate}
+
+and adjust your words, level of detail and complexity, and jokes accordingly. A few general hints, however, can be given:
+
+
+
+\paragraph{Clarity} Science is about getting this right - the main goal of (scientific) communication is therefore clarity and logic. 
+
+\paragraph{KISS} People in science\marginnote{The KISS principle - Keep it short and simple!}, however, are also busy - this means you need to communicate efficiently. Both goals are served well by the KISS principle - Keep it short and simple! However, don't forget Einstein: “as simple as possible, but not simpler”.\footnote{This is also reflected in the following remark by Niels Bohr “Never express yourself more clearly than you are able to think.”}
+
+\paragraph{Jargon} To reach the goals outlined above, Jargon can be a good and a bad thing. It can make communication more efficient, but you have to be careful - this is only the case if you and the recipient have the same jargon. Jargon used in a wrong way is worse than no jargon.
+
+
+
+
+
+
+\section{Communication channels}
+
+
+
+\subsection{Books and articles}
+
+The most important form of scientific communication is arguably the written word, in form of books and articles. A longer description on how a scientific article is structured is given in the following chapter. 
+
+
+\subsection{Oral presentations}
+
+The probably second most important channel are presentations. That is, in the perception and attention of many people. Especially young scientists are very concerned with presentations, because they are often used to determine marks of projects and so on. But also for older scientists, presentations are crucial, for example in job interviews. It is therefore important to have some skill in this type of communication \citep[see, e.g. the tips of][]{Kelleher-Tenguidelineseffective-2011}. More material on poster presentations on our lab on oral presentation. 
+
+Personally, though, I am not sure how important presentations still are in shaping scientific thinking. It seems to me that the scientific debate and thinking relies more strongly on written media, either journal articles, or nowadays blogs, discussion forums and so on. These media are able to reach a much wider audience than a typical conference talk that is visited by maybe 50 people that may see another 30 talks on the same day. All this is not to say that oral presentations are not important - they may be crucial for getting a job. I just think that once you have it, science is driven by different media. 
+
+\subsection{Poster presentation}
+
+A similar case are poster presentations - on many conferences, poster presentations are offered for participants that don't give a talk. Poster presentations are a great opportunity to meet people and start discussing about your work, but I don't think they rank nearly as high in terms of importance than journal articles. More material on poster presentations on our lab on posters. 
+
+
+\subsection{Blogs, social media, and such}
+
+Blogs, social media and similar outlets have become more important in recent years. A collection of things that are worth checking out is provided in our lab on social media.
 
 
 
 \section{Arguments and logical fallacies}
 
-
-\section{Scientific visualisation}
-
-
-\section{Communication channels}
-
-\paragraph{Oral presentations}
-
-\paragraph{Poster presentation}
-
-\paragraph{Written texts}
-
-\paragraph{Blogs, social media, and such}
+In his article ``Sounder thinking through clearer writing'', \citet{Woodford-Sounderthinkingthrough-1967} 
 
 
-\section{Hints on oral delivery}
+\begin{itemize}
+\item False dilemma - if we want everything to be completely correct, we can stop doing science!
+\item False equivalence - no model is completely perfect, therefore there is no difference between using model A and B
+\item Strawman - proving an argument wrong that is similar, but not identical to that of the opponent - A: Diversity can increase ecosystem function. B: my opponent suggests that     diversity increases human well-being. But this is clearly wrong. Imaging a world where we have no HIV virus. Now, if I introduce the virus, we have more diversity. But human well-being is clearly lower!
+\end{itemize}
 
 
 
-Kelleher-Tenguidelineseffective-2011
 
+\vspace{1cm}
+\begin{mdframed}
+    
+\textbf{Repetition of central concepts in this chapter:} 
+
+\begin{itemize*}
+  \item Good communication means not saying the right thing, but that your recipient understands what you want him/her to understand - the road to hell is paved with good intentions!
+  \item You should know the different communication channels of science. The most important ones are the oral presentation and the scientific paper (next chapter)
+  \item Be aware of rhetoric structures and logical fallacies. As a good scientist, you must be able to see through them!
+\end{itemize*}
+
+\end{mdframed}
 
 
 
@@ -566,6 +831,19 @@ In the following, I highlighted \uline{redundant words} and other problems
 \end{itemize}
 
 
+\vspace{1cm}
+\begin{mdframed}
+    
+\textbf{Repetition of central concepts in this chapter:} 
+
+\begin{itemize*}
+  \item You find literature through literature databases
+  \item Use a reference manager to organize your literature
+  \item Read the papers you cite, cite them correctly for what they say, and don't forget to mention all sources that you use!
+\end{itemize*}
+
+\end{mdframed}
+
 \chapter{A working scientists}
 
 Up to now, we have covered the primary scientific process from deciding on a scientific question, generating valid data and conclusions, and communicating those in writing or through other channels. However, as hinted to in the introduction, science is also a human endeavor, and as such, a professional scientist should also be aware of the norms and codes of the field, as well as the realities of a life in science. The purpose of this chapter is to give a very fast overview on this questions.
@@ -612,6 +890,19 @@ There is no clear legal rule about how long data, documentation and samples have
 
 \marginnote{Read the special feature in Nature on the \href{http://www.nature.com/news/specials/phdfuture/index.html}{future of the PhD}}
 
+
+\vspace{1cm}
+\begin{mdframed}
+    
+\textbf{Repetition of central concepts in this chapter:} 
+
+\begin{itemize*}
+  \item You find literature through literature databases
+  \item Use a reference manager to organize your literature
+  \item Read the papers you cite, cite them correctly for what they say, and don't forget to mention all sources that you use!
+\end{itemize*}
+
+\end{mdframed}
 
 
 \bibliographystyle{/Users/Florian/Home/Bibliography/Databases/bibstyles/elsart-harv-hyperlinks}
