@@ -1,12 +1,19 @@
 # LaTeX
 
-LaTeX is a script based typesetting program that allows you to set the design of your report, article, book
-or whatever written statement via written commands. The information below provides some help to get started with LaTeX in a fairly basic way. 
+LaTeX is the most widely used script-based typesetting program in the sciences. To get started
+
+* Read the course [script](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/LaTeX/Script/how_to_latex.pdf)
+
+Other useful links
+
+* [A short introduction to latex](https://ilias.uni-freiburg.de/ilias.php?ref_id=441825&link_id=11203&cmd=callLink&cmdClass=ilobjlinkresourcegui&cmdNode=bd:hv&baseClass=ilLinkResourceHandlerGUI)
+* [LaTeX Cheat Sheet](https://ilias.uni-freiburg.de/ilias.php?ref_id=441825&link_id=11204&cmd=callLink&cmdClass=ilobjlinkresourcegui&cmdNode=bd:hv&baseClass=ilLinkResourceHandlerGUI)
+* [The Not So Short Introduction to LATEX2](https://ilias.uni-freiburg.de/ilias.php?ref_id=441825&link_id=11202&cmd=callLink&cmdClass=ilobjlinkresourcegui&cmdNode=bd:hv&baseClass=ilLinkResourceHandlerGUI)
 
 ## Practical
 
 * Download the [example material](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/LaTeX/Practical.zip)
-* Follow the [script](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/LaTeX/Script/how_to_latex.pdf) to work with this material, and your tutors of course.
+
 
 ## Additional information
 
