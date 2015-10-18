@@ -14,6 +14,8 @@ For writing advice, see primarily the lecture notes. The following links are onl
 
 ### Styleguides 
 
+* The absolute classic is [The Elements of Style by William Strunk](http://www.gutenberg.org/ebooks/37134)
+
 * http://www.economist.com/styleguide/introduction
 
 * http://www.nature.com/authors/author_resources/how_write.html}{http://www.nature.com/authors/author_resources/how_write.html
