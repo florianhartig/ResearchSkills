@@ -515,14 +515,19 @@ The MLE is only a single parameter value.\marginnote{A point estimate is somethi
 
 To conclude\marginnote{Bayesian methods calculate a third quantity, the posterior probability. Although they can be used for any model, Bayesian methods tend to be used for more advanced statistics.} our overview on inferential products, one method is still lacking - Bayesian methods calculate a quantity that is called the posterior parameter estimate. It is similar, but not identical to the parameter estimates discussed previously. You won't need this here, but if you want to know more about those, have a look at \citep{Gelman-BayesianDataAnalysis-2003} and at my website \href{http://florianhartig.github.io/LearningBayes/}{Learning Bayes}.
 
+\subsection{Different methods != different models}
+
+You know now that there are three different things that statisticians typically calculate: p-values, MLE, and the posterior. For a given data-generating process, you can always calcuate any of the three.
+
+I\marginnote{ANOVA , t-tests and linear regression are only different evaluations of the same model} make this point because many people wrongly assume that they use different models when they are indeed only using different ways to evaluate them. An example is the case of ANOVA, t-tests and linear regression. All of them are based on the same data-generating process - some fixed effects between groups and an iid normal observation error on top. ANOVA and t-tests specify different null-hypothesis, and the linear regression searches for the MLEs. You could additionally calculate the Bayesian posterior if you wanted.
 
 \section{Important hypothesis tests}
 
-After having discussed the concept of hypothesis tests (which produce p-values against a null-hypothesis) and parameter estimates (which produce best estimates and confidence intervals), lets move to practice and get to know the two probably most applied hypothesis tests, the t-test and ANOVA.
+After having discussed the basic statistical outputs, lets move to practice and get to know the two probably most applied hypothesis tests, the t-test and ANOVA. I told you already that they are based on the same data-generating process, but specify slightly different null-hypotheses. 
 
 \subsection{t-test}
 
-A t-test tests for differences between the means of two normally distributed samples; or if there is only one sample, between 0 and the mean of the sample. Classifying our variables, we would say the response variable in continuous, and the predictor is categorical (group 1 or group 2), or, if there is only one group, there is no predictor. Again, the statistical model underlying is that of a normally distributed response, and the null hypothesis is that there is no difference in the mean of this normal distribution for the two groups, respectively that the sample mean is 0 if we have one group. Depending on the software used, there are usually a number of adjustments possible, e.g. relaxing the assumption that the two groups have the same variance. An example in R, using the classical data from \citet{Student-probableerrormean-1908}. The data which show the effect of two soporific drugs (increase in hours of sleep compared to control) on 10 patients. 
+A t-test tests for differences between the means of two normally distributed samples; or if there is only one sample, between 0 and the mean of the sample.\marginnote{To stay in our previous classification, we would say the response variable in continuous, and the predictor is categorical (group 1 or group 2), or, if there is only one group, there is no predictor.} Again, the statistical model underlying is that of a normally distributed response, and the null hypothesis is that there is no difference in the mean of this normal distribution for the two groups, respectively that the sample mean is 0 if we have only one group. Also, depending on the software used, there are usually a number of adjustments possible, e.g. relaxing the assumption that the two groups have the same variance. Here, I show an example in R, using the classical data from \citet{Student-probableerrormean-1908}. The data show the effect of two soporific drugs (increase in hours of sleep compared to control) on 10 patients. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -544,15 +549,15 @@ with(sleep, t.test(sleep$extra[sleep$group == 1], extra[group == 2]))
 t.test(extra ~ group, data = sleep)
 @
 
-Note that the output give a p-value, but also contains the estimates of the means, together with the confidence intervals. 
+Note that the output provides a p-value (H0 = no difference), but also the maximum-likelihood estimate for the difference of the means, together with the confidence intervals. This is goes beyond the classical t-test, but probably the programmers assumed that you would also want to have the best estimate for the difference of the means.
 
-Suggestion for reporting: p>0.05: differences between groups were not significant. p<0.05: we found a difference of X +- Confidence interval between the groups (p-value for difference from a t-test was X). 
+Suggestion for reporting this result: p>0.05: differences between groups were not significant. p<0.05: we found a difference of X +- Confidence interval between the groups (p-value for difference from a t-test was X). 
 
 \subsection{Analysis of variance (ANOVA)}
 
-ANOVA or analysis of variance can mean different things to different people. The standard ANOVA makes basically the same assumptions as a t-test (normally distributed responses), but allows for more than two groups. More precisely, it's a test for whether the measured response (i.e. the dependent variable) can be influence by one or several categorical variables that could have two or more levels could also interact. An interaction between two variables means that the value of one explanatory effect affects how strongly another explanatory variable affects the response. Although maybe a bit cryptic on first reading, this is pretty common. See more details \href{biometry.github.io/APES/concepts/interaction.html}{here}.
+ANOVA or analysis of variance can mean different things to different people. The standard ANOVA makes basically the same assumptions as a t-test (normally distributed responses), but allows for more than two groups. More precisely, it tests if the measured response (i.e. the dependent variable) is influenced by one or several categorical variables that could have two or more levels could also interact. An interaction\marginnote{An interaction = one variable modifies the effect of another variable} between two variables means that the value of one explanatory variable affects how strongly another explanatory variable affects the response.
 
-While the word ANOVA is generally associated to the assumption of the standard ANOVA explained above (which correspond to a linear regression, see next chapter), the concept of ANOVA can be extended in the same way as linear regression models can be extended to generalized linear models etc. Hence, we can do ANOVA also for models with non-normally distributed errors (of course you have to tell this the software, it won't do it automatically). 
+While the word ANOVA is generally associated with the assumption explained above (which correspond to a t-test / linear regression, see next chapter), the concept of ANOVA can be extended in the same way as linear regression models can be extended to generalized linear models etc. Hence, we can do ANOVA also for models with non-normally distributed errors (of course you have to tell this the software, it won't do it automatically). You therefore have to read carefully what people mean if they use the term.
 
 Here a simple example with a standard ANOVA (normal errors), testing whether weight (of chicken) depends on their diet, where diet is a factor variable with four levels:
 
@@ -563,23 +568,22 @@ summary(aovresult)
 @
 
 We find a p-value of  6.43e-07, which is highly significant at an $\alpha$ level of 0.05. Hence, we can reject the null hypothesis that the diet has no influence on the response "weight". Note that in this case, we don't get any parameter estimates, and we can't say anything about which of the diets differs from which. If you want those, there are two options:
+
 \begin{itemize}
 \item Either you apply what is called post-hoc testing, which means that you test for differences (e.g. with a t-test) between the diets.
 \item Or you switch to a regression, which is described in the next chapter
 \end{itemize}
+
 If you do post-hoc testing, you are doing multiple tests on the same data. This is a problem - the idea of the p-value is that you calculate the probability of seeing the data under ONE null hypothesis. If you do this, you will get at most 5\% error at an $\alpha$ level of 0.05. \marginnote{When doing multiple tests on the same data, we need to correct the p-values for multiple testing.} However, if we do multiple tests, we are testing multiple null hypotheses, and there are more options for the test statistics to get significant just by chance. Hence, we need to correct the p-values for multiple testing. There are a number of options to do so, google is your friend. 
 
 \section{Other important tests}
 
-t-test and ANOVA are the commonly needed tests in the context of the research skills module, but there are many more tests that could be potentially important. Important tests are 
+t-test and ANOVA are the commonly needed tests in the context of the research skills module, but there are many more tests that could be potentially important. A list of tests that have wikipedia articles can be found at \href{http://en.wikipedia.org/wiki/Category:Statistical_tests}{here} 
 
 
-A list of tests that have wikipedia articles can be found at \href{http://en.wikipedia.org/wiki/Category:Statistical_tests}{here} 
+\section{Regression}
 
-
-\section{Regression models}
-
-To do a regression does not necessarily mean that use a different statistical model as in hypothesis testing (ANOVA and the linear regression model in R use the same assumptions). However, the goal of regression is a different one. While hypothesis tests are all about seeing whether the data would be compatible with a null-hypothesis, regression is about finding the best-fitting hypothesis or parameters (the MLE). Hence, a regression model tries to find the parameter combination that produces the highest probability to create the observed data.
+As explained earlier, regression does not necessarily mean using a different statistical model as in hypothesis testing (ANOVA and the linear regression model in R use the same assumptions). However, the goal of regression is a different one. While hypothesis tests are all about seeing whether the data would be compatible with a null-hypothesis, regression is about finding the best-fitting hypothesis or parameters (the MLE). Hence, a regression model tries to find the parameter combination that produces the highest probability to create the observed data, given the model assumptions.
 
 \subsection{Linear regression}
 
