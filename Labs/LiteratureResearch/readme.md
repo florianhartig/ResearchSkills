@@ -50,7 +50,7 @@ Alternatives (it's worth googeling for newer options):
 
 ### Using BibTex with Open/ Libre Office
 
-1. **Start jabref in 32 bit mode.** If your OS is Windows (e.g. in the CIP pools) paste the following (or similar) into your command line and hit enter. This will open jabref in 32 bit mode: 
+1. **Start jabref in 32 bit mode.** If your OS is Windows (e.g. in the CIP pools), open your terminal (by typing cmd or selecting the terminal from the programs) and paste the following (or similar) into your command line and hit enter. This will open jabref in 32 bit mode: 
 
 "C:\Program Files (x86)\Java\jre1.8.0_60\bin\java" -d32 -jar "C:\Program Files (x86)\JabRef\JabRef-2.10.jar"
 
