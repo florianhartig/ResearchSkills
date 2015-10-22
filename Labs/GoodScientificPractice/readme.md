@@ -9,10 +9,21 @@
 
 * Deutscher Hochschulverband http://www.hochschulverband.de/cms1/fileadmin/redaktion/download/pdf/info_blaetter/Fehlverhalten.pdf 
 
+### Lectures research ethics
+
+* https://www.youtube.com/watch?v=Ir3VvYNzHeM
+
 
 # Interesting Cases of (alledged) scientific misconduct
 
-http://universitypost.dk/article/timeline-bente-klarlund-pedersen-case
+
+* http://www.slideshare.net/cjrw2/infamous-cases-of-research-misconduct
+
+Note that not all of the following specific cases have clearly and finally been judged as misconduct! I provide the links as a documentation of the discussion, so that you can see the arguments that were made!
+
+#### Bente Klarlund Pedersen
+
+* http://universitypost.dk/article/timeline-bente-klarlund-pedersen-case
 
 
 #### Moeller
