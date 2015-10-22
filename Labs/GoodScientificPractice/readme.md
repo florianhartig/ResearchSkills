@@ -16,7 +16,7 @@
 
 # Interesting Cases of (alledged) scientific misconduct
 
-#### General cases
+First of all, here some general articles about misconduct in science
 
 * http://www.economist.com/blogs/babbage/2013/10/science-wrong 
 * http://www.economist.com/blogs/graphicdetail/2013/10/daily-chart-2
