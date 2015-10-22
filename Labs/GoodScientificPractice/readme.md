@@ -1,7 +1,12 @@
 
 
 
-# Codes of professional ethics / conduct for scientists
+
+
+# Research ethics and misconduct
+
+
+## Codes of professional ethics / conduct for scientists
 
 * German Science Foundation http://www.dfg.de/en/research_funding/principles_dfg_funding/good_scientific_practice/ 
 
@@ -9,7 +14,7 @@
 
 * Deutscher Hochschulverband http://www.hochschulverband.de/cms1/fileadmin/redaktion/download/pdf/info_blaetter/Fehlverhalten.pdf 
 
-### Lectures and articles about research ethics and misconduct
+## Discussions / lectures / articles misconduct
 
 * https://www.youtube.com/watch?v=Ir3VvYNzHeM
 * http://www.economist.com/blogs/babbage/2013/10/science-wrong 
@@ -18,7 +23,7 @@
 * http://www.slideshare.net/cjrw2/infamous-cases-of-research-misconduct
 
 
-# Interesting Cases of (alledged) scientific misconduct
+## Interesting Cases of (alledged) scientific misconduct
 
 Note that not all of the following specific cases have clearly and finally been judged as misconduct! I provide the links as a documentation of the discussion, so that you can see the arguments that were made!
 
