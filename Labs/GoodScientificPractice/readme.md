@@ -16,6 +16,7 @@
 
 ## Discussions / lectures / articles misconduct
 
+* Collection of links http://guides.library.iit.edu/content.php?pid=31717&sid=299858
 * https://www.youtube.com/watch?v=Ir3VvYNzHeM
 * http://www.economist.com/blogs/babbage/2013/10/science-wrong 
 * http://www.economist.com/blogs/graphicdetail/2013/10/daily-chart-2
