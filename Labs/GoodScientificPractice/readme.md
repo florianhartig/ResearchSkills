@@ -25,6 +25,12 @@
 
 Note that not all of the following specific cases have clearly and finally been judged as misconduct! I provide the links as a documentation of the discussion, so that you can see the arguments that were made!
 
+
+#### Haruko Obokata 
+
+* http://www.theguardian.com/science/2015/feb/18/haruko-obokata-stap-cells-controversy-scientists-lie
+
+
 #### Bente Klarlund Pedersen
 
 * http://universitypost.dk/article/timeline-bente-klarlund-pedersen-case
