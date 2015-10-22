@@ -74,6 +74,11 @@ Note that not all of the following specific cases have clearly and finally been 
 * http://www.nature.com/articles/nplants2015123
 
 
+#### Milena Penkowa
+
+* http://sciencenordic.com/milena-penkowa-%E2%80%93-famous-infamous
+
+
 #### Purposefully faked chocolate study 
 
 * http://io9.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800
