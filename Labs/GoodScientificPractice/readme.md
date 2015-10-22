@@ -9,19 +9,16 @@
 
 * Deutscher Hochschulverband http://www.hochschulverband.de/cms1/fileadmin/redaktion/download/pdf/info_blaetter/Fehlverhalten.pdf 
 
-### Lectures research ethics
+### Lectures and articles about research ethics and misconduct
 
 * https://www.youtube.com/watch?v=Ir3VvYNzHeM
-
-
-# Interesting Cases of (alledged) scientific misconduct
-
-First of all, here some general articles about misconduct in science
-
 * http://www.economist.com/blogs/babbage/2013/10/science-wrong 
 * http://www.economist.com/blogs/graphicdetail/2013/10/daily-chart-2
 * http://www.economist.com/news/leaders/21588069-scientific-research-has-changed-world-now-it-needs-change-itself-how-science-goes-wrong 
 * http://www.slideshare.net/cjrw2/infamous-cases-of-research-misconduct
+
+
+# Interesting Cases of (alledged) scientific misconduct
 
 Note that not all of the following specific cases have clearly and finally been judged as misconduct! I provide the links as a documentation of the discussion, so that you can see the arguments that were made!
 
