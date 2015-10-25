@@ -6,7 +6,7 @@
 
 #### Notes for the user
 
-* *These practical tutorials scripts are intended to be read together with the more detailed explanation [here](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf)*
+* *This practical tutorial of the [RS course](http://florianhartig.github.io/ResearchSkills/) is intended to be read together with the more detailed [Statstics lecture notes](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf)*
 
 * *If you had problems to follow the practical, see links to websites with further explanations at the end of this document!*
 
