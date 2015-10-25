@@ -1,11 +1,16 @@
-Statistics crash course
-===
+# Research Skills Practical: Regression with R (ca. 1.5h)
+`r format(Sys.time(), '%d %B, %Y')`  
 
 
 
 
+#### Notes for the user
 
-*These scripts are intended to be read together with the more detailed explanation [here](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf)*
+* *These practical tutorials scripts are intended to be read together with the more detailed explanation [here](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf)*
+
+* *If you had problems to follow the practical, see links to websites with further explanations at the end of this document!*
+
+* *To run the code demonstrated here, you should install R and RStudio*
 
 
 ## Continous response variables
@@ -736,5 +741,8 @@ See more examples at http://www.inside-r.org/packages/cran/mlogit/docs/suml
 
 And this is a good tutorial http://cran.r-project.org/web/packages/mlogit/vignettes/Exercises.pdf
 
+
+---
+**Copyright, reuse and updates**: By Florian Hartig. Updates will be posted at http://florianhartig.github.io/ResearchSkills/. Reuse permitted under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licens
 
 
