@@ -13,11 +13,11 @@ R is the de-facto standard for statistical analysis ecology and beyond. There is
 
 * [Statistical Analysis](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/Statistics/Practicals/StatisticalAnalysisInR/Statistics.md)
 
-Both practicals are also availalbe as source or zipped files, including a pdf version of the R code. 
+For the course, I will make zipped versions of this practicals, together with source code, data and scripts, avaiable on ILIAS.
 
 #### Software to install
 
-If you want to run the code / follow the instructions on your computer, you need to install: 
+If you want to run / try out the code, you need to install: 
 
 * [R](https://cran.r-project.org/)
 * [R Studio](https://www.rstudio.com/products/rstudio/download/)
