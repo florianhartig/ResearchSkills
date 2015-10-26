@@ -9,7 +9,7 @@ R is the de-facto standard for statistical analysis ecology and beyond. There is
 
 #### Practicals
 
-* [Graphics with R](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/Statistics/Practicals/GraphicsInR/Rgraphics.Rmd)
+* [Graphics with R](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/Statistics/Practicals/GraphicsInR/Rgraphics.md)
 
 * [Statistical Analysis](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/Statistics/Practicals/StatisticalAnalysisInR/Statistics.md)
 
