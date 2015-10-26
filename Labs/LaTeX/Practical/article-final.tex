@@ -38,6 +38,8 @@ This document provides a first introduction into the typesetting system \LaTeX .
 \end{abstract}
 
 
+
+% I add the table of contents only as a demonstration for your MSc thesis. In your articles for RS, you should not have a table of contents
 \tableofcontents
 
 \section{Introduction}
@@ -45,10 +47,11 @@ This document provides a first introduction into the typesetting system \LaTeX .
 
 This is my \textbf{first} \emph{sentence}.
 
-This is my \textit{second} sentence. 
+This is my \textit{second} sentence. You see that if you do a line break in the LaTeX source, signaling a paragraph, the first line of new paragraphs is indented by default. You could change this, but for the moment just leave it like that. 
 
-This is my third sentence. You can also put some distance between lines.\\[3mm]
-Test
+This is my third paragraph. You can also do an explicit line break, and additionally put some distance between lines.\\[7mm]
+Whether or not this is indented depends on whether you leave an empty line or not. 
+
 
 \section{Doing equations}\label{sec: equations}
 
@@ -75,6 +78,9 @@ where a = 5
 In LaTeX, everything can be labeled, and after that it can be referenced. Consider for example section~\ref{sec: equations}, where eq.~\ref{eq: definition of lambda} are defined. You can also see this in fig.~\ref{fig: einstein}.
 
 \section{Including figures}
+
+Figures will not always be placed exactly where you put them - LaTeX is looking for an empty space, with certain preferences that you could modify. However, problems with figure placing usually disappear once you have more text. Hence, please only worry about figure placing if you have finished all your text!
+
 
 \begin{figure}
 \centering
