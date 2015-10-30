@@ -2,7 +2,7 @@
 
 LaTeX is the most widely used script-based typesetting program in the sciences. To get started
 
-* Read the course [script](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/LaTeX/Script/how_to_latex.pdf)
+* Read the course [script](https://www.dropbox.com/s/9kjanprrj0vjhdf/how_to_latex.pdf?dl=0)
 
 Other useful links
 
