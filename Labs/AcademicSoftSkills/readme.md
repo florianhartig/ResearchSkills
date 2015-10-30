@@ -10,6 +10,11 @@ http://matt.might.net/articles/successful-phd-students/
 http://physics.wustl.edu/katz/scientist.html
 
 
+## How to behave on conferences and meetings 
+
+* Networking: Hello, stranger http://www.nature.com/naturejobs/science/articles/10.1038/nj7575-729a
+
+
 
 ## Finding a job / phd
 

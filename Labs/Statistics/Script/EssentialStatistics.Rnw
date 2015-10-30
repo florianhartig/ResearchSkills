@@ -205,13 +205,19 @@ MLEEstimate <- parameter[which.max(distr)]
 
 How can we summarize the properties of this observed sample? Some basic properties would be the minimum and the maximum value, the mean, or the mode (the maximum of the distribution, i.e. value with the highest density of observations). There are two further central summaries that are much used: moments and quantiles.
 
-The moments may not sound familiar to you, but you have probably already used the first and the second moment of the distribution, which are known as the mean and the standard deviation. In general, the n-th moment is defined as the average across the distribution, taking each observed value to the power of n. 
+The moments may not sound familiar to you, but you have probably already used the first and the second moment of the distribution, which are known as the mean and the standard deviation. In general, the n-th moment $\mu_n$ of a distribution $f(x)$ around a value c is defined as 
 
 \begin{equation}
-<x^2>_{d}
+\mu_n(c) = \int_{-\infty}^{\infty} f(x) (x - c)^n dx
 \end{equation}
 
-where $<>$ denotes the average, and $d$ the distribution. The first four moments are called the mean (average value), the standard deviation (measure of spread), the skewness (measure of asymmetry in the distribution) and the kurtosis. 
+or, for a finite number of observations 
+
+\begin{equation}
+\mu_n(c) = \frac{1}{N}\sum_{i=1}^N (x_i - c)^n dx
+\end{equation}
+
+The first moment, with c=0, is simply the mean. For the following higher moments, it is common to consider the central moments, which are obtained by setting c to the mean, because their values are easier interpretable as indicators of the distribution's shape.\footnote{To estiamte the variance, we often replace the 1/N term by a bias-correction of 1/(N-1)} The 3 higher central moments are called the variance(n=2, identical to standard deviation squared, measure of spread), the skewness (n=3, measure of asymmetry in the distribution) and the kurtosis (n=4). 
 
 Quantiles are the second central class of summary statistics for describing continous distributions. If we have a distribution such as the figure above, we can ask ourself: which is the value of the variable that divides the data in half, so that half of the observed data are lower, and half are higher than this value?\marginnote{Half of the data are lower, and half of the data are higher than the 0.5 quantile, which is called the median} This point is called the median, and also the 0.5 quantile. More general, the 0.x quantile is the value at which a fraction of 0.x of the data is smaller. 
 

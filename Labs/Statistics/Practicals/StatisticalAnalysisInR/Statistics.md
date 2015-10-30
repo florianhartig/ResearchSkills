@@ -577,7 +577,13 @@ detach(cfc)
 
 ### Multinomial Data - multinomial regression
 
-If you have several options for the response (red, green, blue), you are fitting a multinomial regression. This is not in the standard glm package. Use mlogit
+If you have several options for the response (red, green, blue), you are fitting a multinomial regression. This is not in the standard glm package. The standard package to do this would be mlogit. I give an example below. The problem with mlogit is that it requires data in a particular way, i.e. that for every observation, every choice is a single line, and then there is one column that tells you which choice was made (yes / no). To use mlogit, you need to reshape you data to this format. 
+
+If you don't have your data in this format, and don't want to reshape, an alternative is the less powerful but easier to use multinom function from the nnet package. An example of how to use this function is [here](http://www.ats.ucla.edu/stat/stata/dae/mlogit.htm)
+
+
+#### mlogit example
+
 
 
 ```r
