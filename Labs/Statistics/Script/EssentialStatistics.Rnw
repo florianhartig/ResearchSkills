@@ -653,7 +653,7 @@ summary(fit)
 Response y depends linearly on two variables a and b (continous or categorical), but the value of one variable does influence the effect the other variable on the response (interaction)
 
 <<eval = FALSE>>=
-fit = lm(y~a+b)
+fit = lm(y~a*b)
 summary(fit)
 @
 
