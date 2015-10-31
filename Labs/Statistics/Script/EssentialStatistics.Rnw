@@ -19,9 +19,11 @@
 \definecolor{darkblue}{rgb}{0,0,.5}
 \hypersetup{colorlinks=true, breaklinks=true, linkcolor=darkblue, menucolor=darkblue, urlcolor=blue, citecolor=darkblue}
 
+\usepackage[toc,page]{appendix}
 
 
 \setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
 
 \lstset{ % settings for listings needs to be be changed to R sytanx 
 language=R,
@@ -39,9 +41,14 @@ numbers=none
 
 <<setup, cache=FALSE, include=FALSE>>=
 library(knitr)
-opts_knit$set(tidy = T, fig=TRUE, width = 10)
+opts_knit$set(tidy = T, fig=TRUE, fig.height = 4, fig.width=4, fig.align='center')
 render_listings()
 @
+
+<<echo=F, results='hide'>>=
+set.seed(123)
+@
+
 
 
 \title{Essential\\statistics}
@@ -101,6 +108,16 @@ Statistics, or more broadly data science, deals with the visualization, summary 
 For the better or worse, the times when statistics was done with pen, paper and a calculator are over. Statistical analysis nowadays happens on the computer, and a number of software environments exist to do so.\marginnote{R is a script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment.} In the ecological sciences, R has become the de-facto standard for statistical analysis. R is open-source, free, and has a very larger user base, specially in the environmental sciences, that contribute packages for specialised ecological and environmental analysis.
 
 In this primer, all examples will be calculated with R; however, the focus will not be to introduce R itself. If you need one, follow  \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{this link} for an introduction, including help on how to install the software. I highly recommend to using R together with RStudio. Follow the link above to get further information
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width = 6cm]{rst_interface.png}
+\caption{The RStudio editor, arguably the most popular editor for R}
+\label{fig: Rstudio}
+\end{center}
+\end{figure}
+
+
 
 \chapter{Data, sample and population}
 
@@ -905,11 +922,646 @@ Reproducibility means that each step of your analysis is repeatable. Experience 
 \end{itemize}
 
 
-
-
-
-
 \bibliographystyle{chicago}
 \bibliography{/Users/Florian/Home/Bibliography/Databases/flo}
+
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\begin{appendices}
+
+\chapter{R and Rstudio}
+
+R itself is a command line program, meaning that you communicate with it through written commands in the R console. So, in principle, you could write your R code in an editor (even Microsoft Word), and the paste it in the R console. 
+
+For the daily work, however, this is not very convenient, and we would like to have a program that combines the core R console, and editor, and maybe some other options like the option to display R graphical outputs, read in data, and so on. 
+
+R comes with a simple editor that provides basic functionalities of that sort (note it looks a bit different on a Mac than the windows version we show here). This editor is called the RGui. To start the RGui, start the program R from your programs in Windows. Hava a look at the window popping up, and type 2+2 in the main window. After hitting enter you will end up with this:
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width = 6cm]{rgui1.png}
+\caption{Typing a simple calculation into the RGui}
+\label{fig: Rgui1}
+\end{center}
+\end{figure}
+
+
+The window you see here is called the R Console. Through the console, you interact with the core R program that does all the communcation. 
+
+Let's write something else: R has a few standard datasets that are automatically loaded. We will be using the airmiles dataset, which shows the number of airmiles awarded over time. Let's shortly demonstrate how to do a plot with this dataset. Type:
+
+<<eval=F>>=
+plot(airmiles, col = 4)
+@
+
+The result should look like this:
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width = 6cm]{rgui2.png}
+\caption{A figure produced with the RGui}
+\label{fig: Rgui2}
+\end{center}
+\end{figure}
+
+So, as you see, this apparently opens a new window (a graphics output) and plots airmiles against time. We'll discuss why and how this works. Before you get too used the the RGui, however, let's first move to RStudio, an alternative program to interact with R.
+
+\section{The Rstudio editor}
+ 
+RStudio basically offers the same functions as the RGui, but a many things can be done easier or are handled more comfortable for you. This is how it looks like:
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width = 6cm]{rst_interface.png}
+\caption{The RStudio editor, arguably the most popular editor for R}
+\label{fig: Rstudio}
+\end{center}
+\end{figure}
+
+
+\paragraph{Console:} The console that we have already seen is in the bottom-left panel. You can confirm that it behaves in the same way by typing in the same commands as we did before, i.e. 2+2, or plot the graph.
+
+\paragraph{Editor:} Above the console (top left), r script files are displayed and can be changed in the editor. The idea of a script file is that you collect all the commands that you send to the console in one file, so that you can re-run it later.  
+
+A typical script may look like that:
+
+<<eval=F>>=
+# the hash means this is treated as a comment
+# this file is written by FH, 25.10.13
+
+rm(list=ls(all=TRUE))  # this command means all variables in the memory are erase
+
+# load some data
+
+# do some plots
+
+@
+
+To send a part of the script to the console, you can use the run button on the top right border of the editor window. For everything we do from now on, I would strongly recommend writing in the script, and then sending it to console from there. 
+
+\chapter{Handling data in R}
+
+\section{Variables}
+
+Who has ever worked with a programming language? In a programming language, data is stored in variables / objects. This is how we assign the word "test" to the variable "VariableX"
+
+<<>>=
+VariableX = "test"
+@
+
+I can now access the variable by typing its name in the console, and it will return the value that it stores.
+<<>>=
+VariableX
+@
+
+We can see all the variables that we have specified in the global environment or R in the top-right corner or RStudio. You see that we have here the variable "VariableX" together with it's value. 
+
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width = 6cm]{rst_globenv.png}
+\caption{The global environment is displayed in the upper right corner of the The RStudio editor.}
+\label{fig: Rstudio}
+\end{center}
+\end{figure}
+
+\section{Data types and structures}
+
+A variable can store different things: a number, a word, a list, or a whole dataset. 
+
+The most simple case are variables that contain a **single value** only. Here, the only question is what kind of values the variable contains. The different data types a single value can have are called the **atomic types** - think of it as the basic data types in R. Important atomic types are: 
+
+- boolean (TRUE / FALSE)
+- integer (1, 2, 3, 5)
+- numeric (1.1, 2.5, 3.456)
+- factor ("red", "green", "blue")
+- character ("a word", "another word")
+
+If we have a collection of several atomic types, we speak of a data structure or an object (there is a difference but it doesn't matter here). Important examples of this are: 
+
+- **vector** (a row of the same atomic types, e.g. [1,2,3,4,5] )
+- **list** (basically like a vector, but can contain different types such as [1, "red", FALSE] )
+- **data.frame** (a list of vectors, this is the standard format for data in R. Think of it as a spreadsheet - each colum is a vector and can have a different type)
+
+A full list of data types is here http://www.statmethods.net/input/datatypes.html 
+ 
+\subsection{Checking data types and structures}
+
+Especially after reading in your data, it is important to check which type it has. The functions in R react differently depending on which atomic type you supply. 
+
+If you want to see which type or structure a variable has, use the str command:
+
+<<eval=F>>=
+str(object)
+@
+
+To get a summary of your structure (e.g. mean per column, but what exactly is summarized depends on the data structure and type), use:
+
+<<eval=F>>=
+summary(object)
+@
+
+To try to make an automatic plot (R will choose what it thinks most suitable for this structure / type), type:
+
+<<eval=F>>=
+plot(object)
+@
+
+Try this with the object airquality. 
+
+\subsection{Accessing columns, rows and elements in a data.frame or matrix}
+
+As said, the most common structure in R is the data frame. Basically, columns are stored as a list of vectors, so that each column can be a different data type.
+
+You can select columns in a number of ways:
+
+- By name:
+<<eval=F>>=
+airquality$Ozone
+@
+
+- By column index: 
+
+<<eval=F>>=
+airquality[,1]
+@
+
+Note that here [,1] means the first column. You could get the first row by [1,].
+
+\section{Selecting data}
+
+The last type of accessing is an example of slizing. Slizing is a very powerfull technique that is available in most scientific programming languages. What it means is that you can access your data by typing in colums, rows, or particular elements. Look at the following commands (explanation always below):
+
+<<eval=F>>=
+airquality[,1:2]
+@
+
+gets the first colums 1 and 2.
+
+
+<<eval=F>>=
+airquality[4:6,1]]
+@
+
+gets rows 4 to 6 in column 1
+
+
+<<eval=F>>=
+airquality[c(1,2,3,4,7,8),1]
+@
+
+gets rows 1,2,3,4,7,8 in column 1. 
+
+You see, we can select any combination of elemets we want very conveniently from the data frame. Even more convenient is how we can create selections.
+
+
+<<eval=F>>=
+1:10
+@
+
+gives us the values of 1 to 10
+
+<<eval=F>>=
+c(1,5,6)
+@
+
+the c() function combines values in one vector (it is neccessary to have the values in one vector for slicing)
+
+<<eval=F>>=
+c(1,5,6)
+@
+
+But we can also create selections with logical operators
+
+<<eval=F>>=
+airquality$Temp > 80
+@
+
+creates a vector with True on all temperature values that are > 80. I can store this and use it for selection, or use it immediately
+
+
+
+<<eval=F>>=
+airquality[airquality$Temp > 80 , ]
+@
+
+selects all rows with temperature > 80.
+
+
+\section{loading data into R}
+
+So far, we had the data already in the R program. Now, we will demonstrate how to load some data (we will use the airquality.txt file provided to you)
+
+There are basically two options to load data
+
+- with RStudio (point and click) - go to Environment (top right), import dataset, and follow instructions
+
+- from the script with the read.table() command
+
+The latter works like that
+
+
+<<eval=F>>=
+data = read.table("airquality.txt", header = T)
+@
+
+In this case it works nice because I have prepared the data in the most easy way. If you have other data formates (commas, semicolons, header / no header), consult the help of teh read.table command. See also http://www.statmethods.net/input/importingdata.html for more options, e.g. excel or database import. 
+
+\subsection{Checking the data}
+
+After loading the data, always check whether the data format is correct 
+
+<<>>=
+str(data)
+@
+
+You see here the atomic type of every column. Make sure it corresponds to what you want (sometimes numeric is read in as factor, or *vice versa*). If a column would have the wrong type, we have to change this by typing
+
+<<eval=F>>=
+as.factor(x)
+@
+or 
+<<eval=F>>=
+as.numeric(x)
+@
+
+
+Note: this data file is already included in R, so if you don't manage to load it, you can continue anyway. 
+
+\chapter{Plot commands in R}
+
+\marginnote{An overview or R colors \href{here}{http://research.stowers-institute.org/efg/R/Color/Chart/ }}
+
+<<fig.height = 4, fig.width=4, fig.align='center'>>=
+plot(airquality$Ozone, airquality$Temp)
+@
+
+
+<<fig.height = 4, fig.width=4, fig.align='center'>>=
+hist(airquality$Ozone, breaks = 30, col = "darkred", xlab = "Ozone ")
+@
+
+
+<<fig.height = 4, fig.width=4, fig.align='center'>>=
+plot(airquality)
+@
+
+pairs(airquality)
+
+
+Simple Bar Plot 
+
+<<fig.height = 4, fig.width=4, fig.align='center'>>=
+counts <- table(mtcars$gear)
+barplot(counts, main="Car Distribution", 
+   xlab="Number of Gears")
+@
+
+Grouped Bar Plot
+
+<<fig.height = 4, fig.width=4, fig.align='center'>>=
+counts <- table(mtcars$vs, mtcars$gear)
+barplot(counts, main="Car Distribution by Gears and VS",
+  xlab="Number of Gears", col=c("darkblue","red"),
+  legend = rownames(counts), beside=TRUE)
+@
+
+
+
+<<fig.height = 4, fig.width=4, fig.align='center'>>=
+boxplot(mpg~cyl,data=mtcars, main="Car Milage Data", 
+   xlab="Number of Cylinders", ylab="Miles Per Gallon")
+@
+
+Notched Boxplot of Tooth Growth Against 2 Crossed Factors
+boxes colored for ease of interpretation 
+
+<<fig.height = 4, fig.width=4, fig.align='center'>>=
+boxplot(len~supp*dose, data=ToothGrowth, notch=TRUE, 
+  col=(c("gold","darkgreen")),
+  main="Tooth Growth", xlab="Suppliment and Dose")
+@
+
+%See http://www.statmethods.net/graphs/index.html 
+
+\chapter{Regression in R}
+
+
+\section{Continous response - linear regression}
+
+Linear regression is the simples form of regression. We can use this when the response is continous. The assumption is that the response depends on the predictors as in 
+
+y ~ par1 * pred1 +  par2 * pred2 +  par3 * pred2^2 + ... + residual Error
+
+where the parameters par1 ... par3 are estimated, and the residual error is normally distributed. 
+
+Let's look at some example, using the data from Monday. We see that there is a correlation between Ozone and Temperature. 
+
+<<>>=
+plot(airquality$Temp~airquality$Ozone)
+@
+
+With the lm() command, we can ask R to try to get the best fitting straight line between the two variables. 
+
+<<>>=
+fit = lm(airquality$Temp~airquality$Ozone)
+@
+
+Let's look at the result visually first
+
+<<>>=
+plot(airquality$Ozone, airquality$Temp)
+abline(fit, col = "blue")
+@
+
+Here's the detailed output
+
+<<>>=
+summary(fit)
+@
+
+In the output, we see the parameters for the effect of Ozone (called the regression slope), and the intercept. 
+
+R knows the line is straight because we tell the program that airquality$Temp~airquality$Ozone . We'll see later how to modify this if we want to fit other functions. 
+
+\subsection{Residual analysis}
+
+with plot(fit), we get the residuals (the deviation from the straight line). As said, the linear regression assumes that those are normally distributed, so we should check whether this is really the case. 
+
+<<>>=
+par(mfrow=c(2,2))
+plot(fit)
+@
+
+Here, the residuals are not really homogenously scattering around the predicted value, suggesting that the model doesn't fit very well. Well, one could have already guessed this, because the correlation doesn't look very linear. We can add a quadratic term by 
+
+
+<<>>=
+fit2 = lm(airquality$Temp~airquality$Ozone + I(airquality$Ozone^2))
+summary(fit2)
+@
+
+Residuals look better now
+
+<<>>=
+par(mfrow=c(2,2))
+plot(fit2)
+@
+
+Plotting the results
+
+<<>>=
+plot(airquality$Ozone, airquality$Temp)
+points(fit2$model[,2], predict(fit2), col = "blue")
+@
+
+\subsection{Categorical predictors}
+
+If we have categorical varialbles such as in this dataset
+
+<<>>=
+boxplot(PlantGrowth$weight~PlantGrowth$group, main = "growth of plants")
+@
+
+This still works:
+
+<<>>=
+fit <- lm(weight~group, data = PlantGrowth)
+summary(fit)
+@
+
+A thing that is confusing many people now, however, is that we have two parameter estimates for the one predictor variable. The reson is that there are 3 groups in the dataset. The first group is set in this case automatically as reference, and for the other groups, predictors are estimated. The p-values for those predictors are thus against the reference (if I take predictor trt1 out, it will get the value of ctrl). Hence, these p-values for categorical variables depend on the order of the varialbles (you could reorder to have trt1 as reference.)
+
+
+\subsection{ANOVA}
+
+A question that often pops up in this context is: is there are difference between the groups at all? The regression only shows us whether there is a signficant difference between the first factor and the two others. If we want to test for overall differences, we can make an ANOVA of the fitted object
+
+<<>>=
+aovresult <- aov(fit)
+summary(aovresult)
+@
+
+Note that we get now significance for an overall difference, although we didn't have significance in the regression before. 
+
+We can now use so-called post-hoc tests to find out which differences are significant.
+
+See more examples, with more factors \href{http://www.statmethods.net/stats/anova.html}{here} 
+
+Note: aov is designed for balanced designs, and the results can be hard to interpret without balance: beware that missing values in the response(s) will likely lose the balance. If there are two or more error strata, the methods used are statistically inefficient without balance, and it may be better to use lme in package nlme.
+
+\subsection{T-test}
+
+A simple option if you just want to test two groups against each other is the t-test. It assumes normal distribution within the groups. We can use this to do post-hoc testing for the example above: 
+
+<<>>=
+attach(PlantGrowth)
+t.test(weight[group=='ctrl'], weight[group=="trt1"])
+@
+
+testing against group 2
+
+<<>>=
+t.test(weight[group=='ctrl'], weight[group=="trt2"])
+detach(PlantGrowth)
+@
+
+but if we really would have done both tests, we would have had to correct for multiple testing
+
+<<>>=
+p.adjust(c(0.2504, 0.0479), method = "holm")
+  @
+
+How does this work? Write ?p.adjust in the console. Also, read \href{this}{http://webdev.cas.msu.edu/cas992/weeks/week10.html}
+
+\section{The generalized linear model framework}
+
+The glm is a generalization of lm to other response types. We could create a model identical to lm() by glm(formula, family = gaussian(link = "identity")), but the advantage is that glm has more options, among them the following defaults
+
+binomial(link = "logit")
+gaussian(link = "identity")
+Gamma(link = "inverse")
+inverse.gaussian(link = "1/mu^2")
+poisson(link = "log")
+quasi(link = "identity", variance = "constant")
+quasibinomial(link = "logit")
+quasipoisson(link = "log")
+
+but step for step ... let's look at an example for binomial data
+
+
+\section{0/1 Response - the logistic regression}
+
+<<>>=
+library(effects) 
+data(TitanicSurvival)
+head(TitanicSurvival)
+str(TitanicSurvival)
+attach(TitanicSurvival)
+@
+
+Let's visualize this. About visualizing associations see http://www.statmethods.net/advgraphs/mosaic.html
+
+We'll use the mosaic plot. May be you have to install.packages("vcd")
+
+<<>>=
+library(vcd)
+mosaic(~ sex + passengerClass + survived, shade=TRUE, legend=TRUE) 
+surv <- as.numeric(survived)-1 # glm requires 0 / 1 not true false
+@
+
+How do we analyze this data? Response clearly not normal, but 1/0. now, the glm is basically the same as lm(), just that you specify the family.
+
+Let's first test whether survival is correlated to age
+
+<<>>=
+fmt <- glm(surv ~ age, family=binomial)
+summary(fmt)
+@
+
+Result plotted 
+
+<<>>=
+plot(surv ~ age, main="only age term")
+newage <- seq(min(age, na.rm=T), max(age, na.rm=T), len=100)
+preds <- predict(fmt, newdata=data.frame("age"=newage), se.fit=T)
+lines(newage, plogis(preds$fit), col="purple", lwd=3)
+lines(newage, plogis(preds$fit-2*preds$se.fit), col="purple", lwd=3, lty=2)
+lines(newage, plogis(preds$fit+2*preds$se.fit), col="purple", lwd=3, lty=2)
+@
+
+Now, let's out all relevant variables in 
+
+<<>>=
+surv <- as.numeric(survived)-1 # glm requires 0 / 1 not true false
+fmt <- glm(surv ~ age  + sex + passengerClass, family=binomial)
+summary(fmt)
+@
+
+\subsection{ANOVA for GLM}
+
+If you want an ANOVA
+
+<<>>=
+library(car)
+Anova(fmt)
+
+detach(TitanicSurvival)
+@
+
+\section{Count data - Poisson Regression}
+
+For count data, we use the glm with the Poisson error distribution. Here's some observations of the pieces of food given to young birds, and their perceived attractiveness.
+
+<<>>=
+cfc <- data.frame(
+  stuecke = c(3,6,8,4,2,7,6,8,10,3,5,7,6,7,5,6,7,11,8,11,13,11,7,7,6),
+  attrakt = c(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5) 
+)
+attach(cfc)
+plot(stuecke ~ attrakt)
+@
+
+This is how you specify the poisson
+
+<<>>=
+fm <- glm(stuecke ~ attrakt, family=poisson)
+summary(fm)
+@
+
+predictions
+
+<<>>=
+newattrakt <- c(1,1.5,2,2.5,3,3.5,4,4.5,5)
+preds <- predict(fm, newdata=data.frame("attrakt"=newattrakt))
+plot(stuecke ~ attrakt)
+lines(newattrakt, exp(preds), lwd=2, col="green")
+@
+
+same with 95\% confidence interval:
+
+<<>>=
+preds <- predict(fm, newdata=data.frame("attrakt"=newattrakt), se.fit=T)
+str(preds)
+plot(stuecke ~ attrakt)
+lines(newattrakt, exp(preds$fit), lwd=2, col="green")
+lines(newattrakt, exp(preds$fit+2*preds$se.fit), lwd=2, col="green", lty=2)
+lines(newattrakt, exp(preds$fit-2*preds$se.fit), lwd=2, col="green", lty=2)
+
+detach(cfc)
+@
+
+
+
+\section{Multinomial Data - multinomial regression}
+
+If you have several options for the response (red, green, blue), you are fitting a multinomial regression. This is not in the standard glm package. The standard package to do this would be mlogit. I give an example below. The problem with mlogit is that it requires data in a particular way, i.e. that for every observation, every choice is a single line, and then there is one column that tells you which choice was made (yes / no). To use mlogit, you need to reshape you data to this format. 
+
+If you don't have your data in this format, and don't want to reshape, an alternative is the less powerful but easier to use multinom function from the nnet package. An example of how to use this function is \href{http://www.ats.ucla.edu/stat/stata/dae/mlogit.htm}{here}
+
+\subsection{mlogit example}
+
+
+<<>>=
+library(mlogit)
+ 
+data("Fishing", package = "mlogit")
+head(Fishing)
+@
+
+The data we are using is a dataframe containing :
+
+\begin{enumerate}
+
+\item price.beach -price for beach mode
+
+\item price.pier -price for pier mode
+
+\item price.boat -price for private boat mode
+
+\item price.charter -price for charter boat mode
+
+\item catch.beach -catch rate for beach mode
+
+\item catch.pier -catch rate for pier mode
+
+\item catch.boat -catch rate for private boat mode
+
+\item catch.charter -catch rate for charter boat mode
+
+\item income - monthly income
+
+\item mode -recreation mode choice, one of : beach, pier, boat and charter
+
+\end{enumerate}
+
+We transform this in an object mlogit can work with by
+
+<<>>=
+Fish <- mlogit.data(Fishing, varying = c(2:9), shape = "wide", choice = "mode")
+@
+
+varying tells the model that those are variables that are specific to the alternative outcomes of the response, i.e. price of the boat, while variables that are not varying are independent of the outcome, e.g. income. 
+
+<<>>=
+## a pure "conditional" model
+summary(mlogit(mode ~ price + catch, data = Fish))
+@
+
+Fits, for each outcome, the increase of the choice with the price and catch. Hence, we get the intercepts for each outcome, and one parameter fitted per variable that is the effect of price / choice on the probability to choose any of the 4 outcomes. 
+
+If we correlate the variable income, this is different. Income is not specific to the choice (not selected as varying when we set up the data). In this case, we ask how the choice differs when we have people of different incomes. Hence, we obtain an intervept value per parameter, and an estimate for whether this choice is affected by an increase of income, relative to the baseline (pier).
+
+<<>>=
+## a pure "multinomial model"
+summary(mlogit(mode ~ 0 | income, data = Fish))
+@
+
+Note that if you want to interpret the parameter values, you have to transform back to the response with the relatively complicated link function of the multinomial logistic regression, see formula \href{http://en.wikipedia.org/wiki/Multinomial_logistic_regression}{here}. More examples \href{http://www.inside-r.org/packages/cran/mlogit/docs/suml}{here} and see also the mlogit tutorial \href{http://cran.r-project.org/web/packages/mlogit/vignettes/Exercises.pdf}{here}.
+
+\end{appendices}
+
+
  
 \end{document}
