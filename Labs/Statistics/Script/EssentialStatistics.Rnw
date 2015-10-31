@@ -111,7 +111,7 @@ In this primer, all examples will be calculated with R; however, the focus will 
 
 \begin{figure}[]
 \begin{center}
-\includegraphics[width = 10cm]{rst_interface.png}
+\includegraphics[width = 6cm]{rst_interface.png}
 \caption{The RStudio editor, arguably the most popular editor for R}
 \label{fig: Rstudio}
 \end{center}
@@ -121,7 +121,7 @@ In this primer, all examples will be calculated with R; however, the focus will 
 
 \chapter{Data, sample and population}
 
-The four following chapters will be devoted to the four types of statistical analysis described in the introduction: descriptive statistics, inferential statistics, predictive statistics and experimental design. Before we go into these topics, however, we need to discuss how data arises, and how we represent it. 
+The following four chapters will be devoted to the four types of statistical analysis described in the introduction: descriptive statistics, inferential statistics, predictive statistics and experimental design. Before we go into these topics, however, a few short comments on how data arises, and how we represent it. 
 
 \section{Sample, population, and the data-generating process}
 
@@ -135,11 +135,11 @@ The\marginnote{However, not all randomness comes from sampling from a population
 
 \marginnote{A more modern concept that replaces the "population" is the "data-generating process". The data-generating process describes how the observations from a random sample arise, including systematic and stochastic processes} A more modern and general concept to describe how data is created is the the concept of the "data-generating process", which is pretty self-explenatory: the data-generating process describes how the observations from a random sample arise, including systematic and stochastic processes. It therefore includes the properties of what would classically be called "sampling from a population", but it is broader and includes all other processes that would create systematic and random patterns in our data. In this picture, instead of infer properties of the population from a sample, we would say we want to infer the properties of the data-generating process from a sample of observations created by this process.
 
-Whether you think in populations or data-generating processes: the important point to remember from this section is that there are two objects that we have to distinguish well: on the one hand, there is our sample. We may describe it in terms of it's properties (mean, minimum, maximum), but the sample is not the final goal. Ultimately, we want to infer the properties of the population / data-generating process from the sample. We will explain how to do this in the next sections, in particular in the section on inferential statistics. Before we come to that, however, let us talk in a bit more detail about the representation of the sample, i.e. the data that we observe.
+Whether you think in populations or data-generating processes: the important point to remember from this section is that there are two objects that we have to distinguish well: on the one hand, there is our sample. We may describe it in terms of it's properties (mean, minimum, maximum), but the sample is not the final goal. Ultimately, we want to infer the properties of the population / data-generating process from the sample. We will explain how to do this in the next sections, in particular in the section on inferential statistics. 
 
 \section{Representation and classes of data}
 
-A typical dataset consists of multiple observations of number of variables (e.g. temperature, precipitation, growth). You can think of this situation as a spreadsheet where the columns are the variables and the rows are the observations. Of course, there are other data structures, but this is the most common one.
+Before we come to that, however, let us talk in a bit more detail about the representation of the sample, i.e. the data that we observe. A typical dataset consists of multiple observations of number of variables (e.g. temperature, precipitation, growth). You can think of this situation as a spreadsheet where the columns are the variables and the rows are the observations. Of course, there are other data structures, but this is the most common one.
 
 Usually, this data will contain one variable that is our focus, meaning that we want to understand how this variable is influenced by other variables.\marginnote{The response variable is the variable for which we try to understand how it responds to other factors.}  We call this variable the ``response variable'' (sometimes also the dependent variable or outcome variable), because we are interested if and how this variable of interest varies (responds, depends) when something else changes. The variables that affect the response could be an environmental factors (e.g. temperature), it could be experimental treatments (fertilized vs. non fertilized), or anything else. \marginnote{The predictor variables are those that affect the response.} Those other variables that affect our response are called ``predictor variables'' (synonymous terms are explanatory variables, covariates or independent variables). 
 
@@ -603,7 +603,7 @@ We find a p-value of  6.43e-07, which is highly significant at an $\alpha$ level
 
 If you do post-hoc testing, you are doing multiple tests on the same data. This is a problem - the idea of the p-value is that you calculate the probability of seeing the data under ONE null hypothesis. If you do this, you will get at most 5\% error at an $\alpha$ level of 0.05. \marginnote{When doing multiple tests on the same data, we need to correct the p-values for multiple testing.} However, if we do multiple tests, we are testing multiple null hypotheses, and there are more options for the test statistics to get significant just by chance. Hence, we need to correct the p-values for multiple testing. There are a number of options to do so, google is your friend. 
 
-\subsection{Other important tests}
+\section{Other important tests}
 
 t-test and ANOVA are the commonly needed tests in the context of the research skills module, but there are many more tests that could be potentially important. A list of tests that have wikipedia articles can be found at \href{http://en.wikipedia.org/wiki/Category:Statistical_tests}{here} 
 
@@ -808,7 +808,7 @@ In a practical setting, we are typically interested in how a response is affecte
 
 Imagine we are interested in a response A, and we have hypothesized that A~B. Imagine there is a second predictor variable C that has an influence on A, but in which we are not interested in for the purpose of the question under consideration. Such a variable that is not of interest for the question is also called "extraneous variables". \marginnote{An extraneous variable is a variable that can influence the response, but is not of interest for the experimenter}. So we also have A~C, but we are not interested in this relationship. If we now take data, and don't measure C, it's usually not a bit problem as long as C is uncorrelated with B - it might create a bit more variability in the response, but by and large the effect of C should average out and we should still be able to detect the effect of B.
 
-The problem of confounding appears when the extraneous variable C is for some reason correlated with the predictor variable of interest B. \marginnote{A confounding variable is an extraneous variable that correlated to both the response and a predictor variable of interest.} In that case, if we only measure B, we see both the effect of B and C. In this case, we may attribute the effect of C on A wrongly to the effect of B on A. \marginnote{A spurious correlation is a correlation that is caused by a confounding variable.} A correlation that is caused by an unmeasured confounding variable is called a spurious correlation.  
+The problem of confounding appears when the extraneous variable C is for some reason correlated with the predictor variable of interest B. \marginnote{A confounding variable is an extraneous variable that correlated to both the response and a predictor variable of interest.} In that case, if we only measure B, we see both the effect of B and C. In this case, we may attribute the effect of C on A wrongly to the effect of B on A. \marginnote{A spurious correlation is a correlation that is caused by a confounding variable.} Auch a correlation that is caused by an unmeasured confounding variable is called a spurious correlation.  
 
 \subsection{What do do about confounding variables}
 
@@ -864,53 +864,23 @@ We said before that the significance level $\alpha$ is the probability of findin
 \item Power goes down with increasing variability in the response
 \end{enumerate}
 
-This means that, unlike for the type I error which is fixed, calculation of power requires knowledge about the expected effect and the variability. This sounds really bad, but in most cases you can estimate from previous experience how much variation there will be, and in most cases you also know how big the effect has to be at least to be interesting. Based on that, you can then calculate how many samples you need.
+This means that, unlike for the type I error which is fixed, calculation of power requires knowledge about the expected effect and the variability. This sounds really bad, but in most cases you can estimate from previous experience how much variation there will be, and in most cases you also know how big the effect has to be at least to be interesting. Based on that, you can then calculate how many samples you need. \\
 
-\newpage
+\vspace{1cm}
 \begin{mdframed}
     
-\textbf{Checklist experimental design}
+\Large{Checklist experimental desig}
 
 \begin{description}
-
-\item[( )] Clear, logically consistent question? Write it down. Read chapter about valid / good scientific questions in the lecture notes
-
-\item[( )] Make sure you have read and considered all the issues of validity discussed in the main lecture notes. Go through the checklist validity at the end of the section in the main lecture notes.
-
-\item[( )] Draft a design
-
-  \begin{description}
-
-  \item[( )] Vary the variables that you need to measure to answer your questions. Decide if you are intested in main linear effects, or also nonlinear effects or interactions. 
-  
-  \item[( )] Write down potential confounding variables. Decide if they are better controlled, randomised or measured? Are you sure they are confounding (correlated to response AND one or several of the predictors)
-  
-  \item[( )] Define the statistical hypothesis to be tested, including confounders. Write it down, as in $height  \sim age + soil * precipitation + precipitation^2$. 
-  
-  \item[( )] Choose how the variables will be varied in the experiment. Consider using software for this, e.g. for fractional factorial designs (in observational studies, you sometimes have limited control, but you can maybe estimate what variable combinations you will observe).
-  
-  \item[( )] Blocking - try to group different treatments / most different variable combinations together. The aim is that unknown / unmeasured variables are not correlated with your experimental variables (see pseudo-replication)
-  
-  \item[( )] Decide on the number of replicates. Make a guess for effect size and variability of the data, and either calculate or guess the number of replicates necessary to get sufficient power. What sufficient means depends on the field, but I would say you want to have a good chance to see an effect if it's there, so a power of $>80\%$ would be good. 
-  
-  \end{description}
-  
-\item[( )] Check design
-  
-  \begin{description}
-  
-  \item[( )] Play through the processes of collecting your data: simulate it in your mind or in R, make up some data, write it down. Everything seems OK?
-  
-  \item[( )] Play through the process of analysing your data. Which method? Can you answer your question? Do a power analysis!
-
-  \end{description}
-
-
-\item[( )] Revise if neccessary
-
+\item[( )] Clear, logically consistent question? Write it down.
+\item[( )] What variables need to be measured to answer this question? Check that the measured variables really correspond to the main question
+\item[( )] Confounding factors controlled, randomised or measured? Are you sure they are confounding (correlated to response AND one or several of the predictors)
+\item[( )] Define the exact hypothesis (statistical model) to be tested. Write it down, as in $height  \sim age + soil * precipitation + precipitation^2$. Based on that, decide how many different levels of each variable need to be measured.
+\item[( )] Decide on the number of replicates. Make a guess for effect size and variability of the data, and either calculate or guess the number of replicates necessary to get sufficient power. What sufficient means depends on the field, but I would say you want to have a good chance to see an effect if it's there, so a power of $>80\%$ would be good. 
 \end{description}
 
 \end{mdframed}
+
 
 
 \chapter{Good to knows and further reading}
@@ -925,11 +895,11 @@ Reproducibility means that each step of your analysis is repeatable. Experience 
 
 \item{Typically you will have to do some cleaning, renaming etc. before the data analysis. If possible at all, make this through a script (e.g. R, python, perl). Store the script with the analysis.}
 
-\item{Use a version control system for your code, and note for each output the revision number that the output was produced with.} \marginnote{See our RS lab on this topic \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/VersionControl}{here}}
+\item{Use a version control system for your code, and note for each output the revision number that the output was produced with.}
 
 \item{When running the analysis, store the random seed and the settings of your computer to ensure reproducibility. In R, the easiest way to do this is to set the random seed by random.seed(123), and store the results of sessionInfo() which provides you with the version numbers of all the packages that you use}
 
-\item{Think about running your code within an reporting environment such as Rmd or sweave}\marginnote{See our RS lab on this topic \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/Statistics/reporting}{here}}
+\item{Think about running your code within an reporting environment such as Rmd or sweave}
 
 
 %\footnote{See also the R task view on \href{https://cran.r-project.org/web/views/ReproducibleResearch.html}{reproducible research}
@@ -1221,6 +1191,15 @@ Note: this data file is already included in R, so if you don't manage to load it
 
 \chapter{Plot commands in R}
 
+Before that, a few important references 
+
+\begin{itemize}
+\item \href{http://rgraphgallery.blogspot.de/search/label/3%20vartiable%20plots}{here}
+\item Excellent: the \href{http://shiny.stat.ubc.ca/r-graph-catalog/#}{R Graph Catalog}
+\item \href{http://rgm3.lab.nig.ac.jp/RGM/R_image_list?page=2282&init=true}{R Graphical Manual}
+\item \href{http://www.statmethods.net/graphs/line.html}{QuickR}
+\end{itemize}
+
 \marginnote{An overview or R colors \href{here}{http://research.stowers-institute.org/efg/R/Color/Chart/ }}
 
 <<fig.height = 4, fig.width=4, fig.align='center'>>=
@@ -1282,9 +1261,7 @@ boxplot(len~supp*dose, data=ToothGrowth, notch=TRUE,
 
 Linear regression is the simples form of regression. We can use this when the response is continous. The assumption is that the response depends on the predictors as in 
 
-<<eval = F>>=
 y ~ par1 * pred1 +  par2 * pred2 +  par3 * pred2^2 + ... + residual Error
-@
 
 where the parameters par1 ... par3 are estimated, and the residual error is normally distributed. 
 
@@ -1411,7 +1388,6 @@ How does this work? Write ?p.adjust in the console. Also, read \href{this}{http:
 
 The glm is a generalization of lm to other response types. We could create a model identical to lm() by glm(formula, family = gaussian(link = "identity")), but the advantage is that glm has more options, among them the following defaults
 
-<<eval = F>>=
 binomial(link = "logit")
 gaussian(link = "identity")
 Gamma(link = "inverse")
@@ -1420,7 +1396,6 @@ poisson(link = "log")
 quasi(link = "identity", variance = "constant")
 quasibinomial(link = "logit")
 quasipoisson(link = "log")
-@
 
 but step for step ... let's look at an example for binomial data
 
