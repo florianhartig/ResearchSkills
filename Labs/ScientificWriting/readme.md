@@ -11,6 +11,16 @@ For writing advice, see primarily the lecture notes. The following links are onl
 * Ten Simple Rules for Getting Published  http://journals.plos.org/ploscollections/article?id=10.1371/journal.pcbi.0010057
 
 
+### Pages with exercises
+
+* https://cgi.duke.edu/web/sciwriting/index.php
+* http://writingcenter.unc.edu/handouts/
+* http://www.eng.monash.edu.au/current-students/download/improving-scientific-writing-style.pdf
+* http://www.writing.engr.psu.edu/exercises/
+* http://www.writing.engr.psu.edu/handbook/exercises.html
+* https://www.sowi.uni-kl.de/psycholinguistics/teaching/scientific-writing-courses/online-resources/
+* http://www.sowi.uni-kl.de/psycholinguistics/teaching/scientific-writing-courses/online-resources/
+
 
 ### Styleguides 
 
@@ -26,6 +36,10 @@ For writing advice, see primarily the lecture notes. The following links are onl
 * http://www.hemingwayapp.com/
 * http://read-able.com/
 
+### Online courses (MOOCs)
+
+* https://www.coursera.org/course/sciwrite
+
 
 ### Reviewing 
 
@@ -34,5 +48,6 @@ For writing advice, see primarily the lecture notes. The following links are onl
 * Ten Simple Rules for Reviewers http://journals.plos.org/ploscollections/article?id=10.1371/journal.pcbi.0020110
 
 * http://writingcenter.unc.edu/faculty-resources/classroom-handouts/checklist-for-analyzing-research-material/
+
 
 
