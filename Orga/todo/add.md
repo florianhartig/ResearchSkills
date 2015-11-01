@@ -1,0 +1,1 @@
+http://www.unifr.ch/wipol/de/research/phd-course
