@@ -21,6 +21,12 @@ For writing advice, see primarily the lecture notes. The following links are onl
 * http://www.nature.com/authors/author_resources/how_write.html}{http://www.nature.com/authors/author_resources/how_write.html
 
 
+### Readability checks 
+
+* http://www.hemingwayapp.com/
+* http://read-able.com/
+
+
 ### Reviewing 
 
 * History of peer-review http://www.sciencedirect.com/science/article/pii/S0167779902019856
