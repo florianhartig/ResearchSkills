@@ -4,10 +4,14 @@ Soft Skills
 ## Advice to young scientists
 
 
-http://www.infectionimmunity.nl/documents/Stearns%20Advice%20Young%20Scientist.pdf
-https://thompsonlab.sites.ucsc.edu/wp-content/uploads/sites/216/2015/06/Successful-Graduate-Student.pdf
-http://matt.might.net/articles/successful-phd-students/
-http://physics.wustl.edu/katz/scientist.html
+* http://www.infectionimmunity.nl/documents/Stearns%20Advice%20Young%20Scientist.pdf
+* https://thompsonlab.sites.ucsc.edu/wp-content/uploads/sites/216/2015/06/Successful-Graduate-Student.pdf
+* http://matt.might.net/articles/successful-phd-students/
+* http://physics.wustl.edu/katz/scientist.html
+
+## Contemplating to do a PhD 
+
+* http://theprofessorisin.com/2011/07/12/so-you-want-to-do-a-ph-d-in-the-humanities/
 
 
 ## How to behave on conferences and meetings 
