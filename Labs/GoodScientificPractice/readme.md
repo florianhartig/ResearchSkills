@@ -1,8 +1,6 @@
 
 
 
-
-
 # Research ethics and misconduct
 
 
@@ -13,6 +11,16 @@
 * Max Plack Society https://www.mpg.de/197494/rulesScientificPractice.pdf
 
 * Deutscher Hochschulverband http://www.hochschulverband.de/cms1/fileadmin/redaktion/download/pdf/info_blaetter/Fehlverhalten.pdf 
+
+
+
+### Correcting mistakes
+
+* http://elifesciences.org/content/4/e11628
+
+
+
+
 
 ## Discussions / lectures / articles misconduct
 
