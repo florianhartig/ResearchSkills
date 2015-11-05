@@ -9,7 +9,6 @@
 
 *.toc
 *.bak
-*.bbl
 *.blg
 
 Exercises/*.pdf

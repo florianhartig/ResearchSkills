@@ -1,0 +1,47 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Anscombe}{Anscombe}{1973}]{Anscombe-Graphsinstatistical-1973}
+Anscombe, F.~J. (1973).
+\newblock Graphs in statistical analysis.
+\newblock {\em The American Statistician\/}~{\em 27\/}(1), 17--21.
+
+\bibitem[\protect\citeauthoryear{Breiman}{Breiman}{2001}]{Breiman-StatisticalModelingTwo-2001}
+Breiman, L. (2001, 08).
+\newblock Statistical modeling: The two cultures (with comments and a rejoinder
+  by the author).
+\newblock {\em Statist. Sci.\/}~{\em 16\/}(3), 199--231.
+
+\bibitem[\protect\citeauthoryear{Cohen}{Cohen}{1994}]{Cohen-earthisround-1994}
+Cohen, J. (1994).
+\newblock The earth is round (p<. 05).
+\newblock {\em Am. Psychol.\/}~{\em 49\/}(12), 997.
+
+\bibitem[\protect\citeauthoryear{Dormann}{Dormann}{2013}]{Dormann-ParametrischeStatistik-2013}
+Dormann, C.~F. (2013).
+\newblock {\em Parametrische Statistik}.
+\newblock Springer.
+
+\bibitem[\protect\citeauthoryear{Gelman, Carlin, Stern, and Rubin}{Gelman
+  et~al.}{2003}]{Gelman-BayesianDataAnalysis-2003}
+Gelman, A., J.~B. Carlin, H.~S. Stern, and D.~B. Rubin (2003).
+\newblock {\em Bayesian data analysis\/} (2nd ed.).
+\newblock Chapman \& Hall, London.
+
+\bibitem[\protect\citeauthoryear{Gotelli and Ellison}{Gotelli and
+  Ellison}{2004}]{Gotelli-PrimerEcologicalStatistics-2004}
+Gotelli, N.~J. and A.~M. Ellison (2004).
+\newblock {\em A Primer Of Ecological Statistics}.
+\newblock Sinauer Associates.
+
+\bibitem[\protect\citeauthoryear{James, Witten, Hastie, and Tibshirani}{James
+  et~al.}{2013}]{James-IntroductiontoStatistical-2013}
+James, G., D.~Witten, T.~Hastie, and R.~Tibshirani (2013).
+\newblock {\em An Introduction to Statistical Learning with Applications in R}.
+\newblock Springer.
+
+\bibitem[\protect\citeauthoryear{Student}{Student}{1908}]{Student-probableerrormean-1908}
+Student (1908).
+\newblock The probable error of a mean.
+\newblock {\em Biometrika\/}, 1--25.
+
+\end{thebibliography}

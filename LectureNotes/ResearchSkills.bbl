@@ -1,0 +1,67 @@
+\begin{thebibliography}{14}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Descartes(1673)}]{Descartes-DiscourseMethodRightly-1673}
+Descartes, R., 1673. Discourse on the Method of Rightly Conducting One's Reason
+  and of Seeking Truth in the Sciences.
+
+\bibitem[{Editorial(2015)}]{Editorial-Causecorrelationconjecture-2015}
+Editorial, 2015. Cause, correlation, conjecture. Nat Genet 47~(4), 305--305.
+
+\bibitem[{Forschungsgemeinschaft(2013)}]{Forschungsgemeinschaft-RulesGoodScientific-2013}
+Forschungsgemeinschaft, D., 2013. Rules of Good Scientific Practice, 2nd
+  Edition. WILEY-VCH.
+
+\bibitem[{Gopen and Swan(1990)}]{Gopen-ScienceOfScientific-1990}
+Gopen, G.~D., Swan, J.~A., 1990. The Science Of Scientific Writing. Am. Sci.
+  78~(6), 550--558.
+
+\bibitem[{Greenberg(2009)}]{Greenberg-Howcitationdistortions-2009}
+Greenberg, S.~A., 2009. How citation distortions create unfounded authority:
+  analysis of a citation network.
+  \href{http://dx.doi.org/10.1136/bmj.b2680}{BMJ} 339.
+\newline doi: 10.1136/bmj.b2680
+
+\bibitem[{Kelleher and Wagener(2011)}]{Kelleher-Tenguidelineseffective-2011}
+Kelleher, C., Wagener, T., 2011. Ten guidelines for effective data
+  visualization in scientific publications. Environmental Modelling \& Software
+  26~(6), 822--827.
+
+\bibitem[{Loehle(1990)}]{Loehle-guidetoincreased-1990}
+Loehle, C., 1990. A guide to increased creativity in research: Inspiration or
+  perspiration? Bioscience 40~(2), 123--129.
+
+\bibitem[{Medawar(1967)}]{Medawar-artsoluble-1967}
+Medawar, P.~B., 1967. The art of the soluble.
+
+\bibitem[{Platt(1964)}]{Platt-StrongInferenceCertain-1964}
+Platt, J.~R., 1964. Strong Inference: Certain systematic methods of scientific
+  thinking may produce much more rapid progress than others.
+  \href{http://dx.doi.org/10.1126/science.146.3642.347}{Science} 146~(3642),
+  347--353.
+\newline doi: 10.1126/science.146.3642.347
+
+\bibitem[{Roberts(2015)}]{Roberts-TenSimpleRules-2015}
+Roberts, R.~J., 2015. Ten Simple Rules to Win a Nobel Prize.
+  \href{http://dx.doi.org/10.1371/journal.pcbi.1004084}{PLoS Comput Biol}
+  11~(4), e1004084--.
+\newline doi: 10.1371/journal.pcbi.1004084
+
+\bibitem[{Shadish et~al.(2002)Shadish, Cook, and
+  Campbell}]{Shadish-Experimentalandquasi-2002}
+Shadish, W.~R., Cook, T.~D., Campbell, D.~T., 2002. Experimental and
+  quasi-experimental designs for generalized causal inference. Houghton Mifflin
+  Boston.
+
+\bibitem[{Sokal(2008)}]{Sokal-BeyondhoaxScience-2008}
+Sokal, A., 2008. Beyond the hoax: Science, philosophy and culture. Oxford
+  University Press.
+
+\bibitem[{Tischler(1978)}]{Tischler-Scientificwritingbooklet-1978}
+Tischler, M.~E., 1978. Scientific writing booklet. University of Arizona.
+
+\bibitem[{Woodford(1967)}]{Woodford-Sounderthinkingthrough-1967}
+Woodford, F., 1967. Sounder thinking through clearer writing. Science
+  156~(3776), 743.
+
+\end{thebibliography}
