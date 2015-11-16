@@ -806,6 +806,8 @@ In a practical setting, we are typically interested in how a response is affecte
 
 \subsection{What is a confounding variable?}
 
+Imagine we are interested in a response A, and we have hypothesized that A~B. Imagine there is a second predictor variable C that has an influence on A, but in which we are not interested in for the purpose of the question under consideration. Such a variable that is not of interest for the question is also called "extraneous variables". \marginnote{An extraneous variable is a variable that can influence the response, but is not of interest for the experimenter}. So we also have A~C, but we are not interested in this relationship. If we now take data, and don't measure C, it's usually not a bit problem as long as C is uncorrelated with B - it might create a bit more variability in the response, but by and large the effect of C should average out and we should still be able to detect the effect of B.
+
 \begin{figure}[]
 \begin{center}
 \includegraphics[width = 6cm]{Confounding}
@@ -813,11 +815,6 @@ In a practical setting, we are typically interested in how a response is affecte
 \label{fig: Confounding}
 \end{center}
 \end{figure}
-
-
-
-
-Imagine we are interested in a response A, and we have hypothesized that A~B. Imagine there is a second predictor variable C that has an influence on A, but in which we are not interested in for the purpose of the question under consideration. Such a variable that is not of interest for the question is also called "extraneous variables". \marginnote{An extraneous variable is a variable that can influence the response, but is not of interest for the experimenter}. So we also have A~C, but we are not interested in this relationship. If we now take data, and don't measure C, it's usually not a bit problem as long as C is uncorrelated with B - it might create a bit more variability in the response, but by and large the effect of C should average out and we should still be able to detect the effect of B.
 
 The problem of confounding appears when the extraneous variable C is for some reason correlated with the predictor variable of interest B. \marginnote{A confounding variable is an extraneous variable that correlated to both the response and a predictor variable of interest.} In that case, if we only measure B, we see both the effect of B and C. In this case, we may attribute the effect of C on A wrongly to the effect of B on A. \marginnote{A spurious correlation is a correlation that is caused by a confounding variable.} A correlation that is caused by an unmeasured confounding variable is called a spurious correlation.  
 
@@ -834,15 +831,6 @@ If we think there is a factor that could be confounding, we basically have three
 Randomization means that we try to ensure that the confounding factor is not systematically correlated with the variable of interest (but can still cause problems with interactions and nonlinear relationships).
 
 
-\begin{figure}[]
-\begin{center}
-\includegraphics[width = 6cm]{RandomizedBlockDesign}
-\caption{Illustrationo of a randomized block design, the probably most widely used desing on (observational) experiments to randomize the effect of unknown and unmeasured confounding variables. The idea of this design is that the unknown variables are likely correlated in space. By blocking all experimentally changing variables together, we avoid that they can become confounded iwth the unkonwn spatial variables.}
-\label{fig: RandomizedBlockDesign}
-\end{center}
-\end{figure}
-
-
 Measuring\marginnote{Variables that we include but that are not interesting to us are often called nuisance variables.} allows us to account for the effect in a statistical analysis, but cost power (see below) and, and we can't measure everything.
 
 \section{Definition and bias of variables}
@@ -853,6 +841,15 @@ A common mistake at this step of the design is to take the variable definition a
   \item Do my variables measure what I want to measure
   \item What is the expected statistical (stochastic) error in my measurements, and what is the possible systematic error in my measurements
 \end{enumerate}
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width = 10cm]{RandomizedBlockDesign}
+\caption{Illustrationo of a randomized block design, the probably most widely used desing on (observational) experiments to randomize the effect of unknown and unmeasured confounding variables. The idea of this design is that the unknown variables are likely correlated in space. By blocking all experimentally changing variables together, we avoid that they can become confounded iwth the unkonwn spatial variables.}
+\label{fig: RandomizedBlockDesign}
+\end{center}
+\end{figure}
+
 
 The first item may seem a bit odd, because one would think that we know what we measure. However, in many cases in ecological statistics and beyond, we do not measure directly the variable that we are interested in, but rather a proxy. So, for example, we want temperature on the plot, and we use temperature from a weather station 5 km away. Or, we want to look at functional diversity, but how can we exactly express this in terms of variables that we measure in the field.
 
