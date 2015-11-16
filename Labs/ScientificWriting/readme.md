@@ -2,6 +2,8 @@
 
 For writing advice, see primarily the lecture notes. The following links are only meant to complement the script
 
+* Writing advice by George Orwell, George Orwell, "Politics and the English Language," 1946  https://www.mtholyoke.edu/acad/intrel/orwell46.htm
+
 * http://writingcenter.unc.edu/handouts/
 
 * Ten Simple (Empirical) Rules for Writing Science http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004205

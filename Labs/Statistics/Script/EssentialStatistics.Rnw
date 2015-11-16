@@ -806,6 +806,14 @@ In a practical setting, we are typically interested in how a response is affecte
 
 \subsection{What is a confounding variable?}
 
+\begin{figure}[]
+\begin{center}
+\includegraphics[width = 6cm]{Confounding}
+\caption{Diagram illustrating a confounding variable. A key requirement for being a counfounder is that the variable correlates both with the repsonse, and with the predictor variables that form our original hypothesis. If the second link is not there, the variable is not confounding and can be disregarded.}
+\label{fig: Descartes}
+\end{center}
+\end{figure}
+
 Imagine we are interested in a response A, and we have hypothesized that A~B. Imagine there is a second predictor variable C that has an influence on A, but in which we are not interested in for the purpose of the question under consideration. Such a variable that is not of interest for the question is also called "extraneous variables". \marginnote{An extraneous variable is a variable that can influence the response, but is not of interest for the experimenter}. So we also have A~C, but we are not interested in this relationship. If we now take data, and don't measure C, it's usually not a bit problem as long as C is uncorrelated with B - it might create a bit more variability in the response, but by and large the effect of C should average out and we should still be able to detect the effect of B.
 
 The problem of confounding appears when the extraneous variable C is for some reason correlated with the predictor variable of interest B. \marginnote{A confounding variable is an extraneous variable that correlated to both the response and a predictor variable of interest.} In that case, if we only measure B, we see both the effect of B and C. In this case, we may attribute the effect of C on A wrongly to the effect of B on A. \marginnote{A spurious correlation is a correlation that is caused by a confounding variable.} A correlation that is caused by an unmeasured confounding variable is called a spurious correlation.  
