@@ -12,6 +12,7 @@ Soft Skills
 ## Contemplating to do a PhD 
 
 * http://theprofessorisin.com/2011/07/12/so-you-want-to-do-a-ph-d-in-the-humanities/
+* http://www.nature.com/nature/journal/v526/n7574/full/nj7574-597a.html?WT.mc_id=FBK_NJOBS_1510_GRADSURVEY_PORTFOLIO
 
 
 ## How to behave on conferences and meetings 
