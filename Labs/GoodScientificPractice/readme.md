@@ -151,6 +151,8 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 * https://osf.io/x5w7h/
 
 * http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382
+* http://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000192
+* http://blogs.discovermagazine.com/neuroskeptic/2015/11/10/reproducibility-crisis-the-plot-thickens/#.VlCweMrASBt
 
 #### Detection of p-hacking
 
