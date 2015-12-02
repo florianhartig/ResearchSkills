@@ -13,6 +13,8 @@ Soft Skills
 
 * http://theprofessorisin.com/2011/07/12/so-you-want-to-do-a-ph-d-in-the-humanities/
 * http://www.nature.com/nature/journal/v526/n7574/full/nj7574-597a.html?WT.mc_id=FBK_NJOBS_1510_GRADSURVEY_PORTFOLIO
+* http://www.nature.com/news/make-the-most-of-phds-1.18915
+* http://www.nature.com/news/how-to-build-a-better-phd-1.18905
 
 
 ## How to behave on conferences and meetings 
