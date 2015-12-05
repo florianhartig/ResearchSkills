@@ -48,17 +48,17 @@ And of course: google!
 
 ## FAQ
 ### **Q: Why does the referencing not work in my document?**
-#### A$_1$: The path to your reference file is not correct:
+#### A<sub>1</sub>: The path to your reference file is not correct:
 We recommend the use of relative file paths, such that your project folder contains different folders for different files, such as your .tex document (e.g. in a folder called ``thesis") and your .bib literature database (e.g. in a folder called ``literature"). If you use such a structure you may set \verb!\bibliography{../literature/yourbibtexfile}! at the end of your .tex document in order to link your .tex document with your .bib database.
 
 Another option is to store all files in only one folder. Then you only need to set \verb!\bibliography{yourbibtexfile}! at the end of the .tex document. If you have many additional files, such as figures, this is not recommended.
 
 There is one other option, which works as long as you are only working on one computer: The use of full file paths. This may look like this: \verb!\bibliography{C:/Users/User/documents/literature/yourbibtexfile}!, or the path to wherever yourbibtexfile.bib is stored. The obvious problem is that this specific file path must exist.
 
-#### A$_2$: You mistakenly provided the file extension:
+#### A<sub>2</sub>: You mistakenly provided the file extension:
 In \verb!\bibliography{}! you must give the file name of your database without the extension (e.g. .bib). This means it must be \verb!\bibliography{yourbibtexfile}! instead of \verb!\bibliography{yourbibtexfile.bib}!
 
-#### A$_3$: You need to do a LaTeX--BibTeX--LaTeX--LaTeX sequence:
+#### A<sub>3</sub>: You need to do a LaTeX--BibTeX--LaTeX--LaTeX sequence:
 When compiling your .tex document the first time after adding a link to your literature database (.bib) you need to compile in LaTeX (F1 or F6), then in BibTeX (F8 or F11), and then twice in LaTeX again. 
 This is necessary because each step produces auxiliary files that the next step uses. The first compiling in LaTeX generates an .aux file, which the citations need. The BibTeX compiling generates a .bbl file. The third compiling incorporates these references into the document, and the fourth is necessary to ensure that the insertion of these references still produces correct formatting.
 
@@ -66,4 +66,4 @@ This is necessary because each step produces auxiliary files that the next step 
 #### A: Figures and tables are placed in floats:
 In \LaTeX~ figures and tables are positioned in the text always following the same principles or rules (if not specified differently). To do this figures and tables are put into containers called floats. These also prevent the container items to be broken over pages. 
 
-Now, the answer to this question may seem a bit circumventive: Simply don't care about the positioning of your tables and figures. If you finished your document and you still don't like the arrangement check [this][https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions] out. 
+Now, the answer to this question may seem a bit circumventive: Simply don't care about the positioning of your tables and figures. If you finished your document and you still don't like the arrangement check [this](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions) out. 
