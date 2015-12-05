@@ -58,12 +58,12 @@ There is one other option, which works as long as you are only working on one co
 #### A<sub>2</sub>: You mistakenly provided the file extension:
 In *\bibliography{}* you must give the file name of your database without the extension (e.g. .bib). This means it must be *\bibliography{yourbibtexfile}* instead of *\bibliography{yourbibtexfile.bib}*
 
-#### A<sub>3</sub>: You need to do a LaTeX--BibTeX--LaTeX--LaTeX sequence:
+#### A<sub>3</sub>: You need to do a LaTeX-BibTeX-LaTeX-LaTeX sequence:
 When compiling your .tex document the first time after adding a link to your literature database (.bib) you need to compile in LaTeX (F1 or F6), then in BibTeX (F8 or F11), and then twice in LaTeX again. 
 This is necessary because each step produces auxiliary files that the next step uses. The first compiling in LaTeX generates an .aux file, which the citations need. The BibTeX compiling generates a .bbl file. The third compiling incorporates these references into the document, and the fourth is necessary to ensure that the insertion of these references still produces correct formatting.
 
 ### **Q: Why are my figures or tables showing up in the wrong place?**
 #### A: Figures and tables are placed in floats:
-In LaTeX~ figures and tables are positioned in the text always following the same principles or rules (if not specified differently). To do this figures and tables are put into containers called floats. These also prevent the container items to be broken over pages. 
+In LaTeX figures and tables are positioned in the text always following the same principles or rules (if not specified differently). To do this figures and tables are put into containers called floats. These also prevent the container items to be broken over pages. 
 
 Now, the answer to this question may seem a bit circumventive: Simply don't care about the positioning of your tables and figures. If you finished your document and you still don't like the arrangement check [this](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions) out. 
