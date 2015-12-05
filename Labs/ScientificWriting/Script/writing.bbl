@@ -1,0 +1,34 @@
+\begin{thebibliography}{3}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Gopen and Swan(1990)}]{Gopen1990}
+\bibinfo{author}{Gopen, G.D.}, \bibinfo{author}{Swan, J.A.},
+  \bibinfo{year}{1990}.
+\newblock \bibinfo{title}{The science of scientific writing}.
+\newblock \bibinfo{journal}{American Scientist} \bibinfo{volume}{78},
+  \bibinfo{pages}{550--558}.
+\newblock \URLprefix \url{http://www.jstor.org/stable/29774235}.
+%Type = Article
+\bibitem[{Tischler(1978)}]{Tischler1978}
+\bibinfo{author}{Tischler, M.E.}, \bibinfo{year}{1978}.
+\newblock \bibinfo{title}{Scientific writing booklet}.
+\newblock \bibinfo{journal}{University of Arizona} .
+%Type = Article
+\bibitem[{Woodford(1967)}]{Woodford1967}
+\bibinfo{author}{Woodford, F.P.}, \bibinfo{year}{1967}.
+\newblock \bibinfo{title}{Sounder thinking through clearer writing}.
+\newblock \bibinfo{journal}{Science} \bibinfo{volume}{156},
+  \bibinfo{pages}{743--745}.
+
+\end{thebibliography}
