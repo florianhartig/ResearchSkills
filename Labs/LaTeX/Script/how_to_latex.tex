@@ -146,7 +146,7 @@ The gray color symbolizes a \emph{comment} the comment is declared by using the 
 
 \chapter{Start editing your document}
 
-To start of your actual document you first need to declare the type of document you want to create. This is done in the so called "Header" of the file. There you can also declare additional options and include packages to increase the functionality of \LaTeX.
+To start of your actual document you first need to declare the type of document you want to create. This is done in the so called "preamble" of the latex document. There you can also declare additional options and include packages to increase the functionality of \LaTeX.
 
 For the purpose of this tutorial you are going to create a scientific article. This type of document is declared by \verb!\documentclass{article}!. This defines a few design characteristics like line spacing and the width of the borders of the page for your document. the \verb!\! is used to indicate to \LaTeX\ that the following is a command. In \LaTeX\ commands are used for everything from setting your font type to including pictures or graphics.  
 
@@ -226,9 +226,9 @@ Test
 
 Compile your document to notice the effect of the new commands. \verb!\textbf{}! leads to \textbf{bold} fonts \verb!\textit{}! leads to \textit{italic} fonts and \verb!\emph{}! \emph{emphasizes} what ever you put into the wavy brackets. Additionally you learned two ways to add a line break to your document. The first one is to simply leave a blank line after the point at which you want to break the line. This also leads to an indent at the beginning of the next line which makes for better readability. The second one is to add \verb!\\! this method can be refined by adding the exact spacing either in mm, pt or relative to the default linewidth in square brackets. like \verb!\\[3mm]!. No indent follows this type of line break. 
 
-\chapter{The header}
+\chapter{The preamble}
 
-As aforementioned your document has a header.\marginnote{In the header you can include new packages and set general parameters and meta data for your document!} The header is everything you write before the \verb!\begin{document}! statement.Here you declare the packages you want to use, define styles and you can add some meta data to your document. Such as the author or the title of your article. These two are added by using the \verb!\author{}! and \verb!\title{}! commands. Add them to your document right below the \verb!\documentclass{}! command and write a title in the wavy brackets after title and your name in the wavy brackets after author and compile again. There should be no noticeable difference. Now right under the \verb!\begin{document}! statement add \verb!\maketitle! and compile again. Your pdf document should now have a title, your name and the current date at the top. The \verb!\maketitle! command uses the information you provided in the header to create a title for your article. If everything worked your \LaTeX\ document should now look like this:\\[5pt]
+As mentioned before, every \LaTeX\ document should have a preamble.\marginnote{In the preamble you can include new packages and set general parameters and meta data for your document!} The preamble is everything you write before the \verb!\begin{document}! statement. Here you declare the packages you want to use, define styles and you can add some meta data to your document. Such as the author or the title of your article. These two are added by using the \verb!\author{}! and \verb!\title{}! commands. Add them to your document right below the \verb!\documentclass{}! command and write a title in the wavy brackets after title and your name in the wavy brackets after author and compile again. There should be no noticeable difference. Now right under the \verb!\begin{document}! statement add \verb!\maketitle! and compile again. Your pdf document should now have a title, your name and the current date at the top. The \verb!\maketitle! command uses the information you provided in the preamble to create a title for your article. If everything worked your \LaTeX\ document should now look like this:\\[5pt]
 
 
 \begin{lstlisting}
@@ -345,7 +345,7 @@ This is our second numbered equation.
 As you can see there are a lot of new symbols added but if you look at them they are pretty self explanatory. \verb!\infty! is used for the infinity symbol $\infty$ , \verb!\frac{}{}! is used for fractions such as $\frac{x}{y}$ and \verb!\cdot! is used for the multiplication dot $\cdot$. A bit more complicated is \verb!\int! it is used for integrals the lower bound is indicated by an underscore " \_ " and the upper bound by the  \^. The full expression for an integral is respectively \verb!\int_x^y! which then looks like $\int_x^y$. Brackets can be placed with the commands \verb!\left(! and \verb!\right)!. 
 
 \chapter{Labels and referencing}
-When adding graphs, tables, pictures or equations to your document\marginnote{Labels and references are important for you and for others to easily link written information to graphic content!} it is common to number reference these to allow the reader to easily connect your text to the respective visualization. In addition you might also want to reference sections to be able to later refer to them. The numbering is done automatically by latex for all these types. To reference them in your document you just need to label them. The commands used for this purpose are \verb!\label{}! and \verb!\ref{}!. You assign a specific label to the aspect you want reference later on by simply placing \verb!\label{}! behind the object you want to reference. Here it is common to use a short prefix to indicate the type of object you want to label such as \emph{sec} for sections, \emph{fig} for figures, \emph{tab} for tables\marginnote{Use abbreviated prefixes to quickly identify your labels!} and so on. This makes it easy to distinguish between different objects connected to the same topic (e.g. a graph and a table displaying the same kind of data). You can also make your references interactive. This means you can link your references to the actual content to make navigating the pdf even easier. To do so you need to include the \emph{hyperref} package into your document header. You can then use the \verb!\hypersetup! command to define the formatting of your references. Here we colored them in  dark blue. You can use the packages \emph{color} and \emph{xcolor} to increase the spectrum of colors you can use and to enable the definition of custom colors from rgb values. To see how this is done look at the following:
+When adding graphs, tables, pictures or equations to your document\marginnote{Labels and references are important for you and for others to easily link written information to graphic content!} it is common to number reference these to allow the reader to easily connect your text to the respective visualization. In addition you might also want to reference sections to be able to later refer to them. The numbering is done automatically by latex for all these types. To reference them in your document you just need to label them. The commands used for this purpose are \verb!\label{}! and \verb!\ref{}!. You assign a specific label to the aspect you want reference later on by simply placing \verb!\label{}! behind the object you want to reference. Here it is common to use a short prefix to indicate the type of object you want to label such as \emph{sec} for sections, \emph{fig} for figures, \emph{tab} for tables\marginnote{Use abbreviated prefixes to quickly identify your labels!} and so on. This makes it easy to distinguish between different objects connected to the same topic (e.g. a graph and a table displaying the same kind of data). You can also make your references interactive. This means you can link your references to the actual content to make navigating the pdf even easier. To do so you need to include the \emph{hyperref} package into your document preamble. You can then use the \verb!\hypersetup! command to define the formatting of your references. Here we colored them in  dark blue. You can use the packages \emph{color} and \emph{xcolor} to increase the spectrum of colors you can use and to enable the definition of custom colors from rgb values. To see how this is done look at the following:
 \marginnote{\emph{hyperref} allows you to create interactive links between your references and the referenced content. This makes navigating large documents a lot easier!}
 \begin{lstlisting}
 \usepackage[]{hyperref}
@@ -416,7 +416,7 @@ In LaTeX, everything can be labeled, and after that it can be referenced. Consid
 
 
 \chapter{Including figures}
-As aforementioned you can also include graphs and pictures into your \LaTeX\ document. This can be done via the \emph{grapicx} package.\marginnote{Remember that you can include packages in the header before your \emph{begin document} statement!}
+As aforementioned you can also include graphs and pictures into your \LaTeX\ document. This can be done via the \emph{grapicx} package.\marginnote{Remember that you can include packages in the preamble before your \emph{begin document} statement!}
 The easiest way to include figures into your document is by placing the file containing your figure (e.g. a PDF or JPG) in your project folder. That way you only need to specify the name of the file when including it and not the full path. You can however place it in another location on your file system or in a sub folder of your project folder and give the file path to \LaTeX\ but keep in mind not to use space or special symbols in your file and path names.
 
 To include images into your \LaTeX\ document you first need to define a figure space. This can be achieved by using the \verb!\begin{figure}! and \verb!\end{figure}! statements. In between these statements you can now include your image and add a caption to it to briefly summarize what is displayed here. To do so you need the \verb!\includegraphics[scale=]{}!, with the name or file path of the image to include without the file extension, and \verb!\caption{}! commands. Most of the time you want your image to be displayed in the center of the lines your placing it in. For that you can use the command \verb!\centering! one line above the  \verb!\includegraphics[scale=]{}! statement.
@@ -548,7 +548,6 @@ They are a very efficient way to sort large amounts of data and to make them eas
 \end{table*}
 
 \end{lstlisting} 
-
 
 As you can see it is way more complex than the simple table but it also allows a more informative and more structured table design. You do not need to specify the dimensions of the table in advance. The columns are still separated by the \& symbol The rows are separated simply by a line break. Additionally the table is divided into different vertical sections which are indicated by the \emph{toprule, midrule} and \emph{bottomrule} statements. These sections can be used to display additional information such as a header for the columns or to aggregate different treatments in one table. The \verb!\multicolumn{}{}{}! \marginnote{use \emph{multicolumn} to aggregate multiple columns into one e.g. for footnotes or headers} command can be used to write over several columns e.g. for table headlines or explanations. The first wavy bracket defines the number of columns you want to aggregate, the second one the style ("l" means left bound) and in the third wavy bracket you can put your text. In this case the rows are enclosed in \$ symbols to give them the look of a formula and separate them from the headlines. When compiled correctly the table should look like this:\marginnote{Stick to this kind of table whenever you write a scientific article, report or thesis!} 
 \begin{table*}\label{Table: Fit types}
@@ -706,7 +705,7 @@ month = aug,
 }
 \end{lstlisting} 
 %For this purpose \LaTeX provides you with a link to the BibTeX format. 
-Now that you have set up a BibTex database you can easily include it into your document and link the sources within your .bib file. This requires you to locate your database inside your project folder similar to your pictures and graphics. Now you can include this database by using the command \verb!\bibliography{}! at the end of your document, with the name of your database in the wavy brackets. The style of your bibliography is determined by the \verb!\bibliographystyle{}! command before the \verb!\bibliography{}! command and the name of the style file in the wavy brackets. Here we use the \emph{chicago} citation style. To fully integrate the database into you \LaTeX\ file you need to compile Bibtex as well as \LaTeX\ at least two times.\marginnote{To get your bibTex file into your document make sure you use the same format. You might need to compile bibTex and \LaTeX\ several times until everything is up and running!} This process is still slightly faulty and it might require more compilation attempts until everything works properly. Also make sure you are using the correct formatting (e.g. UTF-8). Once everything is set you can reference your sources within your document using the \verb!\citep{}! and \verb!\cite{}! commands. The classical citation command is \verb!\citep{}!. It leads to your cited source enclosed in brackets while \verb!\cite{}! and \verb!\citet{}! only put the date of the citation in brackets allowing for an in-text citation. Once you cite a source in your document it will be listed in your bibliography as well. In this tutorial it is the last step but it is generally advisable to set up your bibliography at the beginning for your project to make citing fluent and to avoid mistakes. Now add a chapter about citations to your document and after that add your bibliography. A literature database is supplied in your training material. To make your citations look nicer and allow for more options include the \emph{natbib} package in your document. You can adjust the punctuation of your references by using the \verb!\bibpunct! command in your header. After including the \emph{natbib} package add the following line:\\
+Now that you have set up a BibTex database you can easily include it into your document and link the sources within your .bib file. This requires you to locate your database inside your project folder similar to your pictures and graphics. Now you can include this database by using the command \verb!\bibliography{}! at the end of your document, with the name of your database in the wavy brackets. The style of your bibliography is determined by the \verb!\bibliographystyle{}! command before the \verb!\bibliography{}! command and the name of the style file in the wavy brackets. Here we use the \emph{chicago} citation style. To fully integrate the database into you \LaTeX\ file you need to compile Bibtex as well as \LaTeX\ at least two times.\marginnote{To get your bibTex file into your document make sure you use the same format. You might need to compile bibTex and \LaTeX\ several times until everything is up and running!} This process is still slightly faulty and it might require more compilation attempts until everything works properly. Also make sure you are using the correct formatting (e.g. UTF-8). Once everything is set you can reference your sources within your document using the \verb!\citep{}! and \verb!\cite{}! commands. The classical citation command is \verb!\citep{}!. It leads to your cited source enclosed in brackets while \verb!\cite{}! and \verb!\citet{}! only put the date of the citation in brackets allowing for an in-text citation. Once you cite a source in your document it will be listed in your bibliography as well. In this tutorial it is the last step but it is generally advisable to set up your bibliography at the beginning for your project to make citing fluent and to avoid mistakes. Now add a chapter about citations to your document and after that add your bibliography. A literature database is supplied in your training material. To make your citations look nicer and allow for more options include the \emph{natbib} package in your document. You can adjust the punctuation of your references by using the \verb!\bibpunct! command in your preamble. After including the \emph{natbib} package add the following line:\\
 \verb!\bibpunct{(}{)}{;}{a}{}{,}!
 \noindent Now everything is set for you to compile your document and have a look at your citations and your bibliography. Your \LaTeX\ file should now look like this:
 
@@ -838,6 +837,23 @@ Referenced are extremely important \citep[see also][for more references]{Gintis-
 \end{document}
 \end{lstlisting}
 
+
+\chapter{Going further}
+
+While expanding your document or when creating a new one you will probably get to a point where you want to do something that has not been covered by this tutorial. Here are three options how to find additional information and help:\\
+\begin{itemize}
+	\item The first\marginnote{When you encounter problems with \LaTeX\ search engines and forums are your best friends!} thing to do is to search for a solution on the web. \LaTeX\ has a very active community and most of the things you want to do will have already been done by someone and posted in some forum or wiki.
+	\item Secondly, you can find so called "cheat sheets" (just search for them online) these are short scripts which list most of the functions and commands with a short explanation about what they do and how they are used.
+	\item Finally, I provide some information on a list of useful packages in the \hyperref[appendix]{appendix} of this document.
+	
+\end{itemize} 
+
+\makeatletter\@openrightfalse
+
+\begin{appendices}
+
+
+
 \chapter{FAQ}
 \section*{\bfseries Q: Why does the referencing not work in my document?}
 \subsection*{A$_1$: The path to your reference file is not correct:}
@@ -860,19 +876,9 @@ In \LaTeX~ figures and tables are positioned in the text always following the sa
 
 Now, the answer to this question may seem a bit circumventive: Simply don't care about the positioning of your tables and figures. If you finished your document and you still don't like the arrangement check \href{https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}{this} out. 
 
-\chapter{Going further}
 
-While expanding your document or when creating a new one you will probably get to a point where you want to do something that has not been covered by this tutorial. Here are three options how to find additional information and help:\\
-\begin{itemize}
-	\item The first\marginnote{When you encounter problems with \LaTeX\ search engines and forums are your best friends!} thing to do is to search for a solution on the web. \LaTeX\ has a very active community and most of the things you want to do will have already been done by someone and posted in some forum or wiki.
-	\item Secondly, you can find so called "cheat sheets" (just search for them online) these are short scripts which list most of the functions and commands with a short explanation about what they do and how they are used.
-	\item Finally, I provide some information on a list of useful packages in the \hyperref[appendix]{appendix} of this document.
-	
-\end{itemize} 
 
-\makeatletter\@openrightfalse
-
-\begin{appendices}
+\chapter{Useful packages}
 
 \label{appendix}
 \noindent \textbf{This is a selection of packages, which may help you with everyday \LaTeX\ problems:}
