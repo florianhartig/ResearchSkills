@@ -394,7 +394,7 @@ mtext("Anscombe's 4 Regression data sets", outer = TRUE, cex = 1.5)
 par(op)
 
 @
-\caption{Anscombe's Quartet}
+\caption{Anscombe's Quartet, a hypothetical dataset of four observations that are identical in classical summary statistics such as mean, variance, correlation, regression line, etc.}
 \label{fig: Anscombes Quartet}
 \end{center}
 \end{figure}
@@ -697,7 +697,47 @@ So, what were the assumptions of a linear regression? One problem I often encoun
 y - (a \cdot x + b ) \sim \epsilon 
 \end{equation}
 
-i.e. the difference between the observed value and the model predictions. These differences are called the residuals, and, according to the assumptions of our model, they should be normally distributed. You get basic residual diagnostics by typing plot(fit), where fit is your fitted model object. For further details on residual diagnostics, see \href{http://www.statmethods.net/stats/rdiagnostics.html}{here}.
+i.e. the difference between the observed value and the model predictions. These differences are called the residuals, and, according to the assumptions of our model, they should be normally distributed. To see whether this is indeed the case, one should perform a number of checks. The most basic is to plot the residuals against the fitted value AND against all predictors in the model. The resulting plots allow to diagnose a number of possible problems (Fig.~\ref{fig: ResidualPatterns})
+
+\begin{figure}[htbp]
+\begin{center}
+<< echo = F>>=
+oldpar <- par(mfrow = c(2,2))
+
+plot(rnorm(1000), ylim = c(-4,4), main = "Perfekt Normal", ylab = "Residual", xlab = "Fitted value or predictor")
+abline(h=0, col = "red", lwd = 3)
+
+plot(rnorm(1000, sd = seq(0.01,2, len = 1000)), ylim = c(-4,4), main = "Heteroscedasticity", ylab = "Residual", xlab = "Fitted value or predictor")
+abline(h=0, col = "red", lwd = 3)
+
+
+plot(rnorm(1000, mean = seq(-2,2, len = 1000)), ylim = c(-4,4), main = "Pattern in the residuals", ylab = "Residual", xlab = "Fitted value or predictor")
+abline(h=0, col = "red", lwd = 3)
+
+plot(ifelse(runif(1000) <0.5, rnorm(1000, mean = 2, sd = 0.3), rnorm(1000, mean = -2, sd = 0.3)) , ylim = c(-4,4), main = "Distribution not normal", ylab = "Residual", xlab = "Fitted value or predictor")
+abline(h=0, col = "red", lwd = 3)
+
+par(oldpar)
+@
+\caption{A collection of possible patterns when plotting the residuals against the fitted value (default in R) or a predictor.}
+\label{fig: ResidualPatterns}
+\end{center}
+\end{figure}
+
+Common problems and their solutions are 
+
+\begin{itemize}
+  \item Heteroskedasticity (variance changes) --> transform response, or use a regression model that can account for heteroscedasticity
+  \item Pattern in the residuals --> Wrong functional form of the regression model. Try to add predictors, quadratic effects, interactions, or other things that change the functional form
+  \item Distribution not normal --> Assuming this is not due to one of the earlier problems (no pattern / no heteroskedasticity), you can still try a variable transformation, or go to a regression with a different distributional assumption (see next section)
+\end{itemize}  
+
+There are further specialized plots to help with the diagnosis of these problems. You get then when applying the plot() command 
+
+
+You get basic residual diagnostics by typing plot(fit), where fit is your fitted model object. For further details on residual diagnostics, see \href{http://www.statmethods.net/stats/rdiagnostics.html}{here}.
+
+
 
 \section{Generalized linear regression models}
 
@@ -858,15 +898,19 @@ The second questions relates to considering how much two measurements would diff
 
 \section{Selection of values for the independent (predictor) variables}
 
-If we have decided which variables to measure, we have to decide for the values at which we want to measure them. In an observational study, this may not always be possible completely, but it's usually possible to ensure sufficient variation in the predictor variables. A few points to consider
+If we have decided which variables to measure / vary, we have to decide for the values at which we want to measure them. 
+
+In\marginnote{The experimental unit is the entity that can be assigned a particular variable combination (e.g. treatment or control). Example: an individual plant, or a pot.} an experimental study, we usually vary variables systematically for a particular entity, e.g. a plant, a pot or a plot. This entity is called the experimental unit. Also observational studies have experimental units (the entities for which measurements are taken), but it usually not possible to completely control the variables. However, one usually has the option to make particular selections. Also in observational studies, it is key to ensure sufficient sufficient variation of the predictor variables across the experimental units to allow a meaningfull statstical analysis.
+
+Here are a few points to consider
 
 \subsection{Vary all variables independently}
 
-A common problem in practice is that we have two variables,  but their values change in a correlated way. Imagine we test for the presence of a species, but we have only warm dry and cold wet sites. We say the two variables a collinear. In this case we don't know whether any observed effect is due to temperature or water availability. The bottom-line: if you want to separate two effects, you need them to vary independently. 
+A common problem in practice is that we have two variables,  but their values change in a correlated way. Imagine we test for the presence of a species, but we have only warm dry and cold wet sites. We say the two variables a collinear. In this case we don't know whether any observed effect is due to temperature or water availability. The bottom-line: if you want to separate two effects, the correlation between them must not be perfect - ideally, it would be zero, or failing that, as low as possible. 
 
 \subsection{Interactions}
 
-To be able to detect interactions between variables, it's not enough to vary all, you also need to have certain combinations. The buzzword here is called factorial design. Google will help you.
+To be able to detect interactions between variables, it's not enough to vary all, you also need to have certain combinations. The buzzword here is (fractional) factorial designs. Google will help you.
 
 \subsection{Nonlinear effects}
 
@@ -1003,7 +1047,7 @@ Let's write something else: R has a few standard datasets that are automatically
 plot(airmiles, col = 4)
 @
 
-The result should look like this:
+The result should look like Fig.~\ref{fig: Rgui2}:
 
 \begin{figure}[]
 \begin{center}
@@ -1021,7 +1065,7 @@ RStudio basically offers the same functions as the RGui, but a many things can b
 
 \begin{figure}[]
 \begin{center}
-\includegraphics[width = 6cm]{rst_interface.png}
+\includegraphics[width = 9cm]{rst_interface.png}
 \caption{The RStudio editor, arguably the most popular editor for R}
 \label{fig: Rstudio}
 \end{center}
