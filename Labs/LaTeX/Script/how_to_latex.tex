@@ -1,10 +1,12 @@
 \documentclass[]{tufte-book} %justified ovverides the rugged-right style
 
-\usepackage{graphicx}
+
 \usepackage{color}
-\usepackage{xcolor}
+\usepackage{enumitem}
 \usepackage{framed}
+\usepackage{graphicx}
 \usepackage{listings}
+\usepackage{xcolor}
 
 \usepackage{multicol}              
 \usepackage{multirow}
@@ -714,8 +716,12 @@ month = aug,
 In hardly any case you have to type this yourself into your literature database in jabref. Here are some examples how to automatically import such sources from (1) journals, (2) databases (google scholar, ISI, \ldots) or even (3) package citations from \textsf{R}:
 \begin{enumerate}
 	\item Importing BibTex sources from the journal website is highly recommended, since it is most likely to get the correct spelling of the citation from there. Instead of directly reading the paper (pdf) you may search for a ``export citation" button or similar on the journal website. After clicking on it several format options should be provided. If you drag-and-drop the source to jabref it does not matter which format you choose (jabref can handle it). If you import it as BibTex source, choose the BibTex format.
-	\item Faster but with higher risk of typos is the citation export directly from (a) google scholar or (b) ISI: (a) click on ``cite" below the requested google scholar entry. At the bottom of the pop-up window you may choose the source format (see above). (b) 
-	\item If you want to cite \textsf{R} or an \textsf{R}-package, you may obtain the BibTex source directly from R. For citing the sole program simply type \textsf{citation()} into the console and hit enter. If you wish to cite a specific package, e.g. \textsf{MASS} the command to use is: \textsf{citation(``MASS")}.  
+	\item Faster but with higher risk of misspelling is the citation export directly from: 
+	\begin{enumerate}[label=(\alph*)]
+		\item \textbf{Google Scholar:} Click on ``cite" below the requested google scholar entry. At the bottom of the pop-up window you may choose the source format (see above).
+		\item \textbf{ISI Web of Knowledge:} Tick the box left to the article you want to cite and choose from the drop-down list at the top of the page ``Save to EndNote desktop". A window pops up asking you to choose the contents to record. \marginnote{The default notepad on windows does not let you drag-and-drop. Use \href{https://notepad-plus-plus.org/}{notepad++} instead.} Hit send and open the output with an editor. From there drag-and-drop the source into jabref. 
+	\end{enumerate} 
+	\item If you want to cite \textsf{R} or an \textsf{R}-package, you may obtain the BibTex source directly from R. For citing the sole program simply type \textsf{citation()} into the console and hit enter. If you wish to cite a specific package, e.g. \textsf{MASS} the command to use is: \textsf{citation(``MASS")}. Copy the source from the \textsf{R} console to jabref.  
 \end{enumerate}
 
 %For this purpose \LaTeX provides you with a link to the BibTeX format. 
