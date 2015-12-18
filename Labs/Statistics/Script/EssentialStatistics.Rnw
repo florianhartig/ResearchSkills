@@ -56,6 +56,7 @@ set.seed(123)
 
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 \let\cleardoublepage\clearpage % No empty pages between chapters
 \maketitle
@@ -1613,12 +1614,12 @@ detach(cfc)
 
 If you have several options for the response (red, green, blue), you are fitting a multinomial regression. This is not in the standard glm package. The standard package to do this would be mlogit. I give an example below. The problem with mlogit is that it requires data in a particular way, i.e. that for every observation, every choice is a single line, and then there is one column that tells you which choice was made (yes / no). To use mlogit, you need to reshape you data to this format. 
 
-If you don't have your data in this format, and don't want to reshape, an alternative is the less powerful but easier to use multinom function from the nnet package. An example of how to use this function is \href{http://www.ats.ucla.edu/stat/stata/dae/mlogit.htm}{here}
+If you don't have your data in this format, and don't want to reshape, an alternative is the less powerful but easier to use multinom function from the nnet package. You find an example of how to use this function below or \href{http://www.ats.ucla.edu/stat/stata/dae/mlogit.htm}{here}.
 
 \subsection{mlogit example}
 
 
-<<>>=
+<<message=FALSE>>=
 library(mlogit)
  
 data("Fishing", package = "mlogit")
@@ -1628,7 +1629,7 @@ head(Fishing)
 The data we are using is a dataframe containing :
 
 \begin{enumerate}
-
+\setlength\itemsep{-0.5em}
 \item price.beach -price for beach mode
 
 \item price.pier -price for pier mode
@@ -1675,6 +1676,20 @@ summary(mlogit(mode ~ 0 | income, data = Fish))
 
 Note that if you want to interpret the parameter values, you have to transform back to the response with the relatively complicated link function of the multinomial logistic regression, see formula \href{http://en.wikipedia.org/wiki/Multinomial_logistic_regression}{here}. More examples \href{http://www.inside-r.org/packages/cran/mlogit/docs/suml}{here} and see also the mlogit tutorial \href{http://cran.r-project.org/web/packages/mlogit/vignettes/Exercises.pdf}{here}.
 
+\subsection{mlogit example}
+
+<<message=FALSE>>=
+require(nnet)
+@
+
+We use the original (without reshaping) fishing data as for the mlogit example above. 
+And also the same model structure
+
+<<>>=
+## a pure "conditional" model
+summary(multinom(mode ~ price.beach + price.pier + price.boat + price.charter + 
+                   catch.beach + catch.pier + catch.boat + catch.charter, data = Fishing))
+@
 \end{appendices}
 
 
