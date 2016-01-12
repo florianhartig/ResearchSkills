@@ -161,11 +161,10 @@ Another important distinction is the type of each variables independent of wheth
 
 It is important that you record the variables according to their ``nature''.\marginnote{Check that your variables have the right type after reading them in in your statistics software.} And if you use a statistics software, you have to make sure that the type is properly recognized after reading in the data, because many methods treat a variable differently if it is numeric or categorical.
 
-Experience shows that there is certain tendency of beginners to use categorical variables for things that are actually continuous, e.g. by coding body weight of animals into light, medium, heavy. \marginnote{Don't use categorical variables for things that can also be recorded numerically! } The justification stated is often that this avoids the measurement uncertainty. In short: it doesn't, it just creates more problems. Don't use categorical variables for things that can also be recorded numerically! 
+Experience shows that there is certain tendency of beginners to use categorical variables for things that are actually continuous, e.g. by coding body weight of animals into light, medium, heavy.\marginnote{Don't use categorical variables for things that can also be recorded numerically! } The justification stated is often that this avoids the measurement uncertainty. In short: it doesn't, it just creates more problems. Don't use categorical variables for things that can also be recorded numerically! 
 
 
 \vspace{1cm}
-\begin{fullwidth}
 \begin{mdframed}
     
 \textbf{In R:} 
@@ -181,12 +180,11 @@ To represent data, R has a basic data structure, the data.frame. A data frame is
 
 Also, although not really a data type, a common case is the absence of an observation for a particular variable. This is typicall code by "NA". Similar, but not the same is "NaN" (not a number), which occurs as the result of a calculation that cannot be performed. 
 
-To read in data as a data.frame in R-studio, go to the upper right part, "Import Dataset". For more explanation, see \href{http://biometry.github.io/APES/R/R20-DataStructures.html}{http://biometry.github.io/APES/R/R20-DataStructures.html}
+To read\marginnote{Find a beginner's guide to Handling data in R in Appendix \ref{HandlingDataInR}} in data as a data.frame in R-studio, go to the upper right part, "Import Dataset". For more explanation, see \href{http://biometry.github.io/APES/R/R20-DataStructures.html}{http://biometry.github.io/APES/R/R20-DataStructures.html}
 
 It is very important that you check that your columns have the right type after reading in the data. To do so, type in str(TheNameOfMyData), and check the type of the columns
 
 \end{mdframed}
-\end{fullwidth} 
 
 
 \chapter{Descriptive statstics and visualization}
@@ -1094,6 +1092,7 @@ rm(list=ls(all=TRUE))  # this command means all variables in the memory are eras
 To send a part of the script to the console, you can use the run button on the top right border of the editor window. For everything we do from now on, I would strongly recommend writing in the script, and then sending it to console from there. 
 
 \chapter{Handling data in R}
+\label{HandlingDataInR}
 
 \section{Variables}
 
