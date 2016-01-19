@@ -52,4 +52,9 @@ For writing advice, see primarily the lecture notes. The following links are onl
 * http://writingcenter.unc.edu/faculty-resources/classroom-handouts/checklist-for-analyzing-research-material/
 
 
+### Other
+
+* Search Engine Optimization http://www.slideshare.net/growkudos/maximizing-the-exposure-of-your-research
+
+
 
