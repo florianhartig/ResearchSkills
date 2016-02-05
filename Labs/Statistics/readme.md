@@ -24,6 +24,10 @@ If you want to run / try out the code, you need to install:
 
 
 
+## Validity and apprailal
+
+* https://ecologyisnotadirtyword.com/2016/02/04/evaluating-scientific-evidence/
+* http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2696241/
 
 
 
