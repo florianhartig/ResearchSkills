@@ -11,6 +11,8 @@ For writing advice, see primarily the lecture notes. The following links are onl
 * Ten Simple Rules for Writing Research Papers http://journals.plos.org/ploscollections/article?id=10.1371/journal.pcbi.1003453
 
 * Ten Simple Rules for Getting Published  http://journals.plos.org/ploscollections/article?id=10.1371/journal.pcbi.0010057
+* http://conservationbytes.com/2012/10/22/how-to-write-a-scientific-paper/
+
 
 
 ### Pages with exercises
