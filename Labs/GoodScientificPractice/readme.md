@@ -124,7 +124,7 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 ### Reproducibility
 
 * Why Most Published Research Findings Are False http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124
-
+* The Baby Factory - Difficult Research Objects, Disciplinary Standards, and the Production of Statistical Significance http://srd.sagepub.com/content/2/2378023115625071
 
 
 
