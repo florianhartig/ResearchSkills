@@ -56,7 +56,7 @@ set.seed(123)
 
 
 \begin{document}
-\SweaveOpts{concordance=TRUE}
+%\SweaveOpts{concordance=TRUE} % don't activate this for knitr
 
 \let\cleardoublepage\clearpage % No empty pages between chapters
 \maketitle
@@ -106,14 +106,14 @@ Statistics, or more broadly data science, deals with the visualization, summary 
 
 \section{The R environment for statistical computing}
 
-For the better or worse, the times when statistics was done with pen, paper and a calculator are over. Statistical analysis nowadays happens on the computer, and a number of software environments exist to do so.\marginnote{R is a script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment.} In the ecological sciences, R has become the de-facto standard for statistical analysis. R is open-source, free, and has a very larger user base, especially in the environmental sciences, that contribute packages for specialised ecological and environmental analysis.
+For the better or worse, the times when statistics was done with pen, paper and a calculator are over. Statistical analysis nowadays happens on the computer, and a number of software environments exist to do so. In the ecological sciences, R has become the de-facto standard for statistical analysis. R is open-source, free, and has a very larger user base, especially in the environmental sciences, that contribute packages for specialised ecological and environmental analysis.
 
 In this primer, all examples will be calculated with R; however, the focus will not be to introduce R itself. If you need one, follow  \href{http://biometry.github.io/APES/R/R10-gettingStarted.html}{this link} for an introduction, including help on how to install the software. I highly recommend to using R together with RStudio. Follow the link above to get further information
 
 \begin{figure}[]
 \begin{center}
 \includegraphics[width = 10cm]{rst_interface.png}
-\caption{The RStudio editor, arguably the most popular editor for R}
+\caption{The RStudio editor, arguably the most popular editor for R. R is a script-based language, which means that you communicate with the computer not by clicking on buttons, but by writing commands either directly in the R console, or first in a text file and then sending it to the R console, which is then evaluating your commands. If you aren't used to this kind of approach yet, it may take a short while to get used to this, but once you are used to it, you will notice how advantageous it is to have all steps of your analysis listed in a text file, being able to repeat everything at any moment.}
 \label{fig: Rstudio}
 \end{center}
 \end{figure}
@@ -150,11 +150,11 @@ Another important distinction is the type of each variables independent of wheth
 
 \begin{itemize}
 \item Continuous numeric variables (ordered and continous / real), e.g. temperature
-\item Integer numeric variables (ordered, integer), e.g. count data
+\item Integer numeric variables (ordered, integer). An important special case of those are count data, i.e. 0,1,2,3, ...
 \item Categorical variables (e.g. a fixed set of options such as red, green blue), which can further be divided into
 \begin{itemize}
 \item Unordered categorical variables (Nominal) such as red, green, blue 
-\item Binary (Dichotomous) variables (dead / survived)
+\item Binary (Dichotomous) variables (dead / survived, 0/1)
 \item Ordered categorical variables (small, medium, large)
 \end{itemize}
 \end{itemize}
@@ -165,6 +165,7 @@ Experience shows that there is certain tendency of beginners to use categorical 
 
 
 \vspace{1cm}
+\begin{fullwidth}
 \begin{mdframed}
     
 \textbf{In R:} 
@@ -180,11 +181,12 @@ To represent data, R has a basic data structure, the data.frame. A data frame is
 
 Also, although not really a data type, a common case is the absence of an observation for a particular variable. This is typicall code by "NA". Similar, but not the same is "NaN" (not a number), which occurs as the result of a calculation that cannot be performed. 
 
-To read\marginnote{Find a beginner's guide to Handling data in R in Appendix \ref{HandlingDataInR}} in data as a data.frame in R-studio, go to the upper right part, "Import Dataset". For more explanation, see \href{http://biometry.github.io/APES/R/R20-DataStructures.html}{http://biometry.github.io/APES/R/R20-DataStructures.html}
+To read in data as a data.frame in R-studio, go to the upper right part, "Import Dataset". For more explanation, see "Handling data in R" in Appendix~\ref{HandlingDataInR}, as well as \href{http://biometry.github.io/APES/R/R20-DataStructures.html}{http://biometry.github.io/APES/R/R20-DataStructures.html}
 
-It is very important that you check that your columns have the right type after reading in the data. To do so, type in str(TheNameOfMyData), and check the type of the columns
+After reading in the data, it is very important that you check that your columns have the right type after reading in the data. To do so, type in str(TheNameOfMyData), and check the type of the columns
 
 \end{mdframed}
+\end{fullwidth}
 
 
 \chapter{Descriptive statstics and visualization}
@@ -521,7 +523,7 @@ If the p-value falls under a certain level (the significance level $\alpha$), we
 
 A problem with hypothesis tests and p-values is that their results are notoriously misinterpreted. The p-value is NOT the probability that the null hypothesis is true, or the probability that the alternative hypothesis is false, although many authors have made the mistake of interpreting it like that \citep[][]{Cohen-earthisround-1994}. Rather, the idea of p-values is to control the rate of false positives (Type I error). When doing hypothesis tests on random data, with an $\alpha$ level of 0.05, one will get exactly 5\% false positives. Not more and not less.  
 
-\subsection{Parameter estimates}
+\subsection{Maximum likelihood estimation}
 
 The second type of output that is reported by most statistical methods are maximum-likelihood parameter estimates. In a nutshell, the maximum-likelihood estimate (MLE) is our best estimate for the parameters in our model (e.g. a difference between the treatments and the control in our example). 
 
@@ -537,7 +539,7 @@ The maximum-likelihood estimate (MLE)\marginnote{It is important to note that th
 
 The MLE is only a single parameter value.\marginnote{A point estimate is something like a single best estimate.} This type of estimate is often called a point estimate. However, a point estimate is typically of little use if we don't know how certain it is.\marginnote{Confidence intervals provide an estimate of uncertainty around the point estimate.} Therefore, parameter estimates are usually accompanied by confidence intervals. Sloppily you can think of the 95\% confidence interval of a parameter as the probable range for this area. Somewhat confusing for many, it's not the interval in which the true parameter lies with 95\% probability. Rather, in a repeated experiments, the standard 95\% CI will contain the true value in 95\% of all cases. It's a subtle, but important difference. However, for now, don't worry about it. The CI interval is roughly the range within which we expect the true parameter to be. 
 
-\subsection{Bayesian estimates}
+\subsection{Bayesian inference}
 
 To conclude\marginnote{Bayesian methods calculate a third quantity, the posterior probability. Although they can be used for any model, Bayesian methods tend to be used for more advanced statistics.} our overview on inferential products, one method is still lacking - Bayesian methods calculate a quantity that is called the posterior parameter estimate. It is similar, but not identical to the parameter estimates discussed previously. You won't need this here, but if you want to know more about those, have a look at \citep{Gelman-BayesianDataAnalysis-2003} and at my website \href{http://florianhartig.github.io/LearningBayes/}{Learning Bayes}.
 
