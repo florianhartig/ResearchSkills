@@ -60,5 +60,7 @@ For writing advice, see primarily the lecture notes. The following links are onl
 
 * Search Engine Optimization http://www.slideshare.net/growkudos/maximizing-the-exposure-of-your-research
 
+### Opinions 
 
+* https://jeffollerton.wordpress.com/2016/03/20/research-is-writing-is-research-is-writing-is-research/
 
