@@ -28,15 +28,29 @@
 \lstset{ % settings for listings needs to be be changed to R sytanx 
 language=R,
 breaklines = true,
+columns=fullflexible,
 breakautoindent = false,
+%basicstyle=\listingsfont, 
 basicstyle=\ttfamily \scriptsize,
 keywordstyle=\color{black},                          
 identifierstyle=\color{black},
 commentstyle=\color{gray},
 xleftmargin=3.4pt,
 xrightmargin=3.4pt,
-numbers=none
+numbers=none,
+literate={*}{{\char42}}1
+         {-}{{\char45}}1
+         {\ }{{\copyablespace}}1
 }
+% http://www.monperrus.net/martin/copy-pastable-listings-in-pdf-from-latex
+\usepackage[space=true]{accsupp}
+% requires the latest version of package accsupp
+\newcommand{\copyablespace}{
+    \BeginAccSupp{method=hex,unicode,ActualText=00A0}
+\ %
+    \EndAccSupp{}
+}
+
 
 
 <<setup, cache=FALSE, include=FALSE>>=
