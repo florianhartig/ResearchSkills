@@ -132,7 +132,9 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 
 * http://rajlaboratory.blogspot.ca/2015/08/top-10-signs-that-paperfield-is-bogus.html
 
+### Post-hoc-ing
 
+* http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4210093/
 
 ### Publication biases through p-hacking 
 
