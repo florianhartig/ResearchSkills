@@ -64,3 +64,6 @@ For writing advice, see primarily the lecture notes. The following links are onl
 
 * https://jeffollerton.wordpress.com/2016/03/20/research-is-writing-is-research-is-writing-is-research/
 
+### Teaching writing 
+
+* http://education.jhu.edu/PD/newhorizons/Better/articles/Winter2011.html
