@@ -6,6 +6,7 @@
 * http://guides.library.ucsc.edu/c.php?g=119671&p=781516
 * http://www.the-scientist.com/?articles.view/articleNo/31071/title/Poster-Perfect/
 * https://conbio.org/professional-development/advice-for-students/help-designing-posters
+* http://www.nature.com/naturejobs/science/articles/10.1038/nj7614-115a
 
 
 ## Examples posters
