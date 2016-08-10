@@ -87,6 +87,10 @@ Note that not all of the following specific cases have clearly and finally been 
 
 * http://sciencenordic.com/milena-penkowa-%E2%80%93-famous-infamous
 
+#### Kristofer Helgen
+
+* http://www.theverge.com/2016/8/9/12405846/smithsonian-national-museum-of-natural-history-investigation-kris-helgen
+
 
 #### Purposefully faked chocolate study 
 
