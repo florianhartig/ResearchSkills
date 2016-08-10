@@ -32,7 +32,7 @@ To work with git locally, the minimum is to have the git software installed (com
 
 If you install github, I would recommend installing SourceTree or TortoiseGit as well, because the GitHub is nice and easy, but a bit limited.
 
-On Linux, peole seem to have trouble with whatever solution is out there. The best seems to be the command line. Let me know if there is a better option. 
+On Linux, peole seem to have trouble with whatever solution is out there. The best options seems to be the command line and [smartgit](https://www.syntevo.com/smartgit/). Let me know if there is a better option. 
 
 ### Further readings
 
