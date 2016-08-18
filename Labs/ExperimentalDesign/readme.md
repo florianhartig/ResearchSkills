@@ -11,6 +11,7 @@
 
 # Reprodocibility 
 
+* https://hardsci.wordpress.com/2016/08/11/everything-is-fucked-the-syllabus/
 
 ## Ego-depletion
 
