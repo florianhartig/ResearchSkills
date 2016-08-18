@@ -8,3 +8,10 @@
 * www.nedarc.org/media/pdf/survey_survey_design.pdf 
 * https://answers.yahoo.com/question/index?qid=20080803204823AA852iP 
 
+
+# Reprodocibility 
+
+
+## Ego-depletion
+
+* http://www.slate.com/articles/health_and_science/cover_story/2016/03/ego_depletion_an_influential_theory_in_psychology_may_have_just_been_debunked.html
