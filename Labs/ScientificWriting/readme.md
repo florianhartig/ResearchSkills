@@ -50,10 +50,9 @@ For writing advice, see primarily the lecture notes. The following links are onl
 ### Reviewing 
 
 * History of peer-review http://www.sciencedirect.com/science/article/pii/S0167779902019856
-
 * Ten Simple Rules for Reviewers http://journals.plos.org/ploscollections/article?id=10.1371/journal.pcbi.0020110
-
 * http://writingcenter.unc.edu/faculty-resources/classroom-handouts/checklist-for-analyzing-research-material/
+* https://methodsblog.wordpress.com/2016/09/20/what-makes-a-good-review/
 
 
 ### Other
