@@ -30,7 +30,9 @@ Soft Skills
 
 * https://dynamicecology.wordpress.com/2015/06/23/advice-on-writing-reference-letters/
 
+## Career 
 
+* Salaries and satisfaction of scientists http://www.nature.com/nature/journal/v537/n7621/full/nj7621-573a.html
 
 
 ## Improving your skills
