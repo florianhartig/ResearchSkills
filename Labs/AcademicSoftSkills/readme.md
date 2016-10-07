@@ -1,6 +1,7 @@
 Soft Skills
 
 
+
 ## Advice to young scientists
 
 
@@ -8,6 +9,19 @@ Soft Skills
 * https://thompsonlab.sites.ucsc.edu/wp-content/uploads/sites/216/2015/06/Successful-Graduate-Student.pdf
 * http://matt.might.net/articles/successful-phd-students/
 * http://physics.wustl.edu/katz/scientist.html
+
+* https://www.youtube.com/watch?v=cnmIWZVvM7s
+* https://www.youtube.com/watch?v=BhtSrNOgz0w
+
+* [Feigenbaum - sorround yourself with genius](https://www.youtube.com/watch?v=YIjxMkcyofQ)
+
+* [Donald Knuth - do something different](https://www.youtube.com/watch?v=75Ju0eM5T2c)
+
+* [Wolfgang Kramer / Diversitas / Biodiv](https://www.youtube.com/watch?v=_pS17unanaE)
+
+* ['The fear of doing anything unconventional' - Russell Fernald ](https://www.youtube.com/watch?v=LzTDcW2Yons)
+
+* Great! http://www.webofstories.com/play/martin.raff/5;jsessionid=35A1661288A5B3F05E837A3AB50494A4
 
 ## Contemplating to do a PhD 
 
