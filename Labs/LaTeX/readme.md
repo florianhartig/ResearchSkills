@@ -1,23 +1,24 @@
 # LaTeX
 
+## What is LaTeX?
+
 LaTeX is the most widely used script-based typesetting program in the sciences. To get started
 
 * Read the course [script](https://www.dropbox.com/s/9kjanprrj0vjhdf/how_to_latex.pdf?dl=0)
 
-Other useful links
+Other useful links are
 
 * [A short introduction to latex](https://ilias.uni-freiburg.de/ilias.php?ref_id=441825&link_id=11203&cmd=callLink&cmdClass=ilobjlinkresourcegui&cmdNode=bd:hv&baseClass=ilLinkResourceHandlerGUI)
 * [LaTeX Cheat Sheet](https://ilias.uni-freiburg.de/ilias.php?ref_id=441825&link_id=11204&cmd=callLink&cmdClass=ilobjlinkresourcegui&cmdNode=bd:hv&baseClass=ilLinkResourceHandlerGUI)
 * [The Not So Short Introduction to LATEX2](https://ilias.uni-freiburg.de/ilias.php?ref_id=441825&link_id=11202&cmd=callLink&cmdClass=ilobjlinkresourcegui&cmdNode=bd:hv&baseClass=ilLinkResourceHandlerGUI)
 
-## Practical
+## Research Skills Practical
 
 * Download the [example material](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/LaTeX/Practical.zip)
 
+## Further information
 
-## Additional information
-
-#### To Install LaTeX on your computer
+#### To Install LaTeX on your computer, you need ... 
 
 * A latex distribution
   * Windows: MikTex
@@ -28,14 +29,13 @@ Other useful links
   * TexMaker
   * ...
 
-
 #### BSc / MSc Template 
 
-* Template from Prof. Dormann [here](https://github.com/florianhartig/ResearchSkills/tree/master/Labs/LaTeX/LaTeX_Templates/Template-BScMSc-Freiburg)
+* For the University of Freiburg, here is a template from Prof. Dormann [here](https://github.com/florianhartig/ResearchSkills/tree/master/Labs/LaTeX/LaTeX_Templates/Template-BScMSc-Freiburg)
 
 #### Getting Help
 
-If you find yourself on to higher goals and get stuck at some point (which you inevitably will), seek online help here:
+If you get stuck at some point (which you inevitably will), seek online help here:
 
 * for a list of helpful websites
   * https://latex-project.org/guides/
