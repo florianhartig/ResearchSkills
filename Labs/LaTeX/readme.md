@@ -2,9 +2,7 @@
 
 ## What is LaTeX?
 
-LaTeX is the most widely used script-based typesetting program in the sciences. To get started
-
-* Read our [LaTeX tutorial](https://www.dropbox.com/s/9kjanprrj0vjhdf/how_to_latex.pdf?dl=0), which is of course written in LaTeX, as are the research skills lecture notes. If you want to see the source code of the LaTeX tutorial, have a look [here](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/LaTeX/Script/how_to_latex.tex) 
+LaTeX is the most widely used script-based typesetting program in the sciences. To get started, read our [LaTeX tutorial](https://www.dropbox.com/s/9kjanprrj0vjhdf/how_to_latex.pdf?dl=0), which is of course written in LaTeX, as are the research skills lecture notes. If you want to see the source code of the LaTeX tutorial, have a look [here](https://github.com/florianhartig/ResearchSkills/blob/master/Labs/LaTeX/Script/how_to_latex.tex) 
 
 Other useful links are
 
