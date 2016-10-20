@@ -22,9 +22,7 @@ If you want to run / try out the code, you need to install:
 * [R](https://cran.r-project.org/)
 * [R Studio](https://www.rstudio.com/products/rstudio/download/)
 
-
-
-## Validity and apprailal
+## Validity and critical apraisal of published studies 
 
 * https://ecologyisnotadirtyword.com/2016/02/04/evaluating-scientific-evidence/
 * http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2696241/
