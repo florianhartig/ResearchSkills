@@ -4,7 +4,7 @@ R is the de-facto standard for statistical analysis ecology and beyond. There is
 
 #### Lecture notes
 
-* The **[RS statistics lecture notes](https://www.dropbox.com/s/8fmh10fdn6jd2xb/EssentialStatistics.pdf?dl=0)** provides an introduction to the topics of statistics and data analysis
+* The **[RS statistics lecture notes](https://www.dropbox.com/s/s38ge7pjgf55qs1/EssentialStatistics.pdf?dl=0)** provides an introduction to the topics of statistics and data analysis
 
 
 #### Practicals
