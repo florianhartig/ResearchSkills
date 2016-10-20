@@ -5,7 +5,7 @@ Florian Hartig
 
 
 
-* *This practical tutorial of the [RS course](http://florianhartig.github.io/ResearchSkills/) is intended to be read together with the more detailed [Statstics lecture notes](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf)*
+* *This practical tutorial of the [RS course](http://florianhartig.github.io/ResearchSkills/) is intended to be read together with the more detailed [Statstics lecture notes](https://www.dropbox.com/s/s38ge7pjgf55qs1/EssentialStatistics.pdf?dl=0)*
 
 * *To run the code demonstrated here, you should install R and RStudio*
 
@@ -284,7 +284,7 @@ automatically chooses a particular plot, namely:
 pairs(airquality)
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-24-1.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
 
 Let's plot only two variables against each other 
 
@@ -292,7 +292,7 @@ Let's plot only two variables against each other
 plot(airquality$Ozone, airquality$Temp)
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-25-1.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
 
 ...or should it rather be the other way around? 
 
@@ -301,13 +301,13 @@ plot(airquality$Ozone, airquality$Temp)
 plot(airquality$Temp , airquality$Ozone)
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-26-1.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
 
 ```r
 hist(airquality$Ozone)
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-27-1.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-27-1.png)<!-- -->
 
 ## Getting help and modifying functions
 Functions in R have typically a lot of options. You get information about them by looking at the help of a function, either by clicking on the command and hitting F1, or ?functionname. try ?hist.
@@ -318,7 +318,7 @@ Default values can be overwritten
 hist(airquality$Ozone, breaks = 30, col = "darkred")
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-28-1.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
 
 Find R Colors at http://research.stowers-institute.org/efg/R/Color/Chart/ 
 
@@ -328,14 +328,14 @@ You may further modify:
 plot(airquality$Ozone, airquality$Temp, pch = 5)
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-29-1.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
 ...or:
 
 ```r
 plot(airquality$Ozone, airquality$Temp, pch = 3, cex = airquality$Wind / 10, col = "darkred")
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-30-1.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
 
 ## Some more plotting functions
 
@@ -349,7 +349,7 @@ barplot(counts, main="Car Distribution",
    xlab="Number of Gears")
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-31-1.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-31-1.png)<!-- -->
 
 ```r
 # Grouped Bar Plot
@@ -359,7 +359,7 @@ barplot(counts, main="Car Distribution by Gears and VS",
   legend = rownames(counts), beside=TRUE)
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-31-2.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-31-2.png)<!-- -->
 
 ```r
 # Boxplot of MPG by Car Cylinders 
@@ -367,7 +367,7 @@ boxplot(mpg~cyl,data=mtcars, main="Car Milage Data",
    xlab="Number of Cylinders", ylab="Miles Per Gallon")
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-31-3.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-31-3.png)<!-- -->
 
 ```r
 # Notched Boxplot of Tooth Growth Against 2 Crossed Factors
@@ -382,7 +382,7 @@ boxplot(len~supp*dose, data=ToothGrowth, notch=TRUE,
 ## some notches went outside hinges ('box'): maybe set notch=FALSE
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-31-4.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-31-4.png)<!-- -->
 
 
 ## Modifying a function afterwards with inkscape 
@@ -400,7 +400,7 @@ plot(airquality$Temp~airquality$Ozone)
 abline(fit, col = "blue")
 ```
 
-![](Rgraphics_files/figure-html/unnamed-chunk-32-1.png) 
+![](Rgraphics_files/figure-html/unnamed-chunk-32-1.png)<!-- -->
 
 ```r
 fit2 = lm(airquality$Temp~airquality$Ozone + I(airquality$Ozone^2))

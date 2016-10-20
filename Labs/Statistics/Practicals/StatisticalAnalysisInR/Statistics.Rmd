@@ -14,7 +14,7 @@ knitr::opts_chunk$set(fig.width=6, fig.height=6)
 
 #### Notes for the user
 
-* *This practical tutorial of the [RS course](http://florianhartig.github.io/ResearchSkills/) is intended to be read together with the more detailed [Statstics lecture notes](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf)*
+* *This practical tutorial of the [RS course](http://florianhartig.github.io/ResearchSkills/) is intended to be read together with the more detailed [Statstics lecture notes](https://www.dropbox.com/s/s38ge7pjgf55qs1/EssentialStatistics.pdf?dl=0)*
 
 * *If you had problems to follow the practical, see links to websites with further explanations at the end of this document!*
 

@@ -6,7 +6,7 @@
 
 #### Notes for the user
 
-* *This practical tutorial of the [RS course](http://florianhartig.github.io/ResearchSkills/) is intended to be read together with the more detailed [Statstics lecture notes](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/Statistics/Script/EssentialStatistics.pdf)*
+* *This practical tutorial of the [RS course](http://florianhartig.github.io/ResearchSkills/) is intended to be read together with the more detailed [Statstics lecture notes](https://www.dropbox.com/s/s38ge7pjgf55qs1/EssentialStatistics.pdf?dl=0)*
 
 * *If you had problems to follow the practical, see links to websites with further explanations at the end of this document!*
 
@@ -30,7 +30,7 @@ Let's look at some example, using the data from Monday. We see that there is a c
 plot(airquality$Temp~airquality$Ozone)
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-2-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 With the lm() command, we can ask R to try to get the best fitting straight line between the two variables. 
 
@@ -47,7 +47,7 @@ plot(airquality$Ozone, airquality$Temp)
 abline(fit, col = "blue")
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-4-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 Here's the detailed output
 
@@ -92,7 +92,7 @@ par(mfrow=c(2,2))
 plot(fit)
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-6-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 Here, the residuals are not really homogenously scattering around the predicted value, suggesting that the model doesn't fit very well. Well, one could have already guessed this, because the correlation doesn't look very linear. We can add a quadratic term by 
 
@@ -134,7 +134,7 @@ par(mfrow=c(2,2))
 plot(fit2)
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-8-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
 Plotting the results
 
@@ -144,7 +144,7 @@ plot(airquality$Ozone, airquality$Temp)
 points(fit2$model[,2], predict(fit2), col = "blue")
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-9-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 ### Linear regression with categorical predictors 
 
@@ -155,7 +155,7 @@ If we have categorical varialbles such as in this dataset
 boxplot(PlantGrowth$weight~PlantGrowth$group, main = "growth of plants")
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-10-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 
 This still works:
 
@@ -350,7 +350,7 @@ library(vcd)
 mosaic(~ sex + passengerClass + survived, shade=TRUE, legend=TRUE) 
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-17-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
 
 ```r
 surv <- as.numeric(survived)-1 # glm requires 0 / 1 not true false
@@ -404,7 +404,7 @@ lines(newage, plogis(preds$fit-2*preds$se.fit), col="purple", lwd=3, lty=2)
 lines(newage, plogis(preds$fit+2*preds$se.fit), col="purple", lwd=3, lty=2)
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-19-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
 
 Now, let's out all relevant variables in 
 
@@ -456,7 +456,9 @@ library(car)
 ```
 ## 
 ## Attaching package: 'car'
-## 
+```
+
+```
 ## The following object is masked from 'package:effects':
 ## 
 ##     Prestige
@@ -496,7 +498,7 @@ attach(cfc)
 plot(stuecke ~ attrakt)
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-22-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
 
 This is how you specify the poisson
 
@@ -541,7 +543,7 @@ plot(stuecke ~ attrakt)
 lines(newattrakt, exp(preds), lwd=2, col="green")
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-24-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
 
 same with 95% confidence interval:
 
@@ -567,7 +569,7 @@ lines(newattrakt, exp(preds$fit+2*preds$se.fit), lwd=2, col="green", lty=2)
 lines(newattrakt, exp(preds$fit-2*preds$se.fit), lwd=2, col="green", lty=2)
 ```
 
-![](Statistics_files/figure-html/unnamed-chunk-25-1.png) 
+![](Statistics_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
 
 ```r
 detach(cfc)
@@ -592,8 +594,17 @@ library(mlogit)
 
 ```
 ## Loading required package: Formula
+```
+
+```
 ## Loading required package: maxLik
+```
+
+```
 ## Loading required package: miscTools
+```
+
+```
 ## 
 ## Please cite the 'maxLik' package as:
 ## Henningsen, Arne and Toomet, Ott (2011). maxLik: A package for maximum likelihood estimation in R. Computational Statistics 26(3), 443-458. DOI 10.1007/s00180-010-0217-1.
