@@ -31,6 +31,12 @@ Soft Skills
 * http://www.nature.com/news/how-to-build-a-better-phd-1.18905
 
 
+## Career perspectives 
+
+* http://www.nature.com/news/early-career-researchers-need-fewer-burdens-and-more-support-1.20863?WT.ec_id=NATURE-20161027&spMailingID=52621451&spUserID=ODQwNTI5Nzg2NgS2&spJobID=1025013611&spReportId=MTAyNTAxMzYxMQS2
+
+
+
 ## How to behave on conferences and meetings 
 
 * Networking: Hello, stranger http://www.nature.com/naturejobs/science/articles/10.1038/nj7575-729a
