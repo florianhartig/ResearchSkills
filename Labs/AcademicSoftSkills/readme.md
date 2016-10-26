@@ -34,6 +34,7 @@ Soft Skills
 ## Career perspectives 
 
 * http://www.nature.com/news/early-career-researchers-need-fewer-burdens-and-more-support-1.20863?WT.ec_id=NATURE-20161027&spMailingID=52621451&spUserID=ODQwNTI5Nzg2NgS2&spJobID=1025013611&spReportId=MTAyNTAxMzYxMQS2
+* http://www.nature.com/news/young-talented-and-fed-up-scientists-tell-their-stories-1.20872
 
 
 
