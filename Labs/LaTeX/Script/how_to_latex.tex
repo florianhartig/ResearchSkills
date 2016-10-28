@@ -84,21 +84,21 @@ If you find typos or have suggestions, please report them by creating a ticket \
 
 \vfill
 \begin{fullwidth}
-This notes were created 2014 by Paul Bauche based on the existing RS LaTeX exercise of FH. Updates 2015 by Severin Hauenstein and Florian Hartig. This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+These notes were created 2014 by Paul Bauche based on the existing RS LaTeX exercise of FH. Updates 2015 by Severin Hauenstein and Florian Hartig. This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 \end{fullwidth}
 
 \tableofcontents
 
 \chapter{Introduction}
 
-This tutorial will help you start working with \LaTeX. You will learn how to set up a basic  \LaTeX document that contains all the elements typically used in a scientific article, for example references, graphics, tables or formulae. 
+This tutorial will help you start working with \LaTeX. You will learn how to set up a basic  \LaTeX document which contains all the elements typically used in a scientific article, for example references, graphics, tables or formulae. 
 
- \LaTeX\ is a script based typesetting program that allows you to set the design of your report, article, book or whatever written statement via written commands. This may appear a bit cryptic in the beginning but after a short time of getting used to this way of working you will realize how much time this can save you and how much nicer and more professional your documents look. Basically when it comes to typesetting software there are two distinguishable types.
- 
-The first and most common is called \emph{"What You See Is What You Get"} (WYSIWYG). This describes software such as Open Office, Microsoft Word etc. where you can see how your document is going to look in the end while you are working on it but it might be difficult to create a document exactly the way you wanted it to be. The second type is called \emph{"What You Get Is What You Want"}(WYGIWYW). This is the category \LaTeX\ belongs to. It means that while you are working on your  document you do not get a visual representation of the final result but your final result will be the way you imagined it when you started.  	
+ \LaTeX\ is a script-based typesetting program which allows you to set the design of your report, article, book or whatever written statement via written commands. This may appear a bit cryptic in the beginning, but after a short time of getting used to this way of working you will realize how much time you can save and how much nicer and more professional your documents look.
+
+ Basically, when it comes to typesetting software there are two distinguishable types. The first and most common is called \emph{"What You See Is What You Get"} (WYSIWYG). This describes software such as OpenOffice Writer, Microsoft Word etc. where you can see how your document is going to look in the end while you are working on it, but it might be difficult to create a document exactly the way you wanted it to be. The second type is called \emph{"What You Get Is What You Want"}(WYGIWYW). This is the category \LaTeX\ belongs to. It means that while you are working on your document you do not get a visual representation of the final result, but your final result will be the way you imagined it when you started.  	
 
 \paragraph{Templates}
-Since the basic structure of \LaTeX\ documents of the same class is similar in most cases, it may save you some time to use existing templates. Prof. Dormann created such template for a Master's thesis. It is available \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/LaTeX/LaTeX_Templates/Template-BScMSc-Freiburg}{here}.
+Since the basic structure of \LaTeX\ documents of the same class is similar in most cases, you may save some time by using existing templates. Prof. Dormann created such a template for a Master's thesis. It is available \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/LaTeX/LaTeX_Templates/Template-BScMSc-Freiburg}{here}.
  
 Other templates for the Tufte-style book (book\_1), the Legrand Orange book (book\_2) or some stylish article (article\_3) can be found \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/LaTeX/LaTeX_Templates/LatexTemplates}{here}.
  
@@ -106,17 +106,17 @@ The \href{https://github.com/florianhartig/ResearchSkills/tree/master/Labs/LaTeX
 
 \chapter{Setting up \LaTeX\ on your computer}
 
-First you need to set up \LaTeX\ on your computer. Basically, a \LaTeX\ system consists of two component: a latex distribution, and an editor.
+First you need to set up \LaTeX\ on your computer. Basically, a \LaTeX\ system consists of two components: a \LaTeX\ distribution, and an editor.
 
-\paragraph{Distribution -}There are different distributions, also depending on your operating system. For Windows, the clear choice is MikTex. For Mac, MacTeX is probably the best choice but there are other options as well. Linux distributions usually already include a \LaTeX\ distribution, otherwise it should be easy to install one. 
+\paragraph{Distribution -}There are different distributions, also depending on your operating system. For Windows, the clear choice is MikTex. For Mac, MacTeX is probably the best choice, but there are other options as well. The \LaTeX\ distribution under Linux is called TeX Live and can be installed through the package managers of all major distributions.
 
-\paragraph{Editor -}The second thing you need is an editor. In principle you can use any editor (latex documents are just text files), but it is more convenient to use a specialised \LaTeX\  editor that is already set up to work together wit your \LaTeX\ distribution. \marginnote{Texmaker and TeXstudio are very simular (they originate from the same software). TeXstudio is a bit more automatized and offers more buttons} We recommend using the free \LaTeX\ editor TexMaker or TexStudio, and some of the comments later in this document will assume that you will be working with a MikTex / TexMaker or TeXstudio combination (Most of the advice, however, as well as any proper \LaTeX\ document, can be used on any system).
+\paragraph{Editor -}The second thing you need is an editor. In principle you can use any editor (\LaTeX\ documents are just text files), but it is more convenient to use a specialised \LaTeX\  editor that is already set up to work together with your \LaTeX\ distribution. \marginnote{Texmaker and TeXstudio are very similar (TeXStudio originated from a previous version of TeXmaker). TeXstudio is a bit more automatized and offers more buttons.} We recommend using one of the free \LaTeX\ editors TexMaker or TexStudio, and some of the comments later in this document will assume that you will be working with a MikTex / TexMaker or TeXstudio combination (Most of the advice, however, as well as any proper \LaTeX\ document, can be used on any system).
 
-To get MikTex and TexMaker or TeXstudio, search for it on the web then download and install it on your computer. Make sure you install from the project website and not from third-party sites that often offer pretty old versions. 
+To get MikTex and TexMaker or TeXstudio, search for it on the web, then download and install it on your computer. Make sure you install from the project website and not from third-party sites that often offer pretty old versions. 
   
 Before you start your project you have to keep a couple of things in mind that will later on help you to keep track of what you are doing and to avoid unnecessary errors.
  
-If you use MikTex, it is helpful to be connected to the internet in some way to enable \LaTeX\ to download packages on the fly.\marginnote{If you install MacTex, choose the full installation because missing packages are not installed automatically} For other distributions, you will have to install missing packages by hand. 
+If you use MikTex, it is helpful to be connected to the internet in some way to enable \LaTeX\ to download packages on the fly.\marginnote{If you install MacTex, choose the full installation because missing packages are not installed automatically.} For other distributions, you will have to install missing packages by hand. 
 
 
 \chapter{Starting a new \LaTeX\ project}
@@ -124,9 +124,9 @@ If you use MikTex, it is helpful to be connected to the internet in some way to 
 
 \section{Creating a new directory for the project}
 
-First of create a folder on your computer and make sure that you have the necessary\marginnote{Always create a new project folder with a distinct name when starting a \LaTeX\ document!} rights to read and write in that location. Do not simply start your project on the desktop since \LaTeX\ creates additional files as you compile your project and you will make a mess of things.
+First of all, create a folder on your computer and make sure that you have the necessary\marginnote{Always create a new project folder with a distinct name when starting a \LaTeX\ document!} rights to read and write in that location. Do not simply start your project on the desktop since \LaTeX\ creates additional files as you compile your project and you will make a mess of things.
  
-When creating the folder and all following files make sure you do not use spaces or\marginnote{No spaces or special symbols in file- or folder-names anywhere in your file path!} special symbols. Nowhere in the path to your files should be any of those symbols. Stick to letters, numbers and underscores or scores. 
+When creating the folder and all following files make sure you do not use spaces or\marginnote{No spaces or special symbols in file or folder names anywhere in your file path!} special symbols. Nowhere in the path to your files should be any of those symbols. Stick to letters, numbers and underscores. 
 
 
 \section{Preparing your editor}
@@ -135,38 +135,38 @@ In TexMaker you have several options to configure the user interface. The most i
 
 It is advisable to set the spell check to the language you want to write your article in. You can do that under "Options -> Configure TexMaker -> Editor -> Spelling Dictionary". The most common languages are already part of your software and you can just choose the one you need.  
 
-Here you can also choose the text format of your editor. It is recommended to use UTF-8.
+Here you can also choose the text encoding of your editor. It is recommended to use UTF-8.
 
 Under "Options -> Interface Language" you can choose the language for TexMaker. This does not affect the spell check but is solely for your convenience.  
 
 
 \section{Creating a \LaTeX\ document}
 
-Now that you have created your project folder you can create your first \LaTeX document. Navigate to your project folder and create a new text file. Open this file and type the following line:\\[5pt]
+Now that you have created your project folder, you can create your first \LaTeX\ document. Navigate to your project folder and create a new text file. Open this file and type the following line:\\[5pt]
 
-\emph{\% This is my first Latex document. There are many documents like this but this one is mine.}\\[5pt]
+\emph{\% This is my first Latex document. There are many documents like it, but this one is mine.}\\[5pt]
 
-Make sure you do not forget the \%. Then save your document as \verb!my_first_article.tex! and close the editor. With the extension .tex you make sure that your system recognizes the file as a \LaTeX\ document.\marginnote{The \% symbol is used for comments, lines of text that are not interpreted by \LaTeX!}
+Make sure you do not forget the percent symbol \%. Then save your document as \verb!my_first_article.tex! and close the editor. With the extension .tex you make sure that your system recognizes the file as a \LaTeX\ document.\marginnote{The \% symbol is used for comments, lines of text that are not interpreted by \LaTeX!}
 Now open \verb!my_first_article.tex! with your \LaTeX\ editor (e.g. Texmaker). You will notice that the line you wrote now looks gray.\\[5pt]
 
 \begin{lstlisting}
-% This is my first Latex document. There are many documents like this but this one is mine.}
+% This is my first Latex document. There are many documents like it, but this one is mine.
 \end{lstlisting}
 
-The gray color symbolizes a \emph{comment} the comment is declared by using the \% symbol at the start of the line. Everything written after the \% is not interpreted by \LaTeX\ and does not appear in your document. Comments can be used to structure your document for yourself and others using it. You can explain functions and why you include packages. This is especially useful if you want to reuse the structure of our document again for other papers.    
+The gray color symbolizes a \emph{comment}. The comment is declared by using the \% symbol at the start of the line. Everything written after the \% is not interpreted by \LaTeX\ and does not appear in your document. Comments can be used to structure your document for yourself and others using it. You can explain functions and why you include packages. This is especially useful if you want to reuse the structure of our document again for other papers.    
 
 \chapter{Start editing your document}
 
-To start of your actual document you first need to declare the type of document you want to create. This is done in the so called "preamble" of the latex document. There you can also declare additional options and include packages to increase the functionality of \LaTeX.
+To start your actual document, you first need to declare the type of document you want to create. This is done in the so called "preamble" of the \LaTeX\ document. There you can also declare additional options and include packages to increase the functionality of \LaTeX.
 
-For the purpose of this tutorial you are going to create a scientific article. This type of document is declared by \verb!\documentclass{article}!. This defines a few design characteristics like line spacing and the width of the borders of the page for your document. the \verb!\! is used to indicate to \LaTeX\ that the following is a command. In \LaTeX\ commands are used for everything from setting your font type to including pictures or graphics.  
+For the purpose of this tutorial you are going to create a scientific article. This type of document is declared by \verb!\documentclass{article}!. This defines a few design characteristics such as line spacing and the width of the borders of the page for your document. The backslash \verb!\! is used to indicate to \LaTeX\ that the following is a command. In \LaTeX\, commands are used for everything from setting your font type to including pictures or graphics.  
 
-Now you can begin with your document.\marginnote{Every \emph{begin} statement requires an \emph{end} statement!} To do so you start with the line \verb!\begin{document}!
-This should result in 2 lines being created in addition to \verb!\begin{document}! there should also be a line saying \verb!\end{document}!. If this is not the case just type it yourself. Now  you should have a document looking like this:\\[5pt]
+Now you can begin with your document.\marginnote{Every \emph{begin} statement requires an \emph{end} statement!} To do so, you start with the line \verb!\begin{document}!.
+This should result in two lines being created: in addition to \verb!\begin{document}! there should also be a line saying \verb!\end{document}!. If this is not the case, just type it yourself. Now  you should have a document looking like this:\\[5pt]
 
 
 \begin{lstlisting}
-% This is my first Latex document. There are many documents like this but this one is mine.
+% This is my first Latex document. There are many documents like it, but this one is mine.
 
 \documentclass{article}
 
@@ -176,7 +176,7 @@ This should result in 2 lines being created in addition to \verb!\begin{document
 \end{lstlisting}
 
 
-This is the most basic setup for your document. To start adding some text you can now write a few lines between the begin- and end-document statements. Since this is supposed to be a scientific article it should start with an abstract. The abstract is also framed by a begin- and an end-statement. They are \verb!\begin{abstract}! and \verb!\end{abstract}!. For your abstract try:\\[5pt] 
+This is the most basic setup for your document. To start adding some text, you can now write a few lines between the begin- and end-document statements. Since this is supposed to be a scientific article, it should start with an abstract. The abstract is also framed by a begin- and an end-statement. They are \verb!\begin{abstract}! and \verb!\end{abstract}!. For your abstract try:\\[5pt] 
 
 \textit{This is my first \LaTeX\ document. I am going to learn a lot about typesetting and writing articles in \LaTeX.}\\[5pt]
 
@@ -185,11 +185,12 @@ Now your document should look like this:\\[5pt]
 
 
 \begin{lstlisting}
-% This is my first Latex document. There are many documents like this but this one is mine.
+% This is my first Latex document. There are many documents like it, but this one is mine.
 
 \documentclass{article}
 
 \begin{document}
+
 \begin{abstract}
 This is my first \LaTeX\ document. I am going to learn a lot about typesetting and writing articles in \LaTeX\ and my papers will look really nice from now on.
 \end{abstract}
@@ -198,7 +199,7 @@ This is my first \LaTeX\ document. I am going to learn a lot about typesetting a
 \end{lstlisting}
 
 
-You should now be able to compile your document and create a pdf file from it. To do so you just have to press compile in your \LaTeX\ editor. You should notice the  \LaTeX\ symbol. This was created by using the \verb!\LaTeX! command. After the abstract you can start your first section. This is usually the introduction. You can add sections via \verb!\section{}!. Here no begin- or end-statement is needed. One section lasts until the next one starts or the document ends. To add the section "Introduction" to your document now type  \verb!\section{Introdution}! below \verb!\end{abstract}! in your document and write a few lines like\\
+You should now be able to compile your document and create a pdf file from it. To do so, you just have to press compile in your \LaTeX\ editor. You should notice the  \LaTeX\ symbol. This was created by using the \verb!\LaTeX! command. After the abstract you can start your first section. This is usually the introduction. You can add sections via \verb!\section{}!. Here no begin- or end-statement is needed. One section lasts until the next one starts or the document ends. To add the section "Introduction" to your document, now type  \verb!\section{Introduction}! below \verb!\end{abstract}! in your document and write a few lines like\\
 
 \begin{lstlisting}
 
@@ -214,7 +215,7 @@ Test
 Now your document should look like this:\\[5pt]
 
 \begin{lstlisting}
-% This is my first Latex document. There are many documents like this but this one is mine.
+% This is my first Latex document. There are many documents like it, but this one is mine.
 
 \documentclass{article}
 
@@ -235,15 +236,15 @@ Test
 \end{document}
 \end{lstlisting}
 
-Compile your document to notice the effect of the new commands. \verb!\textbf{}! leads to \textbf{bold} fonts \verb!\textit{}! leads to \textit{italic} fonts and \verb!\emph{}! \emph{emphasizes} what ever you put into the wavy brackets. Additionally you learned two ways to add a line break to your document. The first one is to simply leave a blank line after the point at which you want to break the line. This also leads to an indent at the beginning of the next line which makes for better readability. The second one is to add \verb!\\! this method can be refined by adding the exact spacing either in mm, pt or relative to the default linewidth in square brackets. like \verb!\\[3mm]!. No indent follows this type of line break. 
+Compile your document to notice the effect of the new commands. \verb!\textbf{}! leads to \textbf{bold} fonts, \verb!\textit{}! leads to \textit{italic} fonts, and \verb!\emph{}! \emph{emphasizes} what ever you put into the curly brackets. Additionally, you learned two ways to add a line break to your document. The first one is to simply leave a blank line after the point at which you want to break the line. This also leads to an indent at the beginning of the next line, which makes for better readability. The second one is to add \verb!\\!. This method can be refined by adding the exact spacing either in mm, pt or relative to the default line height in square brackets, for example \verb!\\[3mm]!. No indent follows this type of line break. 
 
 \chapter{The preamble}
 
-As mentioned before, every \LaTeX\ document should have a preamble.\marginnote{In the preamble you can include new packages and set general parameters and meta data for your document!} The preamble is everything you write before the \verb!\begin{document}! statement. Here you declare the packages you want to use, define styles and you can add some meta data to your document. Such as the author or the title of your article. These two are added by using the \verb!\author{}! and \verb!\title{}! commands. Add them to your document right below the \verb!\documentclass{}! command and write a title in the wavy brackets after title and your name in the wavy brackets after author and compile again. There should be no noticeable difference. Now right under the \verb!\begin{document}! statement add \verb!\maketitle! and compile again. Your pdf document should now have a title, your name and the current date at the top. The \verb!\maketitle! command uses the information you provided in the preamble to create a title for your article. If everything worked your \LaTeX\ document should now look like this:\\[5pt]
+As mentioned before, every \LaTeX\ document must have a preamble.\marginnote{In the preamble, you can include new packages and set general parameters and metadata for your document!} The preamble is everything you write before the \verb!\begin{document}! statement. Here you declare the packages you want to use, define styles, and you can add some metadata to your document, such as the author or the title of your article. These two are added by using the \verb!\author{}! and \verb!\title{}! commands. Add them to your document right below the \verb!\documentclass{}! command, write a title in the curly brackets after \verb!\title! and your name in the curly brackets after \verb!\author! and compile again. There should be no noticeable difference. Now right under the \verb!\begin{document}! statement add \verb!\maketitle! and compile again. Your pdf document should now have a title, your name and the current date at the top. The \verb!\maketitle! command uses the information you provided in the preamble to create a title for your article. If everything worked, your \LaTeX\ document should now look like this:\\[5pt]
 
 
 \begin{lstlisting}
-% This is my first Latex document. There are many documents like this but this one is mine.}
+% This is my first Latex document. There are many documents like it, but this one is mine.
 
 \documentclass{article}
 \author{FirstName LastName}
@@ -269,7 +270,8 @@ Test
 
 
 \chapter{Equations in \LaTeX}
-Here you will learn how to write equations in \LaTeX. There are two basic types of equations. First there are inline equations which can be used to write down basic mathematical expressions and equations like $\alpha = 3.5$. or $\lambda = \sqrt{\alpha}$ within your text. Second are the numbered equations. They will appear separated from your text like this:
+
+Here you will learn how to write equations in \LaTeX. There are two basic types of equations. First, there are inline equations which can be used to write down basic mathematical expressions and equations like $\alpha = 3.5$. or $\lambda = \sqrt{\alpha}$ within your text. Second are the numbered equations. They will appear separated from your text like this:
 
 \begin{lstlisting}
 \begin{equation} 
@@ -277,7 +279,7 @@ Here you will learn how to write equations in \LaTeX. There are two basic types 
 \end{equation}
 \end{lstlisting}
 
-They will be numbered (in this case as the first equation in chapter six) which allows you to easily reference the equation later on in your text. You can use this to write down more complex equations or expressions. As an exercise you can now create those two types within your own document and put them in a new section named "Equations". You will start with an inline equation. An inline equation is framed by \$ symbols to separate it from the rest of the text. For this purpose start a new subsection called "Inline Equations" a subsection can be created with the \verb!\subsection{}! command. Your first inline equations will be \verb!$\alpha = 3.5$. and $\lambda = \sqrt{\alpha}$!. To emphasize the inline effect put a short sentence before the equations. As you can see Greek letters can be written by typing a \verb!\! before the full name of the letter. Additionally the \verb!\sqrt{}! command is used for the square root symbol. Include this section in your document:\\[5pt]   
+They will be numbered (in this case as the first equation in chapter six), which allows you to easily reference the equation later on in your text. You can use this to write down more complex equations or expressions. As an exercise, you can now create those two types within your own document and put them in a new section named "Equations". You will start with an inline equation. An inline equation is surrounded by \$ symbols to separate it from the rest of the text. For this purpose, start a new subsection called "Inline Equations". A subsection can be created with the \verb!\subsection{}! command. Your first inline equations will be \verb!$\alpha = 3.5$! and \verb!$\lambda = \sqrt{\alpha}$!. To emphasize the inline effect, put a short sentence before the equation. As you can see, Greek letters can be written by typing a \verb!\! before the full name of the letter. Additionally the \verb!\sqrt{}! command is used for the square root symbol. Include this section in your document:\\[5pt]   
 
 
 \begin{lstlisting}
@@ -310,7 +312,7 @@ Your document should now look like this:\\[5pt]
 
 
 \begin{lstlisting}
-% This is my first Latex document. There are many documents like this but this one is mine.
+% This is my first Latex document. There are many documents like it, but this one is mine.
 
 \documentclass{article}
 \author{FirstName LastName}
@@ -353,11 +355,13 @@ This is our second numbered equation.
 \end{lstlisting}
 
 
-As you can see there are a lot of new symbols added but if you look at them they are pretty self explanatory. \verb!\infty! is used for the infinity symbol $\infty$ , \verb!\frac{}{}! is used for fractions such as $\frac{x}{y}$ and \verb!\cdot! is used for the multiplication dot $\cdot$. A bit more complicated is \verb!\int! it is used for integrals the lower bound is indicated by an underscore " \_ " and the upper bound by the  \^. The full expression for an integral is respectively \verb!\int_x^y! which then looks like $\int_x^y$. Brackets can be placed with the commands \verb!\left(! and \verb!\right)!. 
+As you can see, there are a lot of new symbols added, but if you look at them, they are pretty self explanatory. \verb!\infty! is used for the infinity symbol $\infty$ , \verb!\frac{}{}! is used for fractions such as $\frac{x}{y}$ and \verb!\cdot! is used for the multiplication dot $\cdot$. A bit more complicated is \verb!\int!, which is used for integrals. The lower bound is indicated by an underscore " \_ " and the upper bound by the  \^. The full expression for an integral is \verb!\int_x^y! which then looks like $\int_x^y$. Brackets can be placed with the commands \verb!\left(! and \verb!\right)!. 
 
 \chapter{Labels and referencing}
-When adding graphs, tables, pictures or equations to your document\marginnote{Labels and references are important for you and for others to easily link written information to graphic content!} it is common to number reference these to allow the reader to easily connect your text to the respective visualization. In addition you might also want to reference sections to be able to later refer to them. The numbering is done automatically by latex for all these types. To reference them in your document you just need to label them. The commands used for this purpose are \verb!\label{}! and \verb!\ref{}!. You assign a specific label to the aspect you want reference later on by simply placing \verb!\label{}! behind the object you want to reference. Here it is common to use a short prefix to indicate the type of object you want to label such as \emph{sec} for sections, \emph{fig} for figures, \emph{tab} for tables\marginnote{Use abbreviated prefixes to quickly identify your labels!} and so on. This makes it easy to distinguish between different objects connected to the same topic (e.g. a graph and a table displaying the same kind of data). You can also make your references interactive. This means you can link your references to the actual content to make navigating the pdf even easier. To do so you need to include the \emph{hyperref} package into your document preamble. You can then use the \verb!\hypersetup! command to define the formatting of your references. Here we colored them in  dark blue. You can use the packages \emph{color} and \emph{xcolor} to increase the spectrum of colors you can use and to enable the definition of custom colors from rgb values. To see how this is done look at the following:
+
+When adding graphs, tables, pictures or equations to your document,\marginnote{Labels and references are important for you and for others to easily link written information to graphic content!} it is common to number these and refer to the number in the text to allow the reader to easily connect your text to the respective visualization. In addition, you might also want to number sections to be able to later refer to them. The numbering is done automatically by \LaTeX\ for all these types. To reference them in your document you just need to label them. The commands used for this purpose are \verb!\label{}! and \verb!\ref{}!. You assign a specific label to the object you want to reference later on by simply placing \verb!\label{}! behind the object you want to reference. Here it is common to use a short prefix to indicate the type of object you want to label such as \emph{sec} for sections, \emph{fig} for figures, \emph{tab} for tables\marginnote{Use abbreviated prefixes to quickly identify your labels!} and so on. This makes it easy to distinguish between different objects connected to the same topic (e.g. a graph and a table displaying the same kind of data). You can also make your references interactive. This means you can link your references to the actual content to make navigating the pdf even easier. To do so you need to include the \emph{hyperref} package in your document preamble. You can then use the \verb!\hypersetup! command to define the formatting of your references. Here we colored them in dark blue. You can use the packages \emph{color} and \emph{xcolor} to increase the spectrum of colors you can use and to enable the definition of custom colors from RGB values. To see how this is done, look at the following:
 \marginnote{\emph{hyperref} allows you to create interactive links between your references and the referenced content. This makes navigating large documents a lot easier!}
+
 \begin{lstlisting}
 \usepackage[]{hyperref}
 \usepackage{color}
@@ -368,11 +372,11 @@ linkcolor=darkblue, menucolor=darkblue,
 urlcolor=darkblue, citecolor=darkblue}
 \end{lstlisting}
 
-As a quick exercise you are now going to label your numbered equations and the introduction section and reference them in a new section called \emph{Labels and referencing}. Do so by placing a label behind the \verb!\section{}! and the \verb!\begin{equation}! statements. The label you assign here is just for you so you can distinguish it from the others the \verb!\ref{}! command only returns the number of the object. To reference your labels simply type \verb!\ref{}! with the label you assigned within the wavy brackets. Your document should now look like this:
+As a quick exercise, you are now going to label your numbered equations and the introduction section and reference them in a new section called \emph{Labels and referencing}. Do so by placing a label behind the \verb!\section{}! and the \verb!\begin{equation}! statements. The label you assign here is just for you, to help you distinguish it from the others. The \verb!\ref{}! command only returns the number of the object. To reference your labels simply type \verb!\ref{}! with the label you assigned within the curly brackets. Your document should now look like this:
 
 
 \begin{lstlisting}
-% This is my first Latex document. There are many documents like this but this one is mine.
+% This is my first Latex document. There are many documents like it, but this one is mine.
 
 \documentclass{article}
 \author{FirstName LastName}
@@ -427,26 +431,28 @@ In LaTeX, everything can be labeled, and after that it can be referenced. Consid
 
 
 \chapter{Including figures}
-As aforementioned you can also include graphs and pictures into your \LaTeX\ document. This can be done via the \emph{grapicx} package.\marginnote{Remember that you can include packages in the preamble before your \emph{begin document} statement!}
-The easiest way to include figures into your document is by placing the file containing your figure (e.g. a PDF or JPG) in your project folder. That way you only need to specify the name of the file when including it and not the full path. You can however place it in another location on your file system or in a sub folder of your project folder and give the file path to \LaTeX\ but keep in mind not to use space or special symbols in your file and path names.
 
-To include images into your \LaTeX\ document you first need to define a figure space. This can be achieved by using the \verb!\begin{figure}! and \verb!\end{figure}! statements. In between these statements you can now include your image and add a caption to it to briefly summarize what is displayed here. To do so you need the \verb!\includegraphics[scale=]{}!, with the name or file path of the image to include without the file extension, and \verb!\caption{}! commands. Most of the time you want your image to be displayed in the center of the lines your placing it in. For that you can use the command \verb!\centering! one line above the  \verb!\includegraphics[scale=]{}! statement.
+As mentioned before, you can also include graphs and pictures in your \LaTeX\ document. This can be done via the \emph{grapicx} package.\marginnote{Remember that you can include packages in the preamble before your \emph{begin document} statement!}
+The easiest way to include figures in your document is by placing the file containing your figure (e.g. a PDF or JPG) in your project folder. That way you only need to specify the name of the file when including it and not the full path. You can however place it in another location in your file system or in a subfolder of your project folder and give the file path to \LaTeX\ (but keep in mind not to use spaces or special symbols in your file and path names).
 
-There should be two image files in your training material. A picture of Albert Einstein in his study and a boxplot graph. Include them into your document. They should be 6 cm wide. 
+To include images in your \LaTeX\ document, you first need to define a figure space. This can be achieved by using the \verb!\begin{figure}! and \verb!\end{figure}! statements. In between these statements you can now include your image and add a caption to it to briefly summarize what is displayed here. To do so, you need two commands: \verb!\includegraphics[scale=]{}!, with the name or file path of the image to include without the file extension, and \verb!\caption{}!. Most of the time you want your image to be displayed in the center of the lines you are placing it in. For that you can use the command \verb!\centering! one line above the \verb!\includegraphics[scale=]{}! statement.
+
+There should be two image files in your training material, a picture of Albert Einstein in his study and a boxplot graph. Include them into your document. They should be 6 cm wide. 
+
 \begin{lstlisting}
 \begin{marginfigure}
-\includegraphics[width=4cm]{../example/einstein}
+\includegraphics[width=6cm]{../example/einstein}
 \caption{This photograph by Ferdinand Schmutzer shows Einstein in his study}
-\end{marginfigure}You can set the width in the square brackets by typing \emph{width = 6 cm}. 
+\end{marginfigure}
 \end{lstlisting}
 
-To include two pictures side by side just put them into the same figure just make sure to set their width to 3 cm. For each figure you just need one caption even if it induces several images. And do not forget to label your figures.   
+To include two pictures side by side, just put them into the same figure and make sure to set their width to 3 cm. For each figure, you just need one caption even if it includes several images. And do not forget to label your figures.   
 
 Your document should now look like this:\\[5pt]
 
 
 \begin{lstlisting}
-% This is my first Latex document. There are many documents like this but this one is mine.
+% This is my first Latex document. There are many documents like it, but this one is mine.
 
 \documentclass{article}
 
@@ -537,7 +543,7 @@ A very common way of displaying data is to use tables\marginnote{\begin{tabular}
 \end{tabular}\\[2mm] 
 
 \noindent This is a very simple table created with the \emph{tabular} command!}. 
-They are a very efficient way to sort large amounts of data and to make them easy to understand. In \LaTeX\ there are different ways to create and display tables. The easiest way is to use the \verb!\begin{tabular}{}! command. In the wavy brackets you can define the number of columns with the following syntax \verb!\begin{tabular}{|c|c|}!. This would for example create a two column table. The columns are later separated by the \& symbol. To add rows you have to break the line with \verb!\\! and then add a horizontal line with the \verb!\hline! command. Try to recreate the table on right and keep in mind that every \emph{begin} statement needs an \emph{end} statement. As you can see this kind of table is very simplistic and does not look professional or well suited for large amounts of data that require some explanation and additional information. To create proper tables you need additional packages. These packages are called \emph{multicol, multirow} and \emph{booktabs}. Include them in your document now. Look at the following code snippet:
+They are a very efficient way to sort large amounts of data and to make them easy to understand. In \LaTeX\ there are different ways to create and display tables. The easiest way is to use the \verb!\begin{tabular}{}! command. In the curly brackets you can define the number of columns with the following syntax \verb!\begin{tabular}{|c|c|}!. This would for example create a table with two columns and centered text. The columns are later separated by the \& (ampersand) symbol. To add rows you have to break the line with \verb!\\! and optionally add a horizontal line with the \verb!\hline! command. Try to recreate the table on the right and keep in mind that every \emph{begin} statement needs an \emph{end} statement. As you can see, this kind of table is very simplistic and does not look professional or well suited for large amounts of data that require some explanation and additional information. To create proper tables you need additional packages. These packages are called \emph{multicol, multirow} and \emph{booktabs}. Include them in your document now. Look at the following code snippet:
 
 \begin{lstlisting}
 
@@ -560,7 +566,7 @@ They are a very efficient way to sort large amounts of data and to make them eas
 
 \end{lstlisting} 
 
-As you can see it is way more complex than the simple table but it also allows a more informative and more structured table design. You do not need to specify the dimensions of the table in advance. The columns are still separated by the \& symbol The rows are separated simply by a line break. Additionally the table is divided into different vertical sections which are indicated by the \emph{toprule, midrule} and \emph{bottomrule} statements. These sections can be used to display additional information such as a header for the columns or to aggregate different treatments in one table. The \verb!\multicolumn{}{}{}! \marginnote{use \emph{multicolumn} to aggregate multiple columns into one e.g. for footnotes or headers} command can be used to write over several columns e.g. for table headlines or explanations. The first wavy bracket defines the number of columns you want to aggregate, the second one the style ("l" means left bound) and in the third wavy bracket you can put your text. In this case the rows are enclosed in \$ symbols to give them the look of a formula and separate them from the headlines. When compiled correctly the table should look like this:\marginnote{Stick to this kind of table whenever you write a scientific article, report or thesis!} 
+As you can see, it is way more complex than the simple table, but it also allows a more informative and more structured table design. You do not need to specify the dimensions of the table in advance. The columns are still separated by the \& symbol The rows are separated simply by a line break. Additionally, the table is divided into different vertical sections which are indicated by the \emph{toprule, midrule} and \emph{bottomrule} statements. These sections can be used to display additional information such as a header for the columns or to aggregate different treatments in one table. The \verb!\multicolumn{}{}{}! \marginnote{use \emph{multicolumn} to aggregate multiple columns into one e.g. for footnotes or headers} command can be used to write over several columns e.g. for table headlines or explanations. The first curly bracket defines the number of columns you want to aggregate, the second one the style ("l" means left-justified) and in the third curly bracket you can put your text. In this case the rows are enclosed in \$ symbols to give them the look of a formula and separate them from the headlines. When compiled correctly the table should look like this:\marginnote{Stick to this kind of table whenever you write a scientific article, report or thesis!} 
 \begin{table*}\label{Table: Fit types}
   \begin{tabular}{l@{\hspace{0.2cm}}l@{\hspace{0.2cm}}l} \toprule
   \textsc{Case} & \textsc{Explanation} & \textsc{Dimensions} \\ \midrule \addlinespace[0.2cm] 
@@ -576,12 +582,12 @@ As you can see it is way more complex than the simple table but it also allows a
 \end{tabular}
 \end{table*}
 
-This is how a table for scientific data should look. Generally there should be no vertical lines and horizontal lines should only be used to separate the headline from the data. Try to create this table in your own document. Your document should now look like this: \\
+This is what a table for scientific data should look like. Generally, there should be no vertical lines and horizontal lines should only be used to separate the headline from the data. Try to create this table in your own document. Your document should now look like this: \\
 
 
 \begin{lstlisting}
 
-% This is my first Latex document. There are many documents like this but this one is mine.
+% This is my first Latex document. There are many documents like it, but this one is mine.
 
 \documentclass{article}
 
@@ -696,12 +702,12 @@ In LaTeX, everything can be labeled, and after that it can be referenced. Consid
 
 \chapter{References in \LaTeX}
 
-In every scientific article it is important to clearly state your sources. You need to cite within your article and list all used sources at the end within your bibliography. 
-Basically, there are two options to use references in \LaTeX. One is including references in the \LaTeX\ file directly, the other one is maintaining an external file in BibTex format. For most cases, the latter will be preferred. There are few reasons to keep references directly in the \LaTeX\ file. One could be that a journal requires the submission in one \LaTeX\ file only (but in most cases you are allowed to include a .bbl file, which is created by bibTex). In the following, we focus on the link to the BibTex format. 
+In every scientific article it is important to clearly state your sources. You need to cite within your article and list all sources used at the end in your bibliography. 
+Basically, there are two options to use references in \LaTeX. The first is to include references in the \LaTeX\ file directly, the second is to maintain an external file with references in the BibTeX format. For most cases, the latter will be preferred. There are few reasons to keep references directly in the \LaTeX\ file. One reason could be that a journal requires the submission in one \LaTeX\ file only (but in most cases you are allowed to include a .bbl file, which is created by BibTeX). In the following, we focus on the link to the BibTeX format. 
 
-An excellent program to built your BibTex database is Jabref, a free, open-source literature manager, which uses the BibTex file format. As it was written in java and distributed as a jar file, you can use it on any operating system with a java virtual machine installed. It is first choice for everyone who works with latex, but it may also be linked to Microsoft Word\marginnote{Comprehensive information on how to link your Jabref database with Microsoft Word can be found at: \href{http://www.medicalnerds.com/how-to-use-jabrefbibtex-with-microsoft-word-2003/}{http://www.medicalnerds.com/how-to-use-jabrefbibtex-with-microsoft-word-2003/}}. 
+An excellent program to build your BibTeX database is Jabref, a free, open-source literature manager, which uses the BibTeX file format. As it is written in Java and distributed as a jar file, you can use it on any operating system with a Java Virtual Machine (JVM) installed. It is the first choice for everyone who works with \LaTeX, but it can also be used to insert citations in LibreOffice Writer or Microsoft Word\marginnote{Comprehensive information on how to link your Jabref database with Microsoft Word can be found at: \href{http://www.medicalnerds.com/how-to-use-jabrefbibtex-with-microsoft-word-2003/}{http://www.medicalnerds.com/how-to-use-jabrefbibtex-with-microsoft-word-2003/}}. 
 
-This is an example of how an entry your BibTex database could look like:
+This is an example of how an entry in your BibTeX database could look like:
 \begin{lstlisting}[language=BibTeX]
 @ARTICLE{Ovaskainen-Spaceandstochasticity-2006,
 author = {Ovaskainen, O. and Cornell, S. J.},
@@ -715,19 +721,21 @@ number = {34},
 month = aug,
 }
 \end{lstlisting} 
-In hardly any case you have to type this yourself into your literature database in jabref. Here are some examples how to automatically import such sources from (1) journals, (2) databases (google scholar, ISI, \ldots) or even (3) package citations from \textsf{R}:
+You will almost never have to type this yourself into your literature database in Jabref. Here are some examples of how to automatically import BibTeX entries from (1) journals, (2) databases (google scholar, ISI, \ldots) or even (3) package citations from \textsf{R}:
 \begin{enumerate}
-	\item Importing BibTex sources from the journal website is highly recommended, since it is most likely to get the correct spelling of the citation from there. Instead of directly reading the paper (pdf) you may search for a ``export citation" button or similar on the journal website. After clicking on it several format options should be provided. If you drag-and-drop the source to jabref it does not matter which format you choose (jabref can handle it). If you import it as BibTex source, choose the BibTex format.
-	\item Faster but with higher risk of misspelling is the citation export directly from: 
+	\item Importing BibTeX entries from journal websites is highly recommended, since these are most likely to be correct. Instead of directly reading the paper (pdf) you may search for an ``export citation" button or similar on the journal website. After clicking on it, several format options should be provided. If you drag-and-drop the source to Jabref, it does not matter which format you choose (Jabref can handle it). If you use the import menu option in Jabref, choose the BibTeX format.
+	\item Faster, but with higher risk of misspelling or other mistakes is the citation export directly from: 
 	\begin{enumerate}[label=(\alph*)]
-		\item \textbf{Google Scholar:} Click on ``cite" below the requested google scholar entry. At the bottom of the pop-up window you may choose the source format (see above).
-		\item \textbf{ISI Web of Knowledge:} Tick the box left to the article you want to cite and choose from the drop-down list at the top of the page ``Save to EndNote desktop". A window pops up asking you to choose the contents to record. \marginnote{The default notepad on windows does not let you drag-and-drop. Use \href{https://notepad-plus-plus.org/}{notepad++} instead.} Hit send and open the output with an editor. From there drag-and-drop the source into jabref. 
+		\item \textbf{Google Scholar:} Click on ``cite" below the respective Google Scholar entry. At the bottom of the pop-up window you may choose the source format (see above).
+		\item \textbf{ISI Web of Knowledge:} Tick the box on the left of the article you want to cite and choose from the drop-down list at the top of the page ``Save to EndNote desktop". A window pops up asking you to choose the contents to record. \marginnote{The default notepad on windows does not let you drag-and-drop. Use \href{https://notepad-plus-plus.org/}{notepad++} instead.} Hit send and open the output with an editor. From there drag-and-drop the source into jabref.
 	\end{enumerate} 
-	\item If you want to cite \textsf{R} or an \textsf{R}-package, you may obtain the BibTex source directly from R. For citing the sole program simply type \textsf{citation()} into the console and hit enter. If you wish to cite a specific package, e.g. \textsf{MASS} the command to use is: \textsf{citation(``MASS")}. Copy the source from the \textsf{R} console to jabref.  
+\item If you want to cite \textsf{R} or an \textsf{R}-package, you may obtain the BibTeX source directly from R. For citing the base \textsf{R} program simply type \textsf{citation()} in the R console and hit Enter. If you wish to cite a specific package, e.g. \textsf{MASS}, the command to use is: \textsf{citation(``MASS")}. Copy the source from the \textsf{R} console to jabref.
 \end{enumerate}
 
 %For this purpose \LaTeX provides you with a link to the BibTeX format. 
-Now that you have set up a BibTex database you can easily include it into your document and link the sources within your .bib file. This requires you to locate your database inside your project folder similar to your pictures and graphics. Now you can include this database by using the command \verb!\bibliography{}! at the end of your document, with the name of your database in the wavy brackets. The style of your bibliography is determined by the \verb!\bibliographystyle{}! command before the \verb!\bibliography{}! command and the name of the style file in the wavy brackets. Here we use the \emph{chicago} citation style. To fully integrate the database into you \LaTeX\ file you need to compile Bibtex as well as \LaTeX\ at least two times.\marginnote{To get your bibTex file into your document make sure you use the same format. You might need to compile bibTex and \LaTeX\ several times until everything is up and running!} This process is still slightly faulty and it might require more compilation attempts until everything works properly. Also make sure you are using the correct formatting (e.g. UTF-8). Once everything is set you can reference your sources within your document using the \verb!\citep{}! and \verb!\cite{}! commands. The classical citation command is \verb!\citep{}!. It leads to your cited source enclosed in brackets while \verb!\cite{}! and \verb!\citet{}! only put the date of the citation in brackets allowing for an in-text citation. Once you cite a source in your document it will be listed in your bibliography as well. In this tutorial it is the last step but it is generally advisable to set up your bibliography at the beginning for your project to make citing fluent and to avoid mistakes. Now add a chapter about citations to your document and after that add your bibliography. A literature database is supplied in your training material. To make your citations look nicer and allow for more options include the \emph{natbib} package in your document. You can adjust the punctuation of your references by using the \verb!\bibpunct! command in your preamble. After including the \emph{natbib} package add the following line:\\
+Now that you have set up a BibTeX database, you can easily include it in your document and link to the entries in your .bib file. As with the inclusion of graphics, you can either put your .bib file in the same directory as the \LaTeX\ file and just refer to the .bib file by its name or put the .bib file elsewhere, but then you need to specify the whole path. You can include a database in your \LaTeX\ document by using the command \verb!\bibliography{}! at the end of your document, with the name of your database in curly brackets. The style of your bibliography is determined by the \verb!\bibliographystyle{}! command before the \verb!\bibliography{}! command, with the name of the style file in curly brackets. Here we use the \emph{chicago} citation style. To produce a pdf with all citations and the complete bibliography, you need to compile BibteX as well as \LaTeX\ at least two times.
+% This process is still slightly faulty and it might require more compilation attempts until everything works properly.
+Also make sure you are using the correct file encoding (e.g. UTF-8). Once everything is set, you can reference your sources within your document using the \verb!\citep{}! and \verb!\cite{}! commands from the \emph{natbib} package. The classical citation command is \verb!\citep{}!. It leads to your cited source enclosed in brackets while \verb!\cite{}! and \verb!\citet{}! only put the date of the citation in brackets allowing for an in-text citation. Once you cite a source in your document it will be listed in your bibliography as well. In this tutorial it is the last step but it is generally advisable to set up your bibliography at the beginning for your project to make citing fluent and to avoid mistakes. Now add a chapter about citations to your document and after that add your bibliography. A literature database is supplied in your training material. To make your citations look nicer and allow for more options include the \emph{natbib} package in your document. You can adjust the punctuation of your references by using the \verb!\bibpunct! command in your preamble. After including the \emph{natbib} package add the following line:\\
 \verb!\bibpunct{(}{)}{;}{a}{}{,}!
 \noindent Now everything is set for you to compile your document and have a look at your citations and your bibliography. Your \LaTeX\ file should now look like this:
 
@@ -735,7 +743,7 @@ Now that you have set up a BibTex database you can easily include it into your d
 
 \begin{lstlisting}
 
-% This is my first Latex document. There are many documents like this but this one is mine.
+% This is my first Latex document. There are many documents like it, but this one is mine.
 
 \documentclass{article}
 
