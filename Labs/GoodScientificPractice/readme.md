@@ -6,30 +6,29 @@
 
 ## Codes of professional ethics / conduct for scientists
 
-* German Science Foundation http://www.dfg.de/en/research_funding/principles_dfg_funding/good_scientific_practice/ 
-
-* Max Plack Society https://www.mpg.de/197494/rulesScientificPractice.pdf
-
-* Deutscher Hochschulverband http://www.hochschulverband.de/cms1/fileadmin/redaktion/download/pdf/info_blaetter/Fehlverhalten.pdf 
+* [German Science Foundation - Good Scientific Practice](http://www.dfg.de/en/research_funding/principles_dfg_funding/good_scientific_practice/)
+* [Max Plack Society - Rules of Good Scientific Practice](https://www.mpg.de/197494/rulesScientificPractice.pdf)
+* [Deutscher Hochschulverband - Kurzinformation
+zur Sicherung guter wissenschaftlicher Praxis an den
+Hochschulen und zum Umgang mit wissenschaftlichem
+Fehlverhalten](http://www.hochschulverband.de/cms1/fileadmin/redaktion/download/pdf/info_blaetter/Fehlverhalten.pdf)
 
 
 
 ### Correcting mistakes
 
-* http://elifesciences.org/content/4/e11628
-
-
-
+* [Living science: Owning your mistakes - Article by Eve Marder](http://elifesciences.org/content/4/e11628)
 
 
 ## Discussions / lectures / articles misconduct
 
-* Collection of links http://guides.library.iit.edu/content.php?pid=31717&sid=299858
-* https://www.youtube.com/watch?v=Ir3VvYNzHeM
-* http://www.economist.com/blogs/babbage/2013/10/science-wrong 
-* http://www.economist.com/blogs/graphicdetail/2013/10/daily-chart-2
-* http://www.economist.com/news/leaders/21588069-scientific-research-has-changed-world-now-it-needs-change-itself-how-science-goes-wrong 
-* http://www.slideshare.net/cjrw2/infamous-cases-of-research-misconduct
+Collection of links 
+* [Scientific Research Ethics: Research Misconduct - Guide](http://guides.library.iit.edu/content.php?pid=31717&sid=299858)
+* [Research ethics - Sam Fiala, YouTube Video](https://www.youtube.com/watch?v=Ir3VvYNzHeM)
+* [Is science wrong? Human after all](http://www.economist.com/blogs/babbage/2013/10/science-wrong)
+* [Problems with scientific research - How science goes wrong](http://www.economist.com/news/leaders/21588069-scientific-research-has-changed-world-now-it-needs-change-itself-how-science-goes-wrong )
+* [(In)famous cases of research misconduct - Slides, from a talk given at an event organised by the UK Centre for Biosciences](http://www.slideshare.net/cjrw2/infamous-cases-of-research-misconduct)
+
 
 
 ## Interesting Cases of (alledged) scientific misconduct
@@ -39,62 +38,59 @@ Note that not all of the following specific cases have clearly and finally been 
 
 #### Haruko Obokata 
 
-* http://www.theguardian.com/science/2015/feb/18/haruko-obokata-stap-cells-controversy-scientists-lie
+* [What pushes scientists to lie? The disturbing but familiar story of Haruko Obokata](http://www.theguardian.com/science/2015/feb/18/haruko-obokata-stap-cells-controversy-scientists-lie)
 
 
 #### Bente Klarlund Pedersen
 
-* http://universitypost.dk/article/timeline-bente-klarlund-pedersen-case
+* [Timeline: The Bente Klarlund Pedersen case](http://universitypost.dk/article/timeline-bente-klarlund-pedersen-case)
 
 
-#### Moeller
+#### Anders Pape Möller
 
-* http://www.the-scientist.com/?articles.view/articleNo/24645/title/A-Fluctuating-Reality/
-* http://www.nature.com/nature/journal/v427/n6973/full/427381a.html
-* http://news.sciencemag.org/2004/01/ecologists-rocked-misconduct-finding
-* http://www.biology.ualberta.ca/palmer/pubs/05MollerComm/MollerExchange.htm
+* [A Fluctuating Reality](http://www.the-scientist.com/?articles.view/articleNo/24645/title/A-Fluctuating-Reality/)
+* [Ecologists Rocked by Misconduct Finding](http://news.sciencemag.org/2004/01/ecologists-rocked-misconduct-finding)
+* [Prolific ecologist vows to fight Danish misconduct verdict](http://www.nature.com/nature/journal/v427/n6973/full/427381a.html)
 
 
-#### Meyer Lab
+#### Axel Meyer Lab
 
-* http://www.nature.com/nature/journal/v430/n6995/full/430007a.html
-
-* http://www.nature.com/nature/journal/v431/n7008/full/431505c.html
+* [Junior biologists score partial victory over lab conditions](http://www.nature.com/nature/journal/v430/n6995/full/430007a.html)
+* [Meyer: disagreements but no misconduct](http://www.nature.com/nature/journal/v431/n7008/full/431505c.html)
 
 
 #### Meyer Lab II
 
-* http://www.faz.net/aktuell/feuilleton/debatten/universitaets-professor-ueber-die-arbeitsmoral-von-studenten-13539958.html
+* [Arbeitsmoral an Hochschulen - Ehre und Ehrlichkeit der Studenten](http://www.faz.net/aktuell/feuilleton/debatten/universitaets-professor-ueber-die-arbeitsmoral-von-studenten-13539958.html)
+* ['Ich bin Professor und mag meine Studenten' - Zeit Campus](http://www.zeit.de/studium/2015-04/bologna-faz-professor-student-ruediger-bachmann)
+* [Streit an der Uni Konstanz - Wie frei ist Meinung?](http://www.faz.net/aktuell/feuilleton/forschung-und-lehre/meinungsstreit-an-der-universitaet-konstanz-13557304.html)
 
-* http://www.zeit.de/studium/2015-04/bologna-faz-professor-student-ruediger-bachmann
-
-* http://www.faz.net/aktuell/feuilleton/forschung-und-lehre/meinungsstreit-an-der-universitaet-konstanz-13557304.html
 
 #### Jens Föster
 
-* http://www.sciencemag.org/content/344/6184/566.summary
+* [Fresh Misconduct Charges Hit Dutch Social Psychology](http://www.sciencemag.org/content/344/6184/566.summary)
+* [On the “Suspicion of Scientific Misconduct by Jens Förster”](http://blogs.discovermagazine.com/neuroskeptic/2014/05/06/suspicion-misconduct-forster/#.VUjEqWbVXF4)
+* [Social psychologist Förster denies misconduct, calls charge “terrible misjudgment”](http://retractionwatch.com/2014/04/30/social-psychologist-forster-denies-misconduct-calls-charge-terrible-misjudgment/)
 
-* http://blogs.discovermagazine.com/neuroskeptic/2014/05/06/suspicion-misconduct-forster/#.VUjEqWbVXF4
-
-* http://retractionwatch.com/2014/04/30/social-psychologist-forster-denies-misconduct-calls-charge-terrible-misjudgment/
 
 #### Voinnet
 
-* http://www.nature.com/articles/nplants2015123
+* [Better than riches - the usefulness of post-publication review](http://www.nature.com/articles/nplants2015123)
 
 
 #### Milena Penkowa
 
-* http://sciencenordic.com/milena-penkowa-%E2%80%93-famous-infamous
+* [Milena Penkowa – from famous to infamous](http://sciencenordic.com/milena-penkowa-%E2%80%93-famous-infamous)
+
 
 #### Kristofer Helgen
 
-* http://www.theverge.com/2016/8/9/12405846/smithsonian-national-museum-of-natural-history-investigation-kris-helgen
+* [A star scientist stands accused of misconduct, but colleagues say he’s being railroaded](http://www.theverge.com/2016/8/9/12405846/smithsonian-national-museum-of-natural-history-investigation-kris-helgen)
 
 
 #### Purposefully faked chocolate study 
 
-* http://io9.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800
+* [I Fooled Millions Into Thinking Chocolate Helps Weight Loss. Here's How.](http://io9.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800)
 
 
 
@@ -102,7 +98,7 @@ Note that not all of the following specific cases have clearly and finally been 
 
 ## Data sharing
 
-http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2294.html
+['Towards transparency' - A Nature Article](http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2294.html)
 
 Kattge, J.; Diaz, S. & Wirth, C. (2014) Of carrots and sticks. Nature Geosci, Nature Publishing Group, a division of Macmillan Publishers Limited. All Rights Reserved., 7, 778-779.
 
@@ -116,19 +112,16 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 
 ### Replication / Re-analyses
 
-* http://www.sciencemag.org/content/349/6251/aac4716.full
-
-* http://www.sciencemag.org/content/349/6251/910.full
-
-* http://fivethirtyeight.com/datalab/psychology-is-starting-to-deal-with-its-replication-problem/
-* 
-* http://andrewgelman.com/2015/08/11/its-hard-to-replicate-that-is-duplicate-analyses-in-sociology/
+* [Estimating the reproducibility of psychological science](http://www.sciencemag.org/content/349/6251/aac4716.full)
+* [Many psychology papers fail replication test](http://www.sciencemag.org/content/349/6251/910.full)
+* [Psychology Is Starting To Deal With Its Replication Problem](http://fivethirtyeight.com/datalab/psychology-is-starting-to-deal-with-its-replication-problem/)
+* [It’s hard to replicate (that is, duplicate) analyses in sociology](http://andrewgelman.com/2015/08/11/its-hard-to-replicate-that-is-duplicate-analyses-in-sociology/)
 
 
 ### Reproducibility
 
-* Why Most Published Research Findings Are False http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124
-* The Baby Factory - Difficult Research Objects, Disciplinary Standards, and the Production of Statistical Significance http://srd.sagepub.com/content/2/2378023115625071
+* [Why Most Published Research Findings Are False](http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124)
+* [The Baby Factory - Difficult Research Objects, Disciplinary Standards, and the Production of Statistical Significance](http://srd.sagepub.com/content/2/2378023115625071)
 
 
 
