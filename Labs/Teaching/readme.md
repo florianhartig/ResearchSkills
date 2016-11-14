@@ -1,6 +1,8 @@
+
+
 * [Brown University - Teaching and Learning Topics](https://www.brown.edu/about/administration/sheridan-center/teaching-learning)
+
 * [LSE - Structure Matters: Twenty-One Teaching Strategies to Promote Student Engagement and Cultivate Classroom Equity](http://www.lifescied.org/content/12/3/322.full)
-* 
 
 ## Empirical data on teaching methods 
 
