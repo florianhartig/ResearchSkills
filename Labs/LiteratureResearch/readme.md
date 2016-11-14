@@ -10,9 +10,9 @@ An exercise demonstrating this workflow is provided in the [practical](https://g
 
 The three main databases are
 
-* Google scholar https://scholar.google.de/ (free, fast)
-* ISI web of knowledge http://webofknowledge.com/ (proprietory, slow, but most "official")
-* Scopus http://www.scopus.com/ (proprietory, competitor to ISI)
+* [Google scholar](https://scholar.google.de/) (free, fast)
+* [ISI web of knowledge](http://webofknowledge.com/) (proprietory, slow, but most "official")
+* [Scopus](http://www.scopus.com/) (proprietory, competitor to ISI)
 
 see comments in the lecture notes / scripts about their use, in particular about how to use advanced search patterns and how they index the papers.
 
