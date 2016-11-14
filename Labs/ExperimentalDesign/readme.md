@@ -15,7 +15,7 @@
 * ["Do's and dont's in making a research questionnaire" - Yahoo Answers](https://answers.yahoo.com/question/index?qid=20080803204823AA852iP)
 
 
-# Reprodocibility 
+## Reproducibility 
 
 * ["Everything is fucked: The syllabus" - Blog of 'The Hardest Science'](https://hardsci.wordpress.com/2016/08/11/everything-is-fucked-the-syllabus/)
 
