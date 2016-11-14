@@ -3,9 +3,7 @@
 ## Finding a question 
 
 * ["How To Ask Good Questions" by David Stork](https://www.youtube.com/watch?v=PkcHstP6Ht0)
-
 * ["Risk of Bias in Reports of In Vivo Research: A Focus for Improvement" - Published in PLOS (2015)](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002273)
-
 * ["Ten Simple Rules to Win a Nobel Prize" - Published in PLOS (2015)](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004084)
 
 
