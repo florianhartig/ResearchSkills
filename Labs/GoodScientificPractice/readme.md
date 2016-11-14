@@ -98,7 +98,7 @@ Note that not all of the following specific cases have clearly and finally been 
 
 ## Data sharing
 
-['Towards transparency' - A Nature Article](http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2294.html)
+* ['Towards transparency' - A Nature Article](http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2294.html)
 
 Kattge, J.; Diaz, S. & Wirth, C. (2014) Of carrots and sticks. Nature Geosci, Nature Publishing Group, a division of Macmillan Publishers Limited. All Rights Reserved., 7, 778-779.
 
@@ -127,34 +127,31 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 
 ### Bogus papers
 
-* http://rajlaboratory.blogspot.ca/2015/08/top-10-signs-that-paperfield-is-bogus.html
+* [Top 10 signs that a paper/field is bogus](http://rajlaboratory.blogspot.ca/2015/08/top-10-signs-that-paperfield-is-bogus.html)
 
 ### Post-hoc-ing
 
-* http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4210093/
+* [Revisiting “Is the scientific paper a fraud?”](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4210093/)
+
 
 ### Publication biases through p-hacking 
 
 
-#### Negative results 
-
-* http://www.ploscollections.org/article/browse/issue/info:doi/10.1371/issue.pcol.v02.i39
-
 #### False discovery rates 
 
-* http://www.nature.com/news/reproducibility-don-t-cry-wolf-1.17859
+* [Reproducibility: Don't cry wolf](http://www.nature.com/news/reproducibility-don-t-cry-wolf-1.17859)
 
 
 ### Pre-registration
 
-* https://osf.io/x5w7h/
+* [Preregistration Challenge: Plan, Test, Discover Public  4 Share](https://osf.io/x5w7h/)
 
-* http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382
-* http://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000192
-* http://blogs.discovermagazine.com/neuroskeptic/2015/11/10/reproducibility-crisis-the-plot-thickens/#.VlCweMrASBt
+* [Likelihood of Null Effects of Large NHLBI Clinical Trials Has Increased over Time](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382)
+* [Registered Reports - A Method to Increase the Credibility of Published Results](http://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000192)
+* [Reproducibility Crisis: The Plot Thickens](http://blogs.discovermagazine.com/neuroskeptic/2015/11/10/reproducibility-crisis-the-plot-thickens/#.VlCweMrASBt)
 
 #### Detection of p-hacking
 
-* http://datacolada.org/2015/08/24/41-falsely-reassuring-analyses-of-all-p-values-2/
+* [Falsely Reassuring: Analyses of ALL p-values](http://datacolada.org/2015/08/24/41-falsely-reassuring-analyses-of-all-p-values-2/)
 
 
