@@ -24,8 +24,8 @@ If you want to run / try out the code, you need to install:
 
 ## Validity and critical apraisal of published studies 
 
-* https://ecologyisnotadirtyword.com/2016/02/04/evaluating-scientific-evidence/
-* http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2696241/
+* [Evaluating scientific evidence](https://ecologyisnotadirtyword.com/2016/02/04/evaluating-scientific-evidence/)
+* [Critical Appraisal of Scientific Articles](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2696241/)
 
 
 
