@@ -1,9 +1,9 @@
 #Soft Skills
 
+A successful scientific career requires many skills that go beyond the topics that are taught in a scientific curriculum.
 
 
 ## Advice to young scientists
-
 
 * [3 Qualities of successful Ph.D. Students](http://matt.might.net/articles/successful-phd-students/)
 * [Edward Feigenbaum - Surround yourself with genius](https://www.youtube.com/watch?v=YIjxMkcyofQ)
@@ -14,7 +14,7 @@
 
 ## Contemplating to do a PhD 
 
-* ["Graduate survey: Uncertain futures" - A Nature article about by Chris Woolston](http://www.nature.com/nature/journal/v526/n7574/full/nj7574-597a.html?WT.mc_id=FBK_NJOBS_1510_GRADSURVEY_PORTFOLIO)
+* ["Graduate survey: Uncertain futures" - A Nature article by Chris Woolston](http://www.nature.com/nature/journal/v526/n7574/full/nj7574-597a.html?WT.mc_id=FBK_NJOBS_1510_GRADSURVEY_PORTFOLIO)
 * ["How to build a better PhD" - A Nature article by Julie Gould](http://www.nature.com/news/how-to-build-a-better-phd-1.18905)
 * ["Make the most of PhDs" -  Published in Nature (2015)](http://www.nature.com/news/make-the-most-of-phds-1.18915)
 * [“So You Want to Get a Ph.D. in the Humanities” - A satire video about a women willing to get a PhD](http://theprofessorisin.com/2011/07/12/so-you-want-to-do-a-ph-d-in-the-humanities/)
@@ -30,6 +30,7 @@
 ## How to behave on conferences and meetings 
 
 * ["Networking : Hello, stranger" - Published in NatureJobs (2015)](http://www.nature.com/naturejobs/science/articles/10.1038/nj7575-729a)
+* ["Conference Do's and Don't's" - Article on 'Inside higher ED'](https://www.insidehighered.com/advice/2009/10/19/conference-dos-and-donts)
 
 
 
@@ -55,11 +56,7 @@
 
 ### Hand gestures
 
-* [10 Surprising Ways To Offend People In Other Countries - YouTube Video](https://www.youtube.com/watch?v=UTE0G9amZNk&index=2&list=RDOWFPHW7BCCI)
 * [A global guide to hand gestures - Article in 'The Telegraph'](http://www.telegraph.co.uk/travel/travelnews/10728934/A-global-guide-to-hand-gestures.html)
 * [Intercultural Training on German Culture - YouTube Video](https://www.youtube.com/watch?v=8WTOmUGBEGA)
-* [Intercultural Communication Adventure - YouTube Video](https://www.youtube.com/watch?v=PSt_op3fQck&index=9&list=RDOWFPHW7BCCI)
 * [Methods for Intercultural Training - YouTube Video](https://www.youtube.com/watch?v=20k4sKcoL-k)
-* [Riding the waves of culture - YouTube Video](https://www.youtube.com/watch?v=hmyfjKjcbm0)
-* [Rude hand gestures of the world - Article in 'The Telegraph'](http://www.telegraph.co.uk/travel/picturegalleries/8788932/Rude-hand-gestures-of-the-world.html?frame=2009424)
 * [The World's Rudest Hand Gestures - Article in 'The Atlantic'](http://www.theatlantic.com/international/archive/2011/09/the-worlds-rudest-hand-gestures/245238/#slide1)
