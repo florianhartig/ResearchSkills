@@ -36,10 +36,6 @@
 ## Finding a job / phd
 
 
-#### References
-
-* [Advice on writing reference letters - by Jeremy Fox](https://dynamicecology.wordpress.com/2015/06/23/advice-on-writing-reference-letters/)
-
 ## Career 
 
 * ["Salaries: Reality check" - Published in Nature (2016)](http://www.nature.com/nature/journal/v537/n7621/full/nj7621-573a.html)
