@@ -6,9 +6,7 @@
 
 
 * [3 Qualities of successful Ph.D. Students](http://matt.might.net/articles/successful-phd-students/)
-* [Russell Fernald -  The fear of doing anything unconventional](https://www.youtube.com/watch?v=LzTDcW2Yons)
 * [Edward Feigenbaum - Surround yourself with genius](https://www.youtube.com/watch?v=YIjxMkcyofQ)
-* [Donald Knuth - My advice to young people](https://www.youtube.com/watch?v=75Ju0eM5T2c)
 * [David Leon - Advice to a Young Scientist](https://www.youtube.com/watch?v=cnmIWZVvM7s)
 * [Martin Raff -  Advice to young scientists: Do important science!](http://www.webofstories.com/play/martin.raff/5;jsessionid=35A1661288A5B3F05E837A3AB50494A4)
 * [Stephen C. Stearns - Advice for graduate students](http://www.infectionimmunity.nl/documents/Stearns%20Advice%20Young%20Scientist.pdf)
