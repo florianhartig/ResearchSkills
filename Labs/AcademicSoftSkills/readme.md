@@ -6,7 +6,6 @@
 
 
 * [3 Qualities of successful Ph.D. Students](http://matt.might.net/articles/successful-phd-students/)
-* [Wolfgang Cramer - How young scientists can get involved with initiatives](https://www.youtube.com/watch?v=_pS17unanaE)
 * [Russell Fernald -  The fear of doing anything unconventional](https://www.youtube.com/watch?v=LzTDcW2Yons)
 * [Edward Feigenbaum - Surround yourself with genius](https://www.youtube.com/watch?v=YIjxMkcyofQ)
 * [Donald Knuth - My advice to young people](https://www.youtube.com/watch?v=75Ju0eM5T2c)
