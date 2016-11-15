@@ -3,6 +3,7 @@
 
 # Research ethics and misconduct
 
+Research ethics involves the application of fundamental ethical principles to a variety of topics involving research, including scientific research. These include the design and implementation of research involving human experimentation, animal experimentation, various aspects of academic scandal, including scientific misconduct (such as fraud, fabrication of data and plagiarism), whistleblowing; regulation of research, etc.
 
 ## Codes of professional ethics / conduct for scientists
 
