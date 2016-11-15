@@ -30,7 +30,7 @@ A successful scientific career requires many skills that go beyond the topics th
 ## How to behave on conferences and meetings 
 
 * ["Networking : Hello, stranger" - Published in NatureJobs (2015)](http://www.nature.com/naturejobs/science/articles/10.1038/nj7575-729a)
-* ["Conference Do's and Don't's" - Article on 'Inside higher ED'](https://www.insidehighered.com/advice/2009/10/19/conference-dos-and-donts)
+* ["Conference Do's and Don't's" - Article in 'Inside higher ED'](https://www.insidehighered.com/advice/2009/10/19/conference-dos-and-donts)
 
 
 
