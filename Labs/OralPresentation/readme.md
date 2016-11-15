@@ -2,7 +2,7 @@
 
 ##Oral presentations
 
-Here, you can find articles about what it takes to make a good oral presentation:
+Oral presentations are challenging to design and execute effectively. Here, you can find articles about what it takes to make a good oral presentation:
 
 * [Giving Oral Presentations](http://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/giving-oral-presentations-14239332)
 
