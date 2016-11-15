@@ -1,5 +1,7 @@
 # Poster 
 
+A large-format poster is a big piece of paper or wall-mounted monitor featuring a short title, an introduction to your burning question, an overview of your novel experimental approach, your amazing results in graphical form, some insightful discussion of aforementioned results, a listing of previously published articles that are important to your research, and some brief acknowledgement of the tremendous assistance and financial support conned from others — if all text is kept to a minimum, a person could fully read your poster in 5-10 minutes (really).
+
 ## General suggestions / tips
 
 * [Ten Simple Rules for a Good Poster Presentation](http://journals.plos.org/ploscollections/article?id=10.1371/journal.pcbi.0030102)
