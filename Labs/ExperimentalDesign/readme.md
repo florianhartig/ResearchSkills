@@ -21,4 +21,4 @@
 
 ## Ego-depletion
 
-* ["Everything Is Crumbling" - Article on Slate] (http://www.slate.com/articles/health_and_science/cover_story/2016/03/ego_depletion_an_influential_theory_in_psychology_may_have_just_been_debunked.html)
+* ["Everything Is Crumbling" - Article in 'Slate'] (http://www.slate.com/articles/health_and_science/cover_story/2016/03/ego_depletion_an_influential_theory_in_psychology_may_have_just_been_debunked.html)
