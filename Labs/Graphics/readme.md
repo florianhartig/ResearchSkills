@@ -1,5 +1,8 @@
+
+
 # Visuals
 
+Although many magazines and newspapers also include graphs, the visual depiction of data is fundamental to science and help scientists visualize and interpret the variation, patterns, and trends within the data.
 
 ### Technical 
 
