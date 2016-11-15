@@ -8,10 +8,10 @@
 
 
 
-## Questionaires 
+## Questionnaires 
 
 * ['Questionnaire' - Wikipedia Article](http://en.wikipedia.org/wiki/Questionnaire)
-* ["The Dos and Don'ts of creating a good questionnaire"](https://prezi.com/bqmdj-9q4a4e/the-dos-and-donts-of-creating-a-good-questionnaire/)
+* ["The Do's and Don'ts of creating a good questionnaire"](https://prezi.com/bqmdj-9q4a4e/the-dos-and-donts-of-creating-a-good-questionnaire/)
 * ["Do's and dont's in making a research questionnaire" - Yahoo Answers](https://answers.yahoo.com/question/index?qid=20080803204823AA852iP)
 
 
