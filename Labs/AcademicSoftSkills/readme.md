@@ -33,9 +33,6 @@
 
 
 
-## Finding a job / phd
-
-
 ## Career 
 
 * ["Salaries: Reality check" - Published in Nature (2016)](http://www.nature.com/nature/journal/v537/n7621/full/nj7621-573a.html)
