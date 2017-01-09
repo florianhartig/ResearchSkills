@@ -18,7 +18,7 @@ see comments in the lecture notes / scripts about their use, in particular about
 
 ## Access to journals
 
-Usually via IP / proprietory databases. This means that within the U Freiburg, you have access. From ouside the Uni, you have access if you use the VPN (because then you have a U Freiburg IP). In many cases, you can also get access via your Uni password, but this is more cumbersome. 
+Access to journals / commercial databases is usually granted via IP. This means that within the University, you have access to everything. When you are outside the university, the main method is to use a Virtual Private Network (VPN) - google for it, basically every univeristy has a solution to that. Once you have installed the appropriate client, you can "tunnel" into the university network, and you will have access because, to the outside world, you appear to be at the university. In many cases, you can also get access via your Uni password, but this is more cumbersome. 
 
 ## Reference Managers
 
@@ -30,6 +30,12 @@ You should see what is best for you. Dependeing on what text processing system y
 * For Word: Endnote (costly), Zotero, Mendeley, Jabref (integreation in Word tricky, some comments below), Citavi (U. Freiburg has a licence, no other reason)
 * For Open Office: Jabref, Zotero, Mendeley
 
+
+## Working with BibTeX
+
+BibTeX-based reference managers such as JabRef work best with LaTeX. How to do this is covered in our LaTeX manual. 
+
+You can also use JabRef with other text editors, but it is less convenient. Here some hints for MS Word and Libre Office.  
 
 ### Using BibTex with Microsoft Word
 
@@ -48,21 +54,16 @@ Alternatives (it's worth googeling for newer options):
 * [docear4word](http://www.docear.org/software/add-ons/docear4word/download/)
 
 
-### Using BibTex with Open/ Libre Office
+### Using BibTex with Libre Office
 
-1. **Start jabref in 32 bit mode.** If your OS is Windows (e.g. in the CIP pools), open your terminal (by typing cmd or selecting the terminal from the programs) and paste the following (or similar) into your command line and hit enter. This will open jabref in 32 bit mode: 
-
-"C:\Program Files (x86)\Java\jre1.8.0_60\bin\java" -d32 -jar "C:\Program Files (x86)\JabRef\JabRef-2.10.jar"
-
-2. If you have an existing BibTex literature database open it here. If you start from scratch start your database here.
-3. Open your Libre Office writer document. (To help jabref and Libre Office find a connection quicker it is better to have both software launched.)
-4. Start the connection: 
+1. Open your Libre Office writer document. (To help jabref and Libre Office find a connection quicker it is better to have both software launched.)
+2. Start the connection: 
   - Tools > OpenOffice/LibreOffice connection
   - A new panel opens to the left of your jabref window.
   - In the top row there are two buttons shaped like plugs. If 3 is fulfilled hit the far left button which should now automatically establish a connection between jabref and Libre Office. The greyed out buttons below should now appear in black.
-5. You are now able to select the settings and style for the appearance of your references.
+3. You are now able to select the settings and style for the appearance of your references.
   - Tip: Make sure to tick: Settings > Automatically sync bibliography when inserting citations.
-6. Wherever in your text you want to cite (or cite in-text) put the cursor there (in your document), select the required BibTex entry in jabref and hit cite (or cite in-text).
-7. Enjoy your new bibliography in Open/ Libre Office
+4. Wherever in your text you want to cite (or cite in-text) put the cursor there (in your document), select the required BibTex entry in jabref and hit cite (or cite in-text).
+5. Enjoy your new bibliography in Open/ Libre Office
 
 For further help please refer to http://jabref.sourceforge.net/OOPlugin-jabref.php
