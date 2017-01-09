@@ -18,7 +18,7 @@ see comments in the lecture notes / scripts about their use, in particular about
 
 ## Access to journals
 
-Usually via IP / proprietory databases. This means that within the U Freiburg, you have access. From ouside the Uni, you have access if you use the VPN (because then you have a U Freiburg IP). In many cases, you can also get access via your Uni password, but this is more cumbersome. 
+Access to journals / commercial databases is usually granted via IP. This means that within the University, you have access to everything. When you are outside the university, the main method is to use a Virtual Private Network (VPN) - google for it, basically every univeristy has a solution to that. Once you have installed the appropriate client, you can "tunnel" into the university network, and you will have access because, to the outside world, you appear to be at the university. In many cases, you can also get access via your Uni password, but this is more cumbersome. 
 
 ## Reference Managers
 
