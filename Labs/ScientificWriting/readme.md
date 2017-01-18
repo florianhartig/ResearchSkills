@@ -26,7 +26,7 @@ For writing advice, see primarily the lecture notes. The following links are onl
 
 ### Styleguides 
 
-* The absolute classic is [The Elements of Style by William Strunk](http://www.gutenberg.org/ebooks/37134)
+* The absolute classic is [The Elements of Style by William Strunk](http://www.gutenberg.org/ebooks/37134) - but many people are not happy with it, see, e.g., the article [50 Years of Stupid Grammar](http://www.chronicle.com/article/50-Years-of-Stupid-Grammar/25497 )
 * [The Economist - Style Guide](http://www.economist.com/styleguide/introduction)
 
 
