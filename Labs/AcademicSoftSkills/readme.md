@@ -2,6 +2,11 @@
 
 A successful scientific career requires many skills that go beyond the topics that are taught in a scientific curriculum.
 
+## Social skills
+
+* http://www.sciencedirect.com/science/article/pii/S0169534716302178
+
+
 
 ## Advice to young scientists
 
@@ -25,18 +30,14 @@ A successful scientific career requires many skills that go beyond the topics th
 * ["Early-career researchers need fewer burdens and more support" - Published in Nature (2016)](http://www.nature.com/news/early-career-researchers-need-fewer-burdens-and-more-support-1.20863?WT.ec_id=NATURE-20161027&spMailingID=52621451&spUserID=ODQwNTI5Nzg2NgS2&spJobID=1025013611&spReportId=MTAyNTAxMzYxMQS2)
 * ["Young, talented and fed-up: scientists tell their stories" - Published in Nature (2016)](http://www.nature.com/news/young-talented-and-fed-up-scientists-tell-their-stories-1.20872)
 
+* ["Salaries: Reality check" - Published in Nature (2016)](http://www.nature.com/nature/journal/v537/n7621/full/nj7621-573a.html)
+
 
 
 ## How to behave on conferences and meetings 
 
 * ["Networking : Hello, stranger" - Published in NatureJobs (2015)](http://www.nature.com/naturejobs/science/articles/10.1038/nj7575-729a)
 * ["Conference Do's and Don't's" - Article in 'Inside higher ED'](https://www.insidehighered.com/advice/2009/10/19/conference-dos-and-donts)
-
-
-
-## Career 
-
-* ["Salaries: Reality check" - Published in Nature (2016)](http://www.nature.com/nature/journal/v537/n7621/full/nj7621-573a.html)
 
 
 ## Improving your skills
