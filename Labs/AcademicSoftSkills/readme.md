@@ -22,7 +22,7 @@ A successful scientific career requires many skills that go beyond the topics th
 * ["Graduate survey: Uncertain futures" - A Nature article by Chris Woolston](http://www.nature.com/nature/journal/v526/n7574/full/nj7574-597a.html?WT.mc_id=FBK_NJOBS_1510_GRADSURVEY_PORTFOLIO)
 * ["How to build a better PhD" - A Nature article by Julie Gould](http://www.nature.com/news/how-to-build-a-better-phd-1.18905)
 * ["Make the most of PhDs" -  Published in Nature (2015)](http://www.nature.com/news/make-the-most-of-phds-1.18915)
-* [“So You Want to Get a Ph.D. in the Humanities” - A satire video about a women willing to get a PhD](http://theprofessorisin.com/2011/07/12/so-you-want-to-do-a-ph-d-in-the-humanities/)
+* [How to pick a good mentor / advisor]{http://www.sciencedirect.com/science/article/pii/S0896627313009070)
 
 
 ## Career perspectives 
