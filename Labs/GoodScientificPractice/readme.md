@@ -138,6 +138,13 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 ### Publication biases through p-hacking 
 
 
+Brian Wansink case
+
+* [https://www.buzzfeed.com/stephaniemlee/brian-wansink-cornell-p-hacking?utm_term=.sexwlV1z0#.rvnn9XOJp](buzzfeed article)
+* [http://www.timvanderzee.com/the-wansink-dossier-an-overview/](The Wansink Dossier: An Overview)
+
+
+
 #### False discovery rates 
 
 * [Reproducibility: Don't cry wolf](http://www.nature.com/news/reproducibility-don-t-cry-wolf-1.17859)
