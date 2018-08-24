@@ -163,3 +163,8 @@ Brian Wansink case
 * [Falsely Reassuring: Analyses of ALL p-values](http://datacolada.org/2015/08/24/41-falsely-reassuring-analyses-of-all-p-values-2/)
 
 
+#### Reporting biases
+
+https://www.cambridge.org/core/journals/psychological-medicine/article/cumulative-effect-of-reporting-and-citation-biases-on-the-apparent-efficacy-of-treatments-the-case-of-depression/71D73CADE32C0D3D996DABEA3FCDBF57/core-reader
+
+
