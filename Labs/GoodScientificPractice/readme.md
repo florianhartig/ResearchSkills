@@ -117,6 +117,7 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 * [Many psychology papers fail replication test](http://www.sciencemag.org/content/349/6251/910.full)
 * [Psychology Is Starting To Deal With Its Replication Problem](http://fivethirtyeight.com/datalab/psychology-is-starting-to-deal-with-its-replication-problem/)
 * [It’s hard to replicate (that is, duplicate) analyses in sociology](http://andrewgelman.com/2015/08/11/its-hard-to-replicate-that-is-duplicate-analyses-in-sociology/)
+* https://www.nature.com/articles/s41562-018-0399-z
 
 
 ### Reproducibility
