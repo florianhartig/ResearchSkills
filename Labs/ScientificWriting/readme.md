@@ -12,6 +12,9 @@ For writing advice, see primarily the lecture notes. The following links are onl
 * [The Writing Center at UNC-Chapel Hill](http://writingcenter.unc.edu/handouts/)
 * [Writing advice by George Orwell, George Orwell, "Politics and the English Language," 1946](http://www.orwell.ru/library/essays/politics/english/e_polit/)
 
+### Books
+
+* https://press.princeton.edu/titles/10769.html
 
 
 ### Pages with exercises
