@@ -22,14 +22,10 @@ For writing advice, see primarily the lecture notes. The following links are onl
 ### Blogs
 
 * [Brian McGill, DE, on Some well-known tricks for clear writing](https://dynamicecology.wordpress.com/2012/11/14/clear-writing/)
-
 * [Brian McGill, DE, on How to write a great journal article – act like a fiction author](https://dynamicecology.wordpress.com/2014/06/11/how-to-write-a-great-journal-article-act-like-a-fiction-author/)
-
 * [Brian McGill, DE on paper structure](https://dynamicecology.wordpress.com/2016/02/24/the-5-pivotal-paragraphs-in-a-paper/)
 * [Meghan Duffy, DE, on concentrating on the biological meaning](https://dynamicecology.wordpress.com/2018/03/05/when-writing-tell-us-your-biological-results/)
-
 * [How to write a scientific paper](http://conservationbytes.com/2012/10/22/how-to-write-a-scientific-paper/)
-
 
 ### Pages with exercises
 
