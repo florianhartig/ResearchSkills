@@ -3,7 +3,6 @@
 For writing advice, see primarily the lecture notes. The following links are only meant to complement the script
 
 
-* [How to write a scientific paper](http://conservationbytes.com/2012/10/22/how-to-write-a-scientific-paper/)
 * [How to write backwards](http://www.jstor.org/stable/20168029?seq=1#page_scan_tab_contents)
 * [Ten Simple Rules for Writing Research Papers](http://journals.plos.org/ploscollections/article?id=10.1371/journal.pcbi.1003453)
 * [Ten Simple (Empirical) Rules for Writing Science](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004205)
@@ -15,6 +14,21 @@ For writing advice, see primarily the lecture notes. The following links are onl
 ### Books
 
 * https://press.princeton.edu/titles/10769.html
+
+### Videos 
+
+* [Lynn Dicks, Writing science in plain English](https://www.youtube.com/watch?v=Mn7f5tsgjx8)
+
+### Blogs
+
+* [Brian McGill, DE, on Some well-known tricks for clear writing](https://dynamicecology.wordpress.com/2012/11/14/clear-writing/)
+
+* [Brian McGill, DE, on How to write a great journal article – act like a fiction author](https://dynamicecology.wordpress.com/2014/06/11/how-to-write-a-great-journal-article-act-like-a-fiction-author/)
+
+* [Brian McGill, DE on paper structure](https://dynamicecology.wordpress.com/2016/02/24/the-5-pivotal-paragraphs-in-a-paper/)
+* [Meghan Duffy, DE, on concentrating on the biological meaning](https://dynamicecology.wordpress.com/2018/03/05/when-writing-tell-us-your-biological-results/)
+
+* [How to write a scientific paper](http://conservationbytes.com/2012/10/22/how-to-write-a-scientific-paper/)
 
 
 ### Pages with exercises
