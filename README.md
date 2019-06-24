@@ -34,16 +34,16 @@ Scientific Writing - lab material
 
 # Past courses
 
-Winter term 15/16 (3-week full time, Uni Freiburg, MSc Env/For)
-Winter term 14/15 (3-week full time, Uni Freiburg, MSc Env/For)
-Winter term 13/14 (3-week full time, Uni Freiburg, MSc Env/For)
-Winter term 12/13 (1-week full time, Uni Freiburg, MSc Renewable Energy Management)
-Winter term 12/13 (3-week full time, Uni Freiburg, MSc Env/For)
+* Summer Term 18-19 (3-week full time, Uni Regensburg, MSc Bio)
+* Summer Term 17-18 (3-week full time, Uni Regensburg, MSc Bio)
+* Summer Term 16-17 (3-week full time, Uni Regensburg, MSc Bio)
+* Winter term 15/16 (3-week full time, Uni Freiburg, MSc Env/For)
+* Winter term 14/15 (3-week full time, Uni Freiburg, MSc Env/For)
+* Winter term 13/14 (3-week full time, Uni Freiburg, MSc Env/For)
+* Winter term 12/13 (1-week full time, Uni Freiburg, MSc Renewable Energy Management)
+* Winter term 12/13 (3-week full time, Uni Freiburg, MSc Env/For)
 
 # Authors and copyright
 
 Unless specified otherwise, the author of these materials is Florian Hartig. Reuse permitted under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
-
-Creative Commons License
-This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 
