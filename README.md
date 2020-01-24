@@ -14,9 +14,9 @@ Introduction to philosophy and history of science, scientific method, finding yo
 
 ## Lecture notes
 
-Main lecture notes - here
-Statistics lecture notes here
-LaTex lecture notes here
+* Main lecture notes - [here](https://www.dropbox.com/s/jzbkt0f6w420zie/ResearchSkills.pdf?dl=0)
+* Statistics lecture notes here
+* LaTex lecture notes here
 
 ## Slides
 
