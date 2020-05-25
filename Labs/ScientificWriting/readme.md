@@ -57,7 +57,7 @@ For writing advice, see primarily the lecture notes. The following links are onl
 
 * [The history of the peer-review process](http://www.sciencedirect.com/science/article/pii/S0167779902019856)
 * [Ten Simple Rules for Reviewers](http://journals.plos.org/ploscollections/article?id=10.1371/journal.pcbi.0020110)
-* [The Writing Center at UNC-Chapel Hill](http://writingcenter.unc.edu/faculty-resources/classroom-handouts/checklist-for-analyzing-research-material/)
+* [The Writing Center at UNC-Chapel Hill - Checklist for Analyzing Research Material](http://writingcenter.unc.edu/faculty-resources/classroom-handouts/checklist-for-analyzing-research-material/)
 * [What Makes a Good Peer Review](https://methodsblog.wordpress.com/2016/09/20/what-makes-a-good-review/)
 
 
