@@ -21,6 +21,7 @@ Although Git (as svn as well) can be purely run locally, it really makes sense t
 * [GitHub help page](https://help.github.com/)
 * [GitHub guids - excellent!!!](https://guides.github.com/)
 * [How to Get Started with Github - Beginner Tutorial ](http://www.youtube.com/watch?v=73I5dRucCds)
+* https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD
 
 ### Software to install
 
