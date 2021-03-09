@@ -37,6 +37,11 @@ Collection of links
 Note that not all of the following specific cases have clearly and finally been judged as misconduct! I provide the links as a documentation of the discussion, so that you can see the arguments that were made!
 
 
+#### Jan Hendrick Schön
+
+* [BBC Documentary The Dark Secret of Hendrik Schoen](https://www.youtube.com/watch?v=Fz_x-YfydCM&ab_channel=dp7)
+* [Suspicions are swirling and Bell Labs is burning](https://www.youtube.com/watch?v=Riio1eKOSKg&ab_channel=BobbyBroccoli)
+
 #### Haruko Obokata 
 
 * [What pushes scientists to lie? The disturbing but familiar story of Haruko Obokata](http://www.theguardian.com/science/2015/feb/18/haruko-obokata-stap-cells-controversy-scientists-lie)
