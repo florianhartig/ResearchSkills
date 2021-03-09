@@ -42,6 +42,7 @@ Note that not all of the following specific cases have clearly and finally been 
 * [BBC Documentary The Dark Secret of Hendrik Schoen](https://www.youtube.com/watch?v=Fz_x-YfydCM&ab_channel=dp7)
 * [Suspicions are swirling and Bell Labs is burning](https://www.youtube.com/watch?v=Riio1eKOSKg&ab_channel=BobbyBroccoli)
 * [Plastic Fantastic - Book about the case](https://en.wikipedia.org/wiki/Plastic_Fantastic)
+* [A bit weird, but quite informative youtube documentary](https://www.youtube.com/watch?v=nfDoml-Db64&list=PLAB-wWbHL7Vsfl4PoQpNsGp61xaDDiZmh&ab_channel=BobbyBroccoli)
 
 #### Haruko Obokata 
 
