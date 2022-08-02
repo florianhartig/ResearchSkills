@@ -1,4 +1,4 @@
-# General infos
+# Research Skills
 
 This site contains material and links for the MSc module Research Skills. The objective of this course is to to learn discipline-independent skills for doing quantitative research at the graduate-level. 
 
