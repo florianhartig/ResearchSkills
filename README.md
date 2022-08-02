@@ -29,6 +29,12 @@ Statistics with R - lab material
 Version Control - lab material
 Scientific Writing - lab material
 
+# Authors and copyright
+
+Author: Florian Hartig, University of Regensburg
+
+Unless specified otherwise, the author of these materials is Florian Hartig. Reuse permitted under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
+
 # Past courses
 
 * Summer Term 21-22 (3-week full time, Uni Regensburg, MSc Bio)
@@ -42,10 +48,3 @@ Scientific Writing - lab material
 * Winter term 13/14 (3-week full time, Uni Freiburg, MSc Env/For)
 * Winter term 12/13 (1-week full time, Uni Freiburg, MSc Renewable Energy Management)
 * Winter term 12/13 (3-week full time, Uni Freiburg, MSc Env/For)
-
-# Authors and copyright
-
-Author: Florian Hartig, University of Regensburg
-
-Unless specified otherwise, the author of these materials is Florian Hartig. Reuse permitted under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
-
