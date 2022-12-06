@@ -101,6 +101,12 @@ Note that not all of the following specific cases have clearly and finally been 
 * [I Fooled Millions Into Thinking Chocolate Helps Weight Loss. Here's How.](http://io9.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800)
 
 
+#### Fiedler case
+
+In 2022, Stephen Robers accused Klaus Fiedler, then Editor at Perspectives on Psychological Science, of supporting (systemic) racisim
+
+* https://www.chronicle.com/article/i-am-the-victim-a-journal-editor-is-under-fire-after-a-diversity-debate-is-derailed
+* https://psyarxiv.com/xk4yu
 
 # Data and analysis problems
 
