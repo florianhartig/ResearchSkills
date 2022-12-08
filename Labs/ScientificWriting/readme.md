@@ -72,3 +72,5 @@ For writing advice, see primarily the lecture notes. The following links are onl
 ### Teaching writing 
 
 * [Evidence-based practices for teaching writing](http://education.jhu.edu/PD/newhorizons/Better/articles/Winter2011.html)
+* https://threadreaderapp.com/thread/1600501975279456257.html
+
