@@ -2,6 +2,11 @@
 
 A successful scientific career requires many skills that go beyond the topics that are taught in a scientific curriculum.
 
+## Social skills
+
+* http://www.sciencedirect.com/science/article/pii/S0169534716302178
+
+
 
 ## Advice to young scientists
 
@@ -17,7 +22,7 @@ A successful scientific career requires many skills that go beyond the topics th
 * ["Graduate survey: Uncertain futures" - A Nature article by Chris Woolston](http://www.nature.com/nature/journal/v526/n7574/full/nj7574-597a.html?WT.mc_id=FBK_NJOBS_1510_GRADSURVEY_PORTFOLIO)
 * ["How to build a better PhD" - A Nature article by Julie Gould](http://www.nature.com/news/how-to-build-a-better-phd-1.18905)
 * ["Make the most of PhDs" -  Published in Nature (2015)](http://www.nature.com/news/make-the-most-of-phds-1.18915)
-* [“So You Want to Get a Ph.D. in the Humanities” - A satire video about a women willing to get a PhD](http://theprofessorisin.com/2011/07/12/so-you-want-to-do-a-ph-d-in-the-humanities/)
+* [How to pick a good mentor / advisor]{http://www.sciencedirect.com/science/article/pii/S0896627313009070)
 
 
 ## Career perspectives 
@@ -25,18 +30,14 @@ A successful scientific career requires many skills that go beyond the topics th
 * ["Early-career researchers need fewer burdens and more support" - Published in Nature (2016)](http://www.nature.com/news/early-career-researchers-need-fewer-burdens-and-more-support-1.20863?WT.ec_id=NATURE-20161027&spMailingID=52621451&spUserID=ODQwNTI5Nzg2NgS2&spJobID=1025013611&spReportId=MTAyNTAxMzYxMQS2)
 * ["Young, talented and fed-up: scientists tell their stories" - Published in Nature (2016)](http://www.nature.com/news/young-talented-and-fed-up-scientists-tell-their-stories-1.20872)
 
+* ["Salaries: Reality check" - Published in Nature (2016)](http://www.nature.com/nature/journal/v537/n7621/full/nj7621-573a.html)
+
 
 
 ## How to behave on conferences and meetings 
 
 * ["Networking : Hello, stranger" - Published in NatureJobs (2015)](http://www.nature.com/naturejobs/science/articles/10.1038/nj7575-729a)
 * ["Conference Do's and Don't's" - Article in 'Inside higher ED'](https://www.insidehighered.com/advice/2009/10/19/conference-dos-and-donts)
-
-
-
-## Career 
-
-* ["Salaries: Reality check" - Published in Nature (2016)](http://www.nature.com/nature/journal/v537/n7621/full/nj7621-573a.html)
 
 
 ## Improving your skills

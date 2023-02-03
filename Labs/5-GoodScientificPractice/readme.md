@@ -37,6 +37,13 @@ Collection of links
 Note that not all of the following specific cases have clearly and finally been judged as misconduct! I provide the links as a documentation of the discussion, so that you can see the arguments that were made!
 
 
+#### Jan Hendrick Schön
+
+* [BBC Documentary The Dark Secret of Hendrik Schoen](https://www.youtube.com/watch?v=Fz_x-YfydCM&ab_channel=dp7)
+* [Suspicions are swirling and Bell Labs is burning](https://www.youtube.com/watch?v=Riio1eKOSKg&ab_channel=BobbyBroccoli)
+* [Plastic Fantastic - Book about the case](https://en.wikipedia.org/wiki/Plastic_Fantastic)
+* [A bit weird, but quite informative youtube documentary](https://www.youtube.com/watch?v=nfDoml-Db64&list=PLAB-wWbHL7Vsfl4PoQpNsGp61xaDDiZmh&ab_channel=BobbyBroccoli)
+
 #### Haruko Obokata 
 
 * [What pushes scientists to lie? The disturbing but familiar story of Haruko Obokata](http://www.theguardian.com/science/2015/feb/18/haruko-obokata-stap-cells-controversy-scientists-lie)
@@ -94,6 +101,12 @@ Note that not all of the following specific cases have clearly and finally been 
 * [I Fooled Millions Into Thinking Chocolate Helps Weight Loss. Here's How.](http://io9.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800)
 
 
+#### Fiedler case
+
+In 2022, Stephen Robers accused Klaus Fiedler, then Editor at Perspectives on Psychological Science, of supporting (systemic) racisim
+
+* https://www.chronicle.com/article/i-am-the-victim-a-journal-editor-is-under-fire-after-a-diversity-debate-is-derailed
+* https://psyarxiv.com/xk4yu
 
 # Data and analysis problems
 
@@ -117,6 +130,7 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 * [Many psychology papers fail replication test](http://www.sciencemag.org/content/349/6251/910.full)
 * [Psychology Is Starting To Deal With Its Replication Problem](http://fivethirtyeight.com/datalab/psychology-is-starting-to-deal-with-its-replication-problem/)
 * [It’s hard to replicate (that is, duplicate) analyses in sociology](http://andrewgelman.com/2015/08/11/its-hard-to-replicate-that-is-duplicate-analyses-in-sociology/)
+* https://www.nature.com/articles/s41562-018-0399-z
 
 
 ### Reproducibility
@@ -138,6 +152,13 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 ### Publication biases through p-hacking 
 
 
+Brian Wansink case
+
+* [https://www.buzzfeed.com/stephaniemlee/brian-wansink-cornell-p-hacking?utm_term=.sexwlV1z0#.rvnn9XOJp](buzzfeed article)
+* [http://www.timvanderzee.com/the-wansink-dossier-an-overview/](The Wansink Dossier: An Overview)
+
+
+
 #### False discovery rates 
 
 * [Reproducibility: Don't cry wolf](http://www.nature.com/news/reproducibility-don-t-cry-wolf-1.17859)
@@ -154,5 +175,10 @@ Nosek, B. A.; Alter, G.; Banks, G. C.; Borsboom, D.; Bowman, S. D.; Breckler, S.
 #### Detection of p-hacking
 
 * [Falsely Reassuring: Analyses of ALL p-values](http://datacolada.org/2015/08/24/41-falsely-reassuring-analyses-of-all-p-values-2/)
+
+
+#### Reporting biases
+
+https://www.cambridge.org/core/journals/psychological-medicine/article/cumulative-effect-of-reporting-and-citation-biases-on-the-apparent-efficacy-of-treatments-the-case-of-depression/71D73CADE32C0D3D996DABEA3FCDBF57/core-reader
 
 
