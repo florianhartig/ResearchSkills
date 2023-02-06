@@ -1,10 +1,12 @@
+# Set a seed to make everything reproducible
+set.seed(1)
 
 # Use relative file paths as in ../data/mydata.Rdata to keep your project portable
 
 # read in data
 mydata <- read.table("../data/mydata.txt", sep="", header = TRUE)
 
-# do some analysis, such as LR 
+# do some analysis, such as LR
 fm <- lm(y ~ x + I(x^2), data = mydata)
 summary(fm)
 
