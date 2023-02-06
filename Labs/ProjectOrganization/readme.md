@@ -9,8 +9,11 @@ Keeping your project structured (also on your computer) will simplify your work 
 
 ## Template
 
-* [Here](https://github.com/florianhartig/ResearchSkills/tree/master/Labs/ProjectOrganization/ExampleProject) we provide an exemplary folder structure with some simulated data, basic analysis and plotting, and the implementation of these results in a LaTeX document. Note the comments in the folders
-* For your project, please use the same structure. You can download a zipped version of the project template, including the hints and templates for R and LaTeX [here](https://github.com/florianhartig/ResearchSkills/raw/master/Labs/ProjectOrganization/ExampleProject.zip).
+We provide an exemplary folder structure with some simulated data, basic analysis and plotting, and the implementation of these results in a LaTeX document. For your project, please use exactly this structure. Please read the comments in the Readme file!
+
+* Download template as ZIP [here](https://github.com/TheoreticalEcology/ProjectTemplate/archive/refs/heads/main.zip)
+* Create a new GitHub project based on template here https://github.com/TheoreticalEcology/ProjectTemplate
+
 
 ## Further readings
 
